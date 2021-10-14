@@ -1,5 +1,4 @@
-                        <!-- ***** Barra de Navegació ***** -->
- <?php
+                        <!-- ***** Barra de Navegació ***** -->¡
  <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -32,4 +31,3 @@
             </div>
         </div>
     </header>
-	?>

@@ -36,8 +36,7 @@
     
     
     <!-- *** Header Principal *** -->
-	
-<?php
+	<?php
 		 include 'nav.php';
 	?>
     <!-- *** Header Final *** -->
@@ -178,8 +177,8 @@
    
     
     <!-- *** Footer inici *** -->
-     <?php
-		 include 'footer.php';
+     <?
+		php include 'footer.php';
 	?>
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
