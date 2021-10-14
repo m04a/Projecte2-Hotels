@@ -43,10 +43,7 @@
 
     <!-- *** Main Banner Area Start *** -->
     <div class="main-banner" id="top">
-        <video autoplay muted loop id="bg-video">
-            <source src="assets/images/video.mp4" type="video/mp4" />
-        </video>
-
+        <img id="bg-video" src="assets/images/line-dec.png">
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Millor hotel de Figueres</h6>
@@ -177,8 +174,8 @@
    
     
     <!-- *** Footer inici *** -->
-     <?
-		php include 'footer.php';
+     <?php
+	 include 'footer.php';
 	?>
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>

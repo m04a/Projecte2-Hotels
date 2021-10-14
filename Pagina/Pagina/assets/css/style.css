@@ -523,7 +523,7 @@ header
 
 /* 
 ---------------------------------------------
-banner
+header banner
 --------------------------------------------- 
 */
 
@@ -1035,31 +1035,6 @@ contact
 
 
 
-/* 
----------------------------------------------
-footer
---------------------------------------------- 
-*/
-footer {
-  text-align: center;
-  padding: 30px 0px;
-}
-
-footer p {
-  color: #232d39;
-  font-size: 13px;
-}
-
-footer p a {
-  cursor: pointer;
-  color: #ed563b;
-}
-
-footer p a:hover {
-  color: #ed563b;
-}
-
-
 
 /* 
 ---------------------------------------------
@@ -1362,4 +1337,22 @@ footer
   margin-bottom:0;
   font-size:13px;
   opacity:0.6;
+}
+footer {
+  text-align: center;
+  padding: 30px 0px;
+}
+
+footer p {
+  color: #232d39;
+  font-size: 13px;
+}
+
+footer p a {
+  cursor: pointer;
+  color: #ed563b;
+}
+
+footer p a:hover {
+  color: #ed563b;
 }
