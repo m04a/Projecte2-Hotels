@@ -3,6 +3,7 @@ Anàlisi de requisits -FET
 Disseny del Model ER -FET
 Disseny del diagrama de classes
 Planificació del projecte -FET
+instalacion de MySQL - FET
 Instalar Mysql - FET
 Esquemes “wireframes” de la pàgina principal, dels resultats de les cerques i del detall d’una habitació. -FET
 Entorn de desenvolupament (Realització de proves)
