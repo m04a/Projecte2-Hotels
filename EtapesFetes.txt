@@ -3,6 +3,8 @@ Anàlisi de requisits -FET
 Disseny del Model ER -FET
 Disseny del diagrama de classes
 Planificació del projecte -FET
+Instalar Mysql - FET
 Esquemes “wireframes” de la pàgina principal, dels resultats de les cerques i del detall d’una habitació. -FET
 Entorn de desenvolupament (Realització de proves)
 Servidor de proves configurat per poder allotjar més d’un domini. 
+Configurar servidor apache
