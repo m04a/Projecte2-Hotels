@@ -11,27 +11,20 @@
 
     <title>Pagina Hotel| </title>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="utilitats/css/style.css">
 
     </head>
     
-    <body>
+    <body> 
     
-    <!-- ***** Preloader Start ***** -->
-    <div id="js-preloader" class="js-preloader">
-      <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
+    <!-- ***** Carregadpr Inici ***** -->
+    <?php
+		 include 'carregador.php';
+	?>
     <!-- *** Preloader End *** -->
     
     
@@ -43,7 +36,7 @@
 
     <!-- *** Main Banner Area Start *** -->
     <div class="main-banner" id="top">
-        <img id="bg-video" src="assets/images/line-dec.png">
+        <img id="bg-video" src="utilitats/imatges/line-dec.png">
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Millor hotel de Figueres</h6>
@@ -63,7 +56,7 @@
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
                         <h2>Habitacions <em>Promocionades</em></h2>
-                        <img src="assets/images/line-dec.png" alt="">
+                        <img src="utilitats/imatges/line-dec.png" alt="">
                         <p>Aqui pots trobar les millors ofertes de habitacions.</p>
                     </div>
                 </div>
@@ -72,7 +65,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                            <img src="utilitats/imatges/habitacio-1.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -94,7 +87,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-2-720x480.jpg" alt="">
+                            <img src="utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -116,7 +109,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-3-720x480.jpg" alt="">
+                            <img src="utilitats/imatges/product-3-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -148,13 +141,13 @@
 	
     <!-- *** Qui som inici *** -->
 
-    <section class="section section-bg" id="schedule" style="background-image: url(assets/images/about-fullscreen-1-1920x700.jpg)">
+    <section class="section section-bg" id="schedule" style="background-image: url(utilitats/imatges/about-fullscreen-1-1920x700.jpg)">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading dark-bg">
                         <h2>Qui <em>Som</em></h2>
-                        <img src="assets/images/line-dec.png" alt="">
+                        <img src="utilitats/imatges/line-dec.png" alt="">
                         <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</p>
                     </div>
                 </div>
@@ -178,22 +171,22 @@
 	 include 'footer.php';
 	?>
     <!-- jQuery -->
-    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="utilitats/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="assets/js/popper.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="utilitats/js/popper.js"></script>
+    <script src="utilitats/js/bootstrap.min.js"></script>
 
-    <!-- Plugins -->
-    <script src="assets/js/scrollreveal.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/imgfix.min.js"></script> 
-    <script src="assets/js/mixitup.js"></script> 
-    <script src="assets/js/accordions.js"></script>
+    <!-- Plugins afegits -->
+    <script src="utilitats/js/scrollreveal.min.js"></script>
+    <script src="utilitats/js/waypoints.min.js"></script>
+    <script src="utilitats/js/jquery.counterup.min.js"></script>
+    <script src="utilitats/js/imgfix.min.js"></script> 
+    <script src="utilitats/js/mixitup.js"></script> 
+    <script src="utilitats/js/accordions.js"></script>
     
-    <!-- Global Init -->
-    <script src="assets/js/custom.js"></script>
+    <!-- Fitxer nostre -->
+    <script src="utilitats/js/custom.js"></script>
 
   </body>
 </html>
