@@ -1,8 +1,7 @@
 
 <footer class="footer">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div>
+                    <div class="flex-item">
                         <h3>Services</h3>
                         <ul>
                             <li><a href="#">Web design</a></li>
@@ -10,7 +9,7 @@
                             <li><a href="#">Hosting</a></li>
                         </ul>
                     </div>
-                    <div">
+                    <div class="flex-item">
                         <h3>About</h3>
                         <ul>
                             <li><a href="#">Company</a></li>
@@ -18,7 +17,7 @@
                             <li><a href="#">Legacy</a></li>
                         </ul>
                     </div>
-                    <div>
+					<div class="flex-item">
                         <h3>Careers</h3>
                         <ul>
                             <li><a href="#">Job openings</a></li>
@@ -28,7 +27,7 @@
                     </div>
                     
                 </div>
-				<div>
+					<div>
                         <p class="copyright">Hotel PBC © 2021</p>
                     </div>
             </div>
