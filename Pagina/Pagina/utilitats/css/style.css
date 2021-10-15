@@ -71,7 +71,7 @@ ul {
 p {
   font-size: 14px;
   line-height: 25px;
-  color: #7a7a7a;
+  color: #fff;
 }
 
 /* 
@@ -81,7 +81,7 @@ global styles
 */
 html,
 body {
-  background: #454a4d;
+  background: #181a1b;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -120,7 +120,7 @@ body {
 .section-heading h2 {
   font-size: 28px;
   font-weight: 800;
-  color: #232d39;
+  color: #cbc6c0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-top: 0px;
@@ -898,7 +898,7 @@ trainers
 }
 
 #trainers .trainer-item {
-  background-color: #fff;
+  background-color: #454a4d;
   border-radius: 5px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
   padding: 15px;
@@ -922,7 +922,7 @@ trainers
 #trainers .trainer-item h4 {
   font-size: 19px;
   font-weight: 600;
-  color: #232d39;
+  color: #cbc6c0;
   letter-spacing: 0.5px;
   margin-bottom: 18px;
 }
