@@ -101,3 +101,15 @@
 if ( document.URL.includes("reserva.php") ) {
 	document.getElementById("titlevar").textContent="Reserva";
 }
+if ( document.URL.includes("habitacions.php") ) {
+	document.getElementById("titlevar").textContent="Habitacions";
+}
+if ( document.URL.includes("about.php") ) {
+	document.getElementById("titlevar").textContent="Sobre nosaltres";
+}
+if ( document.URL.includes("terms.php") ) {
+	document.getElementById("titlevar").textContent="Termes i condicions";
+}
+if ( document.URL.includes("contacte.php") ) {
+	document.getElementById("titlevar").textContent="Reserva";
+}
