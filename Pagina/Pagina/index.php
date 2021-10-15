@@ -11,7 +11,7 @@
 
     <title>Pagina Hotel| Hotel MK </title>
 
-    <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">
+  <!--  <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">***** -->
 
     <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
