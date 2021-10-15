@@ -111,5 +111,5 @@ if ( document.URL.includes("terms.php") ) {
 	document.getElementById("titlevar").textContent="Termes i condicions";
 }
 if ( document.URL.includes("contacte.php") ) {
-	document.getElementById("titlevar").textContent="Reserva";
+	document.getElementById("titlevar").textContent="Contacte";
 }
