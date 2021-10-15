@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Inici ***** -->
-                        <a href="index.html" class="logo">HOTELS <em> AMB</em></a>
+                        <a href="index.php" class="logo">HOTEL <em> MK</em></a>
                         <!-- ***** Logo Final ***** -->
                         <!-- ***** Menu Inici ***** -->
                         <ul class="nav">

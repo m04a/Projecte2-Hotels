@@ -98,3 +98,6 @@
 
 
 })(window.jQuery);
+if ( document.URL.includes("reserva.php") ) {
+	document.getElementById("titlevar").textContent="Reserva";
+}

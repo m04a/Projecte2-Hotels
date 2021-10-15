@@ -34,11 +34,12 @@
 	?>
     <!-- *** Header Final *** -->
 	
-     <!-- *** Titol inici *** -->
-	 <h1>Reserva</h1>
-	 <!-- *** Titol final *** -->
+    <!-- *** Capçalera inici *** -->
+	<?php
+		 include 'capsalera.php';
+	?>
+    <!-- *** Capçalera Final *** -->
 
-	
      <!-- *** Footer inici *** -->
      <?php
 	 include 'footer.php';

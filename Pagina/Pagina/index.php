@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Pagina Hotel| </title>
+    <title>Pagina Hotel| Hotel MK </title>
 
     <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">
 
@@ -35,12 +35,13 @@
     <!-- *** Header Final *** -->
 
     <!-- *** Main Banner Area Start *** -->
-    <div class="main-banner" id="top">
-        <img id="bg-video" src="utilitats/imatges/line-dec.png">
-        <div class="video-overlay header-text">
+     <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/imatges/video.mp4" type="video/mp4" />
+        </video>
             <div class="caption">
                 <h6>Millor hotel de Figueres</h6>
-                <h2>Hotels <em>ABG</em></h2>
+                <h2>Hotels <em>MK</em></h2>
                 <div class="main-button">
                     <a href="reserva.php">Reserva Ara!</a>
                 </div>
