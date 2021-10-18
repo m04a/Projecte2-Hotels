@@ -40,6 +40,13 @@
 	?>
     <!-- *** Capçalera Final *** -->
 
+<!-- *** Reserva Final *** -->
+<label for="from">Des de</label>
+<input type="text" id="from" name="from">
+<label for="to">Fins a </label>
+<input type="text" id="to" name="to">
+<!-- *** Reserva final *** -->
+
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';

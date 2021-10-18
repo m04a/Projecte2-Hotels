@@ -1,3 +1,4 @@
+/*Importem totes les fonts */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
@@ -53,6 +54,7 @@ html, body {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:;
 }
 
 a {
@@ -81,8 +83,9 @@ global styles
 */
 html,
 body {
-  background: #181a1b;
+  background: #420f05;
   font-family: 'Poppins', sans-serif;
+  color:#f5faff;
 }
 
 ::selection {
@@ -1227,4 +1230,12 @@ footer
 	display:flex;
 	justify-content: center;
 
+}
+/*Calendari*/
+#ui-datepicker-div{
+	background-color: rgb(0, 0, 0);
+    padding-right: 5%;
+}
+.ui-datepicker-calendar{
+	margin-left:20%;
 }
