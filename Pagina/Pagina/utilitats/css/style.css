@@ -1203,6 +1203,7 @@ footer
   justify-content: center;
 }
 
+<<<<<<< HEAD
 .containerFooter1 {
   margin:15px;
 }
@@ -1242,3 +1243,12 @@ table, th, td {
 .ui-datepicker-prev {
 	margin:10%;
 	{
+}
+/*Calendari*/
+#ui-datepicker-div{
+	background-color: rgb(0, 0, 0);
+    padding-right: 5%;
+}
+.ui-datepicker-calendar{
+	margin-left:20%;
+}

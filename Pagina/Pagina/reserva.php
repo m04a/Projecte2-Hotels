@@ -39,12 +39,15 @@
     <!-- *** Capçalera Final *** -->
 
 <!-- *** Reserva Final *** -->
+<<<<<<< HEAD
 <!-- *** Calendari Inici *** -->
 <div class="buscador">
+
 <label for="from">Des de</label>
 <input type="text" id="from" name="from">
 <label for="to">Fins a </label>
 <input type="text" id="to" name="to">
+<<<<<<< HEAD
 <!-- *** Calendari Final *** -->
 
 <!-- *** Seleccionar tipus habitació i numero persones Inici *** -->
@@ -66,6 +69,8 @@
   </div>
 <!-- *** Reserva final *** -->
 
+
+<!-- *** Reserva final *** -->
 
      <!-- *** Footer inici *** -->
      <?php
