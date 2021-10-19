@@ -17,16 +17,6 @@
     </head>
     
     <body>
-	<?php
-    $servername='localhost';
-    $username='kirll';
-    $password='Nemes1sx';
-    $dbname = "hotel";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
-?>
     
     <!-- ***** Carregador Inici ***** -->
     <?php
@@ -46,15 +36,12 @@
 	?>
     <!-- *** Capçalera Final *** -->
 	<div class="login">
-  <form>
+  <form submit="includes/loginuser.php">
     <label>Usuari</label>
     <input type="text" />
     <label>Password</label>
     <input type="password" />
-    <div class="buttons">
-      <button>Login</button>
-      <button>Cancel</button>
-    </div>
+    <input type="submit" value="Submit">
   </form>  
 </div>
      <!-- *** Footer inici *** -->
