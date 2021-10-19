@@ -32,11 +32,18 @@
 	?>
     <!-- *** Header Final *** -->
 	
-   <!-- *** Capçalera inici *** -->
-	<?php
-		 include 'includes/capsalera.php';
-	?>
-    <!-- *** Capçalera Final *** -->
+  <section>
+  <form>
+    <label>Usuari</label>
+    <input type="text" />
+    <label>Password</label>
+    <input type="password" />
+    <div class="buttons">
+      <button>Login</button>
+      <button>Cancel</button>
+    </div>
+  </form>  
+</section>
 
      <!-- *** Footer inici *** -->
      <?php
