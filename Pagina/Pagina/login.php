@@ -1,16 +1,5 @@
-<?php
-    $servername='localhost';
-    $username='kirll';
-    $password='Nemes1sx';
-    $dbname = "hotel";
-    $conn=mysqli_connect($servername,$username,$password,"$dbname");
-      if(!$conn){
-          die('Could not Connect MySql Server:' .mysql_error());
-        }
-?>
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -28,7 +17,16 @@
     </head>
     
     <body>
-	
+	<?php
+    $servername='localhost';
+    $username='kirll';
+    $password='Nemes1sx';
+    $dbname = "hotel";
+    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+      if(!$conn){
+          die('Could not Connect MySql Server:' .mysql_error());
+        }
+?>
     
     <!-- ***** Carregador Inici ***** -->
     <?php
