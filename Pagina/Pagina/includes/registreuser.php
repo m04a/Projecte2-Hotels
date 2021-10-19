@@ -7,7 +7,4 @@
       if(!$conn){
           die('Could not Connect MySql Server:' .mysql_error());
         }
-		else{
-			echo 'Hola';
-		}
 ?>
