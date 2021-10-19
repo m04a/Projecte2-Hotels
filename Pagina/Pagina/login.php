@@ -1,3 +1,13 @@
+<?php
+    $servername='localhost';
+    $username='kirll';
+    $password='Nemes1sx';
+    $dbname = "hotel";
+    $conn=mysqli_connect($servername,$username,$password,"$dbname");
+      if(!$conn){
+          die('Could not Connect MySql Server:' .mysql_error());
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +27,8 @@
 
     </head>
     
-    <body> 
+    <body>
+	
     
     <!-- ***** Carregador Inici ***** -->
     <?php
@@ -31,8 +42,12 @@
 		 include 'includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
-	
-  <section>
+	<!-- *** Capçalera inici *** -->
+	<?php
+		 include 'includes/capsalera.php';
+	?>
+    <!-- *** Capçalera Final *** -->
+	<div class="login">
   <form>
     <label>Usuari</label>
     <input type="text" />
@@ -43,8 +58,7 @@
       <button>Cancel</button>
     </div>
   </form>  
-</section>
-
+</div>
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';

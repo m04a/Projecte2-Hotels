@@ -1253,4 +1253,39 @@ table, th, td {
 	margin-left:20%;
 }
 /*Login form*/
+.login{
+	display: flex; 
+	flex-direction: row;
+}
+form { 
+  height: 200px;
+  width: 400px;
 
+  display: flex; 
+  flex-direction: column; 
+  flex: 0 0 auto; 
+  
+  border: 1px solid; 
+  border-radius: 5px;
+  padding: 15px;
+  background: lightblue; 
+}
+form label, form button {
+  margin-top: 15px;
+}
+form label {
+  font-size: 20px;
+}
+form input {
+  flex: 1 1 auto;
+  font-size: 20px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.buttons button {
+  flex: 0 1 95px;
+  font-size: 20px;
+}
