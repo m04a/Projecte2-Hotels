@@ -1,3 +1,4 @@
+/*Importem totes les fonts */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
@@ -53,6 +54,7 @@ html, body {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:;
 }
 
 a {
@@ -81,8 +83,9 @@ global styles
 */
 html,
 body {
-  background: #181a1b;
+  background: #420f05;
   font-family: 'Poppins', sans-serif;
+  color:#f5faff;
 }
 
 ::selection {
@@ -763,38 +766,6 @@ schedule
   position: relative;
   z-index: 2
 }
-
-#schedule {
-  padding: 0px 0px 140px 0px;
-}
-
-#schedule table {
-  width: 100%;
-  text-align: center;
-  border: 1px solid #fff;
-}
-
-#schedule table tbody {
-  border-top: 1px solid #fff; 
-}
-
-#schedule table tbody tr {
-  border-bottom: 1px solid #fff;
-}
-
-#schedule table tbody tr td {
-  border-right: 1px solid #fff;
-  height: 100px;
-}
-
-#schedule table tr td {
-  color: #fff;
-  font-size: 13px;
-  text-transform: capitalize;
-  font-weight: 500;
-  letter-spacing: 0.25px;
-}
-
 .schedule-table.filtering .ts-item {
     opacity: 0;
     transition: all 0.5s;
@@ -1211,7 +1182,7 @@ responsive
 }
 
 a {
-  color: #ed563b;
+  color: #ffad9e;
 }
 
 a:focus,
@@ -1223,8 +1194,98 @@ a:hover {
 footer
 --------------------------------------------- 
 */
-.containerFooter {
-	display:flex;
-	justify-content: center;
+.footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
+<<<<<<< HEAD
+.containerFooter1 {
+  margin:15px;
+}
+/*Marca de la casa*/
+.lifooter,.titFooter{
+  margin:15px;
+}
+.containerFooter1,.containerFooter2{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  flex-basis: 100%;
+  flex: 1;
+}
+iframe{
+  width:60%;
+  margin:5%;
+}
+/* 
+---------------------------------------------
+Calendari
+--------------------------------------------- 
+*/
+#ui-datepicker-div{
+	background-color: #29272f;
+    padding-right: 5%;
+}
+.ui-datepicker-calendar,.ui-datepicker-title{
+	margin-top: 5%;
+    margin-left: 10%;
+	margin-bottom:5%;
+}
+table, th, td {
+  border: 1px solid white;
+  padding: 5px;
+}
+.ui-datepicker-prev {
+	margin:10%;
+	{
+}
+/*Calendari*/
+#ui-datepicker-div{
+	background-color: rgb(0, 0, 0);
+    padding-right: 5%;
+}
+.ui-datepicker-calendar{
+	margin-left:20%;
+}
+/*Login form*/
+.login{
+	display: flex; 
+	flex-direction: row;
+}
+form { 
+  height: 200px;
+  width: 400px;
+
+  display: flex; 
+  flex-direction: column; 
+  flex: 0 0 auto; 
+  
+  border: 1px solid; 
+  border-radius: 5px;
+  padding: 15px;
+  background: lightblue; 
+}
+form label, form button {
+  margin-top: 15px;
+}
+form label {
+  font-size: 20px;
+}
+form input {
+  flex: 1 1 auto;
+  font-size: 20px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.buttons button {
+  flex: 0 1 95px;
+  font-size: 20px;
 }

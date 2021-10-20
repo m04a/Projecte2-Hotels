@@ -11,8 +11,6 @@
 
     <title>Pagina Hotel| Contacte </title>
 
-    <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
     <link rel="stylesheet" href="utilitats/css/style.css">

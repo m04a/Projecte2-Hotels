@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -11,15 +10,13 @@
 
     <title>Pagina Hotel| Iniciar Sessió </title>
 
-    <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">
-
     <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
     <link rel="stylesheet" href="utilitats/css/style.css">
 
     </head>
     
-    <body> 
+    <body>
     
     <!-- ***** Carregador Inici ***** -->
     <?php
@@ -33,13 +30,20 @@
 		 include 'includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
-	
-   <!-- *** Capçalera inici *** -->
+	<!-- *** Capçalera inici *** -->
 	<?php
 		 include 'includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-
+	<div class="login">
+  <form submit="includes/loginuser.php">
+    <label>Usuari</label>
+    <input type="text" />
+    <label>Password</label>
+    <input type="password" />
+    <input type="submit" value="Submit">
+  </form>  
+</div>
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
