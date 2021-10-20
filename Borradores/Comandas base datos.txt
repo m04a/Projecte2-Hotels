@@ -1,0 +1,10 @@
+create table usuario (
+IDusuario int primary key,
+password varchar(50) not null,
+nombre varchar(150),
+apellidos varchar(150),
+fechanacimiento date,
+sexo tinyint(1),
+tipo varchar(20) default 'cliente'
+);
+_____________________________________________
