@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -9,7 +8,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Pagina Hotel| Hotel MK </title>
+    <title>Pagina Hotel| Iniciar Sessió </title>
 
     <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
@@ -17,13 +16,13 @@
 
     </head>
     
-    <body> 
+    <body>
     
-    <!-- ***** Carregadpr Inici ***** -->
+    <!-- ***** Carregador Inici ***** -->
     <?php
 		 include 'includes/carregador.php';
 	?>
-    <!-- *** Carregador End *** -->
+    <!-- *** Preloader End *** -->
     
     
     <!-- *** Header Principal *** -->
@@ -31,36 +30,29 @@
 		 include 'includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
+	<!-- *** Capçalera inici *** -->
+	<?php
+		 include 'includes/capsalera.php';
+	?>
+    <!-- *** Capçalera Final *** -->
+	<div class="login">
+  <form submit="includes/registreuser.php">
+    <label>Usuari</label>
+    <input type="text" />
+    <label>Password</label>
+    <input type="password" />
+	<label>Confirmar Password</label>
+    <input type="password" />
+    <input type="submit" value="Submit">
 
-    <!-- *** Main Banner Area Start *** -->
-     <div class="main-banner" id="top">
-        <video autoplay muted loop id="bg-video">
-            <source src="utilitats/imatges/video.mp4" type="video/mp4" />
-        </video>
-            <div class="caption">
-                <h6>Millor hotel de Figueres</h6>
-                <h2>Hotels <em>MK</em></h2>
-                <div class="main-button">
-                    <a href="reserva.php">Reserva Ara!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- *** Main Banner Area End *** -->
-
-   <!-- *** Hotels promocionats inici *** -->
-   
-    <!-- *** Hotels promocionats final *** -->
-	
-    <!-- *** Qui som inici *** -->
-
-    <!-- *** Qui som inici *** -->
-   
-    
-    <!-- *** Footer inici *** -->
+  </form>  
+</div>
+     <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
 	?>
+	<!-- *** Footer final *** -->
+
     <!-- jQuery -->
     <script src="utilitats/js/jquery-2.1.0.min.js"></script>
 

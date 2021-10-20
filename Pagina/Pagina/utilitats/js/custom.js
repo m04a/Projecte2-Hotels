@@ -95,8 +95,55 @@
 			}
 		});
 	}
-
-
+ $( function() {
+ $.datepicker.regional['cat'] = {
+ closeText: 'Tancar',
+ prevText: '🡰 Ant',
+ nextText: 'Seg 🡲',
+ currentText: 'Avui',
+ monthNames: ['Gener', 'Febrer', 'Març', 'Abril', 'Maig', 'Juny', 'Juliol', 'Agost', 'Setembre', 'Octubre', 'Novembre', 'Decembre'],
+ monthNamesShort: ['Gen','Feb','Mar','Abr', 'Mai','Jun','Jul','Ago','Sep', 'Oct','Nov','Dec'],
+ dayNames: ['Diumenge', 'Dilluns', 'Dimarts', 'Dimecres', 'Dijous', 'Divendres', 'Dissabte'],
+ dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+ dayNamesMin: ['Dg','Di','Dm','Dc','Dj','Dv','Ds'],
+ weekHeader: 'Sm',
+ dateFormat: 'dd/mm/yy',
+ firstDay: 1,
+ isRTL: false,
+ showMonthAfterYear: false,
+ yearSuffix: ''
+ };
+ $.datepicker.setDefaults($.datepicker.regional['cat']);
+    var dateFormat = "dd/mm/yy",
+      from = $( "#from" )
+        .datepicker ({
+          defaultDate: "+1w",
+          changeMonth: true,
+          numberOfMonths: 1
+        })
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+        }),
+      to = $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 1
+      })
+      .on( "change", function() {
+        from.datepicker( "option", "maxDate", getDate( this ) );
+      });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( dateFormat, element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
+  } );
 })(window.jQuery);
 if ( document.URL.includes("reserva.php") ) {
 	document.getElementById("titlevar").textContent="Reserva";

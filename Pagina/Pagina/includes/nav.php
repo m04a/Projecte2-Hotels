@@ -15,6 +15,8 @@
 							<li><a href="about.php">Sobre Nosaltes</a></li>
                             <li><a href="contacte.php">Contacte</a></li> 
 							<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
+							<li><a href="registre.php"> Registre</a></li> 
+
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>

@@ -9,9 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Pagina Hotel| </title>
-
-    <link rel="stylesheet" type="text/css" href="utilitats/css/bootstrap.min.css">
+    <title>Pagina Hotel| Termes i condicions </title>
 
     <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
@@ -23,26 +21,26 @@
     
     <!-- ***** Carregador Inici ***** -->
     <?php
-		 include 'carregador.php';
+		 include 'includes/carregador.php';
 	?>
     <!-- *** Preloader End *** -->
     
     
     <!-- *** Header Principal *** -->
 	<?php
-		 include 'nav.php';
+		 include 'includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
 	
-	 <!-- *** Capçalera inici *** -->
+   <!-- *** Capçalera inici *** -->
 	<?php
-		 include 'capsalera.php';
+		 include 'includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-	
-	 <!-- *** Footer inici *** -->
+
+     <!-- *** Footer inici *** -->
      <?php
-	 include 'footer.php';
+	 include 'includes/footer.php';
 	?>
 	<!-- *** Footer final *** -->
 
