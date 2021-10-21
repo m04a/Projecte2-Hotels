@@ -1,11 +1,11 @@
 <?php
 
-require "conectar_DB.php";
+require 'conectar_DB.php';
 
-$message = '';
+  $message = '';
 
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-    $sql = "INSERT INTO usuario (IDusuario,password) VALUES (:usuari, :password)";
+    $sql = "INSERT INTO usuario (IDUsuario, password) VALUES (:usuari, :password)";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':usuari', $_POST['usuari']);
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
@@ -17,7 +17,6 @@ $message = '';
       $message = 'Sorry there must have been an issue creating your account';
     }
   }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,22 +62,12 @@ $message = '';
       <p> <?= $message ?></p>
     <?php endif; ?>
 	
-  <form action="registre.php" method="post">
-
-      <label>Usuari</label>
-
-        <input type="text" name="usuari" placeholder="Usuari"><br>
-
-        <label>Password</label>
-
-        <input type="password" name="password" placeholder="Password"><br> 
-		
-		<label>Confirmar Password</label>
-		
-		 <!-- <input type="password" name="cpassword" placeholder="Confirmar Password"><br> *** -->
-
-        <button type="submit">Login</button>
-  </form>  
+  <form action="signup.php" method="POST">
+      <input name="usuari" type="text" placeholder="Enter Usuari">
+      <input name="password" type="password" placeholder="Enter your Password">
+      <input type="submit" value="Submit">
+  </form>
+  
 </div>
      <!-- *** Footer inici *** -->
      <?php
