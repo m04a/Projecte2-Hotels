@@ -1,5 +1,5 @@
 
- /*  function validate($data){
+   function validate($data){
 
        $data = trim($data);
 
@@ -9,7 +9,7 @@
 
        return $data;
 
-   } /*
+   } 
   
     /*$pass1 = validate($_POST['cpassword']);*/
 
@@ -49,3 +49,13 @@
    header("Location: index.php");
 
     exit();
+	
+	
+	
+	 if (empty($usuari) && !empty($password)) {
+          $message = 'Ha de insertar el usuari';
+    }else if(empty($password)&& !empty($usuari)){
+          $message = 'Ha de insertar la contrasenya';
+	}else{
+          $message = 'Ha de insertar tots els camps';
+    }

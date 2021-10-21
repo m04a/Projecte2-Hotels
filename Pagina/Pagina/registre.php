@@ -30,15 +30,14 @@ if ($password != $passwordc) {
     } else {
       $message = 'Ha hagut algun error';
     }
-  }
-  else{
-      if (empty($usuari) && !empty($password)) {
-          $message = 'Ha de insertar el usuari';
-    }else if(empty($password)&& !empty($usuari)){
-          $message = 'Ha de insertar la contrasenya';
-	}else{
-          $message = 'Ha de insertar tots els camps';
-      }
+  }else{
+    if (empty($usuari)){
+          $message = 'Ha de insertar el usuari ';
+    }else if(empty($password)){
+          $message .= 'Ha de insertar la contrasenya ';
+	}else if(empty($passwordc)){
+          $message .= 'Ha de insertar la comprovació ';
+    }
   }
 
 ?>
