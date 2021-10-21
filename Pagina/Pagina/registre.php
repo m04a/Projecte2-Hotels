@@ -2,23 +2,28 @@
   <?php
 
 require 'includes/conectar_DB.php';
-
   $message = 'defecto';
-	
+	function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
+}
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-    $usuari = $_POST['usuari']; 
-	$password = $_POST['password']; 
+      $usuari = $_POST['usuari']; 
+      validate($usuari);
+	$password = $_POST['password'];
 	$passwordc = $_POST['cpassword']; 
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
-  }
-	
+  }else{
+	validate($password);
 	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
-	
     $stmt->bindParam('$usuari', $_POST['usuari']);;
     $stmt->bindParam('$password', $_POST['password']);
+}
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
@@ -27,8 +32,15 @@ if ($password != $passwordc) {
     }
   }
   else{
-	$message = 'Ha de insertar tots els camps';
+      if (empty($usuari)) {
+          $message = 'Ha de insertar el usuari';
+    }else if(empty($pass)){
+          $message = 'Ha de insertar la contrasenya';
+	}else{
+          $message = 'Ha de insertar tots els camps';
+      }
   }
+
 ?>
 <html lang="en">
   <head>
