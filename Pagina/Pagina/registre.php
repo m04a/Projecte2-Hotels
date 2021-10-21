@@ -32,9 +32,9 @@ if ($password != $passwordc) {
     }
   }
   else{
-      if (empty($usuari)) {
+      if (empty($usuari) && !empty($password)) {
           $message = 'Ha de insertar el usuari';
-    }else if(empty($pass)){
+    }else if(empty($password)&& !empty($usuari)){
           $message = 'Ha de insertar la contrasenya';
 	}else{
           $message = 'Ha de insertar tots els camps';
