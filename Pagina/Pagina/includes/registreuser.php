@@ -4,13 +4,20 @@ session_start();
 
 require "conectar_DB.php";
 
+
+
+$db = mysqli_connect('localhost', 'admin', 'Nemes1sx', 'hotel');
+
+
+  $usuari = validate($_POST['usuari']);
+
+   $pass = validate($_POST['password']);
+
  $query = "INSERT INTO usuario (IDusuario, password) VALUES('$usuari','$pass')";
   	
  mysqli_query($db, $query);
 
-/*$db = mysqli_connect('localhost', 'kirill', 'Nemes1sx', 'hotel');
-
-   function validate($data){
+ /*  function validate($data){
 
        $data = trim($data);
 
@@ -20,11 +27,8 @@ require "conectar_DB.php";
 
        return $data;
 
-    }
-    $usuari = validate($_POST['usuari']);
-
-    $pass = validate($_POST['password']);
-
+   } /*
+  
     /*$pass1 = validate($_POST['cpassword']);*/
 
   /*  if (empty($usuari)) {
