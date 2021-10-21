@@ -1,5 +1,6 @@
 <?php 
 
+
 session_start(); 
 
 include "conectar_DB.php";
@@ -53,8 +54,9 @@ $db = mysqli_connect('localhost', 'kirill', 'Nemes1sx', 'hotel');
     }
   }*/
 $query = "INSERT INTO usuario (IDusuario, password) 
-  			  VALUES('$usuari', '$password');";
-  	mysqli_query($db, $query);
+  			  VALUES('$usuari','$pass');";
+  	
+	mysqli_query($db, $query);
 
 	/*Si la connexió ha sigut correcte tornem al index.php o sigui en la pagina principal*/
 
