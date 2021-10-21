@@ -2,11 +2,11 @@
 
 session_start(); 
 
-include "conectar_DB.php";
+/*include "conectar_DB.php";*/
 
 $db = mysqli_connect('localhost', 'kirill', 'Nemes1sx', 'hotel');
 
-    function validate($data){
+   /* function validate($data){
 
        $data = trim($data);
 
@@ -16,7 +16,7 @@ $db = mysqli_connect('localhost', 'kirill', 'Nemes1sx', 'hotel');
 
        return $data;
 
-    }
+    }*/
     $usuari = validate($_POST['usuari']);
 
     $pass = validate($_POST['password']);
