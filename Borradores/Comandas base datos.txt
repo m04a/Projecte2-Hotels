@@ -8,3 +8,22 @@ sexo tinyint(1),
 tipo varchar(20) default 'cliente'
 );
 _____________________________________________
+create table reserva (
+    numres int(10) primary key auto_increment,
+    numpers int(1) not null,
+    precio int(10),
+    finicio date,
+    ffin date);
+_____________________________________________
+create table habitacion (
+     numhab int(5) primary key,
+     precio int(10),
+     tipo varchar(50),
+     ocupada tinyint(1));
+_____________________________________________	
+create table hotel (
+     nombre varchar(69) primary key,
+     iniciovac date,
+     finvac date,
+     totalhab int(5));	
+_____________________________________________	
