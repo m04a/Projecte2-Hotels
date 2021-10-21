@@ -8,9 +8,8 @@ require 'includes/conectar_DB.php';
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
     $sql = "INSERT INTO usuario (usuari, password) VALUES (:usuari, :password);";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':usuari', $_POST['usuari']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $stmt->bindParam(':password', $password);
+    $stmt->bindParam(':usuari', $_POST['usuari']);;
+    $stmt->bindParam(':password', $_POST['password']);
 
     if ($stmt->execute()) {
       $message = 'Successfully created new user';
