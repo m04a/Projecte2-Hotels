@@ -62,7 +62,7 @@ require 'conectar_DB.php';
       <p> <?= $message ?></p>
     <?php endif; ?>
 	
-  <form action="signup.php" method="POST">
+  <form action="registre.php" method="POST">
       <input name="usuari" type="text" placeholder="Enter Usuari">
       <input name="password" type="password" placeholder="Enter your Password">
       <input type="submit" value="Submit">
