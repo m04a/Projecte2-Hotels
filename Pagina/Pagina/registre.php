@@ -8,6 +8,11 @@ require 'includes/conectar_DB.php';
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
     $usuari = $_POST['usuari']; 
 	$password = $_POST['password']; 
+	$passwordc = $_POST['cpassword']; 
+if ($password != $passwordc) {
+	$message = 'Les contrasenyes no son iguals';
+	header("Location: registre.php");
+  }
 	
 	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
