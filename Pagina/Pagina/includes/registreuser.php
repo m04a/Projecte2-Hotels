@@ -1,6 +1,6 @@
 <?php 
 
-session_start(); 
+/*session_start(); 
 
 /*include "conectar_DB.php";*/
 
@@ -52,7 +52,7 @@ $db = mysqli_connect('localhost', 'kirill', 'Nemes1sx', 'hotel');
         exit();
     }
   }*/
-$query = "INSERT INTO usuario (IDusuario, password) VALUES('$usuari','$pass');";
+$query = "INSERT INTO usuario (IDusuario, password) VALUES('$usuari','$pass')";
   	
 	mysqli_query($db, $query);
 
@@ -61,7 +61,4 @@ $query = "INSERT INTO usuario (IDusuario, password) VALUES('$usuari','$pass');";
     header("Location: index.php");
 
     exit();
-
-}
-
 ?>

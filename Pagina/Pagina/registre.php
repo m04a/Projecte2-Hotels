@@ -36,6 +36,7 @@
 	?>
     <!-- *** Capçalera Final *** -->
 	<div class="login">
+	
   <form action="includes/registreuser.php" method="post">
 
       <label>Usuari</label>
