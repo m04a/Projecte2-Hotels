@@ -56,7 +56,12 @@ $message = '';
 		 include 'includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
+	
 	<div class="login">
+	
+	 <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
 	
   <form action="registre.php" method="post">
 
