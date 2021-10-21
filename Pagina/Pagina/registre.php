@@ -36,15 +36,20 @@
 	?>
     <!-- *** Capçalera Final *** -->
 	<div class="login">
-  <form submit="includes/registreuser.php">
-    <label>Usuari</label>
-    <input type="text" />
-    <label>Password</label>
-    <input type="password" />
-	<label>Confirmar Password</label>
-    <input type="password" />
-    <input type="submit" value="Submit">
+  <form action="includes/registreuser.php" method="post">
+      <label>Usuari</label>
 
+        <input type="text" name="usuari" placeholder="Usuari"><br>
+
+        <label>Password</label>
+
+        <input type="password" name="password" placeholder="Password"><br> 
+		
+		<label>Confirmar Password</label>
+		
+		<input type="password" name="cpassword" placeholder="Confirmar Password"><br> 
+
+        <button type="submit">Login</button>
   </form>  
 </div>
      <!-- *** Footer inici *** -->
