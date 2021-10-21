@@ -71,7 +71,7 @@ require 'includes/conectar_DB.php';
   <form action="registre.php" method="POST">
       <input name="usuari" type="text" placeholder="Entra el usuari">
       <input name="password" type="password" placeholder="Entra el teu password">
-	  <input name="password" type="cpassword" placeholder="Confirmar el password">
+	  <input name="cpassword" type="password" placeholder="Confirmar el password">
       <input type="submit" value="Submit">
   </form>
   
