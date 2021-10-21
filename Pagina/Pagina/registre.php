@@ -1,3 +1,24 @@
+<?php
+
+require "conectar_DB.php";
+
+$message = '';
+
+  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
+    $sql = "INSERT INTO usuario (IDusuario,password) VALUES (:usuari, :password)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':usuari', $_POST['usuari']);
+    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+    $stmt->bindParam(':password', $password);
+
+    if ($stmt->execute()) {
+      $message = 'Successfully created new user';
+    } else {
+      $message = 'Sorry there must have been an issue creating your account';
+    }
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +58,7 @@
     <!-- *** Capçalera Final *** -->
 	<div class="login">
 	
-  <form action="includes/registreuser.php" method="post">
+  <form action="registre.php" method="post">
 
       <label>Usuari</label>
 
