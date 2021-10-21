@@ -6,7 +6,7 @@ require 'includes/conectar_DB.php';
   $message = 'defecto';
 	
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-    $usuari = $_POST['username']; 
+    $usuari = $_POST['usuari']; 
 	$password = $_POST['password']; 
 	
 	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
