@@ -37,6 +37,7 @@
     <!-- *** Capçalera Final *** -->
 	<div class="login">
   <form action="includes/registreuser.php" method="post">
+
       <label>Usuari</label>
 
         <input type="text" name="usuari" placeholder="Usuari"><br>
@@ -47,7 +48,7 @@
 		
 		<label>Confirmar Password</label>
 		
-		<input type="password" name="cpassword" placeholder="Confirmar Password"><br> 
+		 <!-- <input type="password" name="cpassword" placeholder="Confirmar Password"><br> *** -->
 
         <button type="submit">Login</button>
   </form>  

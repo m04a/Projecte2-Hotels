@@ -4,7 +4,7 @@ session_start();
 
 include "conectar_DB.php";
 
-if (isset($_POST['usuari']) && isset($_POST['password'])) {
+$db = mysqli_connect('localhost', 'kirill', 'Nemes1sx', 'hotel');
 
     function validate($data){
 
@@ -17,33 +17,32 @@ if (isset($_POST['usuari']) && isset($_POST['password'])) {
        return $data;
 
     }
-
     $usuari = validate($_POST['usuari']);
 
     $pass = validate($_POST['password']);
 
-    $pass1 = validate($_POST['cpassword']);
+    /*$pass1 = validate($_POST['cpassword']);*/
 
-    if (empty($usuari)) {
+  /*  if (empty($usuari)) {
 
-        header("Location: login.php?error=Nom usuari obligatori");
+        header("Location: registre.php?error=Nom usuari obligatori");
 
         exit();
 
     }else if(empty($pass)){
 
-        header("Location: login.php?error=Password obligatori");
+        header("Location: registre.php?error=Password obligatori");
 
         exit();
 	}
 	if ($pass != $pass1) {
-	header("Location: login.php?error=Els passwords no corresponen");
+	header("Location: registre.php?error=Els passwords no corresponen");
 
         exit();
   }
 
-  $check_user = "SELECT * FROM users WHERE username='$usuari' LIMIT 1";
-  $result = mysqli_query($conn, $check_user);
+  $check_user = "SELECT * FROM usuario WHERE IDusuario='$usuari' LIMIT 1;";
+  $result = mysqli_query($db, $check_user);
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // Si el usuari existeix
@@ -52,11 +51,11 @@ if (isset($_POST['usuari']) && isset($_POST['password'])) {
 
         exit();
     }
-  }
-$query = "INSERT INTO users (username, email, password) 
-  			  VALUES('$usuari', '$password')";
+  }*/
+$query = "INSERT INTO usuario (IDusuario, password) 
+  			  VALUES('$usuari', '$password');";
   	mysqli_query($db, $query);
-}
+
 	/*Si la connexió ha sigut correcte tornem al index.php o sigui en la pagina principal*/
 
     header("Location: index.php");
