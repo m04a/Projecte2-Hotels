@@ -1,26 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <?php
 
-<require 'conectar_DB.php';
-
-  $message = '';
-
-  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-    $sql = "INSERT INTO usuario (IDUsuario, password) VALUES (:usuari, :password)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':usuari', $_POST['usuari']);
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $stmt->bindParam(':password', $password);
-
-    if ($stmt->execute()) {
-      $message = 'Successfully created new user';
-    } else {
-      $message = 'Sorry there must have been an issue creating your account';
-    }
-  }
-?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
