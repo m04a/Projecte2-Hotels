@@ -4,18 +4,25 @@
 require 'includes/conectar_DB.php';
 
   $message = 'defecto';
-
+	
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-    $sql = "INSERT INTO usuario (usuari, password) VALUES (:usuari, :password);";
+    $usuari = $_POST['username']; 
+	$password = $_POST['password']; 
+	
+	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':usuari', $_POST['usuari']);;
-    $stmt->bindParam(':password', $_POST['password']);
+	
+    $stmt->bindParam('$usuari', $_POST['usuari']);;
+    $stmt->bindParam('$password', $_POST['password']);
 
     if ($stmt->execute()) {
-      $message = 'Successfully created new user';
+      $message = 'El usuari ha sigut creat';
     } else {
-      $message = 'Sorry there must have been an issue creating your account';
+      $message = 'Ha hagut algun error';
     }
+  }
+  else{
+	$message = 'Ha de insertar tots els camps';
   }
 ?>
 <html lang="en">
@@ -62,8 +69,9 @@ require 'includes/conectar_DB.php';
     <?php endif; ?>
 	
   <form action="registre.php" method="POST">
-      <input name="usuari" type="text" placeholder="Enter Usuari">
-      <input name="password" type="password" placeholder="Enter your Password">
+      <input name="usuari" type="text" placeholder="Entra el usuari">
+      <input name="password" type="password" placeholder="Entra el teu password">
+	  <input name="password" type="cpassword" placeholder="Confirmar el password">
       <input type="submit" value="Submit">
   </form>
   
