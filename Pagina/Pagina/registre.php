@@ -31,13 +31,13 @@ if ($password != $passwordc) {
       $message = 'Ha hagut algun error';
     }
   }else{
-    if (empty($usuari){
+    if (empty($usuari)){
           $message = 'Ha d\'insertar el usuari ';
     }
-      if(empty($password){
+      if(empty($password)){
           $message .= 'Ha d\'insertar la contrasenya ';
 	}
-      if(empty($cpassword){
+      if(empty($cpassword)){
           $message .= 'Ha d\'insertar la comprovació ';
     }
   }
