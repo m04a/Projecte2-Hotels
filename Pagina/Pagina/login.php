@@ -6,10 +6,9 @@ if(!isset($_POST['usuari'],$_POST['password'])){
     echo('Location:login.php');
     header('Location:login.php');
 }
-else{
-	$usuari = $_POST['usuari']; 
-	$password = $_POST['password']; 
-}
+$usuari = $_POST['usuari']; 
+$password = $_POST['password']; 
+
 $sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
 
 $rol = $conn->query($sql);
