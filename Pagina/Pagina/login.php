@@ -12,22 +12,19 @@ if (isset($_POST['login'])) {
   if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
-	$password = $_POST['password'];
+	  $password = $_POST['password'];
       validate($password);
 
-$sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
+        $sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
 
-$rol = $conn->query($sql);
-
-    while($row = $rol->fetch_assoc()) {
+        $rol = $conn->query($sql);
+        $row = $rol -> fetch_assoc();
         if($row['tipo']=='cliente'){
             header('Location:index.php');
         } else{
-            header('Location:admin/admin.php');
+            header('Location:admin/admin.php')
         }
-        
-    }
-}
+  }
 }
  ?>
 <!DOCTYPE html>
