@@ -32,8 +32,6 @@ if ($password != $passwordc) {
     } else {
       $message = 'Ha hagut algun error';
     }
-  }else{
-   $message = 'Es tenen que posar tots els camps';
   }
 
 ?>
