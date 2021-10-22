@@ -1,3 +1,27 @@
+  <?php
+
+require 'conectar_DB.php';
+
+if(!isset($_POST['usuari'],$_POST['password'])){
+    echo('Location:login.php');
+    header('Location:login.php');
+}
+$usuari = $_POST['usuari']; 
+$password = $_POST['password']; 
+
+$sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
+
+$rol = $conn->query($sql);
+
+    while($row = $rol->fetch_assoc()) {
+        if($row['rol']=='cliente'){
+            header('Location:index.php');
+        } else{
+            header('Location:admin/admin.php');
+        }
+        
+    }
+ ?>
   <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +60,7 @@
 	?>
     <!-- *** Capçalera Final *** -->
 	<div class="login">
-   <form action="includes/loginuser.php" method="POST">
+   <form action="login.php" method="POST">
       <input name="usuari" type="text" placeholder="Entra el usuari">
       <input name="password" type="password" placeholder="Entra el teu password">
       <input type="submit" value="Submit">
