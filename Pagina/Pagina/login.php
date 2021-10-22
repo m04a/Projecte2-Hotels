@@ -1,6 +1,6 @@
   <?php
 
-require 'include/conectar_DB.php';
+require 'includes/conectar_DB.php';
 
 if(!isset($_POST['usuari'],$_POST['password'])){
     echo('Location:login.php');
