@@ -1,7 +1,6 @@
 <?php
 
 include 'includes/conectar_DB.php';
-session_start(); 
  
 if (isset($_POST['login'])) {
     if(!isset($_POST['usuari'],$_POST['password'])){
@@ -16,7 +15,7 @@ $sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' 
 $rol = $conn->query($sql);
 
     while($row = $rol->fetch_assoc()) {
-        if($row['rol']=='cliente'){
+        if($row['tipo']=='cliente'){
             header('Location:index.php');
         } else{
             header('Location:admin/admin.php');
