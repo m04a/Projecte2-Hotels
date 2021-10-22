@@ -21,7 +21,7 @@ if (isset($_POST['login'])) {
         if($row['tipo']=='cliente'){
             header('Location:index.php');
         } else {
-            header('Location:admin/admin.php')
+            header('Location:admin/admin.php');
         }
 }
  ?>
