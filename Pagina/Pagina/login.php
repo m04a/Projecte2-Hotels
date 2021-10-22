@@ -5,24 +5,24 @@ session_start();
  
 if (isset($_POST['login'])) {
  
-    $usuari = $_POST['usuari'];
-    $password = $_POST['password'];
- 
-    $query = $connection->prepare("SELECT * FROM usuario WHERE usuari=:usuari");
-    $query->bindParam("usuari", $usuari, PDO::PARAM_STR);
-    $query->execute();
- 
-    $result = $query->fetch(PDO::FETCH_ASSOC);
- 
-    if (!$result) {
-        echo '<p class="error">Username password combination is wrong!</p>';
-    } else {
-        if (password_verify($password, $result['PASSWORD'])) {
-            $_SESSION['user_id'] = $result['ID'];
-            echo '<p class="success">Congratulations, you are logged in!</p>';
-        } else {
-            echo '<p class="error">Username password combination is wrong!</p>';
+    if(!isset($_POST['usuari'],$_POST['password'])){
+    echo('Location:login.php');
+    header('Location:login.php');
+}
+$usuari = $_POST['usuari']; 
+$password = $_POST['password']; 
+
+$sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
+
+$rol = $conn->query($sql);
+
+    while($row = $rol->fetch_assoc()) {
+        if($row['rol']=='cliente'){
+            header('Location:index.php');
+        } else{
+            header('Location:admin/admin.php');
         }
+        
     }
 }
  
