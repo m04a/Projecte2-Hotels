@@ -45,18 +45,9 @@
   <?php
 
 require 'includes/conectar_DB.php';
- $sql = "SELECT * FROM tipushabitacio";
-                             $tipus_habitacions = $conn->query($sql);
-                             while($row = $tipus_habitacions->fetch_assoc()) {
-                                if($row['id_tipus']==1){
-                                    $img = 'exemple1';
-                                }
-                                else if ($row['id_tipus']==1) {
-                                    $img = 'exemple2.jpg';
-                                }
-                                 else {
-                                    $img = 'habitacio_doble.jpg';
-                                }
+ $sql = "SELECT * FROM habitacion";
+                             $habitacion = $conn->query($sql);
+                             while($row = $habitacion->fetch_assoc()) {
 					print '<div class="row">';
 						print '<div class="col-lg-4">';
 							print '<div class="trainer-item">';
@@ -67,7 +58,7 @@ require 'includes/conectar_DB.php';
 									print '<span>';
 										print '<sup>€</sup>500.00 - <sup>€</sup>700.00';
 									print '</span>';
-								print '<h4>".$row['nom_tipus']."</h4>';					
+								print '<h4>".$row['tipo']."</h4>';					
 								print '<p>';
 									print '<i class="fa fa-info"></i> Descripció de la nostra habitació';
 								print '</p>';
