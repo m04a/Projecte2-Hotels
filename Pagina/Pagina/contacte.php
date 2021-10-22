@@ -38,6 +38,8 @@
 	?>
     <!-- *** Capçalera Final *** -->
 
+
+
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
