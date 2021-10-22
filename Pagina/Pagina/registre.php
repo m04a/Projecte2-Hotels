@@ -31,11 +31,11 @@ if ($password != $passwordc) {
       $message = 'Ha hagut algun error';
     }
   }else{
-    if (empty($usuari)){
+    if (empty($_POST['usuari'])){
           $message = 'Ha de insertar el usuari ';
-    }else if(empty($password)){
+    }else if(empty($_POST['password'])){
           $message .= 'Ha de insertar la contrasenya ';
-	}else if(empty($passwordc)){
+	}else if(empty($_POST['cpassword'])){
           $message .= 'Ha de insertar la comprovació ';
     }
   }
