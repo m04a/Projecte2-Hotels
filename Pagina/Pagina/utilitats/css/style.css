@@ -11,23 +11,6 @@ figure, header, nav, section, article, aside, footer, figcaption {
   outline: 0;
 }
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-
-.clearfix {
-  display: inline-block;
-}
-
-html[xmlns] .clearfix {
-  display: block;
-}
-
 * html .clearfix {
   height: 1%;
 }
@@ -37,11 +20,6 @@ ul, li {
   margin: 0;
   list-style: none;
 }
-
-header, nav, section, article, aside, footer, hgroup {
-  display: block;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -1288,4 +1266,64 @@ form input {
 .buttons button {
   flex: 0 1 95px;
   font-size: 20px;
+}
+
+---------------------------------------------
+habitacions
+--------------------------------------------- 
+*/
+
+#trainers { 
+  padding-bottom: 90px; 
+}
+
+#trainers .trainer-item {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+#trainers .trainer-item img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#trainers .trainer-item span {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ed563b;
+  display: inline-block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+#trainers .trainer-item h4 {
+  font-size: 19px;
+  font-weight: 600;
+  color: #232d39;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+#trainers .trainer-item p {
+  margin-bottom: 20px;
+}
+ul.social-icons li {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+ul.social-icons li:last-child {
+  margin-right: 0px;
+}
+
+ul.social-icons li a {
+  color: #232d39;
+  transition: all .3s;
+}
+
+ul.social-icons li a:hover {
+  color: #ed563b;
 }
