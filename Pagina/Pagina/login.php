@@ -2,10 +2,6 @@
 
 require 'includes/conectar_DB.php';
 
-if(!isset($_POST['usuari'],$_POST['password'])){
-    echo('Location:login.php');
-    header('Location:login.php');
-}
 $usuari = $_POST['usuari']; 
 $password = $_POST['password']; 
 
