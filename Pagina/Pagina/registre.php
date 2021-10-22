@@ -2,23 +2,30 @@
   <?php
 
 require 'includes/conectar_DB.php';
-
-  $message = 'defecto';
-	
-  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-    $usuari = $_POST['usuari']; 
-	$password = $_POST['password']; 
+  $message = '';
+	function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
+}
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+      $usuari = $_POST['usuari']; 
+      validate($usuari);
+	$password = $_POST['password'];
+      validate($password);
 	$passwordc = $_POST['cpassword']; 
+      validate($passwordc);
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
-  }
+  }else{
 	
 	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
-	
     $stmt->bindParam('$usuari', $_POST['usuari']);;
     $stmt->bindParam('$password', $_POST['password']);
+}
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
@@ -26,9 +33,7 @@ if ($password != $passwordc) {
       $message = 'Ha hagut algun error';
     }
   }
-  else{
-	$message = 'Ha de insertar tots els camps';
-  }
+
 ?>
 <html lang="en">
   <head>

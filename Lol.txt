@@ -1,5 +1,6 @@
 <?php 
 
+<<<<<<< HEAD
 session_start(); 
 
 include "conectar_DB.php";
@@ -7,6 +8,9 @@ include "conectar_DB.php";
 if (isset($_POST['usuari']) && isset($_POST['password'])) {
 
     function validate($data){
+=======
+   function validate($data){
+>>>>>>> origin/condiciones
 
        $data = trim($data);
 
@@ -16,11 +20,17 @@ if (isset($_POST['usuari']) && isset($_POST['password'])) {
 
        return $data;
 
+<<<<<<< HEAD
     }
 
     $usuari = validate($_POST['usuari']);
 
     $pass = validate($_POST['password']);
+=======
+   } 
+  
+    /*$pass1 = validate($_POST['cpassword']);*/
+>>>>>>> origin/condiciones
 
     $pass1 = validate($_POST['cpassword']);
 
@@ -62,3 +72,13 @@ $query = "INSERT INTO users (username, email, password)
     header("Location: index.php");
 
     exit();
+	
+	
+	
+	 if (empty($usuari) && !empty($password)) {
+          $message = 'Ha de insertar el usuari';
+    }else if(empty($password)&& !empty($usuari)){
+          $message = 'Ha de insertar la contrasenya';
+	}else{
+          $message = 'Ha de insertar tots els camps';
+    }
