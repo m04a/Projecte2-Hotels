@@ -1,14 +1,19 @@
 <?php
 
-include 'includes/conectar_DB.php';
- 
-if (isset($_POST['login'])) {
-    if(!isset($_POST['usuari'],$_POST['password'])){
-    echo('Location:index.php');
-    header('Location:index.php');
+require 'includes/conectar_DB.php';
+  $message = '';
+	function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
 }
-$usuari = $_POST['usuari']; 
-$password = $_POST['password']; 
+if (isset($_POST['login'])) {
+  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
+      $usuari = $_POST['usuari']; 
+      validate($usuari);
+	$password = $_POST['password'];
+      validate($password);
 
 $sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
 
@@ -23,7 +28,7 @@ $rol = $conn->query($sql);
         
     }
 }
- 
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +71,7 @@ $rol = $conn->query($sql);
    <form action="login.php" method="POST">
       <input name="usuari" type="text" placeholder="Entra el usuari">
       <input name="password" type="password" placeholder="Entra el teu password">
-      <input type="submit" value="Submit">
+      <input type="submit" value="Submit" name="login">
   </form> 
 </div>
      <!-- *** Footer inici *** -->
