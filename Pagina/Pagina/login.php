@@ -2,6 +2,10 @@
 
 require 'includes/conectar_DB.php';
 
+if(!isset($_POST['usuari'],$_POST['password'])){
+    echo('Location:login.php');
+    header('Location:login.php');
+}
 $usuari = $_POST['usuari']; 
 $password = $_POST['password']; 
 
@@ -11,12 +15,12 @@ $rol = $conn->query($sql);
 
     while($row = $rol->fetch_assoc()) {
         if($row['rol']=='cliente'){
-            header('Location:/index.php');
+            header('Location:index.php');
         } else{
             header('Location:admin/admin.php');
         }
         
-    
+    }
  ?>
 <!DOCTYPE html>
 <html lang="en">
