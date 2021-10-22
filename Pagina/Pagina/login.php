@@ -4,10 +4,9 @@ include 'includes/conectar_DB.php';
 session_start(); 
  
 if (isset($_POST['login'])) {
- 
     if(!isset($_POST['usuari'],$_POST['password'])){
-    echo('Location:login.php');
-    header('Location:login.php');
+    echo('Location:index.php');
+    header('Location:index.php');
 }
 $usuari = $_POST['usuari']; 
 $password = $_POST['password']; 
