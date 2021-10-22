@@ -2,7 +2,7 @@
   <?php
 
 require 'includes/conectar_DB.php';
-  $message = 'defecto';
+  $message = '';
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -31,12 +31,14 @@ if ($password != $passwordc) {
       $message = 'Ha hagut algun error';
     }
   }else{
-    if (empty($_POST['usuari'])){
-          $message = 'Ha de insertar el usuari ';
-    }else if(empty($_POST['password'])){
-          $message .= 'Ha de insertar la contrasenya ';
-	}else if(empty($_POST['cpassword'])){
-          $message .= 'Ha de insertar la comprovació ';
+    if (empty($usuari){
+          $message = 'Ha d\'insertar el usuari ';
+    }
+      if(empty($password){
+          $message .= 'Ha d\'insertar la contrasenya ';
+	}
+      if(empty($cpassword){
+          $message .= 'Ha d\'insertar la comprovació ';
     }
   }
 
