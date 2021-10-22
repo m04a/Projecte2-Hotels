@@ -9,7 +9,6 @@ require 'includes/conectar_DB.php';
        return $data;
 }
 if (isset($_POST['login'])) {
-  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	  $password = $_POST['password'];
@@ -21,10 +20,9 @@ if (isset($_POST['login'])) {
         $row = $rol -> fetch_assoc();
         if($row['tipo']=='cliente'){
             header('Location:index.php');
-        } else{
+        } else {
             header('Location:admin/admin.php')
         }
-  }
 }
  ?>
 <!DOCTYPE html>
