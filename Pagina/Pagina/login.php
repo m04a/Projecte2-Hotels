@@ -16,7 +16,7 @@ $rol = $conn->query($sql);
             header('Location:admin/admin.php');
         }
         
-    }
+    
  ?>
 <!DOCTYPE html>
 <html lang="en">
