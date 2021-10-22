@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <?php
 
-include 'includes/conectar_DB.php';
+include 'conectar_DB.php';
 
 if(!isset($_POST['usuari'],$_POST['password'])){
     echo('Location:login.php');
@@ -12,7 +12,7 @@ $sql= "SELECT tipo FROM usuario WHERE usuari='".$_POST['usuari']."' AND password
 $rol = $conn->query($sql);
 
     while($row = $rol->fetch_assoc()) {
-        if($row['rol']==''){
+        if($row['rol']=='cliente'){
             header('Location:/index.php');
         } else{
             header('Location:admin/admin.php');
