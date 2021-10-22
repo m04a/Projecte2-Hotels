@@ -8,7 +8,7 @@ if(!isset($_POST['usuari'],$_POST['password'])){
 }
 $usuari = $_POST['usuari']; 
 $password = $_POST['password']; 
-
+/*
 $sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
 
 $rol = $conn->query($sql);
@@ -20,5 +20,5 @@ $rol = $conn->query($sql);
             header('Location:../admin/admin.php');
         }
         
-    }
+    }*/
  ?>
