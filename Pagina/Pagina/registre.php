@@ -9,16 +9,18 @@ require 'includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	$password = $_POST['password'];
+      validate($password);
 	$passwordc = $_POST['cpassword']; 
+      validate($passwordc);
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
-	validate($password);
+	
 	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);;
