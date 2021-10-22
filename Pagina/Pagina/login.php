@@ -1,4 +1,5 @@
-  <?php
+<!DOCTYPE html>
+<?php
 
 require 'includes/conectar_DB.php';
 
@@ -6,7 +7,6 @@ if(isset($_POST['usuari'],$_POST['password'])){
     echo('Location:index.php');
     header('Location:index.php');
 }
-else{
 $usuari = $_POST['usuari']; 
 $password = $_POST['password']; 
 
@@ -20,11 +20,9 @@ $rol = $conn->query($sql);
         } else{
             header('Location:admin/admin.php');
         }
-        
     }
-}
  ?>
-  <!DOCTYPE html>
+ 
 <html lang="en">
   <head>
 
