@@ -36,13 +36,11 @@
 	?>
     <!-- *** Capçalera Final *** -->
 	<div class="login">
-  <form submit="includes/loginuser.php">
-    <label>Usuari</label>
-    <input type="text" name="usuari"/>
-    <label>Password</label>
-    <input type="password" name="password" />
-    <input type="submit" value="Submit">
-  </form>  
+   <form action="includes/loginuser.php" method="POST">
+      <input name="usuari" type="text" placeholder="Entra el usuari">
+      <input name="password" type="password" placeholder="Entra el teu password">
+      <input type="submit" value="Submit">
+  </form> 
 </div>
      <!-- *** Footer inici *** -->
      <?php
