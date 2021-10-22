@@ -38,9 +38,9 @@
 	<div class="login">
   <form submit="includes/loginuser.php">
     <label>Usuari</label>
-    <input type="text" />
+    <input type="text" name="usuari"/>
     <label>Password</label>
-    <input type="password" />
+    <input type="password" name="password" />
     <input type="submit" value="Submit">
   </form>  
 </div>
