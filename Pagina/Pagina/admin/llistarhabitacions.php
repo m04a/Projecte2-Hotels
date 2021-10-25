@@ -22,7 +22,7 @@
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT id, name, description, price FROM products ORDER BY id DESC";
+$query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY id DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
  
@@ -40,11 +40,11 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
  
     //creating our table heading
     echo "<tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Action</th>
+        <th>numhab</th>
+        <th>precio</th>
+        <th>tipo</th>
+        <th>Descripcion</th>
+        <th>ocupada</th>
     </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -56,19 +56,20 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
  
     // creating new table row per record
     echo "<tr>
-        <td>{$id}</td>
-        <td>{$name}</td>
-        <td>{$description}</td>
-        <td>${$price}</td>
+        <td>{$numhab}</td>
+        <td>{$precio}</td>
+        <td>{$tipo}</td>
+        <th>{$Descripcion}</th>
+        <td>${$ocupada}</td>
         <td>";
             // read one record
-            echo "<a href='read_one.php?id={$id}' class='btn btn-info m-r-1em'>Llegir</a>";
+            echo "<a href='read_one.php?id={$numhab}' class='btn btn-info m-r-1em'>Llegir</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='update.php?id={$id}' class='btn btn-primary m-r-1em'>Editar</a>";
+            echo "<a href='update.php?id={$numhab}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='delete_user({$id});'  class='btn btn-danger'>Esborrar</a>";
+            echo "<a href='#' onclick='delete_user({$numhab});'  class='btn btn-danger'>Esborrar</a>";
         echo "</td>";
     echo "</tr>";
 }
