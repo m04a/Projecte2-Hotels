@@ -8,22 +8,28 @@ require 'includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-if (isset($_POST['login'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
-	  $password = $_POST['password'];
+      $password = $_POST['password'];
       validate($password);
 
-        $sql= "SELECT tipo FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['login'])) {
+        $sql= "SELECT tipo FROM usuario WHERE usuari='".$usuari."' AND password='".$password."' LIMIT 1;";
 
-        $rol = $conn->query($sql);
-        $row = $rol -> fetch_assoc();
-        if($row['tipo']=='cliente'){
-            header('Location:index.php');
-        } else {
-            header('Location:admin/admin.php');
+        $resultat=mysql_query($sql);
+
+        if(mysql_num_rows($result) == 1){
+          echo "password correcte";
+          exit();
         }
+        else{
+          echo "password incorrecte";
+          exit();
+        }
+    }
 }
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,12 +68,13 @@ if (isset($_POST['login'])) {
 		 include 'includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
+
 	<div class="login">
    <form action="login.php" method="POST">
       <input name="usuari" type="text" placeholder="Entra el usuari">
       <input name="password" type="password" placeholder="Entra el teu password">
       <input type="submit" value="Submit" name="login">
-  </form> 
+  </form>
 </div>
      <!-- *** Footer inici *** -->
      <?php
