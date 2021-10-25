@@ -1,7 +1,6 @@
 <?php
 
 require 'includes/conectar_DB.php';
-  $message = '';
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $resultat=mysql_query($sql);
 
-        if(mysql_num_rows($result) == 1){
+        if(mysql_num_rows($resultat) == 1){
           echo "password correcte";
           exit();
         }
