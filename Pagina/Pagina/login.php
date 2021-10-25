@@ -8,14 +8,15 @@ require 'includes/conectar_DB.php';
        return $data;
 }
           echo "password correcte";
+
       $usuari = $_POST['usuari']; 
       validate($usuari);
       $password = $_POST['password'];
       validate($password);
 
-    if (isset($['usuari'])) {
-        
-        $sql= "SELECT usuari,password FROM usuario WHERE usuari='".$usuari."' AND password='".$password."' LIMIT 1;";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['login'])) {
+        $sql= "SELECT * FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
 
         $resultat=mysql_query($sql);
 
@@ -28,6 +29,7 @@ require 'includes/conectar_DB.php';
           exit();
         }
     }
+}
  ?>
 <!DOCTYPE html>
 <html lang="en">
