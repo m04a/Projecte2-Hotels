@@ -13,9 +13,9 @@ require 'includes/conectar_DB.php';
       $password = $_POST['password'];
       validate($password);
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['login'])) {
-        $sql= "SELECT usuari,password FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
+    if (isset($['usuari'])) {
+        
+        $sql= "SELECT usuari,password FROM usuario WHERE usuari='".$usuari."' AND password='".$password."' LIMIT 1;";
 
         $resultat=mysql_query($sql);
 
@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           exit();
         }
     }
-}
  ?>
 <!DOCTYPE html>
 <html lang="en">
