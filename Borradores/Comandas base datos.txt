@@ -27,3 +27,13 @@ create table hotel (
      finvac date,
      totalhab int(5));	
 _____________________________________________	
+insert into habitacion (precio, tipo, ocupada) values 
+('25','estandar','0'),
+('22','estandar','0'),
+('28','estandar','1'),
+('45','duplex','0'),
+('50','duplex','0'),
+('40','duplex','1'),
+('60','premium','0'),
+('65','premium','0'),
+('64','premium','1');
