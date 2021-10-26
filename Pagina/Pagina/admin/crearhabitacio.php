@@ -3,7 +3,7 @@ if($_POST){
     // include database connection
     include 'includes/conectar_DB.php';
  
-    try{
+    //try{
  
         // insertar query
         $query = "insert into habitacion (tipo, Descripcion, precio) values (:tipo, :Descripcion, :precio);";
@@ -31,12 +31,12 @@ if($_POST){
             echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
         }*/
  
-    }
+    //}
  
     // show error
-    catch(PDOException $exception){
+    /*catch(PDOException $exception){
         printf ('ERROR: ' . $exception->getMessage());
-    }
+    }*/
 }
 ?>
 <!DOCTYPE html>
