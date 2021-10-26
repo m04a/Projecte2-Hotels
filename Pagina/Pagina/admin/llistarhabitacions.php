@@ -17,14 +17,21 @@
  
         <?php
 // fem un include de la nostre base de dades
-   include 'includes/conectar_DB.php';
+   require 'includes/conectar_DB.php';
  
 // delete message prompt will be here
  
 // select all data
 $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
-$stmt = $con->prepare($query);
-$stmt->execute();
+	if ($resultado = $conn->query($query)) {
+		while ($fila = $resultado->fetch_row()) {
+			printf("%s (%s,%s)\n", $fila[0], $fila[1], $fila[2]);
+		}
+		/* liberar el conjunto de resultados */
+		$resultado->close();
+	}
+//$stmt = $conn->prepare($query);
+//$stmt->execute();
  
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
