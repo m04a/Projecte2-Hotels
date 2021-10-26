@@ -1,13 +1,11 @@
 <?php
-if($_POST){
- 
     // include database connection
     include 'includes/conectar_DB.php';
  
     try{
  
         // insertar query
-        $query = "insert into habitacion (tipo, Descripcion, precio) values (?,?,?);";
+        $query = "insert into habitacion (tipo, Descripcion, precio) values (?, ?, ?);";
  
         // prepare query for execution
         $stmt = $conn->prepare($query);
@@ -18,7 +16,9 @@ if($_POST){
         $precio=htmlspecialchars(strip_tags($_POST['precio']));
  
         // bind the parameters
-        $stmt->bindParam($tipo,$Descripcion,$precio);
+        $stmt->bindParam(1, $tipo);
+		$stmt->bindParam(2, $Descripcion);
+		$stmt->bindParam(3, $precio);
        
    
  
@@ -33,9 +33,8 @@ if($_POST){
  
     // show error
     catch(PDOException $exception){
-        die('ERROR: ' . $exception->getMessage());
+        echo ('ERROR: ' . $exception->getMessage());
     }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
