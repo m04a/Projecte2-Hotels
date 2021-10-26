@@ -6,11 +6,20 @@ if($_POST){
     //try{
  
         // insertar query
-        $query = "insert into habitacion (tipo, Descripcion, precio) values (:tipo, :Descripcion, :precio);";
- 
-        // prepare query for execution
+    $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam('$tipo', $_POST['tipo']);
+    $stmt->bindParam('$Descripcion', $_POST['Descripcion']);
+	$stmt->bindParam('$precio', $_POST['password']);
+}
+
+    if ($stmt->execute()) {
+      $message = 'El usuari ha sigut creat';
+    } else {
+      $message = 'Ha hagut algun error';
+    }
         $stmt = $conn->prepare($query);
- 
+ /*
         // posted values
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
         $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
@@ -22,7 +31,7 @@ if($_POST){
 		$stmt->bindParam(':precio', $precio);
         $stmt->execute();
    
- 
+ */
         // Execute the query
 		/*
         if($stmt->execute()){
