@@ -22,7 +22,7 @@
 // delete message prompt will be here
  
 // select all data
-$query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY id DESC";
+$query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
 $stmt = $con->prepare($query);
 $stmt->execute();
  
@@ -60,7 +60,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$precio}</td>
         <td>{$tipo}</td>
         <th>{$Descripcion}</th>
-        <td>${$ocupada}</td>
+        <td>{$ocupada}</td>
         <td>";
             // read one record
             echo "<a href='read_one.php?id={$numhab}' class='btn btn-info m-r-1em'>Llegir</a>";
