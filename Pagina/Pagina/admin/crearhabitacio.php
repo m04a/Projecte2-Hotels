@@ -7,7 +7,7 @@ if($_POST){
     try{
  
         // insertar query
-        $query = "INSERT INTO habitacion (tipo, Descripcion, precio, ocupada) values (tipo=:tipo, Descripcion=:Descripcion, precio=:precio, ocupada=:ocupada);";
+        $query = "insert into habitacion (tipo, Descripcion, precio, ocupada) values ('tipo=:tipo', 'Descripcion=:Descripcion', 'precio=:precio');";
  
         // prepare query for execution
         $stmt = $con->prepare($query);
