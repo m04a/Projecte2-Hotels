@@ -84,7 +84,7 @@ if($_POST){
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
-            <td>Tipus d'habitaciópus</td>
+            <td>Tipus d'habitació</td>
             <td><input type='text' name='tipo' class='form-control' /></td>
         </tr>
         <tr>
