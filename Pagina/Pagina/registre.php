@@ -23,7 +23,7 @@ if ($password != $passwordc) {
 	
 	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$usuari', $_POST['usuari']);;
+    $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
 }
 

@@ -7,22 +7,19 @@ if($_POST){
     try{
  
         // insertar query
-        $query = "insert into habitacion (tipo, Descripcion, precio, ocupada) values ('tipo=:tipo', 'Descripcion=:Descripcion', 'precio=:precio');";
+        $query = "insert into habitacion (tipo, Descripcion, precio) values (?,?,?);";
  
         // prepare query for execution
-        $stmt = $con->prepare($query);
+        $stmt = $conn->prepare($query);
  
         // posted values
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
         $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
         $precio=htmlspecialchars(strip_tags($_POST['precio']));
-        $ocupada=htmlspecialchars(strip_tags($_POST['ocupada']));
  
         // bind the parameters
-        $stmt->bindParam(':tipo', $tipo);
-        $stmt->bindParam(':Descripcion', $Descripcion);
-        $stmt->bindParam(':precio', $precio);
-        $stmt->bindParam(':ocupada', $ocupada);
+        $stmt->bindParam($tipo,$Descripcion,$precio);
+       
    
  
         // Execute the query
@@ -94,10 +91,6 @@ if($_POST){
         <tr>
             <td>Preu</td>
             <td><input type='text' name='precio' class='form-control' /></td>
-        </tr>
-		<tr>
-            <td>Estat</td>
-            <td><input type='text' name='ocupada' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>
