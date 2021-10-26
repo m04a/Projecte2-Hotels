@@ -1,4 +1,5 @@
 <?php
+if($_POST){
     // include database connection
     include 'includes/conectar_DB.php';
  
@@ -36,6 +37,7 @@
     catch(PDOException $exception){
         printf ('ERROR: ' . $exception->getMessage());
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
