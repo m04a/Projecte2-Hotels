@@ -1,16 +1,22 @@
 <?php
 if($_POST){
     // include database connection
-    include 'includes/conectar_DB.php';
- 
+    require 'includes/conectar_DB.php';
+ $message = '';
+	function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
+	}
     //try{
  
         // insertar query
     $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$tipo', $_POST['tipo']);
-    $stmt->bindParam('$Descripcion', $_POST['Descripcion']);
-	$stmt->bindParam('$precio', $_POST['password']);
+    $stmt->bindParam('$tipo', validate($_POST['tipo']));
+    $stmt->bindParam('$Descripcion', validate($_POST['Descripcion']));
+	$stmt->bindParam('$precio', validate($_POST['password']));
 
 
     if ($stmt->execute()) {
@@ -18,7 +24,7 @@ if($_POST){
     } else {
       $message = 'Ha hagut algun error';
     }
-        $stmt = $conn->prepare($query);
+   
  /*
         // posted values
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
