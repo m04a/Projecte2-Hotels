@@ -5,7 +5,7 @@
     try{
  
         // insertar query
-        $query = "insert into habitacion (tipo, Descripcion, precio) values (?, ?, ?);";
+        $query = "insert into habitacion (tipo, Descripcion, precio) values (:tipo, :Descripcion, :precio);";
  
         // prepare query for execution
         $stmt = $conn->prepare($query);
@@ -16,24 +16,25 @@
         $precio=htmlspecialchars(strip_tags($_POST['precio']));
  
         // bind the parameters
-        $stmt->bindParam(1, $tipo);
-		$stmt->bindParam(2, $Descripcion);
-		$stmt->bindParam(3, $precio);
-       
+        $stmt->bindParam(':tipo', $tipo);
+		$stmt->bindParam(':Descripcion', $Descripcion);
+		$stmt->bindParam(':precio', $precio);
+        $stmt->execute();
    
  
         // Execute the query
+		/*
         if($stmt->execute()){
             echo "<div class='alert alert-success'>Camp guardat.</div>";
         }else{
             echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
-        }
+        }*/
  
     }
  
     // show error
     catch(PDOException $exception){
-        echo ('ERROR: ' . $exception->getMessage());
+        printf ('ERROR: ' . $exception->getMessage());
     }
 ?>
 <!DOCTYPE html>
