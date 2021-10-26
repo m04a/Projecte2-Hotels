@@ -14,9 +14,9 @@ if($_POST){
  
         // posted values
         $name=htmlspecialchars(strip_tags($_POST['tipo']));
-        $description=htmlspecialchars(strip_tags($_POST['Descripcion']));
+        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
         $price=htmlspecialchars(strip_tags($_POST['precio']));
-        $price=htmlspecialchars(strip_tags($_POST['ocupada']));
+        $ocupada=htmlspecialchars(strip_tags($_POST['ocupada']));
  
         // bind the parameters
         $stmt->bindParam(':tipo', tipo);
@@ -84,16 +84,20 @@ if($_POST){
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
-            <td>Nom habitació</td>
-            <td><input type='text' name='name' class='form-control' /></td>
+            <td>Tipus d'habitaciópus</td>
+            <td><input type='text' name='tipo' class='form-control' /></td>
         </tr>
         <tr>
             <td>Descripció</td>
-            <td><textarea name='description' class='form-control'></textarea></td>
+            <td><textarea name='Descripcion' class='form-control'></textarea></td>
         </tr>
         <tr>
-            <td>Tipus d'habitació</td>
-            <td><input type='text' name='price' class='form-control' /></td>
+            <td>Preu</td>
+            <td><input type='text' name='precio' class='form-control' /></td>
+        </tr>
+		<tr>
+            <td>Estat</td>
+            <td><input type='text' name='ocupada' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>
