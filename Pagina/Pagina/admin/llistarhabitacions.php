@@ -23,15 +23,19 @@
  
 // select all data
 $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
-	if ($resultado = $conn->query($query)) {
-		while ($fila = $resultado->fetch_row()) {
-			printf("%s (%s,%s)\n", $fila[0], $fila[1], $fila[2]);
-		}
-		/* liberar el conjunto de resultados */
-		$resultado->close();
-	}
+$stmt = $conn->prepare($query);
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+// Ejecutamos
+$stmt->execute();
+// Mostramos los resultados
+while ($row = $stmt->fetch()){
+    echo "numero: {$row["numhab"]} <br>";
+    echo "tipo: {$row["tipo"]} <br>";
+	echo "Descripcion: {$row["Descripcion"]} <br>";
+	echo "ocupada: {$row["ocupada"]} <br>";
+}		
 //$stmt = $conn->prepare($query);
-//$stmt->execute();
+$stmt->execute();
  
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
