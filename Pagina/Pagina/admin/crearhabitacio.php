@@ -11,7 +11,7 @@ if($_POST){
     $stmt->bindParam('$tipo', $_POST['tipo']);
     $stmt->bindParam('$Descripcion', $_POST['Descripcion']);
 	$stmt->bindParam('$precio', $_POST['password']);
-}
+
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
