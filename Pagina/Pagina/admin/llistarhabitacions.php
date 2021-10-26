@@ -36,7 +36,7 @@ while ($row = $stmt->fetch()){
 }		
 //$stmt = $conn->prepare($query);
 $stmt->execute();
- 
+ /*
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
  
@@ -93,7 +93,7 @@ echo "</table>";
 // if no records found
 else{
     echo "<div class='alert alert-danger'>No s'ha trobat dades.</div>";
-}
+}*/
 ?>
  
     </div> <!-- end .container -->
