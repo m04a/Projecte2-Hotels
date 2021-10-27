@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <?php
 if($_POST){
-require 'includes/conectar_DB.php';
-  $message = '';
+    // include database connection
+    require 'includes/conectar_DB.php';
+ $message = '';
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
        $data = htmlspecialchars($data);
        return $data;
-}
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
-      $usuari = $_POST['usuari']; 
-      validate($usuari);
-	$password = $_POST['password'];
-      validate($password);
-	$passwordc = $_POST['cpassword']; 
-      validate($passwordc);
-if ($password != $passwordc) {
-	$message = 'Les contrasenyes no son iguals';
-	header("Location: registre.php");
-  }else{
-	
-	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
+	}
+    try{
+ 
+        // insertar query
+    $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$usuari', $_POST['usuari']);
-    $stmt->bindParam('$password', $_POST['password']);
-}
+    $stmt->bindParam('$tipo', validate($_POST['tipo']));
+    $stmt->bindParam('$Descripcion', validate($_POST['Descripcion']));
+	$stmt->bindParam('$precio', validate($_POST['password']));
+
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
     } else {
       $message = 'Ha hagut algun error';
     }
-  }
+   
+ /*
+        // posted values
+        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+        $precio=htmlspecialchars(strip_tags($_POST['precio']));
+ 
+        // bind the parameters
+        $stmt->bindParam(':tipo', $tipo);
+		$stmt->bindParam(':Descripcion', $Descripcion);
+		$stmt->bindParam(':precio', $precio);
+        $stmt->execute();
+   
+ */
+        // Execute the query
+		/*
+        if($stmt->execute()){
+            echo "<div class='alert alert-success'>Camp guardat.</div>";
+        }else{
+            echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
+        }*/
+ 
+    }catch(PDOException $exception){
+        printf ('ERROR: ' . $exception->getMessage());
+    }
 }
 ?>
 
@@ -76,7 +93,7 @@ if ($password != $passwordc) {
 <div class="col-sm-6" id="div-crearhabitacio">
 <!-- PHP insert code will be here -->
  
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+<form action="crearhabitacio.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
             <td>Tipus d'habitació</td>
@@ -100,10 +117,6 @@ if ($password != $passwordc) {
     </table>
 </form>
   </div>
-  
-  <button type="submit" class="btn btn-primary">Crear Habitació</button>
-</form>
-</div>
 <div class="col-sm-6" id="div-esborrarhabitacio">
 <form>
   <div class="row mb-3">
