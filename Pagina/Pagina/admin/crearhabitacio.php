@@ -11,15 +11,20 @@
 	}
     try{
 		if (!empty($_POST['tipo'])){
+
  	if ($conn->connect_error) {
  	 die("Connection failed: " . $conn->connect_error);
 	} 
         // insertar query
-    $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$tipo', $_POST['tipo']);
-    $stmt->bindParam('$Descripcion', $_POST['Descripcion']);
-	$stmt->bindParam('$precio', $_POST['precio']);
+    $stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) 
+	values (:tipo, :Descripcion, :precio)");
+ 		$stmt->bindParam(':tipo', $tipo);
+		$stmt->bindParam(':Descripcion', $Descripcion);
+		$stmt->bindParam(':precio', $precio);
+
+		$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+        $precio=htmlspecialchars(strip_tags($_POST['precio']));
 
 
     if ($stmt->execute()) {
