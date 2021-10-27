@@ -48,6 +48,8 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
         <th>Tipus</th>
         <th>Descripció</th>
         <th>Ocupació</th>
+        <th>Accions</th>
+
     </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -69,7 +71,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             echo "<a href='veure-un.php?numhab={$numhab}' class='btn btn-info m-r-1em'>Llegir</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='update.php?id={$numhab}' class='btn btn-primary m-r-1em'>Editar</a>";
+            echo "<a href='actualitzar.php?numhab={$numhab}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
             echo "<a href='#' onclick='delete_user({$numhab});'  class='btn btn-danger'>Esborrar</a>";

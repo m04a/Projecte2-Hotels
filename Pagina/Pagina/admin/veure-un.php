@@ -68,7 +68,7 @@ catch(PDOException $exception){
     <tr>
         <td></td>
         <td>
-            <a href='index.php' class='btn btn-danger'>Back to read products</a>
+            <a href='llistarhabitacions.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
     </tr>
 </table> 
