@@ -44,7 +44,8 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
  
     echo "<tr>
         <th>Usuari</th>
-        <th>Tipo</th>
+        <th>Tipus</th>
+        <th>Accions</th>
     </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
