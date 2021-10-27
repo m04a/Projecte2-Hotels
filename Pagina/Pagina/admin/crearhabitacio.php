@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
+<<<<<<< HEAD
 if($_POST){
+=======
+>>>>>>> e6a463c (corregidos errores de merge)
     // include database connection
     require '../includes/conectar_DB.php';
  $message = '';
@@ -17,6 +20,7 @@ if($_POST){
  	 die("Connection failed: " . $conn->connect_error);
 	} 
         // insertar query
+<<<<<<< HEAD
         $query = "insert into habitacion (tipo, Descripcion, precio) values (:tipo, :Descripcion, :precio);";
  
         // prepare query for execution
@@ -42,6 +46,8 @@ if($_POST){
             echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
         }*/
  
+=======
+>>>>>>> e6a463c (corregidos errores de merge)
     $stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) 
 	values (:tipo, :Descripcion, :precio)");
  		$stmt->bindParam(':tipo', $tipo);
@@ -61,9 +67,12 @@ if($_POST){
 		}
 
  
+<<<<<<< HEAD
     // show error
     catch(PDOException $exception){
         printf ('ERROR: ' . $exception->getMessage());
+=======
+>>>>>>> e6a463c (corregidos errores de merge)
     }catch(PDOException $exception){
         die ('ERROR: ' . $exception->getMessage());
     }
@@ -125,10 +134,14 @@ if($_POST){
         </tr>
         <tr>
             <td>Preu</td>
+<<<<<<< HEAD
             <td><input type='text' name='precio' class='form-control' /></td>
 
             <td><input type='number' name='precio' class='form-control' /></td>
 
+=======
+            <td><input type='number' name='precio' class='form-control' /></td>
+>>>>>>> e6a463c (corregidos errores de merge)
         </tr>
         <tr>
             <td></td>

@@ -17,29 +17,26 @@
  
         <?php
 // fem un include de la nostre base de dades
+<<<<<<< HEAD
    require 'includes/conectar_DB.php';
+=======
+>>>>>>> e6a463c (corregidos errores de merge)
    require '../includes/conectar_DB.php';
  
 // delete message prompt will be here
  
 // select all data
 $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
+<<<<<<< HEAD
 $stmt = $conn->prepare($query);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 // Ejecutamos
 
+=======
+>>>>>>> e6a463c (corregidos errores de merge)
 $stmt = $conn->prepare($query);	
 $stmt->execute();
-// Mostramos los resultados
-while ($row = $stmt->fetch()){
-    echo "numero: {$row["numhab"]} <br>";
-    echo "tipo: {$row["tipo"]} <br>";
-	echo "Descripcion: {$row["Descripcion"]} <br>";
-	echo "ocupada: {$row["ocupada"]} <br>";
-}		
-//$stmt = $conn->prepare($query);
-$stmt->execute();
- /*
+ 
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
  
@@ -96,7 +93,7 @@ echo "</table>";
 // if no records found
 else{
     echo "<div class='alert alert-danger'>No s'ha trobat dades.</div>";
-}*/
+}
 ?>
  
     </div> <!-- end .container -->
