@@ -17,9 +17,9 @@
         // insertar query
     $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$tipo', validate($_POST['tipo']));
-    $stmt->bindParam('$Descripcion', validate($_POST['Descripcion']));
-	$stmt->bindParam('$precio', validate($_POST['precio']));
+    $stmt->bindParam('$tipo', $_POST['tipo']);
+    $stmt->bindParam('$Descripcion', $_POST['Descripcion']);
+	$stmt->bindParam('$precio', $_POST['precio']);
 
 
     if ($stmt->execute()) {
