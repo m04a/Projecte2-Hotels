@@ -3,7 +3,7 @@
     // include database connection
     require '../includes/conectar_DB.php';
  $message = '';
- if(isset($_POST["Submit1"])){
+ if(isset($_POST["crearhabitacio"])){
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -29,7 +29,7 @@
 
 
     if ($stmt->execute()) {
-      $message = 'El usuari ha sigut creat';
+      $message = 'La habitació ha sigut creada';
     } else {
       $message = 'Ha hagut algun error';
     }
@@ -39,6 +39,33 @@
     }catch(PDOException $exception){
         die ('ERROR: ' . $exception->getMessage());
     }
+    }
+    if(isset($_POST["crearusuari"])){
+require '../includes/conectar_DB.php';
+  $message = '';
+  function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
+}
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+      $usuari = $_POST['usuari']; 
+      validate($usuari);
+  $password = $_POST['password'];
+      validate($password);
+  
+  $sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam('$usuari', $_POST['usuari']);
+    $stmt->bindParam('$password', $_POST['password']);
+}
+    if ($stmt->execute()) {
+      $message = 'El usuari ha sigut creat';
+    } else {
+      $message = 'Ha hagut algun error';
+    }
+  
     }
 ?>
 
@@ -101,7 +128,7 @@
         <tr>
             <td></td>
             <td>
-                <input type='submit' value='Save' name="Submit1" class='btn btn-primary' />
+                <input type='submit' value='Save' name="crearhabitacio" class='btn btn-primary' />
                 <!--<a href='llistarhabitacions.php' class='btn btn-danger'>Veure tots els productes</a> -->
             </td>
         </tr>
@@ -111,19 +138,19 @@
 		<div class="col-sm-6" id="div-crearusuari">
 <form>
   <div class="row mb-3">
-    <label for="nomtipusdehabitacio" class="col-sm-2 col-form-label">fasdfaadsfadsf</label>
+    <label for="usuari" class="col-sm-2 col-form-label">Usuari</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="nomtipusdehabitacio">
+      <input type="text" class="form-control" id="usuari">
     </div>
   </div>
   <div class="row mb-3">
-    <label for="idtipushabitacio" class="col-sm-2 col-form-label">adsfa</label>
+    <label for="password" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="idtipushabitacio">
+      <input type="password" class="form-control" id="password">
     </div>
   </div>
   
-  <button type="submit" class="btn btn-primary">Crear Habitació</button>
+  <button type="submit" name="crearusuari" class="btn btn-primary">Crear nou usuari</button>
 </form>
 </div> 
 		
