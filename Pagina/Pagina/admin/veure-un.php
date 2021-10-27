@@ -18,13 +18,13 @@ $numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not fou
 require '../includes/conectar_DB.php';
  
  echo $numhab;
- 
+
 // read current record's data
 try {
     // prepare select query
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = '$numhab' LIMIT 0,1";
 
-    $stmt = $con->prepare( $query );
+    $stmt = $conn->prepare($query); 
  
     // execute our query
     $stmt->execute();
