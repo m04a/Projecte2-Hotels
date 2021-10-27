@@ -14,17 +14,20 @@
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
 $numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
+
 //include database connection
 require '../includes/conectar_DB.php';
  
- echo $numhab;
-
+ 
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = '$numhab' LIMIT 0,1";
+    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = ? LIMIT 0,1";
 
-    $stmt = $conn->prepare($query); 
+    $stmt = $conn->prepare( $query );
+ 
+    // this is the first question mark
+    $stmt->bindParam(1, $numhab);
  
     // execute our query
     $stmt->execute();
