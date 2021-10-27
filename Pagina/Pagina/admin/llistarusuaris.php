@@ -27,13 +27,7 @@ $stmt = $conn->prepare($query);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 // Ejecutamos
 $stmt->execute();
-// Mostramos los resultados
-while ($row = $stmt->fetch()){
-    echo "Usuari: {$row["usuari"]} <br>";
-    echo "Tipo: {$row["tipo"]} <br>";
-}		
-$stmt->execute();
- 
+		 
 $num = $stmt->rowCount();
  
 echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou usuari</a>";
