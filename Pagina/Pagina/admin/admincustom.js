@@ -13,7 +13,7 @@ function crearusuari() {
 
 // confirm record deletion
 function esborrar(numhab){
-    var answer = confirm('Are you sure?');
+    var answer = confirm('Estas segur que vols la habitació numero ' + numhab + '?' );
     if (answer){
         // if user clicked ok,
         // pass the id to delete.php and execute the delete query
