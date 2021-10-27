@@ -65,9 +65,9 @@
 		 
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
+    <a class="nav-link" href="" id="crearhabitacio">Crear Habitació</a>
   </li>
-    <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
+    <a class="nav-link" href="" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarhabitacions.php">Llistar Habitacions</a>
@@ -82,7 +82,7 @@
   <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-<form action="crearhabitacio.php" method="post">
+<form action="crear.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
             <td>Tipus d'habitació</td>
