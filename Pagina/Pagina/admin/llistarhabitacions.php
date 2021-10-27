@@ -38,6 +38,14 @@ if($num>0){
     //start table
 echo "<table class='table table-hover table-responsive table-bordered'>";
  
+    //creating our table heading
+    echo "<tr>
+        <th>Numero d'habitació</th>
+        <th>Preu</th>
+        <th>Tipus</th>
+        <th>Descripció</th>
+        <th>Ocupació</th>
+    </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
