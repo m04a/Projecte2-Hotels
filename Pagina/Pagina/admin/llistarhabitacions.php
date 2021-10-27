@@ -17,23 +17,12 @@
  
         <?php
 // fem un include de la nostre base de dades
-<<<<<<< HEAD
-   require 'includes/conectar_DB.php';
-=======
->>>>>>> e6a463c (corregidos errores de merge)
    require '../includes/conectar_DB.php';
  
 // delete message prompt will be here
  
 // select all data
 $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
-<<<<<<< HEAD
-$stmt = $conn->prepare($query);
-$stmt->setFetchMode(PDO::FETCH_ASSOC);
-// Ejecutamos
-
-=======
->>>>>>> e6a463c (corregidos errores de merge)
 $stmt = $conn->prepare($query);	
 $stmt->execute();
  
