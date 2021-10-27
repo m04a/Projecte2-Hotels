@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <?php
-if($_POST){
-require 'includes/conectar_DB.php';
-  $message = '';
+    // include database connection
+    require 'includes/conectar_DB.php';
+ $message = '';
 	function validate($data){
-       $dasdfta = trim($data);
-       $dasdfta = stripslashes($data);
+       $data = trim($data);
+       $data = stripslashes($data);
        $data = htmlspecialchars($data);
        return $data;
-}
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
-      $usuari = $_POST['usuari']; 
-      validate($usuari);
-	$passdfsword = $_POST['password'];
-      validsdfate($pasdfssword);
-	$passwordc = $_POST['cpassword']; 
-      validate($passwordc);
-if ($passsdfword != $passwordc) {
-	$mesdfssage = 'Les contrasenyes no son iguals';
-	header("Location: registre.php");
-  }else{
-	
-	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
+	}
+    try{
+ 	if ($conn->connect_error) {
+ 	 die("Connection failed: " . $conn->connect_error);
+	} 
+        // insertar query
+    $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$usuari', $_POST['usuari']);
-    $stmt->bindParam('$password', $_POST['password']);
-}
+    $stmt->bindParam('$tipo', validate($_POST['tipo']));
+    $stmt->bindParam('$Descripcion', validate($_POST['Descripcion']));
+	$stmt->bindParam('$precio', validate($_POST['password']));
+
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
     } else {
       $message = 'Ha hagut algun error';
     }
-  }
-}
+   
+ /*
+        // posted values
+        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+        $precio=htmlspecialchars(strip_tags($_POST['precio']));
+ 
+        // bind the parameters
+        $stmt->bindParam(':tipo', $tipo);
+		$stmt->bindParam(':Descripcion', $Descripcion);
+		$stmt->bindParam(':precio', $precio);
+        $stmt->execute();
+   
+ */
+        // Execute the query
+		/*
+        if($stmt->execute()){
+            echo "<div class='alert alert-success'>Camp guardat.</div>";
+        }else{
+            echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
+        }*/
+ 
+    }catch(PDOException $exception){
+        die ('ERROR: ' . $exception->getMessage());
+    }
 ?>
 
 <html lang="en">
@@ -58,11 +75,15 @@ if ($passsdfword != $passwordc) {
     </head>
     
     <body> 
+		 
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
+	  <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
   </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link" href="#" id="esborrartipus">Esborrar habitació</a>
   </li>
   <li class="nav-item">
@@ -70,7 +91,7 @@ if ($passsdfword != $passwordc) {
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Disabled</a>
-  </li>
+  </li> -->
 </ul>
 
 <div class="col-sm-6" id="div-crearhabitacio">
@@ -78,27 +99,23 @@ if ($passsdfword != $passwordc) {
  
 <form action="crearhabitacio.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
-	<!--	<tr>
-            <td>ID</td>
-            <td><input type='number' name='numhab' class='form-control' /></td>
-        </tr> -->
         <tr>
             <td>Tipus d'habitació</td>
-            <td><input type='text' name='usuari' class='form-control' /></td>
-        </tr> 
+            <td><input type='text' name='tipo' class='form-control' /></td>
+        </tr>
         <tr>
             <td>Descripció</td>
-            <td><input type='text' name='password' class='form-control'></textarea></td>
+            <td><textarea name='Descripcion' class='form-control'></textarea></td>
         </tr>
         <tr>
             <td>Preu</td>
-            <td><input type='text' name='cpassword' class='form-control' /></td>
+            <td><input type='number' name='precio' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>
             <td>
                 <input type='submit' value='Save' class='btn btn-primary' />
-                <a href='llistarhabitacions.php' class='btn btn-danger'>Veure tots els productes</a>
+                <!--<a href='llistarhabitacions.php' class='btn btn-danger'>Veure tots els productes</a> -->
             </td>
         </tr>
     </table>
@@ -131,8 +148,6 @@ if ($passsdfword != $passwordc) {
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
-</body>
-</html>
 
   </body>
 </html>
