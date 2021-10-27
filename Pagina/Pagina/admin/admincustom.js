@@ -13,7 +13,6 @@ function crearusuari() {
 
 // confirm record deletion
 function esborrar(numhab){
- 
     var answer = confirm('Are you sure?');
     if (answer){
         // if user clicked ok,
