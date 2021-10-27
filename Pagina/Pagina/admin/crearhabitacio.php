@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <?php
-
+if($_POST){
 require 'includes/conectar_DB.php';
   $message = '';
 	function validate($data){
-       $data = trim($data);
-       $data = stripslashes($data);
+       $dasdfta = trim($data);
+       $dasdfta = stripslashes($data);
        $data = htmlspecialchars($data);
        return $data;
 }
   if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
-	$password = $_POST['password'];
-      validate($password);
+	$passdfsword = $_POST['password'];
+      validsdfate($pasdfssword);
 	$passwordc = $_POST['cpassword']; 
       validate($passwordc);
-if ($password != $passwordc) {
-	$message = 'Les contrasenyes no son iguals';
+if ($passsdfword != $passwordc) {
+	$mesdfssage = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
 	
@@ -33,7 +33,7 @@ if ($password != $passwordc) {
       $message = 'Ha hagut algun error';
     }
   }
-
+}
 ?>
 
 <html lang="en">
@@ -58,9 +58,6 @@ if ($password != $passwordc) {
     </head>
     
     <body> 
-		 <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
