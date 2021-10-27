@@ -58,6 +58,9 @@ if ($password != $passwordc) {
     </head>
     
     <body> 
+		 <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
