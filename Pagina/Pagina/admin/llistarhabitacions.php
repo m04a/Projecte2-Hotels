@@ -17,7 +17,7 @@
  
         <?php
 // fem un include de la nostre base de dades
-   require 'includes/conectar_DB.php';
+   require '../includes/conectar_DB.php';
  
 // delete message prompt will be here
  
