@@ -17,6 +17,7 @@ $numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not fou
 //include database connection
 require '../includes/conectar_DB.php';
  
+ echo $numhab;
  
 // read current record's data
 try {
@@ -24,9 +25,6 @@ try {
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = '$numhab' LIMIT 0,1";
 
     $stmt = $con->prepare( $query );
- 
-    // this is the first question mark
-    $stmt->bindParam(1, $numhab);
  
     // execute our query
     $stmt->execute();
