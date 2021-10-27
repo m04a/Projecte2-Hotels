@@ -17,6 +17,6 @@ function esborrar(numhab){
     if (answer){
         // if user clicked ok,
         // pass the id to delete.php and execute the delete query
-        window.location = 'delete.php?numhab=' + numhab;
+        window.location = 'esborrar.php?numhab=' + numhab;
     }
 }
