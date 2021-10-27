@@ -70,15 +70,15 @@
       <p> <?= $message ?></p>
     <?php endif; ?>
   </li>
-  <!-- <li class="nav-item">
-    <a class="nav-link" href="#" id="esborrartipus">Esborrar habitació</a>
+  
+    <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Link</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Disabled</a>
-  </li> -->
+  </li>
 </ul>
 
 <div class="col-sm-6" id="div-crearhabitacio">
@@ -108,8 +108,7 @@
     </table>
 </form>
   </div>
-<!--
-		<div class="col-sm-6" id="div-esborrarhabitacio">
+		<div class="col-sm-6" id="div-crearusuari">
 <form>
   <div class="row mb-3">
     <label for="nomtipusdehabitacio" class="col-sm-2 col-form-label">fasdfaadsfadsf</label>
@@ -128,7 +127,7 @@
 </form>
 </div> 
 		
-    <script src="admincustom.js"></script>-->
+    <script src="admincustom.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
