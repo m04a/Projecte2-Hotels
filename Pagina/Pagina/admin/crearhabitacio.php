@@ -1,60 +1,41 @@
+<!DOCTYPE html>
 <?php
 if($_POST){
-    // include database connection
-    require 'includes/conectar_DB.php';
- $message = '';
+require 'includes/conectar_DB.php';
+  $message = '';
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
        $data = htmlspecialchars($data);
        return $data;
-	}
-    //try{
- 
-        // insertar query
-    $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
+}
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+      $usuari = $_POST['usuari']; 
+      validate($usuari);
+	$password = $_POST['password'];
+      validate($password);
+	$passwordc = $_POST['cpassword']; 
+      validate($passwordc);
+if ($password != $passwordc) {
+	$message = 'Les contrasenyes no son iguals';
+	header("Location: registre.php");
+  }else{
+	
+	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$tipo', validate($_POST['tipo']));
-    $stmt->bindParam('$Descripcion', validate($_POST['Descripcion']));
-	$stmt->bindParam('$precio', validate($_POST['password']));
-
+    $stmt->bindParam('$usuari', $_POST['usuari']);
+    $stmt->bindParam('$password', $_POST['password']);
+}
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
     } else {
       $message = 'Ha hagut algun error';
     }
-   
- /*
-        // posted values
-        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
-        $precio=htmlspecialchars(strip_tags($_POST['precio']));
- 
-        // bind the parameters
-        $stmt->bindParam(':tipo', $tipo);
-		$stmt->bindParam(':Descripcion', $Descripcion);
-		$stmt->bindParam(':precio', $precio);
-        $stmt->execute();
-   
- */
-        // Execute the query
-		/*
-        if($stmt->execute()){
-            echo "<div class='alert alert-success'>Camp guardat.</div>";
-        }else{
-            echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
-        }*/
- 
-    //}
- 
-    // show error
-    /*catch(PDOException $exception){
-        printf ('ERROR: ' . $exception->getMessage());
-    }*/
+  }
 }
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 
   <head>
