@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     // include database connection
-    require 'includes/conectar_DB.php';
+    require '../includes/conectar_DB.php';
  $message = '';
 	function validate($data){
        $data = trim($data);
