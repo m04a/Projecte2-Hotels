@@ -11,7 +11,9 @@ if($_POST){
        return $data;
 	}
     try{
- 
+ 	if ($conn->connect_error) {
+ 	 die("Connection failed: " . $conn->connect_error);
+	} 
         // insertar query
     $sql = "insert into habitacion (tipo, Descripcion, precio) values ('$tipo', '$Descripcion', '$precio');";
     $stmt = $conn->prepare($sql);
@@ -117,7 +119,8 @@ if($_POST){
     </table>
 </form>
   </div>
-<div class="col-sm-6" id="div-esborrarhabitacio">
+<!--
+		<div class="col-sm-6" id="div-esborrarhabitacio">
 <form>
   <div class="row mb-3">
     <label for="nomtipusdehabitacio" class="col-sm-2 col-form-label">fasdfaadsfadsf</label>
@@ -134,7 +137,8 @@ if($_POST){
   
   <button type="submit" class="btn btn-primary">Crear Habitació</button>
 </form>
-</div>
+</div> -->
+		
     <script src="admincustom.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
