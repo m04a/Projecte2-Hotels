@@ -65,9 +65,9 @@
 		 
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link" href="" id="crearhabitacio">Crear Habitació</a>
+    <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
   </li>
-    <a class="nav-link" href="" id="crearusuari">Crear Usuari</a>
+    <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarhabitacions.php">Llistar Habitacions</a>
