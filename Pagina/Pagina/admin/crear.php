@@ -74,10 +74,10 @@
     <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
+    <a class="nav-link" href="llistarhabitacions.php">Llistar Habitacions</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Disabled</a>
+    <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
 </ul>
 

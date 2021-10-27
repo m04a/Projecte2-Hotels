@@ -36,7 +36,7 @@ $stmt->execute();
  
 $num = $stmt->rowCount();
  
-echo "<a href='crearhabitacio.php' class='btn btn-primary m-b-1em'>Crear una nova habitacio</a>";
+echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou usuari</a>";
  
 if($num>0){
  
