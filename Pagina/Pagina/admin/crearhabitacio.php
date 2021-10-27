@@ -78,21 +78,21 @@ if ($password != $passwordc) {
  
 <form action="crearhabitacio.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
-		<tr>
+	<!--	<tr>
             <td>ID</td>
             <td><input type='number' name='numhab' class='form-control' /></td>
-        </tr>
+        </tr> -->
         <tr>
             <td>Tipus d'habitació</td>
-            <td><input type='text' name='tipo' class='form-control' /></td>
-        </tr>
+            <td><input type='text' name='usuari' class='form-control' /></td>
+        </tr> 
         <tr>
             <td>Descripció</td>
-            <td><textarea name='Descripcion' class='form-control'></textarea></td>
+            <td><input type='text' name='password' class='form-control'></textarea></td>
         </tr>
         <tr>
             <td>Preu</td>
-            <td><input type='number' name='precio' class='form-control' /></td>
+            <td><input type='text' name='cpassword' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>
