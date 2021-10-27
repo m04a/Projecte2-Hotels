@@ -33,26 +33,7 @@
       $message = 'Ha hagut algun error';
     }
 		}
- /*
-        // posted values
-        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
-        $precio=htmlspecialchars(strip_tags($_POST['precio']));
- 
-        // bind the parameters
-        $stmt->bindParam(':tipo', $tipo);
-		$stmt->bindParam(':Descripcion', $Descripcion);
-		$stmt->bindParam(':precio', $precio);
-        $stmt->execute();
-   
- */
-        // Execute the query
-		/*
-        if($stmt->execute()){
-            echo "<div class='alert alert-success'>Camp guardat.</div>";
-        }else{
-            echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
-        }*/
+
  
     }catch(PDOException $exception){
         die ('ERROR: ' . $exception->getMessage());
