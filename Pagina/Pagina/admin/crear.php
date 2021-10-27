@@ -66,11 +66,7 @@
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
-	  <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
   </li>
-  
     <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
@@ -83,7 +79,9 @@
 
 <div class="col-sm-6" id="div-crearhabitacio">
 <!-- PHP insert code will be here -->
- 
+  <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
 <form action="crearhabitacio.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
