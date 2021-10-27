@@ -52,7 +52,7 @@
 
     <title>Pagina Hotel| Admin Panel </title>
 
-    <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../utilitats/css/font-awesome.css">
 
     <link rel="stylesheet" href="adminstyle.css">
 
