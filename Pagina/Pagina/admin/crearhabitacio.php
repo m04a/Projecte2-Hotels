@@ -1,11 +1,26 @@
+<!DOCTYPE html>
 <?php
+<<<<<<< HEAD
 if($_POST){
+=======
+>>>>>>> origin/featureadmin
     // include database connection
-    include 'includes/conectar_DB.php';
- 
+    require '../includes/conectar_DB.php';
+ $message = '';
+	function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
+	}
     try{
- 
+		if (!empty($_POST['tipo'])){
+
+ 	if ($conn->connect_error) {
+ 	 die("Connection failed: " . $conn->connect_error);
+	} 
         // insertar query
+<<<<<<< HEAD
         $query = "insert into habitacion (tipo, Descripcion, precio) values (:tipo, :Descripcion, :precio);";
  
         // prepare query for execution
@@ -31,15 +46,38 @@ if($_POST){
             echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
         }*/
  
+=======
+    $stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) 
+	values (:tipo, :Descripcion, :precio)");
+ 		$stmt->bindParam(':tipo', $tipo);
+		$stmt->bindParam(':Descripcion', $Descripcion);
+		$stmt->bindParam(':precio', $precio);
+
+		$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+        $precio=htmlspecialchars(strip_tags($_POST['precio']));
+
+
+    if ($stmt->execute()) {
+      $message = 'El usuari ha sigut creat';
+    } else {
+      $message = 'Ha hagut algun error';
+>>>>>>> origin/featureadmin
     }
+		}
+
  
+<<<<<<< HEAD
     // show error
     catch(PDOException $exception){
         printf ('ERROR: ' . $exception->getMessage());
+=======
+    }catch(PDOException $exception){
+        die ('ERROR: ' . $exception->getMessage());
+>>>>>>> origin/featureadmin
     }
-}
 ?>
-<!DOCTYPE html>
+
 <html lang="en">
 
   <head>
@@ -54,7 +92,7 @@ if($_POST){
 
     <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
 
-    <link rel="stylesheet" href="adminstyle.css">
+   <!-- <link rel="stylesheet" href="adminstyle.css"> -->
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -62,11 +100,15 @@ if($_POST){
     </head>
     
     <body> 
+		 
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
+	  <?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
   </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link" href="#" id="esborrartipus">Esborrar habitació</a>
   </li>
   <li class="nav-item">
@@ -74,13 +116,13 @@ if($_POST){
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Disabled</a>
-  </li>
+  </li> -->
 </ul>
 
 <div class="col-sm-6" id="div-crearhabitacio">
 <!-- PHP insert code will be here -->
  
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+<form action="crearhabitacio.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
             <td>Tipus d'habitació</td>
@@ -92,23 +134,24 @@ if($_POST){
         </tr>
         <tr>
             <td>Preu</td>
+<<<<<<< HEAD
             <td><input type='text' name='precio' class='form-control' /></td>
+=======
+            <td><input type='number' name='precio' class='form-control' /></td>
+>>>>>>> origin/featureadmin
         </tr>
         <tr>
             <td></td>
             <td>
                 <input type='submit' value='Save' class='btn btn-primary' />
-                <a href='llistarhabitacions.php' class='btn btn-danger'>Veure tots els productes</a>
+                <!--<a href='llistarhabitacions.php' class='btn btn-danger'>Veure tots els productes</a> -->
             </td>
         </tr>
     </table>
 </form>
   </div>
-  
-  <button type="submit" class="btn btn-primary">Crear Habitació</button>
-</form>
-</div>
-<div class="col-sm-6" id="div-esborrarhabitacio">
+<!--
+		<div class="col-sm-6" id="div-esborrarhabitacio">
 <form>
   <div class="row mb-3">
     <label for="nomtipusdehabitacio" class="col-sm-2 col-form-label">fasdfaadsfadsf</label>
@@ -125,16 +168,15 @@ if($_POST){
   
   <button type="submit" class="btn btn-primary">Crear Habitació</button>
 </form>
-</div>
-    <script src="admincustom.js"></script>
+</div> 
+		
+    <script src="admincustom.js"></script>-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
-</body>
-</html>
 
   </body>
 </html>
