@@ -3,6 +3,7 @@
     // include database connection
     require '../includes/conectar_DB.php';
  $message = '';
+ if(isset($_POST["Submit1"])){
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -37,6 +38,7 @@
  
     }catch(PDOException $exception){
         die ('ERROR: ' . $exception->getMessage());
+    }
     }
 ?>
 
@@ -99,7 +101,7 @@
         <tr>
             <td></td>
             <td>
-                <input type='submit' value='Save' class='btn btn-primary' />
+                <input type='submit' value='Save' name="Submit1" class='btn btn-primary' />
                 <!--<a href='llistarhabitacions.php' class='btn btn-danger'>Veure tots els productes</a> -->
             </td>
         </tr>
