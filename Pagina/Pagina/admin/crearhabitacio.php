@@ -33,8 +33,8 @@ if($_POST){
  
         // bind the parameters
         $stmt->bindParam(':tipo', $tipo);
-		$stmt->bindParam(':Descripcion', $Descripcion);
-		$stmt->bindParam(':precio', $precio);
+		    $stmt->bindParam(':Descripcion', $Descripcion);
+		    $stmt->bindParam(':precio', $precio);
         $stmt->execute();
    
  
