@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <?php
-<<<<<<< HEAD
 if($_POST){
-=======
->>>>>>> origin/featureadmin
     // include database connection
     require '../includes/conectar_DB.php';
  $message = '';
@@ -20,7 +17,6 @@ if($_POST){
  	 die("Connection failed: " . $conn->connect_error);
 	} 
         // insertar query
-<<<<<<< HEAD
         $query = "insert into habitacion (tipo, Descripcion, precio) values (:tipo, :Descripcion, :precio);";
  
         // prepare query for execution
@@ -46,7 +42,6 @@ if($_POST){
             echo "<div class='alert alert-danger'>No s'ha pugut guardar el camp.</div>";
         }*/
  
-=======
     $stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) 
 	values (:tipo, :Descripcion, :precio)");
  		$stmt->bindParam(':tipo', $tipo);
@@ -62,19 +57,15 @@ if($_POST){
       $message = 'El usuari ha sigut creat';
     } else {
       $message = 'Ha hagut algun error';
->>>>>>> origin/featureadmin
     }
 		}
 
  
-<<<<<<< HEAD
     // show error
     catch(PDOException $exception){
         printf ('ERROR: ' . $exception->getMessage());
-=======
     }catch(PDOException $exception){
         die ('ERROR: ' . $exception->getMessage());
->>>>>>> origin/featureadmin
     }
 ?>
 
@@ -134,11 +125,10 @@ if($_POST){
         </tr>
         <tr>
             <td>Preu</td>
-<<<<<<< HEAD
             <td><input type='text' name='precio' class='form-control' /></td>
-=======
+
             <td><input type='number' name='precio' class='form-control' /></td>
->>>>>>> origin/featureadmin
+
         </tr>
         <tr>
             <td></td>

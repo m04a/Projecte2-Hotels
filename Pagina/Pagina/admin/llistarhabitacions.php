@@ -17,23 +17,18 @@
  
         <?php
 // fem un include de la nostre base de dades
-<<<<<<< HEAD
    require 'includes/conectar_DB.php';
-=======
    require '../includes/conectar_DB.php';
->>>>>>> origin/featureadmin
  
 // delete message prompt will be here
  
 // select all data
 $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
-<<<<<<< HEAD
 $stmt = $conn->prepare($query);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 // Ejecutamos
-=======
+
 $stmt = $conn->prepare($query);	
->>>>>>> origin/featureadmin
 $stmt->execute();
 // Mostramos los resultados
 while ($row = $stmt->fetch()){
