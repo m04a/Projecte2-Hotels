@@ -137,9 +137,9 @@ if($_POST){
   
   <button type="submit" class="btn btn-primary">Crear Habitació</button>
 </form>
-</div> -->
+</div> 
 		
-    <script src="admincustom.js"></script>
+    <script src="admincustom.js"></script>-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
