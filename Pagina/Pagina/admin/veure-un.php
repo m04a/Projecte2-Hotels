@@ -27,7 +27,7 @@ try {
     $stmt = $con->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(1, $id);
+    $stmt->bindParam(1, $numhab);
  
     // execute our query
     $stmt->execute();
