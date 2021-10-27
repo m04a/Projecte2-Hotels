@@ -10,3 +10,14 @@ function crearusuari() {
   document.getElementById("div-crearhabitacio").style.display = 'none';
   document.getElementById("div-crearusuari").style.display = 'block';
 }
+
+// confirm record deletion
+function esborrar( numhab ){
+ 
+    var answer = confirm('Are you sure?');
+    if (answer){
+        // if user clicked ok,
+        // pass the id to delete.php and execute the delete query
+        window.location = 'delete.php?numhab=' + numhab;
+    }
+}
