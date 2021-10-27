@@ -10,6 +10,7 @@
        return $data;
 	}
     try{
+		if (!empty($_POST['tipo'])){
  	if ($conn->connect_error) {
  	 die("Connection failed: " . $conn->connect_error);
 	} 
@@ -18,7 +19,7 @@
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$tipo', validate($_POST['tipo']));
     $stmt->bindParam('$Descripcion', validate($_POST['Descripcion']));
-	$stmt->bindParam('$precio', validate($_POST['password']));
+	$stmt->bindParam('$precio', validate($_POST['precio']));
 
 
     if ($stmt->execute()) {
@@ -26,7 +27,7 @@
     } else {
       $message = 'Ha hagut algun error';
     }
-   
+		}
  /*
         // posted values
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
