@@ -49,7 +49,7 @@ require '../includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
   $password = $_POST['password'];
@@ -105,12 +105,11 @@ require '../includes/conectar_DB.php';
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
 </ul>
-
-<div class="col-sm-6" id="div-crearhabitacio">
-<!-- PHP insert code will be here -->
-  <?php if(!empty($message)): ?>
+<?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
+<div class="col-sm-6" id="div-crearhabitacio">
+<!-- PHP insert code will be here -->
 <form action="crear.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
