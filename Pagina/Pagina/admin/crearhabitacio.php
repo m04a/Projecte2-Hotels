@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-if($_POST){
+
 require 'includes/conectar_DB.php';
   $message = '';
 	function validate($data){
@@ -33,7 +33,7 @@ if ($password != $passwordc) {
       $message = 'Ha hagut algun error';
     }
   }
-}
+
 ?>
 
 <html lang="en">
