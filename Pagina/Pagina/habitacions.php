@@ -44,32 +44,24 @@
             <br>
   <?php
 
-require 'includes/conectar_DB.php';
- $sql = "SELECT * FROM habitacion";
-                             $habitacion = $conn->query($sql);
-                             while($row = $habitacion->fetch_assoc()) {
-					print '<div class="row">';
-						print '<div class="col-lg-4">';
-							print '<div class="trainer-item">';
-								print '<div class="image-thumb">';
-									print '<img src="cambiar.jpg" alt="">';
-								print '</div>';
-								print '<div class="down-content">';
-									print '<span>';
-										print '<sup>€</sup>500.00 - <sup>€</sup>700.00';
-									print '</span>';
-								print '<h4>".$row['tipo']."</h4>';					
-								print '<p>';
-									print '<i class="fa fa-info"></i> Descripció de la nostra habitació';
-								print '</p>';
-							print '<ul class="social-icons">';
-								print '<li><a href="habitaciodemanada.php">+ Més informació</a></li>';
-							print '</ul>';
-								print '</div>';
-							print '</div>';
-						print '</div>';
-					print '</div>';
-							 }
+   require 'includes/conectar_DB.php';
+    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
+    $stmt = $conn->prepare($query); 
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        extract($row);
+
+				echo '<div class="row">';
+                echo "<tr>
+        <td>{$numhab}</td>
+        <td>{$precio}</td>
+        <td>{$tipo}</td>
+        <th>{$Descripcion}</th>
+        <td>{$ocupada}</td>
+        <td>";
+                echo '</div>'
+            }
+		
 ?>       
      <!-- *** Footer inici *** -->
      <?php
