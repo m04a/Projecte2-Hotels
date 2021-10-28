@@ -1206,41 +1206,33 @@ table, th, td {
 	margin-left:20%;
 }
 /*Login form*/
-.login{
-	display: flex; 
-	flex-direction: row;
+.note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
 }
-form { 
-  height: 200px;
-  width: 400px;
-
-  display: flex; 
-  flex-direction: column; 
-  flex: 0 0 auto; 
-  
-  border: 1px solid; 
-  border-radius: 5px;
-  padding: 15px;
-  background: lightblue; 
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
 }
-form label, form button {
-  margin-top: 15px;
+.form-control{
+    border-radius:1.5rem;
 }
-form label {
-  font-size: 20px;
-}
-form input {
-  flex: 1 1 auto;
-  font-size: 20px;
-}
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.buttons button {
-  flex: 0 1 95px;
-  font-size: 20px;
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
 }
 
 ---------------------------------------------
