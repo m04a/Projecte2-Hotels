@@ -1,67 +1,40 @@
 
-<footer class="mainfooter" role="contentinfo">
-  <div class="footer-middle">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 1</h4>
-          <ul class="list-unstyled">
-            <li><a href="#"></a></li>
-            <li><a href="#">Payment Center</a></li>
-            <li><a href="#">Contact Directory</a></li>
-            <li><a href="#">Forms</a></li>
-            <li><a href="#">News and Updates</a></li>
-            <li><a href="#">FAQs</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 2</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Website Tutorial</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Webmaster</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <!--Column1-->
-        <div class="footer-pad">
-          <h4>Heading 3</h4>
-          <ul class="list-unstyled">
-            <li><a href="#">Parks and Recreation</a></li>
-            <li><a href="#">Public Works</a></li>
-            <li><a href="#">Police Department</a></li>
-            <li><a href="#">Fire</a></li>
-            <li><a href="#">Mayor and City Council</a></li>
-            <li>
-              <a href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-        <div class="col-md-3">
-            <h4>Follow Us</h4>
-            <ul class="social-network social-circle">
-             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-            </ul>               
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 copy">
-            <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
-        </div>
-    </div>
-
-
-  </div>
-  </div>
-</footer>
+<footer>
+		<div class="footer">
+            <div class="containerFooter1">
+                    <div>
+                        <h3 class="titFooter">Serveis</h3>
+                        <ul>
+                            <li class="lifooter"><a href="habitacions.php">Habitacions</a></li>
+                            <li class="lifooter"><a href="#">Development</a></li>
+                            <li class="lifooter"><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="titFooter">Informació</h3>
+                        <ul>
+                            <li class="lifooter"><a href="about.php">Sobre nosaltres</a></li>
+                            <li class="lifooter"><a href="terms.php">Termes i condicions</a></li>
+                            <li class="lifooter"><a href="contacte.php">Contacte</a></li>
+                        </ul>
+                    </div>
+					<div>
+                        <h3 class="titFooter">Info</h3>
+                        <ul>
+                            <li class="lifooter"><a href="#">Info 1 </a></li>
+                            <li class="lifooter"><a href="#">Info 2</a></li>
+                            <li class="lifooter"><a href="#">Info 3</a></li>
+                        </ul>
+                    </div>
+                 
+                </div>
+				<div class="containerFooter2">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23621.354742483483!2d2.9477342597390224!3d42.26423331836242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8de7daf77b2d%3A0x2f451468ac1a35cb!2s17600%20Figueres%2C%20Girona!5e0!3m2!1sca!2ses!4v1634574728585!5m2!1sca!2ses" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				 </div>	
+				 </div>
+					<div>
+                        <p class="copyright">Hotel PBC © 2021</p>
+                    </div>
+            </div>
+			
+        </footer>
