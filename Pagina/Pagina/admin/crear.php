@@ -47,13 +47,14 @@ if(isset($_POST["crearusuari"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, sexo, email) values 
-			(:usuari, :password, :nombre, :apellidos, :sexo, :email)");
+			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
+			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
 				$stmt->bindParam(':usuari', $usuari);
 				$stmt->bindParam(':password', $password);
 				$stmt->bindParam(':nombre', $nombre);
 				$stmt->bindParam(':apellidos', $apellidos);
-				//$stmt->bindParam(':fechanacimiento', $fechanacimiento);
+				$fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
+				$stmt->bindParam(':fechanacimiento', $fecha);
 				$stmt->bindParam(':sexo', $sexo);
 				$stmt->bindParam(':email', $email);
 			
@@ -61,7 +62,7 @@ if(isset($_POST["crearusuari"])){
 				$password=htmlspecialchars(strip_tags($_POST['password']));
 				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
 				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
-				//$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
 				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
 				$email=htmlspecialchars($_POST['email']);
 
