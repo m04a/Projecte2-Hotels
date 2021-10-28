@@ -57,7 +57,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup> <?php echo'{$precio}'?>
+                                <sup>€</sup> <?php $precio ?>
                             </span>
 
                             <h4>Lorem ipsum dolor sit amet, consectetur</h4>
