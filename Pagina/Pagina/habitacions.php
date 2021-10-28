@@ -57,13 +57,13 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup> 
+                                <sup>€</sup> <?php echo'$precio'?>
                             </span>
 
                             <h4>Lorem ipsum dolor sit amet, consectetur</h4>
 
                             <p>
-                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
+                                <i class="fa fa-info"></i> 6 Regeneration Road, SE16 2NX
                             </p>
 
                             <ul class="social-icons">
