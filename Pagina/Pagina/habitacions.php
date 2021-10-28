@@ -51,15 +51,28 @@
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
 
-				echo '<div class="row">';
-                echo "<tr>
-        <td>{$numhab}</td>
-        <td>{$precio}</td>
-        <td>{$tipo}</td>
-        <th>{$Descripcion}</th>
-        <td>{$ocupada}</td>
-        <td>";
-                echo '</div>';
+				echo ' <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>
+                                <sup>$</sup>500.00 - <sup>$</sup>700.00
+                            </span>
+
+                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+
+                            <p>
+                                <i class="fa fa-map-marker"></i> 6 Regeneration Road, SE16 2NX
+                            </p>
+
+                            <ul class="social-icons">
+                                <li><a href="vacation-details.html">+ View More</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>';
             }
 		
 ?>      
