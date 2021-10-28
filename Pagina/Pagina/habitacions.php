@@ -48,7 +48,10 @@
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        extract($row); ?>
+        $precio=$row['precio'];
+        extract($row); 
+
+        ?>
     
 				 <div class="col-lg-4">
                     <div class="trainer-item">
