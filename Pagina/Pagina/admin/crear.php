@@ -173,23 +173,20 @@ if(isset($_POST["crearusuari"])){
 	  <div class="buscador">
     <label for="fechanacimiento" class="col-sm-2 col-form-label">Data neixament: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="fechanacimiento">
+      <input type="date" class="form-control" id="fechanacimiento">
     </div>
   </div>
 	  <div class="row mb-3">
     <label for="sexo" class="col-sm-2 col-form-label">Sexe:</label>
-		  <select name="nhabitacio" id="nhabitacio">
+		  <select name="sexo" id="sexo">
 			<option value="0">Home</option>
 			<option value="1">Dona</option>
 		  </select>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="sexo">
-    </div>
   </div>
 	  <div class="row mb-3">
     <label for="email" class="col-sm-2 col-form-label">Email: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="email">
+      <input type="email" class="form-control" id="email">
     </div>
   </div>
   
