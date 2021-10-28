@@ -59,10 +59,10 @@
         <th>{$Descripcion}</th>
         <td>{$ocupada}</td>
         <td>";
-                echo '</div>'
+                echo '</div>';
             }
 		
-?>       
+?>      
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
