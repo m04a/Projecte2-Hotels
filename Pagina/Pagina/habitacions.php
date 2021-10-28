@@ -77,7 +77,7 @@
                
             <?php
              echo "<tr>
-        <td>{$numhab}</td>
+        <td>{$numhab}</td>";
             }
 		?> 
      
