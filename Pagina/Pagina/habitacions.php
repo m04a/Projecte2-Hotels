@@ -58,17 +58,17 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup> <?php echo "<tr><td>{$numhab}</td>"; ?>
+                                <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
                             </span>
 
-                            <h4>Lorem ipsum dolor sit amet, consectetur</h4>
+                            <h4><?php echo "<tr><td>{$tipo}</td>"; ?></h4>
 
                             <p>
-                                <i class="fa fa-info"></i> 6 Regeneration Road, SE16 2NX
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$Descripcion}</td>"; ?>
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="vacation-details.html">+ View More</a></li>
+                                <li><a href="vacation-details.html">+ Més informació</a></li>
                             </ul>
                         </div>
                     </div>
@@ -77,7 +77,12 @@
                
             <?php
              echo "<tr>
-        <td>{$numhab}</td>";
+        <td>{$numhab}</td>
+        <td>{$precio}</td>
+        <td>{$tipo}</td>
+        <th>{$Descripcion}</th>
+        <td>{$ocupada}</td>
+        <td>";
             }
 		?> 
      
