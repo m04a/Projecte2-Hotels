@@ -66,7 +66,6 @@ if(isset($_POST["crearusuari"])){
 				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
 				$email=htmlspecialchars($_POST['email']);
 
-
 			if ($stmt->execute()) {
 			  $message = 'El usuari ha sigut creat';
 			} else {
@@ -155,102 +154,52 @@ if(isset($_POST["crearusuari"])){
   </div>
 <div class="col-sm-6" id="div-crearusuari">
 <!-- PHP insert code will be here -->
-<form action="crear.php" method="post">
-    <table class='table table-hover table-responsive table-bordered'>
-        <tr>
-            <td>Usuari:</td>
-			<td><input type='text' name='usuari' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Contrasenya:</td>
-            <td><input type="password" name='password' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Nom:</td>
-            <td><input type='text' name='nombre' class='form-control' /></td>
-        </tr>
-		<tr>
-            <td>Cognom:</td>
-            <td><input type='text' name='apellidos' class='form-control' /></td>
-        </tr>
-		<<tr>
-            <td>Data neixament:</td>
-            <td><input type='date' name='fechanacimiento' class='form-control' /></td>
-        </tr>
-		<tr>
-            <td>Sexe:</td>
-            <td>
-				<select name="sexo" id="sexo" class='form-control'>
-					<option value="0">Home</option>
-					<option value="1">Dona</option>
-			  </select>
-			</td>
-        </tr>
-		<tr>
-            <td>Email:</td>
-            <td><input type='text' name='email' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type='submit' value='Save' name="crearusuari" class='btn btn-primary' />
-            </td>
-        </tr>
-    </table>
-</form>
-  </div> <!--
-		<div class="col-sm-6" id="div-crearusuari">
-<form action="crear.php" method="post">
-  <div class="row mb-3">
-    <label for="usuari" class="col-sm-2 col-form-label">Usuari: </label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="usuari">
-    </div>
-  </div>
-  <div class="row mb-3">
-    <label for="password" class="col-sm-2 col-form-label">Contrasenya: </label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="password">
-    </div>
-  </div>
-	  <div class="row mb-3">
-    <label for="nombre" class="col-sm-2 col-form-label">Nom: </label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="nombre">
-    </div>
-  </div>
-	  <div class="row mb-3">
-    <label for="apellidos" class="col-sm-2 col-form-label">Cognom: </label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="apellidos">
-    </div>
-  </div>
-	  <div class="row mb-3">
-    <label for="fechanacimiento" class="col-sm-2 col-form-label">Data neixament: </label>
-    <div class="col-sm-10">
-      <input type="date" class="form-control" id="fechanacimiento">
-    </div>
-  </div> 
-	  <div class="row mb-3">
-    <label for="sexo" class="col-sm-2 col-form-label">Sexe:</label>
-		  <select name="sexo" id="sexo" class="col-sm-2 col-form-label">
-			<option value="0">Home</option>
-			<option value="1">Dona</option>
-		  </select>
-  </div>
-	  <div class="row mb-3">
-    <label for="email" class="col-sm-2 col-form-label">Email: </label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email">
-    </div>
-  </div>
-  
-  <button type="submit" name="crearusuari" class="btn btn-primary">Crear nou usuari</button>
-</form>
-</div> -->
-		
+	<form action="crear.php" method="post">
+		<table class='table table-hover table-responsive table-bordered'>
+			<tr>
+				<td>Usuari:</td>
+				<td><input type='text' name='usuari' class='form-control' /></td>
+			</tr>
+			<tr>
+				<td>Contrasenya:</td>
+				<td><input type="password" name='password' class='form-control' /></td>
+			</tr>
+			<tr>
+				<td>Nom:</td>
+				<td><input type='text' name='nombre' class='form-control' /></td>
+			</tr>
+			<tr>
+				<td>Cognom:</td>
+				<td><input type='text' name='apellidos' class='form-control' /></td>
+			</tr>
+			<<tr>
+				<td>Data neixament:</td>
+				<td><input type='date' name='fechanacimiento' class='form-control' /></td>
+			</tr>
+			<tr>
+				<td>Sexe:</td>
+				<td>
+					<select name="sexo" id="sexo" class='form-control'>
+						<option value="0">Home</option>
+						<option value="1">Dona</option>
+				  </select>
+				</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type='text' name='email' class='form-control' /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type='submit' value='Save' name="crearusuari" class='btn btn-primary' />
+				</td>
+			</tr>
+		</table>
+	</form>
+</div> 		
     <script src="admincustom.js"></script>
-	<!-- <script src="../utilitats/js/custom.js"></script> -->
+	<script src="../utilitats/js/custom.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  

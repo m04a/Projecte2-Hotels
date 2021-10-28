@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Llistar habitacions - Admin</title>
+    <title>Llistar usuaris - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -21,9 +21,13 @@
         <?php
 // fem un include de la nostre base de dades
    require '../includes/conectar_DB.php';
+		
+$action = isset($_GET['action']) ? $_GET['action'] : "";
  
 // delete message prompt will be here
- 
+ if($action=='deleted'){
+    echo "<div class='alert alert-success'>Record was deleted.</div>";
+}
 // select all data
 $query = "SELECT usuari,tipo FROM usuario ORDER BY usuari DESC";
 $stmt = $conn->prepare($query);
@@ -55,10 +59,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$tipo}</td>
         <td>";
             // read one record
-            echo "<a href='read_one.php?id={$usuari}' class='btn btn-info m-r-1em'>Llegir</a>";
+            echo "<a href='ver-un-user.php?id={$usuari}' class='btn btn-info m-r-1em'>Llegir</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='update.php?id={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
+            echo "<a href='actualizar-user.php?id={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
             echo "<a href='#' onclick='delete_user({$usuari});'  class='btn btn-danger'>Esborrar</a>";
@@ -78,7 +82,7 @@ else{
 ?>
  
     </div> <!-- end .container -->
- 
+ <script type="text/javascript" src="admincustom.js"></script>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
