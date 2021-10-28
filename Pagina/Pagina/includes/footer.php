@@ -1,40 +1,145 @@
+<div class="container my-5">
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #45526e"
+          >
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
 
-<footer>
-		<div class="footer">
-            <div class="containerFooter1">
-                    <div>
-                        <h3 class="titFooter">Serveis</h3>
-                        <ul>
-                            <li class="lifooter"><a href="habitacions.php">Habitacions</a></li>
-                            <li class="lifooter"><a href="#">Development</a></li>
-                            <li class="lifooter"><a href="#">Hosting</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="titFooter">Informació</h3>
-                        <ul>
-                            <li class="lifooter"><a href="about.php">Sobre nosaltres</a></li>
-                            <li class="lifooter"><a href="terms.php">Termes i condicions</a></li>
-                            <li class="lifooter"><a href="contacte.php">Contacte</a></li>
-                        </ul>
-                    </div>
-					<div>
-                        <h3 class="titFooter">Info</h3>
-                        <ul>
-                            <li class="lifooter"><a href="#">Info 1 </a></li>
-                            <li class="lifooter"><a href="#">Info 2</a></li>
-                            <li class="lifooter"><a href="#">Info 3</a></li>
-                        </ul>
-                    </div>
-                 
-                </div>
-				<div class="containerFooter2">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23621.354742483483!2d2.9477342597390224!3d42.26423331836242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8de7daf77b2d%3A0x2f451468ac1a35cb!2s17600%20Figueres%2C%20Girona!5e0!3m2!1sca!2ses!4v1634574728585!5m2!1sca!2ses" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-				 </div>	
-				 </div>
-					<div>
-                        <p class="copyright">Hotel PBC © 2021</p>
-                    </div>
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a class="text-white">MDBootstrap</a>
+            </p>
+            <p>
+              <a class="text-white">MDWordPress</a>
+            </p>
+            <p>
+              <a class="text-white">BrandFlow</a>
+            </p>
+            <p>
+              <a class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Useful links
+            </h6>
+            <p>
+              <a class="text-white">Your Account</a>
+            </p>
+            <p>
+              <a class="text-white">Become an Affiliate</a>
+            </p>
+            <p>
+              <a class="text-white">Shipping Rates</a>
+            </p>
+            <p>
+              <a class="text-white">Help</a>
+            </p>
+          </div>
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+              © 2020 Copyright:
+              <a class="text-white" href="https://mdbootstrap.com/"
+                 >MDBootstrap.com</a
+                >
             </div>
-			
-        </footer>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!-- Facebook -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
