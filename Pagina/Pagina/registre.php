@@ -83,7 +83,7 @@ if ($password != $passwordc) {
             <form action="registre.php" method="POST">
             <div class="form">
                 <div class="note">
-                    <p>This is a simpleRegister Form made using Boostrap.</p>
+                    <h3>Entra tots el camps</h3>
                 </div>
 
                 <div class="form-content">
@@ -95,13 +95,8 @@ if ($password != $passwordc) {
                             <div class="form-group">
                                 <input name="password" type="password" class="form-control" placeholder="Password" value=""/>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <input name="cpassword" type="password" class="form-control" placeholder="Your Password *" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Confirm Password *" value=""/>
                             </div>
                         </div>
                     </div>
