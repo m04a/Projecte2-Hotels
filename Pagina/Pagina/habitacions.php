@@ -58,7 +58,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup> <?php $row['precio']; ?>
+                                <sup>€</sup> <?php echo "<tr><td>{$numhab}</td>"; ?>
                             </span>
 
                             <h4>Lorem ipsum dolor sit amet, consectetur</h4>
