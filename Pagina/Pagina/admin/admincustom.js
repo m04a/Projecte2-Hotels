@@ -20,3 +20,11 @@ function esborrar(numhab){
         window.location = 'esborrar.php?numhab=' + numhab;
     }
 }
+function borraruser(usuari){
+    var answer = confirm('Estas segur que vols el usuari ' + usuari + '?' );
+    if (answer){
+        // if user clicked ok,
+        // pass the id to delete.php and execute the delete query
+        window.location = 'borraruser.php?numhab=' + usuari;
+    }
+}
