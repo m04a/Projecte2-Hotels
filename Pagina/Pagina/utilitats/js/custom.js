@@ -160,3 +160,9 @@ if ( document.URL.includes("terms.php") ) {
 if ( document.URL.includes("contacte.php") ) {
 	document.getElementById("titlevar").textContent="Contacte";
 }
+if ( document.URL.includes("registre.php") ) {
+	document.getElementById("titlevar").textContent="Registre";
+}
+if ( document.URL.includes("login.php") ) {
+	document.getElementById("titlevar").textContent="Login";
+}

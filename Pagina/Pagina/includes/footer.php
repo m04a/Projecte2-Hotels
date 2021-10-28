@@ -1,9 +1,5 @@
-<div class="container my-5">
   <!-- Footer -->
-  <footer
-          class="text-center text-lg-start text-white"
-          style="background-color: #45526e"
-          >
+  <footer class="text-center text-lg-start text-white">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
       <!-- Section: Links -->
@@ -141,5 +137,4 @@
     <!-- Grid container -->
   </footer>
   <!-- Footer -->
-</div>
 <!-- End of .container -->
