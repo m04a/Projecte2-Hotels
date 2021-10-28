@@ -82,27 +82,27 @@ if ($password != $passwordc) {
 	<form action="registre.php" method="POST">
   <div class="form-group row">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input type="name" name="usuari" class="form-control" id="inputEmail3" placeholder="Entra el usuari">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Entra el password">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Confirmar Password</label>
-    <div class="col-sm-10">
+    <div class="col-sm-4">
       <input name="cpassword" type="password" class="form-control" id="inputPassword3" placeholder="Entra el password">
     </div>
   </div>
   <fieldset class="form-group">
   </fieldset>
   <div class="form-group row">
-    <div class="col-sm-2">Checkbox</div>
-    <div class="col-sm-10">
+    <div class="col-sm-2">Marca Aquí si estas d'acord</div>
+    <div class="col-sm-4">
       <div class="form-check">
         <input class="form-check-input" type="checkbox" id="gridCheck1">
         <label class="form-check-label" for="gridCheck1">
