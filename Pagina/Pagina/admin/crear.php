@@ -152,7 +152,7 @@ if(isset($_POST["crearusuari"])){
 </form>
   </div>
 		<div class="col-sm-6" id="div-crearusuari">
-<form>
+<form action="crear.php" method="post">
   <div class="row mb-3">
     <label for="usuari" class="col-sm-2 col-form-label">Usuari: </label>
     <div class="col-sm-10">
