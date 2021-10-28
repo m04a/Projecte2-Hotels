@@ -54,7 +54,7 @@ if(isset($_POST["crearusuari"])){
 				$stmt->bindParam(':nombre', $nombre);
 				$stmt->bindParam(':apellidos', $apellidos);
 				$fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
-				$stmt->bindParam(':fechanacimiento', $fecha);
+				$stmt->bindParam(':fechanacimiento', $fechanacimiento);
 				$stmt->bindParam(':sexo', $sexo);
 				$stmt->bindParam(':email', $email);
 			
