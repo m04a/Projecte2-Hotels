@@ -41,7 +41,7 @@ if(isset($_POST["crearhabitacio"])){
 }
 if(isset($_POST["crearusuari"])){
   try{
-		if (!empty($_POST['tipo'])){
+		if (!empty($_POST['usuari']) && !empty($_POST['password'])){
 
 			if ($conn->connect_error) {
 				die("Connection failed: " . $conn->connect_error);
@@ -195,7 +195,7 @@ if(isset($_POST["crearusuari"])){
 </div> 
 		
     <script src="admincustom.js"></script>
-	<script src="../utilitats/js/custom.js"></script>
+	<!-- <script src="../utilitats/js/custom.js"></script> -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
