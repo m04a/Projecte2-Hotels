@@ -99,7 +99,7 @@ if ($password != $passwordc) {
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btnSubmit">Registrar</button>
+                     <button type="submit" class="btn btn-primary">Registrar</button>
                 </div>
             </div>
         </div>
