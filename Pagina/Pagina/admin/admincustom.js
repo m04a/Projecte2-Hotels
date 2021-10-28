@@ -25,6 +25,6 @@ function borraruser(usuari){
     if (answer){
         // if user clicked ok,
         // pass the id to delete.php and execute the delete query
-        window.location = 'borraruser.php?numhab=' + usuari;
+        window.location = 'borraruser.php?usuari=' + usuari;
     }
 }

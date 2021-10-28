@@ -29,7 +29,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : "";
     echo "<div class='alert alert-success'>Record was deleted.</div>";
 }
 // select all data
-$query = "SELECT usuari,tipo FROM usuario ORDER BY usuari DESC";
+$query = "SELECT usuari, tipo FROM usuario ORDER BY usuari DESC";
 $stmt = $conn->prepare($query);
 $stmt->setFetchMode(PDO::FETCH_ASSOC);
 // Ejecutamos
@@ -59,13 +59,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$tipo}</td>
         <td>";
             // read one record
-            echo "<a href='ver-un-user.php?id={$usuari}' class='btn btn-info m-r-1em'>Llegir</a>";
+            echo "<a href='ver-un-user.php?usuari={$usuari}' class='btn btn-info m-r-1em'>Llegir</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='actualizar-user.php?id={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
+            echo "<a href='actualizar-user.php?usuari={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='delete_user({$usuari});'  class='btn btn-danger'>Esborrar</a>";
+            echo "<a href='#' onclick='borraruser({$usuari});'  class='btn btn-danger'>Esborrar</a>";
         echo "</td>";
     echo "</tr>";
 }
