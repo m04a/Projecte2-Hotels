@@ -116,7 +116,7 @@ if(isset($_POST["crearusuari"])){
   </li>
 </ul>
 <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
+      <p> <?= $message ?> test </p>
     <?php endif; ?>
 <div class="col-sm-6" id="div-crearhabitacio">
 <!-- PHP insert code will be here -->
