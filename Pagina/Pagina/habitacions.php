@@ -58,7 +58,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup>{$precio}
+                                <sup>€</sup><td>{$precio}</td>
                             </span>
 
                             <h4>Lorem ipsum dolor sit amet, consectetur</h4>
