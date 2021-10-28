@@ -44,7 +44,7 @@
             <br>
   <?php
    require 'includes/conectar_DB.php';
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
+    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion  WHERE ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -54,7 +54,7 @@
 				 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                            <img src="utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
