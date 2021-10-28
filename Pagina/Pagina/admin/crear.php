@@ -3,7 +3,7 @@
     // include database connection
     require '../includes/conectar_DB.php';
  $message = '';
- if(isset($_POST["crearhabitacio"])){
+if(isset($_POST["crearhabitacio"])){
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -13,60 +13,70 @@
     try{
 		if (!empty($_POST['tipo'])){
 
- 	if ($conn->connect_error) {
- 	 die("Connection failed: " . $conn->connect_error);
-	} 
-        // insertar query
-    $stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) 
-	values (:tipo, :Descripcion, :precio)");
- 		$stmt->bindParam(':tipo', $tipo);
-		$stmt->bindParam(':Descripcion', $Descripcion);
-		$stmt->bindParam(':precio', $precio);
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			} 
+				// insertar query
+			$stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) values 
+			(:tipo, :Descripcion, :precio)");
+				$stmt->bindParam(':tipo', $tipo);
+				$stmt->bindParam(':Descripcion', $Descripcion);
+				$stmt->bindParam(':precio', $precio);
 
-		$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
-        $precio=htmlspecialchars(strip_tags($_POST['precio']));
+				$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+				$Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+				$precio=htmlspecialchars(strip_tags($_POST['precio']));
 
 
-    if ($stmt->execute()) {
-      $message = 'La habitació ha sigut creada';
-    } else {
-      $message = 'Ha hagut algun error';
-    }
+			if ($stmt->execute()) {
+			  $message = 'La habitació ha sigut creada';
+			} else {
+			  $message = 'Ha hagut algun error';
+			}
 		}
-
- 
+		
     }catch(PDOException $exception){
         die ('ERROR: ' . $exception->getMessage());
     }
-    }
-    if(isset($_POST["crearusuari"])){
-require '../includes/conectar_DB.php';
-  $message = '';
-  function validate($data){
-       $data = trim($data);
-       $data = stripslashes($data);
-       $data = htmlspecialchars($data);
-       return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password'])) {
-      $usuari = $_POST['usuari']; 
-      validate($usuari);
-  $password = $_POST['password'];
-      validate($password);
-  
-  $sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$usuari', $_POST['usuari']);
-    $stmt->bindParam('$password', $_POST['password']);
+if(isset($_POST["crearusuari"])){
+  try{
+		if (!empty($_POST['tipo'])){
+
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			} 
+				// insertar query
+			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, fechanacimiento, sexo, email) values 
+			(:usuari, :password, :nombre, :apellidos, :fechanacimiento, :sexo, :email)");
+				$stmt->bindParam(':usuari', $usuari);
+				$stmt->bindParam(':password', $password);
+				$stmt->bindParam(':nombre', $nombre);
+				$stmt->bindParam(':apellidos', $apellidos);
+				$stmt->bindParam(':fechanacimiento', $fechanacimiento);
+				$stmt->bindParam(':sexo', $sexo);
+				$stmt->bindParam(':email', $email);
+			
+				$usuari=htmlspecialchars(strip_tags($_POST['usuari']));
+				$password=htmlspecialchars(strip_tags($_POST['password']));
+				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
+				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
+				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
+				$email=htmlspecialchars(strip_tags($_POST['email']));
+
+
+			if ($stmt->execute()) {
+			  $message = 'La habitació ha sigut creada';
+			} else {
+			  $message = 'Ha hagut algun error';
+			}
+		}
+		
+    }catch(PDOException $exception){
+        die ('ERROR: ' . $exception->getMessage());
+    }
 }
-    if ($stmt->execute()) {
-      $message = 'El usuari ha sigut creat';
-    } else {
-      $message = 'Ha hagut algun error';
-    }
-  
-    }
 ?>
 
 <html lang="en">
@@ -137,15 +147,49 @@ require '../includes/conectar_DB.php';
 		<div class="col-sm-6" id="div-crearusuari">
 <form>
   <div class="row mb-3">
-    <label for="usuari" class="col-sm-2 col-form-label">Usuari</label>
+    <label for="usuari" class="col-sm-2 col-form-label">Usuari: </label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="usuari">
     </div>
   </div>
   <div class="row mb-3">
-    <label for="password" class="col-sm-2 col-form-label">Password</label>
+    <label for="password" class="col-sm-2 col-form-label">Contrasenya: </label>
     <div class="col-sm-10">
       <input type="password" class="form-control" id="password">
+    </div>
+  </div>
+	  <div class="row mb-3">
+    <label for="nombre" class="col-sm-2 col-form-label">Nom: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="nombre">
+    </div>
+  </div>
+	  <div class="row mb-3">
+    <label for="apellidos" class="col-sm-2 col-form-label">Cognom: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="apellidos">
+    </div>
+  </div>
+	  <div class="buscador">
+    <label for="fechanacimiento" class="col-sm-2 col-form-label">Data neixament: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="fechanacimiento">
+    </div>
+  </div>
+	  <div class="row mb-3">
+    <label for="sexo" class="col-sm-2 col-form-label">Sexe:</label>
+		  <select name="nhabitacio" id="nhabitacio">
+			<option value="0">Home</option>
+			<option value="1">Dona</option>
+		  </select>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="sexo">
+    </div>
+  </div>
+	  <div class="row mb-3">
+    <label for="email" class="col-sm-2 col-form-label">Email: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="email">
     </div>
   </div>
   
@@ -154,6 +198,7 @@ require '../includes/conectar_DB.php';
 </div> 
 		
     <script src="admincustom.js"></script>
+	<script src="../utilitats/js/custom.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
