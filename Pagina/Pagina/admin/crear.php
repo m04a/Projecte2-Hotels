@@ -173,10 +173,10 @@ if(isset($_POST["crearusuari"])){
             <td>Cognom:</td>
             <td><input type='text' name='apellidos' class='form-control' /></td>
         </tr>
-		<!--<tr>
+		<<tr>
             <td>Data neixament:</td>
             <td><input type='date' name='fechanacimiento' class='form-control' /></td>
-        </tr>-->
+        </tr>
 		<tr>
             <td>Sexe:</td>
             <td>
