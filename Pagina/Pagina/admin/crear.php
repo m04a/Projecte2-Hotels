@@ -47,8 +47,8 @@ if(isset($_POST["crearusuari"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, fechanacimiento, sexo, email) values 
-			(:usuari, :password, :nombre, :apellidos, :fechanacimiento, :sexo, :email)");
+			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, sexo, email) values 
+			(:usuari, :password, :nombre, :apellidos, :sexo, :email)");
 				$stmt->bindParam(':usuari', $usuari);
 				$stmt->bindParam(':password', $password);
 				$stmt->bindParam(':nombre', $nombre);
@@ -61,7 +61,7 @@ if(isset($_POST["crearusuari"])){
 				$password=htmlspecialchars(strip_tags($_POST['password']));
 				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
 				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
-				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+				//$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
 				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
 				$email=htmlspecialchars(strip_tags($_POST['email']));
 
@@ -124,7 +124,14 @@ if(isset($_POST["crearusuari"])){
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
             <td>Tipus d'habitació</td>
-            <td><input type='text' name='tipo' class='form-control' /></td>
+            <td>
+				<select name="tipo" id="tipo" class='form-control'>
+					<option value="Estandar">Estandar</option>
+					<option value="Duplex">Duplex</option>
+					<option value="Premium">Premium</option>
+					<option value="Duplex premium">Duplex premium</option>
+			  </select>
+			</td>
         </tr>
         <tr>
             <td>Descripció</td>
@@ -170,15 +177,15 @@ if(isset($_POST["crearusuari"])){
       <input type="text" class="form-control" id="apellidos">
     </div>
   </div>
-	  <div class="buscador">
+	<!--  <div class="row mb-3">
     <label for="fechanacimiento" class="col-sm-2 col-form-label">Data neixament: </label>
     <div class="col-sm-10">
       <input type="date" class="form-control" id="fechanacimiento">
     </div>
-  </div>
+  </div> -->
 	  <div class="row mb-3">
     <label for="sexo" class="col-sm-2 col-form-label">Sexe:</label>
-		  <select name="sexo" id="sexo">
+		  <select name="sexo" id="sexo" class="col-sm-2 col-form-label">
 			<option value="0">Home</option>
 			<option value="1">Dona</option>
 		  </select>
