@@ -81,9 +81,18 @@ if ($password != $passwordc) {
     <?php endif; ?>
 	
   <form action="registre.php" method="POST">
+    <div class="form-group row">
+      <div class="col-sm-10">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      </div>
       <input name="usuari" type="text" placeholder="Entra el usuari">
+    </div>
+    <div class="form-group row">
       <input name="password" type="password" placeholder="Entra el teu password">
+    </div>
+      <div class="form-group row">
 	  <input name="cpassword" type="password" placeholder="Confirmar el password">
+    </div>
       <input type="submit" value="Submit">
   </form>
   
