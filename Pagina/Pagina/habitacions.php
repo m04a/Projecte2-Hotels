@@ -43,22 +43,21 @@
             <br>
             <br>
   <?php
-
    require 'includes/conectar_DB.php';
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        extract($row);
-       $precio=$row['precio'];
-				echo ' <div class="col-lg-4">
+        extract($row); ?>
+    
+				 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
                             <img src="assets/images/product-1-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup> $precio
+                                <sup>€</sup> 
                             </span>
 
                             <h4>Lorem ipsum dolor sit amet, consectetur</h4>
@@ -72,8 +71,11 @@
                             </ul>
                         </div>
                     </div>
-                </div>';
-                echo "<tr>
+                </div>
+
+               
+            <?php
+             echo "<tr>
         <td>{$numhab}</td>
         <td>{$precio}</td>
         <td>{$tipo}</td>
@@ -81,8 +83,8 @@
         <td>{$ocupada}</td>
         <td>";
             }
-		
-?>      
+		?> 
+     
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
