@@ -67,10 +67,12 @@ if(isset($_POST["crearusuari"])){
 
 
 			if ($stmt->execute()) {
-			  $message = 'La habitació ha sigut creada';
+			  $message = 'El usuari ha sigut creat';
 			} else {
 			  $message = 'Ha hagut algun error';
 			}
+		}else{
+			$message = 'usuari o password no establecidos';
 		}
 		
     }catch(PDOException $exception){
