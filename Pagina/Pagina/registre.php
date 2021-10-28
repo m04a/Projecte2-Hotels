@@ -79,24 +79,45 @@ if ($password != $passwordc) {
 	 <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-	
-  <form action="registre.php" method="POST">
-    <div class="form-group row">
-      <div class="col-sm-10">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+	<form action="registre.php" method="POST">
+  <div class="form-group row">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="name" name="usuari" class="form-control" id="inputEmail3" placeholder="Entra el usuari">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-10">
+      <input name="password" type="password" class="form-control" id="inputPassword3" placeholder="Entra el password">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword3" class="col-sm-2 col-form-label">Confirmar Password</label>
+    <div class="col-sm-10">
+      <input name="cpassword" type="password" class="form-control" id="inputPassword3" placeholder="Entra el password">
+    </div>
+  </div>
+  <fieldset class="form-group">
+  </fieldset>
+  <div class="form-group row">
+    <div class="col-sm-2">Checkbox</div>
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1">
+        <label class="form-check-label" for="gridCheck1">
+          Example checkbox
+        </label>
       </div>
-      <input name="usuari" type="text" placeholder="Entra el usuari">
     </div>
-    <div class="form-group row">
-      <input name="password" type="password" placeholder="Entra el teu password">
+  </div>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Registrar-se</button>
     </div>
-      <div class="form-group row">
-	  <input name="cpassword" type="password" placeholder="Confirmar el password">
-    </div>
-      <input type="submit" value="Submit">
-  </form>
-  
-</div>
+  </div>
+</form>
+  </div>
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
