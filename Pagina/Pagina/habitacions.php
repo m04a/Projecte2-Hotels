@@ -78,11 +78,6 @@
             <?php
              echo "<tr>
         <td>{$numhab}</td>
-        <td>{$precio}</td>
-        <td>{$tipo}</td>
-        <th>{$Descripcion}</th>
-        <td>{$ocupada}</td>
-        <td>";
             }
 		?> 
      
