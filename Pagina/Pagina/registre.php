@@ -79,13 +79,12 @@ if ($password != $passwordc) {
 	 <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
+    <form action="registre.php" method="POST">
     <div class="container register-form">
-            <form action="registre.php" method="POST">
             <div class="form">
                 <div class="note">
                     <h3>Entra tots el camps</h3>
                 </div>
-
                 <div class="form-content">
                     <div class="row">
                         <div class="col-md-6">
