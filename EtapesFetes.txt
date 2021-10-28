@@ -1,11 +1,7 @@
-ETAPA 1 
-Anàlisi de requisits -FET
-Disseny del Model ER -FET
-Disseny del diagrama de classes
-Planificació del projecte -FET
-instalacion de MySQL - FET
-Instalar Mysql - FET
-Esquemes “wireframes” de la pàgina principal, dels resultats de les cerques i del detall d’una habitació. -FET
-Entorn de desenvolupament (Realització de proves)
-Servidor de proves configurat per poder allotjar més d’un domini. 
-Configurar servidor apache
+Etapa 3  (w43)
+Hauríeu de tenir:
+Codi actualitzat amb la llibreria jQuery / jQuery-UI FET
+Framework CSS vàlid i opcional: Bootstrap FET
+Gestió de preus. FET
+Inici del motor de reserves
+El codi backend organitzat amb el patró MVC.

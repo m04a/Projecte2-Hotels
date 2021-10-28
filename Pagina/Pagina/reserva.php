@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="utilitats/css/style.css">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     </head>
     
     <body> 
@@ -49,19 +51,22 @@
 <input type="text" id="to" name="to">
 <!-- *** Calendari Final *** -->
 
-<!-- *** Seleccionar tipus habitació i numero persones Inici *** -->
-<label for="tipus">Nombre de habitacions</label>
-  <select name="nhabitacio" id="nhabitacio">
-    <option value="1">1</option>
-    <option value="2">2</option>
-  </select>
 <!-- *** Seleccionar tipus habitació i numero persones Final *** -->
 <label for="tipus">Numero de persones:</label>
   <select name="npersones" id="npersones">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
-	<option value="4">4</option>
+  <option value="4">4</option>
+  </select>
+
+<!-- *** Seleccionar tipus habitació i numero persones Inici *** -->
+<label for="tipus">Nombre de habitacions</label>
+  <select name="nhabitacio" id="nhabitacio">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
   </select>
   <input type="submit" value="submit">
   </form>
