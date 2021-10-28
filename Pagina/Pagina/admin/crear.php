@@ -53,7 +53,7 @@ if(isset($_POST["crearusuari"])){
 				$stmt->bindParam(':password', $password);
 				$stmt->bindParam(':nombre', $nombre);
 				$stmt->bindParam(':apellidos', $apellidos);
-				$stmt->bindParam(':fechanacimiento', $fechanacimiento);
+				//$stmt->bindParam(':fechanacimiento', $fechanacimiento);
 				$stmt->bindParam(':sexo', $sexo);
 				$stmt->bindParam(':email', $email);
 			
@@ -63,7 +63,7 @@ if(isset($_POST["crearusuari"])){
 				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
 				//$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
 				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
-				$email=htmlspecialchars(strip_tags($_POST['email']));
+				$email=htmlspecialchars($_POST['email']);
 
 
 			if ($stmt->execute()) {
@@ -118,7 +118,7 @@ if(isset($_POST["crearusuari"])){
   </li>
 </ul>
 <?php if(!empty($message)): ?>
-      <p> <?= $message ?> test </p>
+      <p> <?= $message ?> </p>
     <?php endif; ?>
 <div class="col-sm-6" id="div-crearhabitacio">
 <!-- PHP insert code will be here -->
@@ -172,14 +172,10 @@ if(isset($_POST["crearusuari"])){
             <td>Cognom:</td>
             <td><input type='text' name='apellidos' class='form-control' /></td>
         </tr>
-		<tr>
-            <td>Nom:</td>
-            <td><input type='text' name='nombre' class='form-control' /></td>
-        </tr>
-		<tr>
+		<!--<tr>
             <td>Data neixament:</td>
             <td><input type='date' name='fechanacimiento' class='form-control' /></td>
-        </tr>
+        </tr>-->
 		<tr>
             <td>Sexe:</td>
             <td>
