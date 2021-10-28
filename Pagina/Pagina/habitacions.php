@@ -48,9 +48,7 @@
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $precio=$row['precio'];
         extract($row); 
-
         ?>
     
 				 <div class="col-lg-4">
@@ -60,7 +58,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup> <?php $precio ?>
+                                <sup>€</sup> <?php $row['precio']; ?>
                             </span>
 
                             <h4>Lorem ipsum dolor sit amet, consectetur</h4>
