@@ -75,21 +75,21 @@ if($_POST){
  
         // posted values
         $password=htmlspecialchars(strip_tags($_POST['password']));
-        $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
+       /* $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
         $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
         $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
         $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-        $email=htmlspecialchars(strip_tags($_POST['email']));
+        $email=htmlspecialchars(strip_tags($_POST['email']));*/
  
         // bind the parameters
         $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':nombre', $nombre);
+        /*$stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':apellidos', $apellidos);
         $stmt->bindParam(':fechanacimiento', $fechanacimiento);
         $stmt->bindParam(':sexo', $sexo);
         $stmt->bindParam(':tipo', $tipo);
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':email', $email);*/
  
         // Execute the query
         if($stmt->execute()){
@@ -112,7 +112,7 @@ if($_POST){
         <td>Contrasenya</td>
             <td><input type='password' name='password' value="<?php echo htmlspecialchars($password, ENT_QUOTES);  ?>" class='form-control'/></td>
     </tr>
-    <tr>
+   <!-- <tr>
         <td>Nom</td>
             <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
@@ -136,7 +136,7 @@ if($_POST){
     <tr>
         <td>Email</td>
             <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
-    </tr>
+    </tr> -->
     <tr>
         <td></td>
         <td>
