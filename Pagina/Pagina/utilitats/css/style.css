@@ -19,7 +19,7 @@ ul, li {
   padding: 0;
   margin: 0;
   list-style: none;
-}
+} 
 * {
   box-sizing: border-box;
 }
@@ -27,7 +27,7 @@ ul, li {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: #000 !important;
+  background-color: #1b1c1d !important;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -1145,12 +1145,12 @@ responsive
 }
 
 a {
-  color: #ffad9e;
+  color:rgb(0 0 0) ! important;
 }
 
 a:focus,
 a:hover {
-  color: #f9735b;
+  color: #ed563b ! important;
 }
 /* 
 ---------------------------------------------
@@ -1158,7 +1158,7 @@ footer
 --------------------------------------------- 
 */
 footer{
-  background-color: #45526e;
+  background-color: #350c54;
 }
 
   
@@ -1168,7 +1168,7 @@ Calendari
 --------------------------------------------- 
 */
 #ui-datepicker-div{
-	background-color: #29272f !important;
+	background-color: #f0a091 !important;
     padding-right: 5% !important;
 }
 .ui-datepicker-calendar,.ui-datepicker-title{
@@ -1177,8 +1177,9 @@ Calendari
 	margin-bottom:5% !important;
 }
 table, th, td {
-  border: 1px solid white !important;
-  padding: 5px !important;
+  border: 1px solid white;
+  padding: 5px;
+  text-align: center;
 }
 .ui-datepicker-prev {
 	margin:10% !important;
