@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Veure habitació - Admin</title>
+    <title>Veure usuari - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -13,7 +13,7 @@
  <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-$numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
+$usuari=isset($_GET['usuari']) ? $_GET['usuari'] : die('ERROR: Record ID not found.');
 
 //include database connection
 require '../includes/conectar_DB.php';
@@ -22,12 +22,12 @@ require '../includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = ? LIMIT 0,1";
+    $query = "SELECT usuari, password, nombre, apellidos, fechanacimiento, sexo, tipo, email FROM usuario WHERE usuari = ? LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(1, $numhab);
+    $stmt->bindParam(1, $usuari);
  
     // execute our query
     $stmt->execute();
@@ -36,10 +36,14 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $numhab = $row['numhab'];
-    $Descripcion = $row['Descripcion'];
-    $precio = $row['precio'];
-    $ocupada = $row['ocupada'];
+    $usuari = $row['usuari'];
+    $password = $row['password'];
+    $nombre = $row['nombre'];
+    $apellidos = $row['apellidos'];
+    $fechanacimiento = $row['fechanacimiento'];
+    $sexo = $row['sexo'];
+    $tipo = $row['tipo'];
+    $email = $row['email'];
 }
  
 // show error
@@ -57,23 +61,34 @@ if($_POST){
         // write update query
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
-        $query = "UPDATE habitacion
-                    SET Descripcion=:Descripcion, precio=:precio, ocupada=:ocupada
-                    WHERE numhab = :numhab";
+        $query = "UPDATE usuario
+                    SET usuari=:usuari, password=:password, nombre=:nombre, apellidos=:apellidos,
+                    fechanacimieno=:fechanacimiento,
+                    sexo=:sexo, tipo=:tipo, email=:email
+                    WHERE usuari = :usuari";
  
         // prepare query for excecution
         $stmt = $conn->prepare($query);
  
         // posted values
-        $Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
-        $precio=htmlspecialchars(strip_tags($_POST['precio']));
-        $ocupada=htmlspecialchars(strip_tags($_POST['ocupada']));
+        $usuari=htmlspecialchars(strip_tags($_POST['usuari']));
+        $password=htmlspecialchars(strip_tags($_POST['password']));
+        $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
+        $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
+        $fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+        $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
+        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+        $email=htmlspecialchars(strip_tags($_POST['email']));
  
         // bind the parameters
-        $stmt->bindParam(':Descripcion', $Descripcion);
-        $stmt->bindParam(':precio', $precio);
-        $stmt->bindParam(':ocupada', $ocupada);
-        $stmt->bindParam(':numhab', $numhab);
+        $stmt->bindParam(':usuari', $usuari);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':apellidos', $apellidos);
+        $stmt->bindParam(':fechanacimiento', $fechanacimiento);
+        $stmt->bindParam(':sexo', $sexo);
+        $stmt->bindParam(':tipo', $tipo);
+        $stmt->bindParam(':email', $email);
  
         // Execute the query
         if($stmt->execute()){
@@ -90,29 +105,46 @@ if($_POST){
     }
 }
 ?>
- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?numhab={$numhab}");?>" method="post">
+ <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?usuari={$usuari}");?>" method="post">
  <table class='table table-hover table-responsive table-bordered'>
     <tr>
-        <td>numhab</td>
-            <td><input type='text' name='numhab' value="<?php echo htmlspecialchars($numhab, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Usuari</td>
+            <td><input type='text' name='usuari' value="<?php echo htmlspecialchars($usuari, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
-        <td>Descripcion</td>
-            <td><textarea name='Descripcion' class='form-control'><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></textarea></td>
+        <td>Contrasenya</td>
+            <td><input type='password' name='password' value="<?php echo htmlspecialchars($password, ENT_QUOTES);  ?>" class='form-control'/></td>
     </tr>
     <tr>
-        <td>precio</td>
-            <td><input type='text' name='precio' value="<?php echo htmlspecialchars($precio, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Nom</td>
+            <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
-        <td>ocupada</td>
-            <td><input type='text' name='ocupada' value="<?php echo htmlspecialchars($ocupada, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Cognom</td>
+            <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>Data neixament</td>
+            <td><input type='date' name='fechanacimiento' value="<?php echo htmlspecialchars($fechanacimiento, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>Sexe</td>
+            <td>
+                <select name="sexo" class='form-control'>
+						<option value="0">Home</option>
+						<option value="1">Dona</option>
+				</select>
+            </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+            <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
         <td></td>
         <td>
             <input type='submit' value='Guardar Canvis' class='btn btn-primary' />
-            <a href='llistarhabitacions.php' class='btn btn-danger'>Tornar a Habitacions</a>
+            <a href='llistarusuaris.php' class='btn btn-danger'>Tornar a Usuaris</a>
         </td>
     </tr>
 </table> 
