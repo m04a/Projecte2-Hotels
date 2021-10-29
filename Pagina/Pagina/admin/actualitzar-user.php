@@ -62,7 +62,7 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET usuari=:usuari, password=:password, nombre=:nombre, apellidos=:apellidos,
+                    SET password=:password, nombre=:nombre, apellidos=:apellidos,
                     fechanacimieno=:fechanacimiento,
                     sexo=:sexo, tipo=:tipo, email=:email
                     WHERE usuari = :usuari";
@@ -71,17 +71,15 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
-        $usuari=htmlspecialchars(strip_tags($_POST['usuari']));
         $password=htmlspecialchars(strip_tags($_POST['password']));
         $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
         $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
-        $fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+        $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
         $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
         $email=htmlspecialchars(strip_tags($_POST['email']));
  
         // bind the parameters
-        $stmt->bindParam(':usuari', $usuari);
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':apellidos', $apellidos);
@@ -107,10 +105,6 @@ if($_POST){
 ?>
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?usuari={$usuari}");?>" method="post">
  <table class='table table-hover table-responsive table-bordered'>
-    <tr>
-        <td>Usuari</td>
-            <td><input type='text' name='usuari' value="<?php echo htmlspecialchars($usuari, ENT_QUOTES);  ?>" class='form-control' /></td>
-    </tr>
     <tr>
         <td>Contrasenya</td>
             <td><input type='password' name='password' value="<?php echo htmlspecialchars($password, ENT_QUOTES);  ?>" class='form-control'/></td>
