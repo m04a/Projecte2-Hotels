@@ -38,12 +38,12 @@ try {
     // values to fill up our form
     $usuari = $row['usuari'];
     $password = $row['password'];
-    $nombre = $row['nombre'];
+    /*$nombre = $row['nombre'];
     $apellidos = $row['apellidos'];
     $fechanacimiento = $row['fechanacimiento'];
     $sexo = $row['sexo'];
     $tipo = $row['tipo'];
-    $email = $row['email'];
+    $email = $row['email'];*/
 }
  
 // show error
