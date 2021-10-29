@@ -62,10 +62,10 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             echo "<a href='ver-un-user.php?usuari={$usuari}' class='btn btn-info m-r-1em'>Llegir</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='actualizar-user.php?usuari={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
+            echo "<a href='actualitzar-user.php?usuari={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='borraruser({$usuari});'  class='btn btn-danger'>Esborrar</a>";
+            echo "<a href='#' onclick='borraruser({\'$usuari\'});'  class='btn btn-danger'>Esborrar</a>";
         echo "</td>";
     echo "</tr>";
 }
