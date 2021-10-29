@@ -1168,29 +1168,29 @@ Calendari
 --------------------------------------------- 
 */
 #ui-datepicker-div{
-	background-color: #29272f;
-    padding-right: 5%;
+	background-color: #29272f !important;
+    padding-right: 5% !important;
 }
 .ui-datepicker-calendar,.ui-datepicker-title{
-	margin-top: 5%;
-    margin-left: 10%;
-	margin-bottom:5%;
+	margin-top: 5% !important;
+    margin-left: 10% !important;
+	margin-bottom:5% !important;
 }
 table, th, td {
-  border: 1px solid white;
-  padding: 5px;
+  border: 1px solid white !important;
+  padding: 5px !important;
 }
 .ui-datepicker-prev {
-	margin:10%;
+	margin:10% !important;
 	{
 }
 /*Calendari*/
 #ui-datepicker-div{
-	background-color: rgb(0, 0, 0);
-    padding-right: 5%;
+	background-color: rgb(0, 0, 0) !important;
+    padding-right: 5% !important;
 }
 .ui-datepicker-calendar{
-	margin-left:20%;
+	margin-left:20% !important;
 }
 /*Login form*/
 .note
