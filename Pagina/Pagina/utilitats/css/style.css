@@ -42,6 +42,7 @@ a {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
   margin-bottom: 0px;
+  color:#fff;
 }
 
 ul {
@@ -224,7 +225,7 @@ header
   display: block;
   font-weight: 500;
   font-size: 13px;
-  color: #7a7a7a !important;
+  color: #ed563b !important;
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   height: 40px;
