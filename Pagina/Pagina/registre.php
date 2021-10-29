@@ -80,7 +80,7 @@ if ($password != $passwordc) {
       <p> <?= $message ?></p>
     <?php endif; ?>
     <form action="registre.php" method="POST">
-    <div class="container register-form">
+    <div class="container register-form justify-content-center align-items-center">
             <div class="form">
                 <div class="note">
                     <h3>Entra tots el camps</h3>
@@ -99,7 +99,7 @@ if ($password != $passwordc) {
                             </div>
                         </div>
                     </div>
-                     <button type="submit" class="btn btn-primary btn-lg btn-block">Registrar</button>
+                     <button type="submit" class="btn btn-primary col-md-6">Registrar</button>
                 </div>
             </div>
         </div>
