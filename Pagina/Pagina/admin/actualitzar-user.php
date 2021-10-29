@@ -62,11 +62,14 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET password=:password, nombre=:nombre, apellidos=:apellidos,
-                    fechanacimieno=:fechanacimiento,
-                    sexo=:sexo, tipo=:tipo, email=:email
+                    SET password=:password, 
+                    
                     WHERE usuari = :usuari";
- 
+                    /*nombre=:nombre, 
+                    apellidos=:apellidos,
+                    fechanacimieno=:fechanacimiento,
+                    sexo=:sexo, tipo=:tipo, 
+                    email=:email*/
         // prepare query for excecution
         $stmt = $conn->prepare($query);
  
