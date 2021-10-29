@@ -44,7 +44,7 @@
 <!-- *** Calendari Inici *** -->
 
 <div class="buscador">
-  <form submit="reservabuscador.php">
+  <form class="buscadorForm" submit="reservabuscador.php">
 <label for="from">Des de</label>
 <input type="text" id="from" name="from">
 <label for="to">Fins a </label>
