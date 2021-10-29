@@ -27,7 +27,7 @@ ul, li {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: ##8994ab !important;
+  background-color: #000 !important;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +61,6 @@ global styles
 */
 html,
 body {
-  background: #420f05;
   font-family: 'Poppins', sans-serif;
   color:#f5faff;
 }
@@ -898,9 +897,7 @@ contact
   border-radius: 5px;
 }
 
-.contact-form select,
-.contact-form input,
-.contact-form textarea {
+select input textarea {
   color: #7a7a7a;
   font-size: 13px;
   border: 1px solid #ddd;

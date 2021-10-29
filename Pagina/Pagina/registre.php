@@ -95,7 +95,7 @@ if ($password != $passwordc) {
                                 <input name="password" type="password" class="form-control" placeholder="Password" value=""/>
                             </div>
                             <div class="form-group">
-                                <input name="cpassword" type="password" class="form-control" placeholder="Your Password *" value=""/>
+                                <input name="cpassword" type="password" class="form-control" placeholder="Confirmar password" value=""/>
                             </div>
                         </div>
                     </div>
