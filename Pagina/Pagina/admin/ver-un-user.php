@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Veure habitació - Admin</title>
+    <title>Veure usuari - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -13,7 +13,7 @@
  <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-$numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
+$usuari=isset($_GET['usuari']) ? $_GET['usuari'] : die('ERROR: Record ID not found.');
 
 //include database connection
 require '../includes/conectar_DB.php';
@@ -22,12 +22,12 @@ require '../includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = ? LIMIT 0,1";
+    $query = "SELECT usuari, nombre, apellidos, fechanacimiento, sexo, tipo, email FROM usuario WHERE usuari = ? LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(1, $numhab);
+    $stmt->bindParam(1, $usuari);
  
     // execute our query
     $stmt->execute();
@@ -36,10 +36,13 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $numhab = $row['numhab'];
-    $Descripcion = $row['Descripcion'];
-    $precio = $row['precio'];
-    $ocupada = $row['ocupada'];
+    $usuari = $row['usuari'];
+    $nombre = $row['nombre'];
+    $apellidos = $row['apellidos'];
+    $fechanacimiento = $row['fechanacimiento'];
+	$sexo = $row['sexo'];
+    $tipo = $row['tipo'];
+    $email = $row['email'];
 }
  
 // show error
@@ -50,26 +53,38 @@ catch(PDOException $exception){
  
  <table class='table table-hover table-responsive table-bordered'>
     <tr>
-        <td>numhab</td>
-        <td><?php echo htmlspecialchars($numhab, ENT_QUOTES);  ?></td>
+        <td>Usuari:</td>
+        <td><?php echo htmlspecialchars($usuari, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>Descripcion</td>
-        <td><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></td>
+        <td>Nom:</td>
+        <td><?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>precio</td>
-        <td><?php echo htmlspecialchars($precio, ENT_QUOTES);  ?></td>
+        <td>Cognom:</td>
+        <td><?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>Esta ocupada?:</td>
+        <td>Data neixament:</td>
+        <td><?php echo htmlspecialchars($fechanacimiento, ENT_QUOTES);  ?></td>
+    </tr>
+	 <tr>
+        <td>Sexe:</td>
         <td><?php 
-			if ($ocupada="0"){
-				echo("No");
+			if ($sexo="0"){
+				echo("Home");
 			}else{
-				echo("Si");
+				echo("Dona");
 			}
 			 ?></td>
+    </tr>
+    <tr>
+        <td>Tipus:</td>
+        <td><?php echo htmlspecialchars($tipo, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><?php echo htmlspecialchars($email, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
         <td></td>
