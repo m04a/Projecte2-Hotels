@@ -62,8 +62,14 @@ catch(PDOException $exception){
         <td><?php echo htmlspecialchars($precio, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>ocupada</td>
-        <td><?php echo htmlspecialchars($ocupada, ENT_QUOTES);  ?></td>
+        <td>Esta ocupada?:</td>
+        <td><?php 
+			if ($ocupada="0"){
+				echo("No");
+			}else{
+				echo("Si");
+			}
+			 ?></td>
     </tr>
     <tr>
         <td></td>

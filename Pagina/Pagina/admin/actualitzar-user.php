@@ -37,9 +37,9 @@ try {
  
     // values to fill up our form
     $usuari = $row['usuari'];
-    $password = $row['password'];
-    /*$nombre = $row['nombre'];
-    $apellidos = $row['apellidos'];
+    //$password = $row['password'];
+    $nombre = $row['nombre'];
+    /*$apellidos = $row['apellidos'];
     $fechanacimiento = $row['fechanacimiento'];
     $sexo = $row['sexo'];
     $tipo = $row['tipo'];
@@ -55,17 +55,16 @@ catch(PDOException $exception){
  
 // check if form was submitted
 if($_POST){
- 
     try{
  
         // write update query
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET password=:password 
-                    
+                    SET nombre=:nombre
                     WHERE usuari = :usuari";
-                    /*nombre=:nombre, 
+                    /*, 
+                    password=:password
                     apellidos=:apellidos,
                     fechanacimieno=:fechanacimiento,
                     sexo=:sexo, tipo=:tipo, 
@@ -74,18 +73,18 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
-        $password=htmlspecialchars(strip_tags($_POST['password']));
-       /* $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
-        $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
+        //$password=htmlspecialchars(strip_tags($_POST['password']));
+        $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
+       /* $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
         $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
         $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
         $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
         $email=htmlspecialchars(strip_tags($_POST['email']));*/
  
         // bind the parameters
-        $stmt->bindParam(':password', $password);
-        /*$stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':apellidos', $apellidos);
+        //$stmt->bindParam(':password', $password);
+        $stmt->bindParam(':nombre', $nombre);
+       /* $stmt->bindParam(':apellidos', $apellidos);
         $stmt->bindParam(':fechanacimiento', $fechanacimiento);
         $stmt->bindParam(':sexo', $sexo);
         $stmt->bindParam(':tipo', $tipo);
@@ -108,15 +107,15 @@ if($_POST){
 ?>
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?usuari={$usuari}");?>" method="post">
  <table class='table table-hover table-responsive table-bordered'>
-    <tr>
+    <!-- <tr>
         <td>Contrasenya</td>
             <td><input type='password' name='password' value="<?php echo htmlspecialchars($password, ENT_QUOTES);  ?>" class='form-control'/></td>
-    </tr>
-   <!-- <tr>
+    </tr> -->
+    <tr>
         <td>Nom</td>
             <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
-    <tr>
+   <!-- <tr>
         <td>Cognom</td>
             <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
