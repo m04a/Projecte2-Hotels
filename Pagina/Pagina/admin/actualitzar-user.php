@@ -62,7 +62,7 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET password=:password, 
+                    SET password=:password 
                     
                     WHERE usuari = :usuari";
                     /*nombre=:nombre, 
