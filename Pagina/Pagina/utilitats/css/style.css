@@ -913,24 +913,12 @@ select input textarea {
   margin-bottom: 30px;
 }
 
-.contact-form textarea {
+textarea {
   height: 150px;
   resize: none;
 }
 
-.contact-form ::-webkit-input-placeholder { /* Edge */
-  color: #7a7a7a;
-}
-
-.contact-form :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #7a7a7a;
-}
-
-.contact-form ::placeholder {
-  color: #7a7a7a;
-}
-
-.contact-form button {
+button {
   display: inline-block;
   font-size: 13px;
   padding: 11px 17px;
@@ -945,7 +933,7 @@ select input textarea {
   margin-top: -8px;
 }
 
-.contact-form button:hover {
+button:hover {
   background-color: #f9735b;
 }
 
