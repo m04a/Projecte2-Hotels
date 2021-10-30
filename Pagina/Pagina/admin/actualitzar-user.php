@@ -24,7 +24,7 @@ try {
     // prepare select query
     $query = "SELECT usuari, password, nombre, apellidos, fechanacimiento, sexo, tipo, email FROM usuario WHERE usuari = ? LIMIT 0,1";
 
-    $stmt = $conn->prepare( $query );
+    $stmt = $conn->prepare($query);
  
     // this is the first question mark
     $stmt->bindParam(1, $usuari);
@@ -61,8 +61,7 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET nombre=:nombre
-                    password=:password
+                    SET nombre=:nombre,password=:password
                     WHERE usuari = :usuari";
                     /*apellidos=:apellidos,
                     fechanacimiento=:fechanacimiento,
@@ -86,6 +85,8 @@ if($_POST){
         // bind the parameters
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':usuari', $usuari);
+
        // $stmt->bindParam(':apellidos', $apellidos);
        // $stmt->bindParam(':fechanacimiento', $fechanacimiento);
        // $stmt->bindParam(':sexo', $sexo);
