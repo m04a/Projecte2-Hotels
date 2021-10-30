@@ -62,7 +62,7 @@ if($_POST){
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
                     SET nombre=:nombre,password=:password,apellidos=:apellidos,
-                    fechanacimiento=:fechanacimiento,sexo=:sexo, tipo=:tipo,email=:email
+                    fechanacimiento=:fechanacimiento,sexo=:sexo,email=:email
                     WHERE usuari = :usuari";
                     
                     
