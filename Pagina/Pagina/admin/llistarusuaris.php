@@ -51,8 +51,8 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    $esborrarD=$row['usuari'];
     extract($row);
- 
     // creating new table row per record
     echo "<tr>
         <td>{$usuari}</td>
@@ -65,7 +65,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
             echo "<a href='actualitzar-user.php?usuari={$usuari}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='borraruser({'$usuari'});'  class='btn btn-danger'>Esborrar</a>";
+            echo "<a href='#' onclick='borraruser($esborrarD);'  class='btn btn-danger'>Esborrar</a>";
         echo "</td>";
     echo "</tr>";
 }
