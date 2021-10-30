@@ -39,11 +39,11 @@ try {
     $usuari = $row['usuari'];
     $password = $row['password'];
     $nombre = $row['nombre'];
-    //$apellidos = $row['apellidos'];
-    //$fechanacimiento = $row['fechanacimiento'];
-    //$sexo = $row['sexo'];
-    //$tipo = $row['tipo'];
-    //$email = $row['email'];
+    $apellidos = $row['apellidos'];
+    $fechanacimiento = $row['fechanacimiento'];
+    $sexo = $row['sexo'];
+    $tipo = $row['tipo'];
+    $email = $row['email'];
 }
  
 // show error
@@ -61,37 +61,33 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET nombre=:nombre,password=:password
+                    SET nombre=:nombre,password=:password,apellidos=:apellidos,
+                    fechanacimiento=:fechanacimiento,sexo=:sexo, tipo=:tipo,email=:email
                     WHERE usuari = :usuari";
-                    /*apellidos=:apellidos,
-                    fechanacimiento=:fechanacimiento,
-                    sexo=:sexo, tipo=:tipo, 
-                    email=:email
                     
-                    /*, 
-                    */
+                    
+                
         // prepare query for excecution
         $stmt = $conn->prepare($query);
  
         // posted values
         $password=htmlspecialchars(strip_tags($_POST['password']));
         $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
-        //$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
-        //$fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
-        //$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
-        //$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-        //$email=htmlspecialchars(strip_tags($_POST['email']));
+        $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
+        $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
+        $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
+        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
+        $email=htmlspecialchars(strip_tags($_POST['email']));
  
         // bind the parameters
         $stmt->bindParam(':password', $password);
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':usuari', $usuari);
-
-       // $stmt->bindParam(':apellidos', $apellidos);
-       // $stmt->bindParam(':fechanacimiento', $fechanacimiento);
-       // $stmt->bindParam(':sexo', $sexo);
-       // $stmt->bindParam(':tipo', $tipo);
-       // $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':apellidos', $apellidos);
+        $stmt->bindParam(':fechanacimiento', $fechanacimiento);
+        $stmt->bindParam(':sexo', $sexo);
+        $stmt->bindParam(':tipo', $tipo);
+        $stmt->bindParam(':email', $email);
  
         // Execute the query
         if($stmt->execute()){
@@ -118,7 +114,7 @@ if($_POST){
         <td>Nom</td>
             <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
-   <!-- <tr>
+   <tr>
         <td>Cognom</td>
             <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
@@ -138,7 +134,7 @@ if($_POST){
     <tr>
         <td>Email</td>
             <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
-    </tr> -->
+    </tr>
     <tr>
         <td></td>
         <td>
