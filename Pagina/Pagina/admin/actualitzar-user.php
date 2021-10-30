@@ -42,6 +42,7 @@ try {
     $apellidos = $row['apellidos'];
     $fechanacimiento = $row['fechanacimiento'];
     $sexo = $row['sexo'];
+    $tipo = $row['tipo'];
     $email = $row['email'];
 }
  
@@ -75,6 +76,7 @@ if($_POST){
         $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
         $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
         $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
+        $tipo=htmlspecialchars(strip_tags($_POST['tipo']));
         $email=htmlspecialchars(strip_tags($_POST['email']));
  
         // bind the parameters
@@ -84,6 +86,7 @@ if($_POST){
         $stmt->bindParam(':apellidos', $apellidos);
         $stmt->bindParam(':fechanacimiento', $fechanacimiento);
         $stmt->bindParam(':sexo', $sexo);
+        $stmt->bindParam(':tipo', $tipo);
         $stmt->bindParam(':email', $email);
  
         // Execute the query
