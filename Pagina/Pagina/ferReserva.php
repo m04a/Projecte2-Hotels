@@ -52,6 +52,11 @@ catch(PDOException $exception){
          include 'includes/nav.php';
     ?>
     <!-- *** Header Final *** -->
+    <!-- *** Capçalera inici *** -->
+    <?php
+         include 'includes/capsalera.php';
+    ?>
+    <!-- *** Capçalera Final *** -->
  <section class="section" id="trainers">
         <div class="container">
             <br>
