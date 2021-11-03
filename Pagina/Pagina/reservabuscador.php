@@ -100,14 +100,14 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     ?> 
      
      <!-- *** Footer inici *** -->
+
      <?php
+	 include 'includes/footer.php';
+	?>
 
 <!-- *** Reserva final *** -->
 
      <!-- *** Footer inici *** -->
-     <?php
-	 include 'includes/footer.php';
-	?>
 	<!-- *** Footer final *** -->
 
     <!-- jQuery -->
