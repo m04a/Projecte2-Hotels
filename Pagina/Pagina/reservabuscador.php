@@ -50,6 +50,8 @@
 <!-- *** Reserva final *** -->
 <?php
 if(isset($_POST["reservaBuscar"])){
+echo $_GET["to"];
+echo $_GET["from"];
 
    require 'includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
