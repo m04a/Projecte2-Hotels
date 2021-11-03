@@ -85,7 +85,9 @@
         <td>";
             }
 		?> 
-     
+     </div>
+ </section>
+ 
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
