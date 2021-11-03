@@ -109,7 +109,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         <td>{$ocupada}</td>
         <td>";
             }
-          }
+          
     ?> 
      </div>
    </section>
