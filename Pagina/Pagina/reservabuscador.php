@@ -48,6 +48,11 @@
    include 'includes/recercaReserva.php';
   ?>
 <!-- *** Reserva final *** -->
+
+ <section class="section" id="trainers">
+        <div class="container">
+            <br>
+            <br>
 <?php
 if(isset($_POST["reservaBuscar"])){
 echo $_GET["to"];
