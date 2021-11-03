@@ -43,11 +43,11 @@
             <br>
             <br>
   <?php
-  echo '<div class="row">';
    require 'includes/conectar_DB.php';
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
+    echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
         ?>
@@ -74,17 +74,10 @@
                         </div>
                     </div>
                 </div>
-
+            </div>
+    </section>
                
             <?php
-             echo "<tr>
-        <td>{$numhab}</td>
-        <td>{$precio}</td>
-        <td>{$tipo}</td>
-        <th>{$Descripcion}</th>
-        <td>{$ocupada}</td>
-        <td>";
-            }
             echo '</div>';
 		?> 
      </div>
