@@ -82,7 +82,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="">+ Reservar</a></li>
+                                <li><a href='ferReserva.php?numhab={$numhab}'>+ Reservar</a></li>
                             </ul>
                         </div>
                     </div>
