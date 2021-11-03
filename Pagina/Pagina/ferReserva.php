@@ -47,38 +47,46 @@ catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
 ?>
- 
- <table class='table table-hover table-responsive table-bordered'>
-    <tr>
-        <td>numhab</td>
-        <td><?php echo htmlspecialchars($numhab, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>Descripcion</td>
-        <td><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>precio</td>
-        <td><?php echo htmlspecialchars($precio, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>Esta ocupada?:</td>
-        <td><?php 
-			if ($ocupada="0"){
-				echo("No");
-			}else{
-				echo("Si");
-			}
-			 ?></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <a href='llistarhabitacions.php' class='btn btn-danger'>Tornar a Habitacions</a>
+<div class="row" id="tabs">
+              <div class="col-lg-4">
+                <ul>
+                  <li><a href='#tabs-1'><i class="fa fa-star"></i> Descripció</a></li>
+                  <li><a href='#tabs-2'><i class="fa fa-gift"></i> Vacances Descripció</a></li>
+                  <li><a href='#tabs-4'><i class="fa fa-info-circle"></i> Vacances Info</a></li>
+                  <li><a href='#tabs-5'><i class="fa fa-phone"></i> Contacte</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-8">
+                <section class='tabs-content' style="width: 100%;">
+                  <article id='tabs-1'>
+                    <h4>Vacation Extras</h4>
+
+                    <div class="row">
+                       <div class="col-sm-6">
+                            <p><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></p>
+                       </div>
+
+                       <div class="col-sm-6">
+                            <p>Piscina Incluida</p>
+                       </div>
+
+                       <div class="col-sm-6">
+                            <p>Cuina Totalment equipada</p>
+                       </div>
+
+                       <div class="col-sm-6">
+                            <p>Aire acondicionat</p>
+                       </div>
+
+                       <div class="col-sm-6">
+                            <p><?php echo htmlspecialchars($numhab, ENT_QUOTES);?></p>
+                       </div>
+                    </div>
+                  </article>
+         <td>
+            <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
-    </tr>
-</table> 
- 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
