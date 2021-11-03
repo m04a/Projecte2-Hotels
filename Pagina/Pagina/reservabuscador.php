@@ -106,7 +106,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         <th>{$Descripcion}</th>
         <td>{$ocupada}</td>
         <td>";
+        if ($contador % 3 == 0){
+          echo '</div>';
+        }
             }
+
           }
     ?> 
      </div>
