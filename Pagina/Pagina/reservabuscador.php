@@ -68,13 +68,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
-        
-        if ($contador == 0){
           echo '<div class="row">';
-          $contador = 3;
-        }
-        $contador--;
-        $contador2++;
         ?>
     
          <div class="col-lg-4">
@@ -109,10 +103,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         <th>{$Descripcion}</th>
         <td>{$ocupada}</td>
         <td>";
-        if ($contador2 == 3){
           echo '</div>';
-          $contador2 = 0;
-        }
             }
 
           }
