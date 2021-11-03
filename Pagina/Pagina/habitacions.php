@@ -43,6 +43,7 @@
             <br>
             <br>
   <?php
+  echo '<div class="row">';
    require 'includes/conectar_DB.php';
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
@@ -84,6 +85,7 @@
         <td>{$ocupada}</td>
         <td>";
             }
+            echo '</div>';
 		?> 
      </div>
  </section>

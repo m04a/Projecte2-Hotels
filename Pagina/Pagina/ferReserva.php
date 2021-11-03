@@ -103,7 +103,7 @@ catch(PDOException $exception){
   </div>
 </section>
          <td>
-            <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
+            <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
         </td>
         <!-- *** Footer inici *** -->
      <?php
