@@ -16,7 +16,7 @@
 $numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
 
 //include database connection
-require '../includes/conectar_DB.php';
+require 'includes/conectar_DB.php';
  
  
 // read current record's data
