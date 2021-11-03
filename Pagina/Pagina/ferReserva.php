@@ -10,6 +10,18 @@
 
 </head>
 <body>
+     <?php
+         include 'includes/carregador.php';
+    ?>
+    <!-- *** Preloader End *** -->
+    
+    
+    <!-- *** Header Principal *** -->
+    <?php
+         include 'includes/nav.php';
+    ?>
+    <!-- *** Header Final *** -->
+    
  <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
@@ -59,7 +71,7 @@ catch(PDOException $exception){
               <div class="col-lg-8">
                 <section class='tabs-content' style="width: 100%;">
                   <article id='tabs-1'>
-                    <h4>Vacation Extras</h4>
+                    <h4>Tipus d'habitació</h4>
 
                     <div class="row">
                        <div class="col-sm-6">
@@ -86,7 +98,11 @@ catch(PDOException $exception){
          <td>
             <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
-
+<!-- *** Footer inici *** -->
+     <?php
+     include 'includes/footer.php';
+    ?>
+    <!-- *** Footer final *** -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
