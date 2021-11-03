@@ -66,9 +66,10 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
+    echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
-          echo '<div class="row">';
+          
         ?>
     
          <div class="col-lg-4">
@@ -103,9 +104,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         <th>{$Descripcion}</th>
         <td>{$ocupada}</td>
         <td>";
-          echo '</div>';
+         
             }
-
+ echo '</div>';
           }
     ?> 
      </div>
