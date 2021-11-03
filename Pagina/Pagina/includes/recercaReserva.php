@@ -1,5 +1,5 @@
 <div class="buscador">
-  <form class="buscadorForm form-inline" method="post" submit="reservabuscador.php">
+  <form class="buscadorForm form-inline" method="post" action="reservabuscador.php">
 <div class="form-group mb-2">
 <label for="from">Des de</label>
 <input type="text" id="from" name="from">
