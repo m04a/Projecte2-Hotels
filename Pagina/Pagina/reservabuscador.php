@@ -69,7 +69,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         extract($row); 
         $contador++;
         if ($contador % 3 == 0){
-          echo '<div class="row">'
+          echo '<div class="row">';
         }
         
         ?>
