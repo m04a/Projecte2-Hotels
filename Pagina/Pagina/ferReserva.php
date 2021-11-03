@@ -47,18 +47,6 @@ catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
 ?>
- <?php
-         include 'includes/carregador.php';
-    ?>
-    <!-- *** Preloader End *** -->
-    
-    
-    <!-- *** Header Principal *** -->
-    <?php
-         include 'includes/nav.php';
-    ?>
-    <!-- *** Header Final *** -->
-
 <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
@@ -71,7 +59,7 @@ catch(PDOException $exception){
               <div class="col-lg-8">
                 <section class='tabs-content' style="width: 100%;">
                   <article id='tabs-1'>
-                    <h4>Tipus d'habitació</h4>
+                    <h4>Vacation Extras</h4>
 
                     <div class="row">
                        <div class="col-sm-6">
@@ -99,11 +87,6 @@ catch(PDOException $exception){
             <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
 
-    <!-- *** Footer inici *** -->
-     <?php
-     include 'includes/footer.php';
-    ?>
-    <!-- *** Footer final *** -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
  
