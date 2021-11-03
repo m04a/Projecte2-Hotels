@@ -48,7 +48,7 @@
    include 'includes/recercaReserva.php';
   ?>
 <!-- *** Reserva final *** -->
-
+<div class="row">
  <section class="section" id="trainers">
         <div class="container">
             <br>
@@ -105,7 +105,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
             }
           }
     ?> 
-     
+     </div>
+   </section>
+ </div>
      <!-- *** Footer inici *** -->
 
      <?php
