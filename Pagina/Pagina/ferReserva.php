@@ -10,18 +10,6 @@
 
 </head>
 <body>
-     <?php
-         include 'includes/carregador.php';
-    ?>
-    <!-- *** Preloader End *** -->
-    
-    
-    <!-- *** Header Principal *** -->
-    <?php
-         include 'includes/nav.php';
-    ?>
-    <!-- *** Header Final *** -->
-    
  <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
@@ -59,6 +47,18 @@ catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
 ?>
+ <?php
+         include 'includes/carregador.php';
+    ?>
+    <!-- *** Preloader End *** -->
+    
+    
+    <!-- *** Header Principal *** -->
+    <?php
+         include 'includes/nav.php';
+    ?>
+    <!-- *** Header Final *** -->
+
 <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
@@ -98,7 +98,8 @@ catch(PDOException $exception){
          <td>
             <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
-<!-- *** Footer inici *** -->
+
+    <!-- *** Footer inici *** -->
      <?php
      include 'includes/footer.php';
     ?>
