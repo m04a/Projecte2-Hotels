@@ -56,8 +56,8 @@
 if(isset($_POST["reservaBuscar"])){
 echo $_GET["to"];
 echo $_GET["from"];
-    $contador = 2;
-    $contador2 = -1;
+    $contador = 0;
+    $contador2 = 0;
    require 'includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
@@ -68,12 +68,13 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
-        $contador++;
-        $contador2++;
-        if ($contador % 3 == 0){
-          echo '<div class="row">';
-        }
         
+        if ($contador == 0){
+          echo '<div class="row">';
+          $contador = 3;
+        }
+        $contador--;
+        $contador2++;
         ?>
     
          <div class="col-lg-4">
@@ -108,8 +109,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         <th>{$Descripcion}</th>
         <td>{$ocupada}</td>
         <td>";
-        if ($contador2 % 3 == 0){
+        if ($contador2 == 3){
           echo '</div>';
+          $contador2 = 0;
         }
             }
 
