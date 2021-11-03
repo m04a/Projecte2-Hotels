@@ -48,7 +48,59 @@
    include 'includes/recercaReserva.php';
   ?>
 <!-- *** Reserva final *** -->
+<?php
+if(isset($_POST["reservaBuscar"])){
 
+   require 'includes/conectar_DB.php';
+   //Hem de posar les condicions corresponentes
+    /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
+HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
+LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
+    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
+    $stmt = $conn->prepare($query); 
+    $stmt->execute();
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        extract($row); 
+        ?>
+    
+         <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="utilitats/imatges/product-2-720x480.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>
+                                <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
+                            </span>
+
+                            <h4><?php echo "<tr><td>{$tipo}</td>"; ?></h4>
+
+                            <p>
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$Descripcion}</td>"; ?>
+                            </p>
+
+                            <ul class="social-icons">
+                                <li><a href="">+ Reservar</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+               
+            <?php
+             echo "<tr>
+        <td>{$numhab}</td>
+        <td>{$precio}</td>
+        <td>{$tipo}</td>
+        <th>{$Descripcion}</th>
+        <td>{$ocupada}</td>
+        <td>";
+            }
+          }
+    ?> 
+     
+     <!-- *** Footer inici *** -->
+     <?php
 
 <!-- *** Reserva final *** -->
 
