@@ -47,6 +47,19 @@ catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
 ?>
+<!-- ***** Carregador Inici ***** -->
+    <?php
+         include 'includes/carregador.php';
+    ?>
+    <!-- *** Preloader End *** -->
+    
+    
+    <!-- *** Header Principal *** -->
+    <?php
+         include 'includes/nav.php';
+    ?>
+    <!-- *** Header Final *** -->
+    
 <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
@@ -83,6 +96,9 @@ catch(PDOException $exception){
                        </div>
                     </div>
                   </article>
+              </section>
+          </div>
+      </div>
          <td>
             <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
