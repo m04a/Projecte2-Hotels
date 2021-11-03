@@ -10,14 +10,6 @@ create table usuario (
 	tipo varchar(69) default 'cliente'
 );
 
-
-create table hotel (
-     nombre varchar(69) primary key,
-     iniciovac date,
-     finvac date,
-     totalhab int(5)
-);	
-
 create table tipo (
 	idtipo int(15) primary key auto_increment,
 	precio int(10),
@@ -25,11 +17,8 @@ create table tipo (
 	m2 int(5),
 	cantidad int(5),
 	persmax int(5),
-	idhabitacion int(10),
 	descripcion varchar(420),
-	nom varchar(30),
-	nomhotel varchar(69),
-	foreign key tipo(nomhotel) references hotel(nombre)
+	nom varchar(30)
 );
 	
 create table reserva (
@@ -43,3 +32,9 @@ create table reserva (
 	foreign key reservatipo(idtipo) references tipo(idtipo),
 	foreign key reservausuari(usuario) references usuario(usuari)
 );
+
+
+
+insert into tipo (precio, m2, cantidad, persmax, descripcion, nom) values
+(50, 120, 15, 4, "Habitació estandar ideal para ahorro", "Individual estandar"),
+(100, 200, 22, 4, "Duplex ideal para parejas o compartirla con amigos", "Doble estandard");
