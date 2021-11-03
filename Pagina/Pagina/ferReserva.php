@@ -52,7 +52,10 @@ catch(PDOException $exception){
          include 'includes/nav.php';
     ?>
     <!-- *** Header Final *** -->
-
+ <section class="section" id="trainers">
+        <div class="container">
+            <br>
+            <br>
 <div class="row" id="tabs">
               <div class="col-lg-4">
                 <ul>
@@ -92,6 +95,8 @@ catch(PDOException $exception){
               </section>
           </div>
       </div>
+  </div>
+</section>
          <td>
             <a href='reservabuscador.php' class='btn btn-danger'>Tornar a Habitacions</a>
         </td>
