@@ -65,9 +65,8 @@ catch(PDOException $exception){
               <div class="col-lg-4">
                 <ul>
                   <li><a href='#tabs-1'><i class="fa fa-star"></i> Descripció</a></li>
-                  <li><a href='#tabs-2'><i class="fa fa-gift"></i> Vacances Descripció</a></li>
-                  <li><a href='#tabs-4'><i class="fa fa-info-circle"></i> Vacances Info</a></li>
-                  <li><a href='#tabs-5'><i class="fa fa-phone"></i> Contacte</a></li>
+                  <li><a href='#tabs-2'><i class="fa fa-info-circle"></i> Extres</a></li>
+                  <li><a href='#tabs-3'><i class="fa fa-phone"></i> Contacte</a></li>
                 </ul>
               </div>
               <div class="col-lg-8">
@@ -102,8 +101,20 @@ catch(PDOException $exception){
       </div>
   </div>
 </section>
+<div class="card text-center text-white bg-dark">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
+    <a href="#" class="btn btn-primary">Reserva</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
          <td>
-            <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
         </td>
         <!-- *** Footer inici *** -->
      <?php
