@@ -87,7 +87,7 @@ if ($password != $passwordc) {
 		 include 'includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-	<section class="vh-100 bg-image">
+	<section>
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
