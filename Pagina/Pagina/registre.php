@@ -80,7 +80,7 @@ if ($password != $passwordc) {
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3" style="background-color: #ff0000;">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
