@@ -82,9 +82,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
 
                
             <?php
-           
+            }
  echo '</div>';
-  }
     ?> 
      </div>
    </section>
