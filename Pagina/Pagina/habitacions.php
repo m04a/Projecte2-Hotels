@@ -42,8 +42,11 @@
         <div class="container">
             <br>
             <br>
-  <?php
-    require 'includes/conectar_DB.php';
+<?php
+if(isset($_POST["reservaBuscar"])){
+echo $_GET["to"];
+echo $_GET["from"];
+   require 'includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
@@ -89,7 +92,6 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
      </div>
    </section>
  </div>
- 
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
