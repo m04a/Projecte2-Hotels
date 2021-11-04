@@ -9,7 +9,8 @@ require 'includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])!empty($_POST['email'])) {
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword']) && 
+    !empty($_POST['email'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	$password = $_POST['password'];
