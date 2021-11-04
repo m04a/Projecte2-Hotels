@@ -1,39 +1,40 @@
+create database hotel;
+
 create table usuario (
-IDusuario int primary key,
-password varchar(50) not null,
-nombre varchar(150),
-apellidos varchar(150),
-fechanacimiento date,
-sexo tinyint(1),
-tipo varchar(20) default 'cliente'
+	usuari varchar(69) primary key,
+	password varchar(69) not null,
+	nombre varchar(69),
+	apellidos varchar(69),
+	fechanacimiento date,
+	sexo tinyint(1),
+	tipo varchar(69) default 'cliente'
 );
-_____________________________________________
+
+create table tipo (
+	idtipo int(15) primary key auto_increment,
+	precio int(10),
+	imagen varchar(30),
+	m2 int(5),
+	cantidad int(5),
+	persmax int(5),
+	descripcion varchar(420),
+	nom varchar(30)
+);
+	
 create table reserva (
     numres int(10) primary key auto_increment,
-    numpers int(1) not null,
-    precio int(10),
+    numpers int(5),
     finicio date,
-    ffin date);
-_____________________________________________
-create table habitacion (
-     numhab int(5) primary key,
-     precio int(10),
-     tipo varchar(50),
-     ocupada tinyint(1));
-_____________________________________________	
-create table hotel (
-     nombre varchar(69) primary key,
-     iniciovac date,
-     finvac date,
-     totalhab int(5));	
-_____________________________________________	
-insert into habitacion (precio, tipo, ocupada) values 
-('25','estandar','0'),
-('22','estandar','0'),
-('28','estandar','1'),
-('45','duplex','0'),
-('50','duplex','0'),
-('40','duplex','1'),
-('60','premium','0'),
-('65','premium','0'),
-('64','premium','1');
+    ffin date,
+	idhabitacion int(10),
+	idtipo  int(15),
+	usuario varchar(69),
+	foreign key reservatipo(idtipo) references tipo(idtipo),
+	foreign key reservausuari(usuario) references usuario(usuari)
+);
+
+
+
+insert into tipo (precio, m2, cantidad, persmax, descripcion, nom) values
+(50, 120, 15, 4, "Habitació estandar ideal para ahorro", "Individual estandar"),
+(100, 200, 22, 4, "Duplex ideal para parejas o compartirla con amigos", "Doble estandard");

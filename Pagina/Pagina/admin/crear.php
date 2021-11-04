@@ -11,22 +11,33 @@ if(isset($_POST["crearhabitacio"])){
        return $data;
 	}
     try{
-		if (!empty($_POST['tipo'])){
+		if (!empty($_POST['nom'])){
 
 			if ($conn->connect_error) {
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) values 
-			(:tipo, :Descripcion, :precio)");
-				$stmt->bindParam(':tipo', $tipo);
-				$stmt->bindParam(':Descripcion', $Descripcion);
+			$stmt = $conn->prepare("insert into tipo (
+            precio,
+            imagen,
+            m2,
+            cantidad,
+            persmax,
+            descripcion,
+            nom) values 
+			(:precio, :imagen, :m2, :cantidad, :persmax :descripcion, :nom)");
 				$stmt->bindParam(':precio', $precio);
-
-				$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-				$Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+                $stmt->bindParam(':imagen', $imagen);
+				$stmt->bindParam(':m2', $m2);
+				$stmt->bindParam(':cantidad', $cantidad);
+                $stmt->bindParam(':descripcion', $descripcion);
+                $stmt->bindParam(':nom', $nom);
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
-
+				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
+                $m2=htmlspecialchars(strip_tags($_POST['m2']));
+				$cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+                $nom=htmlspecialchars(strip_tags($_POST['nom']));
 
 			if ($stmt->execute()) {
 			  $message = 'La habitació ha sigut creada';
@@ -47,7 +58,8 @@ if(isset($_POST["crearusuari"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
+			$stmt = $conn->prepare("insert into usuario 
+            (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
 			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
 				$stmt->bindParam(':usuari', $usuari);
 				$stmt->bindParam(':password', $password);
@@ -106,12 +118,12 @@ if(isset($_POST["crearusuari"])){
 		 
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
+    <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
     <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="llistarhabitacions.php">Llistar Habitacions</a>
+    <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
@@ -125,23 +137,32 @@ if(isset($_POST["crearusuari"])){
 <form action="crear.php" method="post">
     <table class='table table-hover table-responsive table-bordered'>
         <tr>
-            <td>Tipus d'habitació</td>
-            <td>
-				<select name="tipo" id="tipo" class='form-control'>
-					<option value="Estandar">Estandar</option>
-					<option value="Duplex">Duplex</option>
-					<option value="Premium">Premium</option>
-					<option value="Duplex premium">Duplex premium</option>
-			  </select>
-			</td>
+            <td>Preu</td>
+            <td><input type='number' name='precio' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Imatge</td>
+            <td><input type='text' name='imagen' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Metres cuadrats</td>
+            <td><input type='number' name='m2' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Cantitat d'habitacions</td>
+            <td><input type='number' name='cantidad' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Persones maximes</td>
+            <td><input type='number' name='persmax' class='form-control' /></td>
         </tr>
         <tr>
             <td>Descripció</td>
-            <td><textarea name='Descripcion' class='form-control'></textarea></td>
+            <td><textarea name='descripcion' class='form-control'></textarea></td>
         </tr>
         <tr>
-            <td>Preu</td>
-            <td><input type='number' name='precio' class='form-control' /></td>
+            <td>Nom del tipus</td>
+            <td><input type='text' name='nom' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>

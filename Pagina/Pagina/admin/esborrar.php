@@ -6,17 +6,17 @@ try {
  
     // get record ID
     // isset() is a PHP function used to verify if a value is there or not
-    $numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
+    $idtipo=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
  
     // delete query
-    $query = "DELETE FROM habitacion WHERE numhab = ?";
+    $query = "DELETE FROM tipo WHERE idtipo = ?";
     $stmt = $conn->prepare($query);
-    $stmt->bindParam(1, $numhab);
+    $stmt->bindParam(1, $idtipo);
  
     if($stmt->execute()){
         // redirect to read records page and
         // tell the user record was deleted
-        header('Location: llistarhabitacions.php?action=deleted');
+        header('Location: llistartipos.php?action=deleted');
     }else{
         die('No s`ha eliminat');
     }

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Veure habitació - Admin</title>
+    <title>Veure tipus - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -13,7 +13,7 @@
  <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-$numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
+$idtipo=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
 
 //include database connection
 require '../includes/conectar_DB.php';
@@ -22,12 +22,12 @@ require '../includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = ? LIMIT 0,1";
+    $query = "SELECT idtipo, precio, imagen, m2, cantidad, persmax, descripcion, nom FROM tipo WHERE idtipo = ? LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(1, $numhab);
+    $stmt->bindParam(1, $idtipo);
  
     // execute our query
     $stmt->execute();
@@ -36,10 +36,14 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $numhab = $row['numhab'];
-    $Descripcion = $row['Descripcion'];
-    $precio = $row['precio'];
-    $ocupada = $row['ocupada'];
+				$idtipo=$_POST['idtipo'];
+				$precio=$_POST['precio'];
+				$imagen=$_POST['imagen'];
+                $m2=$_POST['m2'];
+				$cantidad=$_POST['cantidad'];
+                $persmax=$_POST['persmax'];
+				$descripcion=$_POST['descripcion'];
+                $nom=$_POST['nom'];
 }
  
 // show error
@@ -50,31 +54,37 @@ catch(PDOException $exception){
  
  <table class='table table-hover table-responsive table-bordered'>
     <tr>
-        <td>numhab</td>
-        <td><?php echo htmlspecialchars($numhab, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>Descripcion</td>
-        <td><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>precio</td>
+        <td>Preu</td>
         <td><?php echo htmlspecialchars($precio, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>Esta ocupada?:</td>
-        <td><?php 
-			if ($ocupada="0"){
-				echo("No");
-			}else{
-				echo("Si");
-			}
-			 ?></td>
+        <td>Imatge</td>
+        <td><?php echo htmlspecialchars($imagen, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Metres cuadrats</td>
+        <td><?php echo htmlspecialchars($m2, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Cantitat</td>
+        <td><?php echo htmlspecialchars($cantidad, ENT_QUOTES);  ?></td>
+    </tr>
+         <tr>
+        <td>Persones maximes</td>
+        <td><?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Descripcio</td>
+        <td><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Nom</td>
+        <td><?php echo htmlspecialchars($nom, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
         <td></td>
         <td>
-            <a href='llistarhabitacions.php' class='btn btn-danger'>Tornar a Habitacions</a>
+            <a href='llistartipos.php' class='btn btn-danger'>Tornar a tipos</a>
         </td>
     </tr>
 </table> 
