@@ -94,31 +94,31 @@ if ($password != $passwordc) {
                   <input type="text" name="usuari" class="form-control form-control-lg" />
                   <label class="form-label">Nom</label>
                 </div>
-
+                <div class="form-outline mb-4">
+                  <input type="text" name="nom" class="form-control form-control-lg" />
+                  <label class="form-label">Cognom</label>
+                </div>
+                  <div class="form-outline mb-4">
+                  <input type="text" name="cognom" class="form-control form-control-lg" />
+                  <label class="form-label">Nom d'usuari</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="date" name="data" class="form-control form-control-lg" />
+                  <label class="form-label">Data de naixament</label>
+                </div>
                 <div class="form-outline mb-4">
                   <input type="email" name="email" class="form-control form-control-lg" />
                   <label class="form-label">Correu electronic</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <input type="password" name="password" class="form-control form-control-lg" />
                   <label class="form-label">Contrasenya</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" name="cpassword" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <input type="password" name="cpassword" class="form-control form-control-lg" />
                   <label class="form-label">Confirma la contrasenya</label>
-                </div>
-
-                <div class="form-check d-flex justify-content-center mb-5">
-                  <input
-                    class="form-check-input me-2"
-                    type="checkbox"
-                    value=""
-                  />
-                  <label class="form-check-label" for="form2Example3g">
-                    Estic d'acord <a href="#!" class="text-body"><u>Termes i condicions</u></a>
-                  </label>
                 </div>
 
                 <div class="d-flex justify-content-center">
