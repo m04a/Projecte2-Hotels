@@ -112,35 +112,35 @@ if($_POST){
 ?>
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?idtipo={$idtipo}");?>" method="post">
  <table class='table table-hover table-responsive table-bordered'>
-         <tr>
-            <td>Preu</td>
-            <td><input type='number' name='precio' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Imatge</td>
-            <td><input type='text' name='imagen' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Metres cuadrats</td>
-            <td><input type='number' name='m2' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Cantitat d'habitacions</td>
-            <td><input type='number' name='cantidad' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Persones maximes</td>
-            <td><input type='number' name='persmax' class='form-control' /></td>
-        </tr>
-        <tr>
-            <td>Descripció</td>
-            <td><textarea name='descripcion' class='form-control'></textarea></td>
-        </tr>
-        <tr>
-            <td>Nom del tipus</td>
-            <td><input type='number' name='nom' class='form-control' /></td>
-        </tr>
-        <tr>
+         
+    <tr>
+        <td>Preu</td>
+            <td><input type='number' name='precio' value="<?php echo htmlspecialchars($precio, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+     <tr>
+        <td>Imatge</td>
+            <td><input type='text' name='imagen' value="<?php echo htmlspecialchars($imagen, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+     <tr>
+        <td>Metres cuadrats</td>
+            <td><input type='number' name='m2' value="<?php echo htmlspecialchars($m2, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+     <tr>
+        <td>Cantitat habitacions</td>
+            <td><input type='number' name='cantidad' value="<?php echo htmlspecialchars($cantidad, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+     <tr>
+        <td>Persones maximes</td>
+            <td><input type='number' name='persmax' value="<?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>descripcion</td>
+            <td><textarea name='descripcion' class='form-control'><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></textarea></td>
+    </tr>
+    <tr>
+        <td>Nom del tipus</td>
+            <td><input type='text' name='nom' value="<?php echo htmlspecialchars($nom, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
     <tr>
         <td></td>
         <td>
