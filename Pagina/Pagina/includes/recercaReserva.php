@@ -27,6 +27,6 @@
     <option value="4">4</option>
   </select>
   </div>
-    <button type="submit" name="reservaBuscar" class="btn btn-primary mb-1"><i class="fas fa-search"></i></button>
+    <button type="submit" name="reservaBuscar" id="cercaBtn" class="btn btn-outline-danger mb-1"><i class="fa fa-search"></i></button>
   </form>
   </div>

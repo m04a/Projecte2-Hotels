@@ -43,16 +43,21 @@
             <br>
             <br>
   <?php
-   require 'includes/conectar_DB.php';
+    require 'includes/conectar_DB.php';
+   //Hem de posar les condicions corresponentes
+    /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
+HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
+LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
+          
         ?>
     
-				 <div class="col-lg-4">
+         <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
                             <img src="utilitats/imatges/product-2-720x480.jpg" alt="">
@@ -69,20 +74,21 @@
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="vacation-details.html">+ Més informació</a></li>
+                                <li><?php echo "<a href='ferReserva.php?numhab={$numhab}' class='btn btn-info m-r-1em'>Llegir</a>";?> </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                </div>
-            </section>
+
                
             <?php
             }
-            echo '</div>';
-		?> 
+ echo '</div>';
+          }
+    ?> 
      </div>
- </section>
+   </section>
+ </div>
  
      <!-- *** Footer inici *** -->
      <?php
