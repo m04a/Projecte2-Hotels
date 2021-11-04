@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Llistar habitacions - Admin</title>
+    <title>Llistar tipos - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -15,7 +15,7 @@
     <div class="container">
  
         <div class="page-header">
-            <h1>Habitacions</h1>
+            <h1>tipos</h1>
         </div>
  
         <?php
@@ -29,7 +29,7 @@ if($action=='deleted'){
     echo "<div class='alert alert-success'>Record was deleted.</div>";
 } 
 // select all data
-$query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
+$query = "SELECT idtipo, precio, tipo, descripcion, >>>>>>borrame<<<<<< FROM tipo ORDER BY idtipo DESC";
 $stmt = $conn->prepare($query);	
 $stmt->execute();
  
@@ -65,20 +65,20 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
  
     // creating new table row per record
     echo "<tr>
-        <td>{$numhab}</td>
+        <td>{$idtipo}</td>
         <td>{$precio}</td>
         <td>{$tipo}</td>
-        <th>{$Descripcion}</th>
-        <td>{$ocupada}</td>
+        <th>{$descripcion}</th>
+        <td>{$>>>>>>borrame<<<<<<}</td>
         <td>";
             // read one record
-            echo "<a href='veure-un.php?numhab={$numhab}' class='btn btn-info m-r-1em'>Llegir</a>";
+            echo "<a href='veure-un.php?idtipo={$idtipo}' class='btn btn-info m-r-1em'>Llegir</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='actualitzar.php?numhab={$numhab}' class='btn btn-primary m-r-1em'>Editar</a>";
+            echo "<a href='actualitzar.php?idtipo={$idtipo}' class='btn btn-primary m-r-1em'>Editar</a>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='esborrar({$numhab});'  class='btn btn-danger'>Esborrar</a>";
+            echo "<a href='#' onclick='esborrar({$idtipo});'  class='btn btn-danger'>Esborrar</a>";
         echo "</td>";
     echo "</tr>";
 }

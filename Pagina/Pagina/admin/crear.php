@@ -17,14 +17,14 @@ if(isset($_POST["crearhabitacio"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into habitacion (tipo, Descripcion, precio) values 
-			(:tipo, :Descripcion, :precio)");
+			$stmt = $conn->prepare("insert into tipo (tipo, descripcion, precio) values 
+			(:tipo, :descripcion, :precio)");
 				$stmt->bindParam(':tipo', $tipo);
-				$stmt->bindParam(':Descripcion', $Descripcion);
+				$stmt->bindParam(':descripcion', $descripcion);
 				$stmt->bindParam(':precio', $precio);
 
 				$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-				$Descripcion=htmlspecialchars(strip_tags($_POST['Descripcion']));
+				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
 
 
@@ -111,7 +111,7 @@ if(isset($_POST["crearusuari"])){
     <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="llistarhabitacions.php">Llistar Habitacions</a>
+    <a class="nav-link" href="llistartipos.php">Llistar tipos</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
@@ -137,7 +137,7 @@ if(isset($_POST["crearusuari"])){
         </tr>
         <tr>
             <td>Descripció</td>
-            <td><textarea name='Descripcion' class='form-control'></textarea></td>
+            <td><textarea name='descripcion' class='form-control'></textarea></td>
         </tr>
         <tr>
             <td>Preu</td>

@@ -89,7 +89,7 @@ catch(PDOException $exception){
     <tr>
         <td></td>
         <td>
-            <a href='llistarusuaris.php' class='btn btn-danger'>Tornar a Habitacions</a>
+            <a href='llistarusuaris.php' class='btn btn-danger'>Tornar a tipos</a>
         </td>
     </tr>
 </table> 
