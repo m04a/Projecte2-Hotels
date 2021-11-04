@@ -5,12 +5,12 @@
 <input type="text" id="from" name="from">
 <!-- *** Calendari Final *** -->
 </div>
-<div class="form-group mb-2">
+<div class="form-group mb-2 formdes">
 <label for="to">Fins a </label>
 <input type="text" id="to" name="to">
 </div>
 <!-- *** Seleccionar tipus habitació i numero persones Final *** -->
-<div class="form-group mb-2">
+<div class="form-group mb-2 formdes">
 <label for="tipus">Numero de persones:</label>
   <select name="npersones" id="npersones">
     <option value="1">1</option>
@@ -20,7 +20,7 @@
   </select>
 </div>
 <!-- *** Seleccionar tipus habitació i numero persones Inici *** -->
-<div class="form-group mb-2">
+<div class="form-group mb-2 formdes">
 <label for="tipus">Nombre de habitacions</label>
   <select name="nhabitacio" id="nhabitacio">
     <option value="1">1</option>

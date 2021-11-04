@@ -1286,12 +1286,13 @@ ul.social-icons li a:hover {
 .buscador{
   padding: 5%
 }
-.buscador label{
-  margin: 30px;
-}
-.buscadorForm label,.buscadorForm input{
-  margin:30px;
+
+.buscadorForm{
+  padding: :4%;
 }
 #cercaBtn{
   margin-left: 2%;
+}
+.formdes{
+  padding: 3%;
 }
