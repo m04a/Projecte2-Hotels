@@ -9,22 +9,24 @@ require 'includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])!empty($_POST['email'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	$password = $_POST['password'];
       validate($password);
 	$passwordc = $_POST['cpassword']; 
       validate($passwordc);
+    $email = $_POST['email']; 
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
+	$sql = "INSERT INTO usuario (usuari, password,email) VALUES ('$usuari','$password','email');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
+    $stmt->bindParam('$email', $_POST['email']);
 }
 
     if ($stmt->execute()) {
@@ -89,22 +91,22 @@ if ($password != $passwordc) {
 
                 <div class="form-outline mb-4">
                   <input type="text" name="usuari" class="form-control form-control-lg" />
-                  <label class="form-label"><h5>Nom</h5></label>
+                  <label class="form-label">Nom</label>
                 </div>
 
                 <div class="form-outline mb-4">
                   <input type="email" name="email" class="form-control form-control-lg" />
-                  <label class="form-label"><h5>Correu electronic</h5></label>
+                  <label class="form-label">Correu electronic</label>
                 </div>
 
                 <div class="form-outline mb-4">
                   <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
-                  <label class="form-label"><h5>Contrasenya</h5</label>
+                  <label class="form-label">Contrasenya</label>
                 </div>
 
                 <div class="form-outline mb-4">
                   <input type="password" name="cpassword" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label"><h5>Confirma la contrasenya</h5></label>
+                  <label class="form-label">Confirma la contrasenya</label>
                 </div>
 
                 <div class="form-check d-flex justify-content-center mb-5">
