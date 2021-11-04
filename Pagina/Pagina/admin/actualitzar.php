@@ -63,23 +63,37 @@ if($_POST){
         // it is better to label them and not use question marks
         $query = "UPDATE tipo
                     SET 
+                    idtipo=:idtipo, 
+                    precio=:precio, 
+                    imagen=:imagen, 
+                    m2=:m2, 
+                    cantidad=:cantidad, 
+                    persmax=:persmax, 
                     descripcion=:descripcion, 
-                    precio=:precio,
+                    nom=:nom
                     WHERE idtipo = :idtipo";
  
         // prepare query for excecution
         $stmt = $conn->prepare($query);
  
         // posted values
-        $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+        $idtipo=htmlspecialchars(strip_tags($_POST['idtipo']));
         $precio=htmlspecialchars(strip_tags($_POST['precio']));
-        $>>>>>>borrame<<<<<<=htmlspecialchars(strip_tags($_POST['>>>>>>borrame<<<<<<']));
+        $imagen=htmlspecialchars(strip_tags($_POST['imagen']));
+        $m2=htmlspecialchars(strip_tags($_POST['m2']));
+        $cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+        $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+        $nom=htmlspecialchars(strip_tags($_POST['nom']));
  
         // bind the parameters
-        $stmt->bindParam(':descripcion', $descripcion);
-        $stmt->bindParam(':precio', $precio);
-        $stmt->bindParam(':>>>>>>borrame<<<<<<', $>>>>>>borrame<<<<<<);
+        
         $stmt->bindParam(':idtipo', $idtipo);
+        $stmt->bindParam(':precio', $precio);
+        $stmt->bindParam(':imagen', $imagen);
+        $stmt->bindParam(':m2', $m2);
+        $stmt->bindParam(':cantidad', $cantidad);
+        $stmt->bindParam(':descripcion', $descripcion);
+        $stmt->bindParam(':nom', $nom);
  
         // Execute the query
         if($stmt->execute()){
@@ -98,22 +112,35 @@ if($_POST){
 ?>
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?idtipo={$idtipo}");?>" method="post">
  <table class='table table-hover table-responsive table-bordered'>
-    <tr>
-        <td>idtipo</td>
-            <td><input type='text' name='idtipo' value="<?php echo htmlspecialchars($idtipo, ENT_QUOTES);  ?>" class='form-control' /></td>
-    </tr>
-    <tr>
-        <td>descripcion</td>
-            <td><textarea name='descripcion' class='form-control'><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></textarea></td>
-    </tr>
-    <tr>
-        <td>precio</td>
-            <td><input type='text' name='precio' value="<?php echo htmlspecialchars($precio, ENT_QUOTES);  ?>" class='form-control' /></td>
-    </tr>
-    <tr>
-        <td>>>>>>>borrame<<<<<<</td>
-            <td><input type='text' name='>>>>>>borrame<<<<<<' value="<?php echo htmlspecialchars($>>>>>>borrame<<<<<<, ENT_QUOTES);  ?>" class='form-control' /></td>
-    </tr>
+         <tr>
+            <td>Preu</td>
+            <td><input type='number' name='precio' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Imatge</td>
+            <td><input type='text' name='imagen' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Metres cuadrats</td>
+            <td><input type='number' name='m2' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Cantitat d'habitacions</td>
+            <td><input type='number' name='cantidad' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Persones maximes</td>
+            <td><input type='number' name='persmax' class='form-control' /></td>
+        </tr>
+        <tr>
+            <td>Descripció</td>
+            <td><textarea name='descripcion' class='form-control'></textarea></td>
+        </tr>
+        <tr>
+            <td>Nom del tipus</td>
+            <td><input type='number' name='nom' class='form-control' /></td>
+        </tr>
+        <tr>
     <tr>
         <td></td>
         <td>

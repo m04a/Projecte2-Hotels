@@ -41,6 +41,7 @@ try {
 				$imagen=$_POST['imagen'];
                 $m2=$_POST['m2'];
 				$cantidad=$_POST['cantidad'];
+                $persmax=$_POST['persmax'];
 				$descripcion=$_POST['descripcion'];
                 $nom=$_POST['nom'];
 }
@@ -64,9 +65,13 @@ catch(PDOException $exception){
         <td>Metres cuadrats</td>
         <td><?php echo htmlspecialchars($m2, ENT_QUOTES);  ?></td>
     </tr>
-         <tr>
+    <tr>
         <td>Cantitat</td>
         <td><?php echo htmlspecialchars($cantidad, ENT_QUOTES);  ?></td>
+    </tr>
+         <tr>
+        <td>Persones maximes</td>
+        <td><?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
         <td>Descripcio</td>
