@@ -10,7 +10,7 @@ require 'includes/conectar_DB.php';
        return $data;
 }
   if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword']) && 
-    !empty($_POST['nom'])&& !empty($_POST['cognom'])&& !empty($_POST['data']) ) {
+    !empty($_POST['nom'])&& !empty($_POST['cognom'])&& !empty($_POST['datanax']) ) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	$password = $_POST['password'];
