@@ -21,7 +21,7 @@ function crearusuari() {
 
 // confirm record deletion
 function esborrar(idtipo){
-    var answer = confirm('Estas segur que vols la habitació numero ' + idtipo + '?' );
+    var answer = confirm('Estas segur que vols esborrar el tipus numero ' + idtipo + '?' );
     if (answer){
         // if user clicked ok,
         // pass the id to delete.php and execute the delete query

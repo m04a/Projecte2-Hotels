@@ -17,16 +17,30 @@ if(isset($_POST["crearhabitacio"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into tipo (tipo, descripcion, precio) values 
-			(:tipo, :descripcion, :precio)");
-				$stmt->bindParam(':tipo', $tipo);
-				$stmt->bindParam(':descripcion', $descripcion);
+			$stmt = $conn->prepare("insert into tipo (
+            idtipo, 
+            precio,
+            imagen,
+            m2,
+            cantidad,
+            persmax,
+            descripcion,
+            nom) values 
+			(:tipo, :precio, :imagen, :m2, :cantidad, :persmax :descripcion, :nom)");
+				$stmt->bindParam(':idtipo', $idtipo);
 				$stmt->bindParam(':precio', $precio);
-
-				$tipo=htmlspecialchars(strip_tags($_POST['tipo']));
-				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+                $stmt->bindParam(':imagen', $imagen);
+				$stmt->bindParam(':m2', $m2);
+				$stmt->bindParam(':cantidad', $cantidad);
+                $stmt->bindParam(':descripcion', $descripcion);
+                $stmt->bindParam(':nom', $nom);
+				$idtipo=htmlspecialchars(strip_tags($_POST['idtipo']));
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
-
+				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
+                $m2=htmlspecialchars(strip_tags($_POST['m2']));
+				$cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+                $nom=htmlspecialchars(strip_tags($_POST['nom']));
 
 			if ($stmt->execute()) {
 			  $message = 'La habitació ha sigut creada';
@@ -47,7 +61,8 @@ if(isset($_POST["crearusuari"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into usuario (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
+			$stmt = $conn->prepare("insert into usuario 
+            (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
 			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
 				$stmt->bindParam(':usuari', $usuari);
 				$stmt->bindParam(':password', $password);
@@ -106,12 +121,12 @@ if(isset($_POST["crearusuari"])){
 		 
    <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link" href="#" id="crearhabitacio">Crear Habitació</a>
+    <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
     <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="llistartipos.php">Llistar tipos</a>
+    <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>

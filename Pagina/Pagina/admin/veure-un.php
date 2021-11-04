@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Veure habitació - Admin</title>
+    <title>Veure tipus - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -36,9 +36,13 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $idtipo = $row['idtipo'];
-    $descripcion = $row['descripcion'];
-    $precio = $row['precio'];
+				$idtipo=$_POST['idtipo'];
+				$precio=$_POST['precio'];
+				$imagen=$_POST['imagen'];
+                $m2=$_POST['m2'];
+				$cantidad=$_POST['cantidad'];
+				$descripcion=$_POST['descripcion'];
+                $nom=$_POST['nom'];
 }
  
 // show error
@@ -49,26 +53,28 @@ catch(PDOException $exception){
  
  <table class='table table-hover table-responsive table-bordered'>
     <tr>
-        <td>idtipo</td>
-        <td><?php echo htmlspecialchars($idtipo, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>descripcion</td>
-        <td><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></td>
-    </tr>
-    <tr>
-        <td>precio</td>
+        <td>Preu</td>
         <td><?php echo htmlspecialchars($precio, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>Esta >>>>>>borrame<<<<<<?:</td>
-        <td><?php 
-			if ($>>>>>>borrame<<<<<<="0"){
-				echo("No");
-			}else{
-				echo("Si");
-			}
-			 ?></td>
+        <td>Imatge</td>
+        <td><?php echo htmlspecialchars($imagen, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Metres cuadrats</td>
+        <td><?php echo htmlspecialchars($m2, ENT_QUOTES);  ?></td>
+    </tr>
+         <tr>
+        <td>Cantitat</td>
+        <td><?php echo htmlspecialchars($cantidad, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Descripcio</td>
+        <td><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></td>
+    </tr>
+    <tr>
+        <td>Nom</td>
+        <td><?php echo htmlspecialchars($nom, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
         <td></td>

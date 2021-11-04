@@ -29,7 +29,7 @@ if($action=='deleted'){
     echo "<div class='alert alert-success'>Record was deleted.</div>";
 } 
 // select all data
-$query = "SELECT idtipo, precio, tipo, descripcion, >>>>>>borrame<<<<<< FROM tipo ORDER BY idtipo DESC";
+$query = "SELECT idtipo, precio, imagen, m2, cantidad, persmax, descripcion, nom FROM tipo ORDER BY idtipo DESC";
 $stmt = $conn->prepare($query);	
 $stmt->execute();
  
@@ -37,7 +37,7 @@ $stmt->execute();
 $num = $stmt->rowCount();
  
 // link to create record form
-echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear una nova habitacio</a>";
+echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
  
 //check if more than 0 record found
 if($num>0){
@@ -47,11 +47,13 @@ echo "<table class='table table-hover table-responsive table-bordered'>";
  
     //creating our table heading
     echo "<tr>
-        <th>Numero d'habitació</th>
         <th>Preu</th>
-        <th>Tipus</th>
+        <th>Imatge</th>
+        <th>Metres cuadrats</th>
+        <th>Cantitat d'habitacions</th>
+        <th>Persones maximes</th>
         <th>Descripció</th>
-        <th>Ocupació</th>
+        <th>Tipus</th>
         <th>Accions</th>
 
     </tr>";
@@ -65,11 +67,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
  
     // creating new table row per record
     echo "<tr>
-        <td>{$idtipo}</td>
         <td>{$precio}</td>
-        <td>{$tipo}</td>
-        <th>{$descripcion}</th>
-        <td>{$>>>>>>borrame<<<<<<}</td>
+        <td>{$imagen}</td>
+        <td>{$m2}</td>
+        <td>{$cantidad}</td>
+        <td>{$persmax}</td>
+        <td>{$descripcion}</td>
+        <td>{$nom}</td>
         <td>";
             // read one record
             echo "<a href='veure-un.php?idtipo={$idtipo}' class='btn btn-info m-r-1em'>Llegir</a>";
