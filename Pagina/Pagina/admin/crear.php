@@ -17,8 +17,7 @@ if(isset($_POST["crearhabitacio"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into tipo (
-            idtipo, 
+			$stmt = $conn->prepare("insert into tipo ( 
             precio,
             imagen,
             m2,
@@ -26,15 +25,13 @@ if(isset($_POST["crearhabitacio"])){
             persmax,
             descripcion,
             nom) values 
-			(:tipo, :precio, :imagen, :m2, :cantidad, :persmax :descripcion, :nom)");
-				$stmt->bindParam(':idtipo', $idtipo);
+			(:precio, :imagen, :m2, :cantidad, :persmax :descripcion, :nom)");
 				$stmt->bindParam(':precio', $precio);
                 $stmt->bindParam(':imagen', $imagen);
 				$stmt->bindParam(':m2', $m2);
 				$stmt->bindParam(':cantidad', $cantidad);
                 $stmt->bindParam(':descripcion', $descripcion);
                 $stmt->bindParam(':nom', $nom);
-				$idtipo=htmlspecialchars(strip_tags($_POST['idtipo']));
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
 				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
                 $m2=htmlspecialchars(strip_tags($_POST['m2']));
