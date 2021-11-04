@@ -17,14 +17,8 @@ if(isset($_POST["crearhabitacio"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into tipo (
-            precio,
-            imagen,
-            m2,
-            cantidad,
-            persmax,
-            descripcion,
-            nom) values 
+			$stmt = $conn->prepare("insert into tipo 
+            (precio, imagen, m2, cantidad, persmax, descripcion, nom) values 
 			(:precio, :imagen, :m2, :cantidad, :persmax, :descripcion, :nom)");
 				$stmt->bindParam(':precio', $precio);
                 $stmt->bindParam(':imagen', $imagen);
@@ -38,7 +32,6 @@ if(isset($_POST["crearhabitacio"])){
 				$cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
 				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
                 $nom=htmlspecialchars(strip_tags($_POST['nom']));
-
 			if ($stmt->execute()) {
 			  $message = 'La habitació ha sigut creada';
 			} else {
