@@ -31,14 +31,14 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,email,nom,cognom,datanax) VALUES ('$usuari','$password','$email','$nom','$cognom','$datanax');";
+	$sql = "INSERT INTO usuario (usuari,password,email,nombre,apellidos,fechanacimiento) VALUES ('$usuari','$password','$email','$nom','$cognom','$datanax');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     $stmt->bindParam('$email', $_POST['email']);
     $stmt->bindParam('$nom', $_POST['nom']);
     $stmt->bindParam('$cognom', $_POST['cognom']);
-    $stmt->bindParam('$data', $_POST['data']);
+    $stmt->bindParam('$datanax', $_POST['datanax']);
 }
 
     if ($stmt->execute()) {
