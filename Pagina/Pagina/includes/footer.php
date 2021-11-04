@@ -8,9 +8,6 @@
         <div class="row">
           <!-- Grid column -->
           <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-            
-            </h6>
             <img src="utilitats\imatges\LOGO.png" alt="Logo pàgina">
           </div>
           <!-- Grid column -->
