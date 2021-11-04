@@ -11,13 +11,13 @@ if(isset($_POST["crearhabitacio"])){
        return $data;
 	}
     try{
-		if (!empty($_POST['tipo'])){
+		if (!empty($_POST['nom'])){
 
 			if ($conn->connect_error) {
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into tipo ( 
+			$stmt = $conn->prepare("insert into tipo (
             precio,
             imagen,
             m2,
@@ -162,7 +162,7 @@ if(isset($_POST["crearusuari"])){
         </tr>
         <tr>
             <td>Nom del tipus</td>
-            <td><input type='number' name='nom' class='form-control' /></td>
+            <td><input type='text' name='nom' class='form-control' /></td>
         </tr>
         <tr>
             <td></td>
