@@ -1,4 +1,4 @@
-<div class="buscador">
+<div class="mx-auto">
   <form class="buscadorForm form-inline" method="post" action="reservabuscador.php">
 <div class="form-group mb-2">
 <label for="from">Des de</label>
