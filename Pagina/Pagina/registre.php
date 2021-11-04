@@ -122,7 +122,7 @@ if ($password != $passwordc) {
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
+                  <button type="submit" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Tens una compte ja?? <a href="login.php" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
