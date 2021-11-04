@@ -10,24 +10,35 @@ require 'includes/conectar_DB.php';
        return $data;
 }
   if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword']) && 
-    !empty($_POST['email'])) {
+    !empty($_POST['nom'])&& !empty($_POST['cognom'])&& !empty($_POST['data']) ) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	$password = $_POST['password'];
       validate($password);
-	$passwordc = $_POST['cpassword']; 
+	$passwordc = $_POST['passwordc']; 
       validate($passwordc);
-    $email = $_POST['email']; 
+  $nom = $_POST['nom']; 
+      validate($nom);      
+  $cognom = $_POST['cognom'];
+      validate($cognom);
+  $datanax = $_POST['datanax'];
+      validate($data); 
+  $email = $_POST['email'];
+      validate($email);  
+
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari, password,email) VALUES ('$usuari','$password','email');";
+	$sql = "INSERT INTO usuario (usuari,password,email,nom,cognom,datanax) VALUES ('$usuari','$password','$email','$nom','$cognom','$datanax');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     $stmt->bindParam('$email', $_POST['email']);
+    $stmt->bindParam('$nom', $_POST['nom']);
+    $stmt->bindParam('$cognom', $_POST['cognom']);
+    $stmt->bindParam('$data', $_POST['data']);
 }
 
     if ($stmt->execute()) {
@@ -80,9 +91,9 @@ if ($password != $passwordc) {
     <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+  <div class="mask align-items-center h-100 gradient-custom-3">
     <div class="container">
-      <div class="row d-flex justify-content-center align-items-center">
+      <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
@@ -92,19 +103,19 @@ if ($password != $passwordc) {
 
                 <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
-                  <input type="text" name="usuari" class="form-control form-control-lg" />
+                  <input type="text" name="nom" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Cognom</label>
-                  <input type="text" name="nom" class="form-control form-control-lg" />
+                  <input type="text" name="cognom" class="form-control form-control-lg" />
                 </div>
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
-                  <input type="text" name="cognom" class="form-control form-control-lg" />
+                  <input type="text" name="usuari" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="data" class="form-control form-control-lg" />
+                  <input type="date" name="datanax" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
@@ -118,7 +129,7 @@ if ($password != $passwordc) {
 
                 <div class="form-outline mb-4">
                   <label class="form-label">Confirma la contrasenya</label>
-                  <input type="password" name="cpassword" class="form-control form-control-lg" />
+                  <input type="password" name="passwordc" class="form-control form-control-lg" />
                 </div>
 
                 <div class="d-flex justify-content-center">
