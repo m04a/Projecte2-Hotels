@@ -25,7 +25,7 @@ if(isset($_POST["crearhabitacio"])){
             persmax,
             descripcion,
             nom) values 
-			(:precio, :imagen, :m2, :cantidad, :persmax :descripcion, :nom)");
+			(:precio, :imagen, :m2, :cantidad, :persmax, :descripcion, :nom)");
 				$stmt->bindParam(':precio', $precio);
                 $stmt->bindParam(':imagen', $imagen);
 				$stmt->bindParam(':m2', $m2);
