@@ -1289,3 +1289,6 @@ ul.social-icons li a:hover {
 .buscadorForm label,.buscadorForm input{
   margin:30px;
 }
+#cercaBtn{
+  margin-left: 10px;
+}
