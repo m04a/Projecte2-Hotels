@@ -91,34 +91,34 @@ if ($password != $passwordc) {
               <form action="registre.php" method="POST">
 
                 <div class="form-outline mb-4">
+                 <label class="form-label">Nom</label>
                   <input type="text" name="usuari" class="form-control form-control-lg" />
-                  <label class="form-label">Nom</label>
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="text" name="nom" class="form-control form-control-lg" />
                   <label class="form-label">Cognom</label>
+                  <input type="text" name="nom" class="form-control form-control-lg" />
                 </div>
                   <div class="form-outline mb-4">
-                  <input type="text" name="cognom" class="form-control form-control-lg" />
                   <label class="form-label">Nom d'usuari</label>
+                  <input type="text" name="cognom" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="date" name="data" class="form-control form-control-lg" />
                   <label class="form-label">Data de naixament</label>
+                  <input type="date" name="data" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
-                  <input type="email" name="email" class="form-control form-control-lg" />
                   <label class="form-label">Correu electronic</label>
+                  <input type="email" name="email" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" name="password" class="form-control form-control-lg" />
                   <label class="form-label">Contrasenya</label>
+                  <input type="password" name="password" class="form-control form-control-lg" />
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" name="cpassword" class="form-control form-control-lg" />
                   <label class="form-label">Confirma la contrasenya</label>
+                  <input type="password" name="cpassword" class="form-control form-control-lg" />
                 </div>
 
                 <div class="d-flex justify-content-center">
