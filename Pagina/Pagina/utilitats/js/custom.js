@@ -146,14 +146,7 @@
   } );
 })(window.jQuery);
 
-$(document).ready(function(){
-  $("#tabs-2").click(function(){
-    $("#tabs-1").hide();
-  });
-  $("#tabs-1").click(function(){
-    $("#tabs-1").show();
-  });
-});
+
 
 if ( document.URL.includes("reserva.php") ) {
 	document.getElementById("titlevar").textContent="Reserva";
