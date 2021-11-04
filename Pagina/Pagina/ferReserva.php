@@ -102,16 +102,12 @@ catch(PDOException $exception){
   </div>
 </section>
 <div class="card text-center text-white bg-dark">
-  <div class="card-header">
-    Featured
-  </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
     <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
     <a href="#" class="btn btn-primary">Reserva</a>
   </div>
   <div class="card-footer text-muted">
-    2 days ago
+    Si tens algun dubte fes-ho saber
   </div>
 </div>
          <td>
