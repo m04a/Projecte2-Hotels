@@ -1159,6 +1159,9 @@ footer
 */
 footer{
   background-color: #350c04;
+  position:absolute;
+  width: 100%;
+
 }
 
   
