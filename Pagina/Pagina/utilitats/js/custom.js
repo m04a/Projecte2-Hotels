@@ -145,6 +145,9 @@
     }
   } );
 })(window.jQuery);
+
+/**/
+
 if ( document.URL.includes("reserva.php") ) {
 	document.getElementById("titlevar").textContent="Reserva";
 }
@@ -161,6 +164,9 @@ if ( document.URL.includes("contacte.php") ) {
 	document.getElementById("titlevar").textContent="Contacte";
 }
 if ( document.URL.includes("registre.php") ) {
+	document.getElementById("titlevar").textContent="Registre";
+}
+if ( document.URL.includes("reservabuscador.php") ) {
 	document.getElementById("titlevar").textContent="Registre";
 }
 if ( document.URL.includes("login.php") ) {

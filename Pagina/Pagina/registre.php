@@ -73,37 +73,66 @@ if ($password != $passwordc) {
 		 include 'includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-	
-	<div class="login">
-	
-	 <?php if(!empty($message)): ?>
+	<section class="vh-100 bg-image">
+    <?php if(!empty($message)): ?>
       <p> <?= $message ?></p>
     <?php endif; ?>
-    <form action="registre.php" method="POST">
-    <div class="container register-form justify-content-center align-items-center">
-            <div class="form">
-                <div class="note">
-                    <h3>Entra tots el camps</h3>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" id="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
+
+              <form action="registre.php" method="POST">
+
+                <div class="form-outline mb-4">
+                  <input type="text" name="usuari" class="form-control form-control-lg" />
+                  <label class="form-label"><h5>Nom</h5></label>
                 </div>
-                <div class="form-content">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" name="usuari"class="form-control" placeholder="Usuari" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <input name="password" type="password" class="form-control" placeholder="Password" value=""/>
-                            </div>
-                            <div class="form-group">
-                                <input name="cpassword" type="password" class="form-control" placeholder="Confirmar password" value=""/>
-                            </div>
-                        </div>
-                    </div>
-                     <button type="submit" class="btn btn-primary col-md-6">Registrar</button>
+
+                <div class="form-outline mb-4">
+                  <input type="email" name="email" class="form-control form-control-lg" />
+                  <label class="form-label"><h5>Correu electronic</h5></label>
                 </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" name="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label"><h5>Contrasenya</h5</label>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input type="password" name="cpassword" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label"><h5>Confirma la contrasenya</h5></label>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                  />
+                  <label class="form-check-label" for="form2Example3g">
+                    Estic d'acord <a href="#!" class="text-body"><u>Termes i condicions</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Tens una compte ja?? <a href="login.php" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
+
+              </form>
+
             </div>
+          </div>
         </div>
-      </form>
+      </div>
+    </div>
+  </div>
+</section>
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';

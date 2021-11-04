@@ -8,9 +8,6 @@
         <div class="row">
           <!-- Grid column -->
           <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-4">
-            <h6 class="text-uppercase mb-4 font-weight-bold">
-              HotelMk
-            </h6>
             <img src="utilitats\imatges\LOGO.png" alt="Logo pàgina">
           </div>
           <!-- Grid column -->
@@ -88,14 +85,6 @@
                class="text-white"
                role="button"
                ><i class="fa fa-twitter"></i
-              ></a>
-
-            <!-- Google -->
-            <a
-               class="btn btn-outline-light btn-floating m-1"
-               class="text-white"
-               role="button"
-               ><i class="fa fa-google"></i
               ></a>
 
             <!-- Instagram -->
