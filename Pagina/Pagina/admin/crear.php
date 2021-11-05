@@ -17,16 +17,45 @@ if(isset($_POST["crearhabitacio"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
+            $null = NULL;
 			$stmt = $conn->prepare("insert into tipo
             (precio, imagen, m2, cantidad, persmax, descripcion, nom) values 
 			(:precio, :imagen, :m2, :cantidad, :persmax, :descripcion, :nom)");
-				$stmt->bindParam(':precio', $precio);
-                $stmt->bindParam(':imagen', $imagen);
-				$stmt->bindParam(':m2', $m2);
-				$stmt->bindParam(':cantidad', $cantidad);
+            if($precio=''){
+                $stmt->bindParam(':precio', $precio);
+            }else{
+                $stmt->bindParam(':precio', $null);
+            }
+            if($imagen=''){
+                $stmt->bindParam(':imagen', $imagen);;
+            }else{
+                $stmt->bindParam(':imagen', $null);
+            }
+            if($m2=''){
+                $stmt->bindParam(':m2', $m2);            
+            }else{
+                $stmt->bindParam(':m2', $null);
+            }
+            if($cantidad=''){
+                $stmt->bindParam(':cantidad', $cantidad);            
+            }else{
+                $stmt->bindParam(':cantidad', $null);
+            }
+            if($persmax=''){
                 $stmt->bindParam(':persmax', $persmax);
+            }else{
+                $stmt->bindParam(':persmax', $null);
+            }
+            if($descripcion=''){
                 $stmt->bindParam(':descripcion', $descripcion);
+            }else{
+                $stmt->bindParam(':descripcion', $null);
+            }
+            if($nom=''){
                 $stmt->bindParam(':nom', $nom);
+            }else{
+                $stmt->bindParam(':nom', $null);
+            }
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
 				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
                 $m2=htmlspecialchars(strip_tags($_POST['m2']));
