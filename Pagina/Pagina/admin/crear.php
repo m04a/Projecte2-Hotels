@@ -33,32 +33,32 @@ if(isset($_POST["crearhabitacio"])){
             }else{
                 $stmt->bindParam(':precio', $precio);
             }
-            if($imagen=''){
+            if(empty($imagen)){
                 $stmt->bindParam(':imagen', $null);;
             }else{
                 $stmt->bindParam(':imagen', $imagen);
             }
-            if($m2=''){
+            if(empty($m2)){
                 $stmt->bindParam(':m2', $null);            
             }else{
                 $stmt->bindParam(':m2', $m2);
             }
-            if($cantidad=''){
+            if(empty($cantidad)){
                 $stmt->bindParam(':cantidad', $null);            
             }else{
                 $stmt->bindParam(':cantidad', $cantidad);
             }
-            if($persmax=''){
+            if(empty($persmax)){
                 $stmt->bindParam(':persmax', $null);
             }else{
                 $stmt->bindParam(':persmax', $persmax);
             }
-            if($descripcion=''){
+            if(empty($descripcion)){
                 $stmt->bindParam(':descripcion', $null);
             }else{
                 $stmt->bindParam(':descripcion', $descripcion);
             }
-            if($nom=''){
+            if(empty($nom)){
                 $stmt->bindParam(':nom', $null);
             }else{
                 $stmt->bindParam(':nom', $nom);
