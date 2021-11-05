@@ -23,22 +23,22 @@ require 'includes/conectar_DB.php';
       $datanax = $_POST['datanax'];
       validate($datanax); 
       $email = $_POST['email'];
-      validate($email);  
+      validate($email); 
 
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,email,nombre,apellidos,fechanacimiento) 
-  VALUES ('$usuari','$password','$email','$nom','$cognom','$datanax');";
+	$sql = "INSERT INTO usuario (usuari,password,email) 
+  VALUES ('$usuari','$password','$email');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     $stmt->bindParam('$email', $_POST['email']);
-    $stmt->bindParam('$nom', $_POST['nom']);
-    $stmt->bindParam('$cognom', $_POST['cognom']);
-    $stmt->bindParam('$datanax', $_POST['datanax']);
+    //$stmt->bindParam('$nom', $_POST['nom']);
+    //$stmt->bindParam('$cognom', $_POST['cognom']);
+    //$stmt->bindParam('$datanax', $_POST['datanax']);
 }
 
     if ($stmt->execute()) {
