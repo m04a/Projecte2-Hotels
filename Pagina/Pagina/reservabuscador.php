@@ -63,7 +63,7 @@ echo $from;
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
 LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion GROUP BY tipo ORDER BY numhab DESC";
+    $query = "SELECT idtipo, precio,descripcion, ocupada FROM tipo GROUP BY tipo ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
@@ -82,14 +82,14 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
                             </span>
 
-                            <h4><?php echo "<tr><td>{$tipo}</td>"; ?></h4>
+                            <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
 
                             <p>
-                                <i class="fa fa-info"></i><?php echo "<tr><td>{$Descripcion}</td>"; ?>
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                             </p>
 
                             <ul class="social-icons">
-                                <li><?php echo "<a href='ferReserva.php?numhab={$numhab}' class='btn btn-info m-r-6em'>Reservar</a>";?> </li>
+                                <li><?php echo "<a href='ferReserva.php?idtipo={$idtipo}' class='btn btn-info m-r-6em'>Reservar</a>";?> </li>
                             </ul>
                         </div>
                     </div>

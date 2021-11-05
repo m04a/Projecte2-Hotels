@@ -22,7 +22,7 @@ require 'includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = ? LIMIT 0,1";
+    $query = "SELECT * FROM habitacion WHERE numhab = ? LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
@@ -36,10 +36,10 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $numhab = $row['numhab'];
-    $Descripcion = $row['Descripcion'];
+    $nom  = $row['nom'];
+    $descripcion = $row['descripcion'];
     $precio = $row['precio'];
-    $ocupada = $row['ocupada'];
+    $m2 = $row['m2'];
 }
  
 // show error
@@ -72,11 +72,11 @@ catch(PDOException $exception){
               <div class="col-lg-8">
                 <section class='tabs-content' style="width: 100%;">
                   <article id='tabs-1'>
-                    <h4>Nom habitació</h4>
+                    <h4><?php echo htmlspecialchars($nom, ENT_QUOTES);?></h4>
 
                     <div class="row">
                        <div class="col-sm-6">
-                            <p><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></p>
+                            <p><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></p>
                        </div>
 
                        <div class="col-sm-6">
@@ -92,7 +92,7 @@ catch(PDOException $exception){
                        </div>
 
                        <div class="col-sm-6">
-                            <p><?php echo htmlspecialchars($numhab, ENT_QUOTES);?></p>
+                            <p></p>
                        </div>
                     </div>
                   </article>
