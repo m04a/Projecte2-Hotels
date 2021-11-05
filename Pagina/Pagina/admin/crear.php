@@ -36,6 +36,7 @@ if(isset($_POST["crearhabitacio"])){
 			  $message = 'La habitació ha sigut creada';
 			} else {
 			  $message = 'Ha hagut algun error';
+                 print_r($conn->errorInfo());
 			}
 		}
 		
