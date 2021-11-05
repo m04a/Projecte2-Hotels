@@ -16,10 +16,11 @@ require 'includes/conectar_DB.php';
       validate($password);
 	    $passwordc = $_POST['passwordc']; 
       validate($passwordc);
-      /*$nom = $_POST['nom']; 
+      $nom = $_POST['nom']; 
       validate($nom);      
       $cognom = $_POST['cognom'];
       validate($cognom);
+      /*
       $datanax = $_POST['datanax'];
       validate($datanax); 
       $email = $_POST['email'];
@@ -30,13 +31,13 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
+	$sql = "INSERT INTO usuario (usuari,password,nombre,apellidos) VALUES ('$usuari','$password',$nom','cognom');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     //$stmt->bindParam('$email', $_POST['email']);
-    //$stmt->bindParam('$nom', $_POST['nom']);
-    //$stmt->bindParam('$cognom', $_POST['cognom']);
+    $stmt->bindParam('$nom', $_POST['nom']);
+    $stmt->bindParam('$cognom', $_POST['cognom']);
     //$stmt->bindParam('$datanax', $_POST['datanax']);
 }
     if ($stmt->execute()) {
@@ -98,14 +99,14 @@ if ($password != $passwordc) {
               <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
               <form method="POST">
 
-                <!-- <div class="form-outline mb-4">
+                 <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
                   <input type="text" name="nom" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Cognom</label>
                   <input type="text" name="cognom" class="form-control form-control-lg" />
-                </div> -->
+                </div>
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
                   <input type="text" name="usuari" class="form-control form-control-lg" />
