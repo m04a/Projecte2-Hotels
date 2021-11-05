@@ -9,21 +9,20 @@ require 'includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword']) && 
-    !empty($_POST['nom'])&& !empty($_POST['cognom'])&& !empty($_POST['datanax']) ) {
+  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
-	$password = $_POST['password'];
+	    $password = $_POST['password'];
       validate($password);
-	$passwordc = $_POST['passwordc']; 
+	    $passwordc = $_POST['passwordc']; 
       validate($passwordc);
-  $nom = $_POST['nom']; 
+      $nom = $_POST['nom']; 
       validate($nom);      
-  $cognom = $_POST['cognom'];
+      $cognom = $_POST['cognom'];
       validate($cognom);
-  $datanax = $_POST['datanax'];
-      validate($data); 
-  $email = $_POST['email'];
+      $datanax = $_POST['datanax'];
+      validate($datanax); 
+      $email = $_POST['email'];
       validate($email);  
 
 if ($password != $passwordc) {
@@ -31,7 +30,8 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,email,nombre,apellidos,fechanacimiento) VALUES ('$usuari','$password','$email','$nom','$cognom','$datanax');";
+	$sql = "INSERT INTO usuario (usuari,password,email,nombre,apellidos,fechanacimiento) 
+  VALUES ('$usuari','$password','$email','$nom','$cognom','$datanax');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
