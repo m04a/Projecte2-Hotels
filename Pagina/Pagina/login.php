@@ -71,13 +71,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	?>
     <!-- *** Capçalera Final *** -->
 
-	<div class="login">
-   <form action="login.php" method="POST">
-      <input name="usuari" type="text" placeholder="Entra el usuari">
-      <input name="password" type="password" placeholder="Entra el teu password">
-      <input type="submit" value="Submit" name="login">
-  </form>
-</div>
+	<section>
+  <div class="mask align-items-center h-100 gradient-custom-3">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
+              <form method="POST">
+                  <div class="form-outline mb-4">
+                  <label class="form-label">Nom d'usuari</label>
+                  <input type="text" name="usuari" class="form-control form-control-lg" />
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label">Contrasenya</label>
+                  <input type="password" name="password" class="form-control form-control-lg" />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" name="login" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">No tens compte... <a href="login.php" class="fw-bold text-body"><u>Fes un compte aquí.</u></a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
      <!-- *** Footer inici *** -->
      <?php
 	 include 'includes/footer.php';
