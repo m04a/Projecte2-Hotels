@@ -21,7 +21,6 @@ require 'includes/conectar_DB.php';
       $cognom = $_POST['cognom'];
       validate($cognom);
       $datanax = $_POST['datanax'];
-      validate($datanax);
       $email = $_POST['email'];
       validate($email);
 
@@ -30,7 +29,7 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,nom,cognom,email,datanax) VALUES ('$usuari','$password','$nom','cognom','email','datanax');";
+	$sql = "INSERT INTO usuario (usuari,password,nom,cognom,email,datanax) VALUES ('$usuari','$password','$nom','$cognom','$email','$datanax');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
