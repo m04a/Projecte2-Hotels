@@ -16,27 +16,28 @@ require 'includes/conectar_DB.php';
       validate($password);
 	    $passwordc = $_POST['passwordc']; 
       validate($passwordc);
-      $nombre = $_POST['nombre']; 
+     /* $nombre = $_POST['nombre']; 
       validate($nombre);      
       $apellidos = $_POST['apellidos'];
       validate($apellidos);
       $fechanacimento = $_POST['fechanacimento'];
       $email = $_POST['email'];
-      validate($email);
+      validate($email);*/
 
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
+	//$sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
+    $sql = "INSERT INTO usuario (usuari,password) VALUES ('$usuari','$password);";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
-    $stmt->bindParam('$email', $_POST['email']);
-    $stmt->bindParam('$nombre', $_POST['nombre']);
-    $stmt->bindParam('$apellidos', $_POST['apellidos']);
-    $stmt->bindParam('$fechanacimento', $_POST['fechanacimento']);
+    //$stmt->bindParam('$email', $_POST['email']);
+    //$stmt->bindParam('$nombre', $_POST['nombre']);
+    //$stmt->bindParam('$apellidos', $_POST['apellidos']);
+    //$stmt->bindParam('$fechanacimento', $_POST['fechanacimento']);
 }
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
@@ -96,31 +97,32 @@ if ($password != $passwordc) {
                  <?php if(!empty($message)): ?>
                   <div class='alert alert-warning'> <?= $message ?> </div>
                   <?php endif; ?>
-                 <div class="form-outline mb-4">
+               <!--  <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
                   <input type="text" name="nombre" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Cognom</label>
                   <input type="text" name="apellidos" class="form-control form-control-lg" />
-                </div>
+                </div> -->
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
                   <input type="text" name="usuari" class="form-control form-control-lg" />
                 </div>
-                 <div class="form-outline mb-4">
+                
+                <!-- <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
                   <input type="date" name="fechanacimento" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
                   <input type="email" name="email" class="form-control form-control-lg" />
-                </div> 
+                </div> -->
 
                 <div class="form-outline mb-4">
                   <label class="form-label">Contrasenya</label>
                   <input type="password" name="password" class="form-control form-control-lg" />
-                </div>
+                </div> 
 
                 <div class="form-outline mb-4">
                   <label class="form-label">Confirma la contrasenya</label>
