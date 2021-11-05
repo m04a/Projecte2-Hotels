@@ -63,7 +63,8 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE tipo
-                    SET  
+                    SET 
+                    idtipo=:idtipo, 
                     precio=:precio, 
                     imagen=:imagen, 
                     m2=:m2, 
@@ -77,19 +78,23 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
+        $idtipo=htmlspecialchars(strip_tags($_POST['idtipo']));
         $precio=htmlspecialchars(strip_tags($_POST['precio']));
         $imagen=htmlspecialchars(strip_tags($_POST['imagen']));
         $m2=htmlspecialchars(strip_tags($_POST['m2']));
         $cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+        $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
         $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
         $nom=htmlspecialchars(strip_tags($_POST['nom']));
  
         // bind the parameters
         
+        $stmt->bindParam(':idtipo', $idtipo);
         $stmt->bindParam(':precio', $precio);
         $stmt->bindParam(':imagen', $imagen);
         $stmt->bindParam(':m2', $m2);
         $stmt->bindParam(':cantidad', $cantidad);
+        $stmt->bindParam(':persmax', $persmax);
         $stmt->bindParam(':descripcion', $descripcion);
         $stmt->bindParam(':nom', $nom);
  
