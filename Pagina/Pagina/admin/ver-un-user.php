@@ -71,11 +71,12 @@ catch(PDOException $exception){
 	 <tr>
         <td>Sexe:</td>
         <td><?php 
-			if($sexo = '0'){
+            echo htmlspecialchars($sexo, ENT_QUOTES);
+			/*if($sexo = '0'){
 				echo("Home");
 			}else{
 				echo("Dona");
-			}
+			}*/
 			 ?></td>
     </tr>
     <tr>
