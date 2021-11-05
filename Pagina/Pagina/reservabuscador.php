@@ -54,14 +54,16 @@
             <br>
 <?php
 if(isset($_POST["reservaBuscar"])){
-echo $_GET["to"];
-echo $_GET["from"];
+$to = $_GET["to"];
+$from = $_GET["from"];
+echo '$to';
+echo '$from';
    require 'includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
 LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion ORDER BY numhab DESC";
+    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion GROUP BY tipo ORDER BY numhab DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
