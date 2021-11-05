@@ -1,5 +1,6 @@
+drop database hotel;
 create database hotel;
-
+use database hotel;
 create table usuario (
 	usuari varchar(69) primary key,
 	password varchar(69) not null,

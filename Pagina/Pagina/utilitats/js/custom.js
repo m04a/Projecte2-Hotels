@@ -146,7 +146,7 @@
   } );
 })(window.jQuery);
 
-/**/
+/*Canvis de reserves*/
 
 if ( document.URL.includes("reserva.php") ) {
 	document.getElementById("titlevar").textContent="Reserva";
@@ -172,3 +172,5 @@ if ( document.URL.includes("reservabuscador.php") ) {
 if ( document.URL.includes("login.php") ) {
 	document.getElementById("titlevar").textContent="Login";
 }
+
+/*Canvis de tabs*/

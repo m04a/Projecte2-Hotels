@@ -6,23 +6,23 @@
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="utilitats/css/style.css">
-    <link rel="stylesheet" href="utilitats/css/font-awesome.css">
+    <link rel="stylesheet" href="../utilitats/css/style.css">
+    <link rel="stylesheet" href="../utilitats/css/font-awesome.css">
 </head>
 <body>
  <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-$numhab=isset($_GET['numhab']) ? $_GET['numhab'] : die('ERROR: Record ID not found.');
+$numhab=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
 
 //include database connection
-require 'includes/conectar_DB.php';
+require '../includes/conectar_DB.php';
  
  
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT numhab, precio, tipo, Descripcion, ocupada FROM habitacion WHERE numhab = ? LIMIT 0,1";
+    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE idtipo = ? LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
@@ -36,10 +36,10 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $numhab = $row['numhab'];
-    $Descripcion = $row['Descripcion'];
+    $nom  = $row['nom'];
+    $descripcion = $row['descripcion'];
     $precio = $row['precio'];
-    $ocupada = $row['ocupada'];
+    $m2 = $row['m2'];
 }
  
 // show error
@@ -49,12 +49,12 @@ catch(PDOException $exception){
 ?>
     <!-- *** Header Principal *** -->
     <?php
-         include 'includes/nav.php';
+         include '../includes/nav.php';
     ?>
     <!-- *** Header Final *** -->
     <!-- *** Capçalera inici *** -->
     <?php
-         include 'includes/capsalera.php';
+         include '../includes/capsalera.php';
     ?>
     <!-- *** Capçalera Final *** -->
  <section class="section" id="trainers">
@@ -72,11 +72,11 @@ catch(PDOException $exception){
               <div class="col-lg-8">
                 <section class='tabs-content' style="width: 100%;">
                   <article id='tabs-1'>
-                    <h4>Nom habitació</h4>
+                    <h4><?php echo htmlspecialchars($nom, ENT_QUOTES);?></h4>
 
                     <div class="row">
                        <div class="col-sm-6">
-                            <p><?php echo htmlspecialchars($Descripcion, ENT_QUOTES);  ?></p>
+                            <p><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></p>
                        </div>
 
                        <div class="col-sm-6">
@@ -92,7 +92,7 @@ catch(PDOException $exception){
                        </div>
 
                        <div class="col-sm-6">
-                            <p><?php echo htmlspecialchars($numhab, ENT_QUOTES);?></p>
+                            <p></p>
                        </div>
                     </div>
                   </article>
@@ -114,13 +114,14 @@ catch(PDOException $exception){
         </td>
         <!-- *** Footer inici *** -->
      <?php
-     include 'includes/footer.php';
+     include '../includes/footer.php';
     ?>
     <!-- *** Footer final *** -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
- 
+<script src="../utilitats/js/accordions.js"></script>
+
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
