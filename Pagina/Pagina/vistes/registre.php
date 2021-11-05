@@ -1,7 +1,7 @@
 <!DOCTYPE html>
   <?php
 
-require 'includes/conectar_DB.php';
+require '../includes/conectar_DB.php';
   $message = '';
 	function validate($data){
        $data = trim($data);
@@ -58,9 +58,9 @@ if ($password != $passwordc) {
 
     <title>Pagina Hotel| Iniciar Sessió </title>
 
-    <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../utilitats/css/font-awesome.css">
 
-    <link rel="stylesheet" href="utilitats/css/style.css">
+    <link rel="stylesheet" href="../utilitats/css/style.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -70,19 +70,19 @@ if ($password != $passwordc) {
     
     <!-- ***** Carregador Inici ***** -->
     <?php
-		 include 'includes/carregador.php';
+		 include '../includes/carregador.php';
 	?>
     <!-- *** Preloader End *** -->
     
     
     <!-- *** Header Principal *** -->
 	<?php
-		 include 'includes/nav.php';
+		 include '../includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
 	<!-- *** Capçalera inici *** -->
 	<?php
-		 include 'includes/capsalera.php';
+		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
 	<section>
@@ -111,8 +111,8 @@ if ($password != $passwordc) {
                 </div>
                  <!--<div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="fechanacimento" class="form-control form-control-lg" /> -->
-                </div>
+                  <input type="date" name="fechanacimento" class="form-control form-control-lg" /> 
+                </div>-->
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
                   <input type="email" name="email" class="form-control form-control-lg" />
@@ -143,27 +143,27 @@ if ($password != $passwordc) {
 </section>
      <!-- *** Footer inici *** -->
      <?php
-	 include 'includes/footer.php';
+	 include '../includes/footer.php';
 	?>
 	<!-- *** Footer final *** -->
 
     <!-- jQuery -->
-    <script src="utilitats/js/jquery-2.1.0.min.js"></script>
+    <script src="../utilitats/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="utilitats/js/popper.js"></script>
-    <script src="utilitats/js/bootstrap.min.js"></script>
+    <script src="../utilitats/js/popper.js"></script>
+    <script src="../utilitats/js/bootstrap.min.js"></script>
 
     <!-- Plugins afegits -->
-    <script src="utilitats/js/scrollreveal.min.js"></script>
-    <script src="utilitats/js/waypoints.min.js"></script>
-    <script src="utilitats/js/jquery.counterup.min.js"></script>
-    <script src="utilitats/js/imgfix.min.js"></script> 
-    <script src="utilitats/js/mixitup.js"></script> 
-    <script src="utilitats/js/accordions.js"></script>
+    <script src="../utilitats/js/scrollreveal.min.js"></script>
+    <script src="../utilitats/js/waypoints.min.js"></script>
+    <script src="../utilitats/js/jquery.counterup.min.js"></script>
+    <script src="../utilitats/js/imgfix.min.js"></script> 
+    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/accordions.js"></script>
     
     <!-- Fitxer nostre -->
-    <script src="utilitats/js/custom.js"></script>
+    <script src="../utilitats/js/custom.js"></script>
 
   </body>
 </html>

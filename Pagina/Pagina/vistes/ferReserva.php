@@ -6,8 +6,8 @@
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="utilitats/css/style.css">
-    <link rel="stylesheet" href="utilitats/css/font-awesome.css">
+    <link rel="stylesheet" href="../utilitats/css/style.css">
+    <link rel="stylesheet" href="../utilitats/css/font-awesome.css">
 </head>
 <body>
  <?php
@@ -16,7 +16,7 @@
 $numhab=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
 
 //include database connection
-require 'includes/conectar_DB.php';
+require '../includes/conectar_DB.php';
  
  
 // read current record's data
@@ -49,12 +49,12 @@ catch(PDOException $exception){
 ?>
     <!-- *** Header Principal *** -->
     <?php
-         include 'includes/nav.php';
+         include '../includes/nav.php';
     ?>
     <!-- *** Header Final *** -->
     <!-- *** Capçalera inici *** -->
     <?php
-         include 'includes/capsalera.php';
+         include '../includes/capsalera.php';
     ?>
     <!-- *** Capçalera Final *** -->
  <section class="section" id="trainers">
@@ -114,13 +114,13 @@ catch(PDOException $exception){
         </td>
         <!-- *** Footer inici *** -->
      <?php
-     include 'includes/footer.php';
+     include '../includes/footer.php';
     ?>
     <!-- *** Footer final *** -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="utilitats/js/accordions.js"></script>
+<script src="../utilitats/js/accordions.js"></script>
 
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

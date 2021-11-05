@@ -11,9 +11,9 @@
 
     <title>Pagina Hotel| Termes i condicions </title>
 
-    <link rel="stylesheet" type="text/css" href="utilitats/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../utilitats/css/font-awesome.css">
 
-    <link rel="stylesheet" href="utilitats/css/style.css">
+    <link rel="stylesheet" href="../utilitats/css/style.css">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
@@ -22,20 +22,20 @@
     
     <!-- ***** Carregador Inici ***** -->
     <?php
-		 include 'includes/carregador.php';
+		 include '../includes/carregador.php';
 	?>
     <!-- *** Preloader End *** -->
     
     
     <!-- *** Header Principal *** -->
 	<?php
-		 include 'includes/nav.php';
+		 include '../includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
 	
    <!-- *** Capçalera inici *** -->
 	<?php
-		 include 'includes/capsalera.php';
+		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
  <section class="section" id="trainers">
@@ -43,7 +43,7 @@
             <br>
             <br>
 <?php
-   require 'includes/conectar_DB.php';
+   require '../includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
@@ -60,7 +60,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
          <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="utilitats/imatges/product-2-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -90,27 +90,27 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
  </div>
      <!-- *** Footer inici *** -->
      <?php
-	 include 'includes/footer.php';
+	 include '../includes/footer.php';
 	?>
 	<!-- *** Footer final *** -->
 
     <!-- jQuery -->
-    <script src="utilitats/js/jquery-2.1.0.min.js"></script>
+    <script src="../utilitats/js/jquery-2.1.0.min.js"></script>
 
     <!-- Bootstrap -->
-    <script src="utilitats/js/popper.js"></script>
-    <script src="utilitats/js/bootstrap.min.js"></script>
+    <script src="../utilitats/js/popper.js"></script>
+    <script src="../utilitats/js/bootstrap.min.js"></script>
 
     <!-- Plugins afegits -->
-    <script src="utilitats/js/scrollreveal.min.js"></script>
-    <script src="utilitats/js/waypoints.min.js"></script>
-    <script src="utilitats/js/jquery.counterup.min.js"></script>
-    <script src="utilitats/js/imgfix.min.js"></script> 
-    <script src="utilitats/js/mixitup.js"></script> 
-    <script src="utilitats/js/accordions.js"></script>
+    <script src="../utilitats/js/scrollreveal.min.js"></script>
+    <script src="../utilitats/js/waypoints.min.js"></script>
+    <script src="../utilitats/js/jquery.counterup.min.js"></script>
+    <script src="../utilitats/js/imgfix.min.js"></script> 
+    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/accordions.js"></script>
     
     <!-- Fitxer nostre -->
-    <script src="utilitats/js/custom.js"></script>
+    <script src="../utilitats/js/custom.js"></script>
 
   </body>
 </html>
