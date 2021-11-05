@@ -30,8 +30,8 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,email) 
-  VALUES ('$usuari','$password','$email');";
+	$sql = "INSERT INTO usuario (usuari,password) 
+  VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
