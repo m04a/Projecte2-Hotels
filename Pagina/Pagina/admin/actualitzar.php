@@ -38,12 +38,12 @@ try {
     // values to fill up our form
     $idtipo = $row['idtipo'];
     $precio = $row['precio'];
-    $imagen = $imagen['imagen'];
-    $m2 = $m2['m2'];
-    $cantidad= $cantidad['cantidad'];
-    $persmax = $persmax['persmax'];
+    $imagen = $row['imagen'];
+    $m2 = $row['m2'];
+    $cantidad= $row['cantidad'];
+    $persmax = $row['persmax'];
     $descripcion = $row['descripcion'];
-    $nom = $nom['nom'];
+    $nom = $row['nom'];
     
 }
  
