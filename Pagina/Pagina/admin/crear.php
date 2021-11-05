@@ -17,25 +17,60 @@ if(isset($_POST["crearhabitacio"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into tipo 
+            $null = NULL;
+            $precio=htmlspecialchars(strip_tags($_POST['precio']));
+            $imagen=htmlspecialchars(strip_tags($_POST['imagen']));
+            $m2=htmlspecialchars(strip_tags($_POST['m2']));
+            $cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+            $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
+            $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+            $nom=htmlspecialchars(strip_tags($_POST['nom']));
+			$stmt = $conn->prepare("insert into tipo
             (precio, imagen, m2, cantidad, persmax, descripcion, nom) values 
 			(:precio, :imagen, :m2, :cantidad, :persmax, :descripcion, :nom)");
-				$stmt->bindParam(':precio', $precio);
+            if(empty($precio)){
+                $stmt->bindParam(':precio', $null);
+            }else{
+                $stmt->bindParam(':precio', $precio);
+            }
+            if(empty($imagen)){
+                $stmt->bindParam(':imagen', $null);;
+            }else{
                 $stmt->bindParam(':imagen', $imagen);
-				$stmt->bindParam(':m2', $m2);
-				$stmt->bindParam(':cantidad', $cantidad);
+            }
+            if(empty($m2)){
+                $stmt->bindParam(':m2', $null);            
+            }else{
+                $stmt->bindParam(':m2', $m2);
+            }
+            if(empty($cantidad)){
+                $stmt->bindParam(':cantidad', $null);            
+            }else{
+                $stmt->bindParam(':cantidad', $cantidad);
+            }
+            if(empty($persmax)){
+                $stmt->bindParam(':persmax', $null);
+            }else{
+                $stmt->bindParam(':persmax', $persmax);
+            }
+            if(empty($descripcion)){
+                $stmt->bindParam(':descripcion', $null);
+            }else{
                 $stmt->bindParam(':descripcion', $descripcion);
+            }
+            if(empty($nom)){
+                $stmt->bindParam(':nom', $null);
+            }else{
                 $stmt->bindParam(':nom', $nom);
-				$precio=htmlspecialchars(strip_tags($_POST['precio']));
-				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
-                $m2=htmlspecialchars(strip_tags($_POST['m2']));
-				$cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
-				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
-                $nom=htmlspecialchars(strip_tags($_POST['nom']));
+            }
+				
 			if ($stmt->execute()) {
 			  $message = 'La habitació ha sigut creada';
 			} else {
 			  $message = 'Ha hagut algun error';
+                 print_r($stmt->errorInfo());
+                echo "\nPDO::errorCode(): ", $stmt->errorCode();
+                die();
 			}
 		}
 		

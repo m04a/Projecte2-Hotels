@@ -38,12 +38,12 @@ try {
     // values to fill up our form
     $idtipo = $row['idtipo'];
     $precio = $row['precio'];
-    $imagen = $imagen['imagen'];
-    $m2 = $m2['m2'];
-    $cantidad= $cantidad['cantidad'];
-    $persmax = $persmax['persmax'];
+    $imagen = $row['imagen'];
+    $m2 = $row['m2'];
+    $cantidad= $row['cantidad'];
+    $persmax = $row['persmax'];
     $descripcion = $row['descripcion'];
-    $nom = $nom['nom'];
+    $nom = $row['nom'];
     
 }
  
@@ -83,6 +83,7 @@ if($_POST){
         $imagen=htmlspecialchars(strip_tags($_POST['imagen']));
         $m2=htmlspecialchars(strip_tags($_POST['m2']));
         $cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+        $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
         $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
         $nom=htmlspecialchars(strip_tags($_POST['nom']));
  
@@ -93,6 +94,7 @@ if($_POST){
         $stmt->bindParam(':imagen', $imagen);
         $stmt->bindParam(':m2', $m2);
         $stmt->bindParam(':cantidad', $cantidad);
+        $stmt->bindParam(':persmax', $persmax);
         $stmt->bindParam(':descripcion', $descripcion);
         $stmt->bindParam(':nom', $nom);
  
