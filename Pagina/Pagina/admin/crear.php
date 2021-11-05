@@ -18,10 +18,17 @@ if(isset($_POST["crearhabitacio"])){
 			} 
 				// insertar query
             $null = NULL;
+            $precio=htmlspecialchars(strip_tags($_POST['precio']));
+            $imagen=htmlspecialchars(strip_tags($_POST['imagen']));
+            $m2=htmlspecialchars(strip_tags($_POST['m2']));
+            $cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+            $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
+            $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
+            $nom=htmlspecialchars(strip_tags($_POST['nom']));
 			$stmt = $conn->prepare("insert into tipo
             (precio, imagen, m2, cantidad, persmax, descripcion, nom) values 
 			(:precio, :imagen, :m2, :cantidad, :persmax, :descripcion, :nom)");
-            if($precio=''){
+            if(empty($precio)){
                 $stmt->bindParam(':precio', $null);
             }else{
                 $stmt->bindParam(':precio', $precio);
@@ -56,13 +63,7 @@ if(isset($_POST["crearhabitacio"])){
             }else{
                 $stmt->bindParam(':nom', $nom);
             }
-				$precio=htmlspecialchars(strip_tags($_POST['precio']));
-				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
-                $m2=htmlspecialchars(strip_tags($_POST['m2']));
-				$cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
-                $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
-				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
-                $nom=htmlspecialchars(strip_tags($_POST['nom']));
+				
 			if ($stmt->execute()) {
 			  $message = 'La habitació ha sigut creada';
 			} else {
