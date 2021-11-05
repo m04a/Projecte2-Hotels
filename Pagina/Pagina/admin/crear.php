@@ -24,12 +24,14 @@ if(isset($_POST["crearhabitacio"])){
                 $stmt->bindParam(':imagen', $imagen);
 				$stmt->bindParam(':m2', $m2);
 				$stmt->bindParam(':cantidad', $cantidad);
+                $stmt->bindParam(':persmax', $persmax);
                 $stmt->bindParam(':descripcion', $descripcion);
                 $stmt->bindParam(':nom', $nom);
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
 				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
                 $m2=htmlspecialchars(strip_tags($_POST['m2']));
 				$cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
+                $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
 				$descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
                 $nom=htmlspecialchars(strip_tags($_POST['nom']));
 			if ($stmt->execute()) {
