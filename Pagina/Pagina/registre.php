@@ -30,8 +30,7 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password) 
-  VALUES ('$usuari','$password');";
+	$sql = "INSERT INTO usuario (usuari, password) VALUES ('$usuari','$password');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
@@ -40,7 +39,6 @@ if ($password != $passwordc) {
     //$stmt->bindParam('$cognom', $_POST['cognom']);
     //$stmt->bindParam('$datanax', $_POST['datanax']);
 }
-
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
     } else {
@@ -88,6 +86,9 @@ if ($password != $passwordc) {
 	?>
     <!-- *** Capçalera Final *** -->
 	<section>
+    <?php if(!empty($message)): ?>
+      <p> <?= $message ?> </p>
+    <?php endif; ?>
   <div class="mask align-items-center h-100 gradient-custom-3">
     <div class="container">
       <div class="row justify-content-center align-items-center">
@@ -95,9 +96,6 @@ if ($password != $passwordc) {
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
-              <?php if(!empty($message)): ?>
-      <p> <?= $message ?></p>
-    <?php endif; ?>
               <form action="registre.php" method="POST">
 
                 <!-- <div class="form-outline mb-4">
