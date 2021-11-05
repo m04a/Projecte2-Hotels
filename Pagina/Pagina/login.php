@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
-              <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
+              <h2 class="text-uppercase text-center mb-5">INICIAR SESSIÓ</h2>
               <form method="POST">
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
