@@ -36,14 +36,14 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-				$idtipo=$_POST['idtipo'];
-				$precio=$_POST['precio'];
-				$imagen=$_POST['imagen'];
-                $m2=$_POST['m2'];
-				$cantidad=$_POST['cantidad'];
-                $persmax=$_POST['persmax'];
-				$descripcion=$_POST['descripcion'];
-                $nom=$_POST['nom'];
+				$idtipo=$row['idtipo'];
+				$precio=$row['precio'];
+				$imagen=$row['imagen'];
+                $m2=$row['m2'];
+				$cantidad=$row['cantidad'];
+                $persmax=$row['persmax'];
+				$descripcion=$row['descripcion'];
+                $nom=$row['nom'];
 }
  
 // show error
