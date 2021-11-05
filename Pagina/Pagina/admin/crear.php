@@ -22,39 +22,39 @@ if(isset($_POST["crearhabitacio"])){
             (precio, imagen, m2, cantidad, persmax, descripcion, nom) values 
 			(:precio, :imagen, :m2, :cantidad, :persmax, :descripcion, :nom)");
             if($precio=''){
-                $stmt->bindParam(':precio', $precio);
-            }else{
                 $stmt->bindParam(':precio', $null);
+            }else{
+                $stmt->bindParam(':precio', $precio);
             }
             if($imagen=''){
-                $stmt->bindParam(':imagen', $imagen);;
+                $stmt->bindParam(':imagen', $null);;
             }else{
-                $stmt->bindParam(':imagen', $null);
+                $stmt->bindParam(':imagen', $imagen);
             }
             if($m2=''){
-                $stmt->bindParam(':m2', $m2);            
+                $stmt->bindParam(':m2', $null);            
             }else{
-                $stmt->bindParam(':m2', $null);
+                $stmt->bindParam(':m2', $m2);
             }
             if($cantidad=''){
-                $stmt->bindParam(':cantidad', $cantidad);            
+                $stmt->bindParam(':cantidad', $null);            
             }else{
-                $stmt->bindParam(':cantidad', $null);
+                $stmt->bindParam(':cantidad', $cantidad);
             }
             if($persmax=''){
-                $stmt->bindParam(':persmax', $persmax);
-            }else{
                 $stmt->bindParam(':persmax', $null);
+            }else{
+                $stmt->bindParam(':persmax', $persmax);
             }
             if($descripcion=''){
-                $stmt->bindParam(':descripcion', $descripcion);
-            }else{
                 $stmt->bindParam(':descripcion', $null);
+            }else{
+                $stmt->bindParam(':descripcion', $descripcion);
             }
             if($nom=''){
-                $stmt->bindParam(':nom', $nom);
-            }else{
                 $stmt->bindParam(':nom', $null);
+            }else{
+                $stmt->bindParam(':nom', $nom);
             }
 				$precio=htmlspecialchars(strip_tags($_POST['precio']));
 				$imagen=htmlspecialchars(strip_tags($_POST['imagen']));
