@@ -9,7 +9,7 @@ require 'includes/conectar_DB.php';
        $data = htmlspecialchars($data);
        return $data;
 }
-  if (!empty($_POST['usuari']) && !empty($_POST['password']) && !empty($_POST['cpassword'])) {
+  if (isset($_POST["Submit1"])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
 	    $password = $_POST['password'];
@@ -96,7 +96,7 @@ if ($password != $passwordc) {
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
-              <form action="registre.php" method="POST">
+              <form method="POST">
 
                 <!-- <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
@@ -131,7 +131,7 @@ if ($password != $passwordc) {
                 </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="submit" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
+                  <button type="submit" name="Submit1" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Tens una compte ja?? <a href="login.php" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
