@@ -11,7 +11,7 @@
                         <ul class="nav">
                             <li><a href="index.php" class="active">Inici</a></li>
                             <li><a href="habitacions.php">Habitacions</a></li>
-                            <li><a href="reserva.php">Reserva</a></li>
+                            <li><a href="reservabuscador.php">Reserva</a></li>
 							<li><a href="about.php">Sobre Nosaltes</a></li>
                             <li><a href="contacte.php">Contacte</a></li> 
 							<li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
