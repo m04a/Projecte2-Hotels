@@ -63,7 +63,7 @@ echo $from;
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
 LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
-    $query = "SELECT idtipo, precio,descripcion, ocupada FROM tipo GROUP BY tipo ORDER BY numhab DESC";
+    $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
