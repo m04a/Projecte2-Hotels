@@ -16,11 +16,11 @@ require 'includes/conectar_DB.php';
       validate($password);
 	    $passwordc = $_POST['passwordc']; 
       validate($passwordc);
-      $nom = $_POST['nom']; 
-      validate($nom);      
-      $cognom = $_POST['cognom'];
-      validate($cognom);
-      $datanax = $_POST['datanax'];
+      $nombre = $_POST['nombre']; 
+      validate($nombre);      
+      $apellidos = $_POST['apellidos'];
+      validate($apellidos);
+      $fechanacimento = $_POST['fechanacimento'];
       $email = $_POST['email'];
       validate($email);
 
@@ -29,14 +29,14 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,nom,cognom,email,datanax) VALUES ('$usuari','$password','$nom','$cognom','$email','$datanax');";
+	$sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     $stmt->bindParam('$email', $_POST['email']);
-    $stmt->bindParam('$nom', $_POST['nom']);
-    $stmt->bindParam('$cognom', $_POST['cognom']);
-    $stmt->bindParam('$datanax', $_POST['datanax']);
+    $stmt->bindParam('$nombre', $_POST['nombre']);
+    $stmt->bindParam('$apellidos', $_POST['apellidos']);
+    $stmt->bindParam('$fechanacimento', $_POST['fechanacimento']);
 }
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
@@ -98,11 +98,11 @@ if ($password != $passwordc) {
                   <?php endif; ?>
                  <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
-                  <input type="text" name="nom" class="form-control form-control-lg" />
+                  <input type="text" name="nombre" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Cognom</label>
-                  <input type="text" name="cognom" class="form-control form-control-lg" />
+                  <input type="text" name="apellidos" class="form-control form-control-lg" />
                 </div>
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
@@ -110,7 +110,7 @@ if ($password != $passwordc) {
                 </div>
                  <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="datanax" class="form-control form-control-lg" />
+                  <input type="date" name="fechanacimento" class="form-control form-control-lg" />
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
