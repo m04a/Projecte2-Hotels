@@ -23,19 +23,20 @@ require 'includes/conectar_DB.php';
       /*
       $datanax = $_POST['datanax'];
       validate($datanax); 
+       */
       $email = $_POST['email'];
-      validate($email); */
+      validate($email);
 
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,nom,cognom) VALUES ('$usuari','$password','$nom','cognom');";
+	$sql = "INSERT INTO usuario (usuari,password,nom,cognom,email) VALUES ('$usuari','$password','$nom','cognom','email');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
-    //$stmt->bindParam('$email', $_POST['email']);
+    $stmt->bindParam('$email', $_POST['email']);
     $stmt->bindParam('$nom', $_POST['nom']);
     $stmt->bindParam('$cognom', $_POST['cognom']);
     //$stmt->bindParam('$datanax', $_POST['datanax']);
@@ -116,10 +117,11 @@ if ($password != $passwordc) {
                   <label class="form-label">Data de naixament</label>
                   <input type="date" name="datanax" class="form-control form-control-lg" />
                 </div>
+                -->
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
                   <input type="email" name="email" class="form-control form-control-lg" />
-                </div> -->
+                </div> 
 
                 <div class="form-outline mb-4">
                   <label class="form-label">Contrasenya</label>
