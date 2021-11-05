@@ -20,10 +20,8 @@ require 'includes/conectar_DB.php';
       validate($nom);      
       $cognom = $_POST['cognom'];
       validate($cognom);
-      /*
       $datanax = $_POST['datanax'];
-      validate($datanax); 
-       */
+      validate($datanax);
       $email = $_POST['email'];
       validate($email);
 
@@ -32,14 +30,14 @@ if ($password != $passwordc) {
 	header("Location: registre.php");
   }else{
 	
-	$sql = "INSERT INTO usuario (usuari,password,nom,cognom,email) VALUES ('$usuari','$password','$nom','cognom','email');";
+	$sql = "INSERT INTO usuario (usuari,password,nom,cognom,email,datanax) VALUES ('$usuari','$password','$nom','cognom','email','datanax');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     $stmt->bindParam('$email', $_POST['email']);
     $stmt->bindParam('$nom', $_POST['nom']);
     $stmt->bindParam('$cognom', $_POST['cognom']);
-    //$stmt->bindParam('$datanax', $_POST['datanax']);
+    $stmt->bindParam('$datanax', $_POST['datanax']);
 }
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
@@ -88,9 +86,6 @@ if ($password != $passwordc) {
 	?>
     <!-- *** Capçalera Final *** -->
 	<section>
-    <?php if(!empty($message)): ?>
-      <p> <?= $message ?> </p>
-    <?php endif; ?>
   <div class="mask align-items-center h-100 gradient-custom-3">
     <div class="container">
       <div class="row justify-content-center align-items-center">
@@ -99,7 +94,9 @@ if ($password != $passwordc) {
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
               <form method="POST">
-
+                 <?php if(!empty($message)): ?>
+                  <div class='alert alert-warning'> <?= $message ?> </div>
+                  <?php endif; ?>
                  <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
                   <input type="text" name="nom" class="form-control form-control-lg" />
@@ -112,12 +109,10 @@ if ($password != $passwordc) {
                   <label class="form-label">Nom d'usuari</label>
                   <input type="text" name="usuari" class="form-control form-control-lg" />
                 </div>
-                
-                <!-- <div class="form-outline mb-4">
+                 <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
                   <input type="date" name="datanax" class="form-control form-control-lg" />
                 </div>
-                -->
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
                   <input type="email" name="email" class="form-control form-control-lg" />
