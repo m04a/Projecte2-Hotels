@@ -59,7 +59,7 @@ $to = $_POST["to"];
 $from = $_POST["from"];
 $nhabitacions = $_POST["nhabitacions"];
 $npersones = $_POST["npersones"];
-    if(!empty($_POST["to"]) && !empty($_POST["from"]) && !empty($_POST["nhabitacions"]) !empty($_POST["npersones"])){
+    if(!empty($_POST["to"]) && !empty($_POST["from"]) && !empty($_POST["nhabitacions"]) && !empty($_POST["npersones"])){
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
