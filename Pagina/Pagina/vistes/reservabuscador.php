@@ -53,6 +53,7 @@
             <br>
             <br>
 <?php
+    require '../includes/conectar_DB.php';
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
 $from = $_POST["from"];
@@ -62,8 +63,7 @@ echo $to;
 echo $from;
 echo $nhabitacions;
 echo $npersones;
-
-   require '../includes/conectar_DB.php';
+    if(!empty($to)){
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
@@ -104,6 +104,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
             <?php
             }
  echo '</div>';
+          }
           }
     ?> 
      </div>
