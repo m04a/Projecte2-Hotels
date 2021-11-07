@@ -57,9 +57,9 @@
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
 $from = $_POST["from"];
-$nhabitacions = $_POST["nhabitacions"];
+$nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
-    if(!empty($to) && !empty($from) && !empty($nhabitacions) && !empty($npersones)){
+    if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
