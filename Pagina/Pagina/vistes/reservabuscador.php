@@ -58,7 +58,8 @@ if(isset($_POST["reservaBuscar"])){
     $from = $_POST["from"];
     $npersones = $_POST["npersones"];
     $nhabitacions = $_POST["nhabitacions"];
-        if(!empty($to) && !empty($from) && !empty($npersones) && !empty($nhabitacions)){
+    echo "$to";
+      //  if(!empty($to) && !empty($from) && !empty($npersones) && !empty($nhabitacions)){
    require '../includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
@@ -100,9 +101,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
             <?php
             }
  echo '</div>';
-          }
-          else{
-    echo '<div class="alert alert-danger" role="alert">Algun camp no ha sigut emplenat! </div>';
+      //    }
+         // else{
+    //echo '<div class="alert alert-danger" role="alert">Algun camp no ha sigut emplenat! </div>';
           }
         }
     ?> 
