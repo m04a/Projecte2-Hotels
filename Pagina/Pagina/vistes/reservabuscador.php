@@ -56,8 +56,13 @@
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
 $from = $_POST["from"];
+$nhabitacions = $_POST["nhabitacions"];
+$npersones = $_POST["npersones"];
 echo $to;
 echo $from;
+echo $nhabitacions;
+echo $npersones;
+
    require '../includes/conectar_DB.php';
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
