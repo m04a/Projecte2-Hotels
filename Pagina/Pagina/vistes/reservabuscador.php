@@ -63,7 +63,7 @@ echo $to;
 echo $from;
 echo $nhabitacions;
 echo $npersones;
-    if(!empty($to)){
+    if(!empty($_POST["to"])){
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
