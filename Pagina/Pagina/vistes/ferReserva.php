@@ -40,8 +40,8 @@ try {
     $descripcion = $row['descripcion'];
     $precio = $row['precio'];
     $m2 = $row['m2'];
-    $to = $_POST["to"];
-    $from = $_POST["from"];
+    $to = $_POST["fins"];
+    $from = $_POST["desde"];
     echo $to;
     echo $from;
 
