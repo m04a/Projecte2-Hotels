@@ -54,8 +54,8 @@
             <br>
 <?php
 if(isset($_POST["reservaBuscar"])){
-$to = $_GET["to"];
-$from = $_GET["from"];
+$to = $_POST["to"];
+$from = $_POST["from"];
 echo $to;
 echo $from;
    require '../includes/conectar_DB.php';
