@@ -40,6 +40,11 @@ try {
     $descripcion = $row['descripcion'];
     $precio = $row['precio'];
     $m2 = $row['m2'];
+    $to = $_POST["to"];
+    $from = $_POST["from"];
+    echo $to;
+    echo $from;
+
 }
  
 // show error
