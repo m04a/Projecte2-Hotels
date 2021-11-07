@@ -67,10 +67,15 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
+
+
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
-          
+        $counthab = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
+        $stmt1 = $conn->prepare($counthab); 
+        $stmt1->execute();
+        echo $counthab;
         ?>
     
          <div class="col-lg-4">
@@ -101,7 +106,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
             }
  echo '</div>';
           }
-          else{ echo'<div class="alert alert-danger" role="alert">Revisa que tots els camps estiguin omplerts!</div>';}
+          else{ echo'<div class="alert alert-danger" role="alert">Revisa que tots els camps estiguin omplerts!</div>'; }
           }
     ?> 
      </div>
