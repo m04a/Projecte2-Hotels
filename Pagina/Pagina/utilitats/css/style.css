@@ -411,7 +411,9 @@ header
     background-color: #ed563b;
     color: #fff;
   }
-
+  .dropdown{
+    display: none;
+  }
   .header-area.header-sticky .nav {
     margin-top: 80px !important;
   }
