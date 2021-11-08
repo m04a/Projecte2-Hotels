@@ -16,17 +16,13 @@ require '../includes/conectar_DB.php';
       validate($usuari);
       $password = $_POST['password'];
       validate($password);
-      echo $usuari;
-      echo $password;
 
     $nRows =$conn->query("SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
 
-    echo $nRows;
-
      if($nRows == 1) {
         session_register("usuari");
-        $_SESSION['login_user'] = $myusername;
-         header("location: index.php");
+        $_SESSION['login_user'] = $usuari;
+         header("location: welcome.php");
         }else {
         $message = 'El usuari es incorrecte';
       }
