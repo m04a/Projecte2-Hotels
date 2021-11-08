@@ -25,7 +25,13 @@
                               
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
-                                    <a class="dropdown-item"  href=""><?php echo $_SESSION["tipo"]; ?></a>
+                                    <?php
+                                    if($_SESSION["tipo"] == "admin") {
+                                    ?>
+                                    <a class="dropdown-item"  href="./admin/crear.php""> Panell d'admin</a>
+                                    <?php
+                                        }
+                                      ?>
                                     <a class="dropdown-item" href="../includes/logout.php">Tancar sessió</a>
                                 </div>
                             </li>
