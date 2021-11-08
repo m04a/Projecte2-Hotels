@@ -1,7 +1,6 @@
   <?php
   session_start();
 
-  unset($_SESSION['error']);
   function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -9,6 +8,8 @@
        return $data;
 }
   if (isset($_POST["login"])) {
+    
+      unset($_SESSION['error']);
       $usuari = $_POST['usuari']; 
       validate($usuari);
       $password = $_POST['password'];
@@ -25,7 +26,7 @@ if (password_verify($password, $hash)) {
          header("location: index.php");
       }
       else{
-        $_SESSION["error"] = "L usuari o el password és incorrecte";
+        $_SESSION["error"] = 1;
     header("Location:login.php");
 }
   if(isset($_SESSION["usuari"])) {
