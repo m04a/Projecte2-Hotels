@@ -17,9 +17,10 @@ require '../includes/conectar_DB.php';
       echo $password;
 
     $sql = "SELECT * FROM usuario WHERE usuari ='$usuari' AND password='$password';";
-    $result = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    $count = mysqli_num_rows($result);
+    $record = $conn -> prepare($sql);
+    $record -> execute();
+    $resultados = $record -> fetch(PDO::FETCH_ASSOC);
+    $count = mysqli_num_rows($resultados);
     echo $count;
 
      if($count == 1) {
