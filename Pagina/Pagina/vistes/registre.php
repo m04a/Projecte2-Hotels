@@ -32,26 +32,16 @@ if ($password != $passwordc) {
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 	
-    $stmt = $conn->prepare("insert into usuario 
-            (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
-      (:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
-        $stmt->bindParam(':usuari', $usuari);
-        $stmt->bindParam(':password', $password);
-        $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':apellidos', $apellidos);
-        $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
-        $stmt->bindParam(':fechanacimiento', $fechanacimiento);
-        $stmt->bindParam(':sexo', $sexo);
-        $stmt->bindParam(':email', $email);
-      
-        $usuari=htmlspecialchars(strip_tags($_POST['usuari']));
-        $password=htmlspecialchars(strip_tags($_POST['password']));
-        $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
-        $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
-        $fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
-        $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
-        $email=htmlspecialchars($_POST['email']);
-        
+    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam('$usuari', $_POST['usuari']);
+    $stmt->bindParam('$password', $_POST['password']);
+    $stmt->bindParam('$email', $_POST['email']);
+    $stmt->bindParam('$nombre', $_POST['nombre']);
+    $stmt->bindParam('$apellidos', $_POST['apellidos']);
+    $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
+    $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);}
+
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
     } else {
