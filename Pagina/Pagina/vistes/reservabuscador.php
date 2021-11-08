@@ -72,7 +72,6 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= :from AND ffin >= :to";
         $stmt1 = $conn->prepare($query2, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $stmt1->execute(array(':from' => $from, ':to' => $to));
-        $resultat =
         if ($resultado = $conn->query($query2)){
             if ($resultado->fetchColumn() > 0) {
 	         $resultado->fetchColumn();
