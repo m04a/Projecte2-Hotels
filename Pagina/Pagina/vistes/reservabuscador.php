@@ -81,8 +81,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                     <div class="trainer-item">
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
-                            <?php echo $resultado; ?>
-                        </div>
+                            <?php
+                            echo $resultado;
+                            echo $from;
+                            echo $to;
+                            ?>
                         <div class="down-content">
                             <span>
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
