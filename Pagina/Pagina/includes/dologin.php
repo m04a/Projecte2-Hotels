@@ -25,7 +25,7 @@ if (password_verify($password, $hash)) {
          header("location: index.php");
       }
       else{
-        $_SESSION["error"] = "L'usuari o el password és incorrecte";
+        $_SESSION["error"] = "L usuari o el password és incorrecte";
     header("Location:login.php");
 }
   if(isset($_SESSION["usuari"])) {
