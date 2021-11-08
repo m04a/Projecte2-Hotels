@@ -32,7 +32,7 @@ if ($password != $passwordc) {
   }else{
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-	
+	  $password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimiento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimiento');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
@@ -42,7 +42,7 @@ if ($password != $passwordc) {
     $stmt->bindParam('$apellidos', $_POST['apellidos']);
     $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
     $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);
-    echo $fechanacimiento;
+
   }
 
     if ($stmt->execute()) {
