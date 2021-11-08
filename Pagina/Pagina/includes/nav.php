@@ -28,7 +28,7 @@
                                     <?php
                                     if($_SESSION["tipo"] == "admin") {
                                     ?>
-                                    <a class="dropdown-item"  href="./admin/crear.php""> Panell d'admin</a>
+                                    <a class="dropdown-item"  href="../admin/crear.php"> Panell d'admin</a>
                                     <?php
                                         }
                                       ?>
