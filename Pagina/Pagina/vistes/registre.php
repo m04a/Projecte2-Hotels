@@ -42,6 +42,7 @@ if ($password != $passwordc) {
     $stmt->bindParam('$apellidos', $_POST['apellidos']);
     $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
     $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);
+    echo $fechanacimiento;
   }
 
     if ($stmt->execute()) {
