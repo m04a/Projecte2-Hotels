@@ -1,6 +1,6 @@
   <?php
   session_start();
- $_SESSION['error'] = 0;
+ $_SESSION['error'] = '0';
   function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
