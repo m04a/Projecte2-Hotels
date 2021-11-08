@@ -1,32 +1,35 @@
 <?php
 
 require '../includes/conectar_DB.php';
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['login'])) {
-	function validate($data){
+  $message = '';
+  function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
        $data = htmlspecialchars($data);
        return $data;
 }
+  if (isset($_POST["login"])) {
       $usuari = $_POST['usuari']; 
       validate($usuari);
       $password = $_POST['password'];
       validate($password);
 
-        $sql= "SELECT * FROM usuario WHERE usuari='$usuari' AND password='$password' LIMIT 1;";
+    $sql = "SELECT * FROM usuario WHERE usuari ='$usuari' AND password='$password';";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $count = mysqli_num_rows($result);
 
-        $resultat=mysql_query($sql);
+     if($count == 1) {
+         header("location: sipass.php");
+      }else {
+         header("location: nopass.php");
+      }
 
-        if(mysql_num_rows($resultat) == 1){
-          echo "password correcte";
-        }
-        else{
-          echo "password incorrecte";
-        }
-    }
-}
- ?>
+
+    //$stmt->bindParam('$fechanacimento', $_POST['fechanacimento']);
+  }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
