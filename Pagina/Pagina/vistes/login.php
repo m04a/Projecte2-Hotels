@@ -16,15 +16,11 @@ require '../includes/conectar_DB.php';
       echo $usuari;
       echo $password;
 
-    $sql = "SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password';";
-    $record = $conn -> prepare($sql);
-    $record -> execute();
-    $fila = mysql_fetch_row($record);
+    $nRows =$conn->query("SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
 
-    $count = $fila[0];
-    
+    echo $nRows;
 
-     if($record == 1) {
+     if($nRows == 1) {
         $message = 'Usuari Correcte';
         }else {
         $message = 'Usuari Incorrecte';
