@@ -367,7 +367,7 @@ header
   }
 }
 
-@media (min-width: 767px) {
+@media (max-width: 2100px) {
 .responsiveItem{
     display: none;
   }
