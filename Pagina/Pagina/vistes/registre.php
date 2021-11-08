@@ -28,10 +28,10 @@ if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
 	header("Location: registre.php");
   }else{
+	   $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-	   $password = password_hash($password, PASSWORD_DEFAULT);
 	
-    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
+    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
