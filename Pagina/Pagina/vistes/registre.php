@@ -43,7 +43,7 @@ if ($password != $passwordc) {
     $stmt->bindParam('$apellidos', $_POST['apellidos']);
     $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
     $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);}
-    echo $fechanacimiento;
+    echo $fechanacimiento
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
@@ -117,7 +117,7 @@ if ($password != $passwordc) {
                 </div>
                  <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="fechanacimento" class="form-control form-control-lg" /> 
+                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" /> 
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
