@@ -22,7 +22,7 @@ require '../includes/conectar_DB.php';
       validate($apellidos);
       $email = $_POST['email'];
       validate($email);
-      $fechanacimento = $_POST['fechanacimento'];
+      $fechanacimiento = $_POST['fechanacimiento'];
 
 
 
@@ -33,7 +33,7 @@ if ($password != $passwordc) {
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 	
-    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
+    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimiento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimiento');";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
