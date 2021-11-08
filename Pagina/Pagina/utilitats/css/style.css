@@ -36,7 +36,9 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   color:;
 }
-
+.responsiveItem{
+    display: none;
+  }
 a {
   text-decoration: none !important;
 }
@@ -367,11 +369,6 @@ header
   }
 }
 
-@media (max-width: 2100px) {
-.responsiveItem{
-    display: none;
-  }
-}
 @media (max-width: 767px) {
   .header-area .main-nav .logo {
     color: #1e1e1e;
