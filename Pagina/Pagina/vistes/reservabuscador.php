@@ -69,18 +69,17 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
-        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= '{$from}' AND ffin >= '{$to}'";
-        $stmt1 = $conn->prepare($query2);
-        $stmt1->execute();
-        $resultat = mysql_fetch_row($stmt1);
-        $counthab = $resultat;
+        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= :from AND ffin >= :to";
+        $stmt1 = $conn->prepare($query2,array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+        $stmt1->execute(array(':from' => $from, ':to' => $to));
+        $resultat = $stmt1->fetchAll();
         ?>
 
          <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
-                            <?php echo $counthab; ?>
+                            <?php echo $resultat; ?>
                         </div>
                         <div class="down-content">
                             <span>
