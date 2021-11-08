@@ -18,10 +18,12 @@ require '../includes/conectar_DB.php';
       validate($password);
 
     $nRows =$conn->query("SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
+    $tipo =$conn->query("SELECT tipo FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
+
 
      if($nRows == 1) {
         $_SESSION["usuari"] = $usuari;
-
+        $_SESSION["tipo"] =$tipo;
          header("location: welcome.php");
         }else {
         $message = 'El usuari es incorrecte';

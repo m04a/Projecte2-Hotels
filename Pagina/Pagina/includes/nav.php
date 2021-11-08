@@ -25,10 +25,12 @@
                               
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
+                                    <a class="dropdown-item"  href=""><?php echo $_SESSION["tipo"]; ?></a>
                                     <a class="dropdown-item" href="../includes/logout.php">Tancar sessió</a>
                                 </div>
                             </li>
                             <li><a class="responsiveItem" href=""><?php echo $_SESSION["usuari"]; ?></a></li> 
+                            <li><a class="responsiveItem" href=""><?php echo $_SESSION["tipo"]; ?></a></li> 
                             <li><a class="responsiveItem" href="../includes/logout.php">Tancar sessió</a></li> 
                             <?php 
                              }else{ ?>
