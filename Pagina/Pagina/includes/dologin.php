@@ -1,6 +1,6 @@
   <?php
   session_start();
-  $message = '';
+  $error = 'Password o login incorrecte';
   function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -24,7 +24,7 @@ if (password_verify($password, $hash)) {
          header("location: index.php");
       }
       else{
-        $message = 'Error';
+        $_SESSION["error"] = $error;
     header("Location:login.php");
 }
   if(isset($_SESSION["usuari"])) {
