@@ -72,7 +72,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $query2 = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
         $stmt1 = $conn->prepare($query2);
         $resultat = mysql_fetch_row($stmt1);
-        $counthab = $resultat[0];
+        $counthab = $resultat;
 
         echo $counthab;
         ?>
@@ -96,7 +96,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
 
                             <ul class="social-icons">
                                 <li>
-                                    <?php echo "<form action='ferReserva.php?idtipo={$idtipo}' method='post'>";?>
+                                    <?php echo "<form action='ferReserva.php' method='post'>";?>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <button type="submit" class='btn btn-info m-r-6em'>Reservar</button> </li>
