@@ -18,12 +18,23 @@
 							<li><a href="about.php">Sobre Nosaltes</a></li>
                             <li><a href="contacte.php">Contacte</a></li> 
 							<?php
-                            if(!$_SESSION["usuari"]) {
+                            if($_SESSION["usuari"]) {
                             ?>
-                            <li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
-							<li><a href="registre.php"> Registre</a></li> 
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
+                              
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
+                                    <a class="dropdown-item" href="../includes/logout.php">Tancar sessió</a>
+                                </div>
+                            </li>
+
+                           
                             <?php 
-                             }else{echo $_SESSION["usuari"];
+                             }else{ ?>
+                            <li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
+                            <li><a href="registre.php"> Registre</a></li> 
+                            <?php
                          }
                             ?>
                         </ul>        
