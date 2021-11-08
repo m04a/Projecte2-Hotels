@@ -13,6 +13,7 @@ require '../includes/conectar_DB.php';
       validate($usuari);
       $password = $_POST['password'];
       validate($password);
+      echo 
 
     $sql = "SELECT * FROM usuario WHERE usuari ='$usuari' AND password='$password';";
     $result = mysqli_query($conn,$sql);
@@ -20,9 +21,9 @@ require '../includes/conectar_DB.php';
     $count = mysqli_num_rows($result);
 
      if($count == 1) {
-         header("location: sipass.php");
-      }else {
-         header("location: nopass.php");
+        $message = 'Usuari Correcte';
+        }else {
+        $message = 'Usuari Incorrecte';
       }
 
 
@@ -75,6 +76,9 @@ require '../includes/conectar_DB.php';
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <?php if(!empty($message)): ?>
+                  <div class='alert alert-warning'> <?= $message ?> </div>
+                  <?php endif; ?>
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">INICIAR SESSIÓ</h2>
