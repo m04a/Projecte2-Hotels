@@ -16,14 +16,13 @@ require '../includes/conectar_DB.php';
       echo $usuari;
       echo $password;
 
-    $sql = "SELECT * FROM usuario WHERE usuari ='$usuari' AND password='$password';";
+    $sql = "SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password';";
     $record = $conn -> prepare($sql);
     $record -> execute();
     $resultados = $record -> fetch(PDO::FETCH_ASSOC);
-    $count = mysqli_num_rows($resultados);
-    echo $count;
+    echo $resultados;
 
-     if($count <= 1) {
+     if($count == 1) {
         $message = 'Usuari Correcte';
         }else {
         $message = 'Usuari Incorrecte';
