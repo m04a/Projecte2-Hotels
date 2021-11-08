@@ -28,8 +28,8 @@
                                     <a class="dropdown-item" href="../includes/logout.php">Tancar sessió</a>
                                 </div>
                             </li>
-
-                           
+                            <li><a class="responsiveItem" href=""><?php echo $_SESSION["usuari"]; ?></a></li> 
+                            <li><a class="responsiveItem" href="../includes/logout.php">Tancar sessió</a></li> 
                             <?php 
                              }else{ ?>
                             <li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 

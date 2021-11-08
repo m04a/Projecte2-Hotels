@@ -367,6 +367,11 @@ header
   }
 }
 
+@media (min-width: 767px) {
+.responsiveItem{
+    display: none;
+  }
+}
 @media (max-width: 767px) {
   .header-area .main-nav .logo {
     color: #1e1e1e;
@@ -413,6 +418,9 @@ header
   }
   .dropdown{
     display: none;
+  }
+  .responsiveItem{
+    display: block;
   }
   .header-area.header-sticky .nav {
     margin-top: 80px !important;
