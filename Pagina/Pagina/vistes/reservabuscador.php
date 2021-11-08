@@ -54,7 +54,9 @@
     require '../includes/conectar_DB.php';
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
+$to = date('Y-m-d', strtotime(str_replace('-', '/', $to)));
 $from = $_POST["from"];
+$from = date('Y-m-d', strtotime(str_replace('-', '/', $from)));
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
     if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
