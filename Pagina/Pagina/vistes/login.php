@@ -28,7 +28,7 @@ require '../includes/conectar_DB.php';
       }
   }
   if(isset($_SESSION["usuari"])) {
-    header("Location:welcome.php");
+    header("Location:index.php");
     }
 
 ?>
