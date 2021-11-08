@@ -23,7 +23,7 @@ require '../includes/conectar_DB.php';
     $count = mysqli_num_rows($resultados);
     echo $count;
 
-     if($count == 1) {
+     if($count <= 1) {
         $message = 'Usuari Correcte';
         }else {
         $message = 'Usuari Incorrecte';
