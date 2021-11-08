@@ -13,12 +13,14 @@ require '../includes/conectar_DB.php';
       validate($usuari);
       $password = $_POST['password'];
       validate($password);
-      echo 
+      echo $usuari;
+      echo $password;
 
     $sql = "SELECT * FROM usuario WHERE usuari ='$usuari' AND password='$password';";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
     $count = mysqli_num_rows($result);
+    echo $count;
 
      if($count == 1) {
         $message = 'Usuari Correcte';
