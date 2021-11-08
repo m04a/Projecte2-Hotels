@@ -37,7 +37,7 @@ html, body {
   color:;
 }
 .responsiveItem{
-    display: none;
+    display: none!important;
 }
 
 a {
