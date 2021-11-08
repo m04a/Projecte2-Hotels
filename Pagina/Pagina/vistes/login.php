@@ -16,6 +16,8 @@ require '../includes/conectar_DB.php';
       validate($usuari);
       $password = $_POST['password'];
       validate($password);
+      $hash = password_hash($password, PASSWORD_DEFAULT);
+      if (password_verify($password, $hash)) {
 
     $nRows =$conn->query("SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
     $tipo =$conn->query("SELECT tipo FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
@@ -28,10 +30,11 @@ require '../includes/conectar_DB.php';
         }else {
         $message = 'El usuari es incorrecte';
       }
-  }
+  }else{$message = 'El usuari es incorrecte';}
   if(isset($_SESSION["usuari"])) {
     header("Location:index.php");
     }
+}
 
 ?>
 <!DOCTYPE html>
