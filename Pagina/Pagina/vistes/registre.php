@@ -23,6 +23,8 @@ require '../includes/conectar_DB.php';
       $email = $_POST['email'];
       validate($email);
       $fechanacimento = $_POST['fechanacimento'];
+      validate($fechanacimento);
+
 
 
 if ($password != $passwordc) {
@@ -41,6 +43,7 @@ if ($password != $passwordc) {
     $stmt->bindParam('$apellidos', $_POST['apellidos']);
     $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
     $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);}
+    echo $fechanacimiento;
 
     if ($stmt->execute()) {
       $message = 'El usuari ha sigut creat';
