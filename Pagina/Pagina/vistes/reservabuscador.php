@@ -17,24 +17,22 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
     </head>
-    
-    <body> 
-    
+
+    <body>
+
     <!-- ***** Carregador Inici ***** -->
     <?php
 		 include '../includes/carregador.php';
 	?>
     <!-- *** Preloader End *** -->
-    
-    
+
     <!-- *** Header Principal *** -->
 	<?php
 		 include '../includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
-	
+
     <!-- *** Capçalera inici *** -->
 	<?php
 		 include '../includes/capsalera.php';
@@ -65,25 +63,25 @@ $npersones = $_POST["npersones"];
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
 LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
-    $stmt = $conn->prepare($query); 
+    $stmt = $conn->prepare($query);
     $stmt->execute();
-
 
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        extract($row); 
-        //$query2 = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
-        //$stmt1 = $conn->prepare($query2); 
-        //$resultat = mysql_fetch_row($stmt1);
-        //$counthab = $resultat[0];
+        extract($row);
+        $query2 = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
+        $stmt1 = $conn->prepare($query2);
+        $resultat = mysql_fetch_row($stmt1);
+        $counthab = $resultat[0];
 
         echo $counthab;
         ?>
-    
+
          <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
+                            <?php echo $counthab; ?>
                         </div>
                         <div class="down-content">
                             <span>
@@ -97,27 +95,26 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             </p>
 
                             <ul class="social-icons">
-                                <li> 
+                                <li>
                                     <?php echo "<form action='ferReserva.php?idtipo={$idtipo}' method='post'>";?>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <button type="submit" class='btn btn-info m-r-6em'>Reservar</button> </li>
                                     </form>
                                 </li>
-                                    
+
                             </ul>
                         </div>
                     </div>
                 </div>
 
-               
             <?php
             }
  echo '</div>';
           }
           else{ echo'<div class="alert alert-danger" role="alert">Revisa que tots els camps estiguin omplerts!</div>'; }
           }
-    ?> 
+    ?>
      </div>
    </section>
  </div>
@@ -143,10 +140,10 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     <script src="../utilitats/js/scrollreveal.min.js"></script>
     <script src="../utilitats/js/waypoints.min.js"></script>
     <script src="../utilitats/js/jquery.counterup.min.js"></script>
-    <script src="../utilitats/js/imgfix.min.js"></script> 
-    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/imgfix.min.js"></script>
+    <script src="../utilitats/js/mixitup.js"></script>
     <script src="../utilitats/js/accordions.js"></script>
-    
+
     <!-- Fitxer nostre -->
     <script src="../utilitats/js/custom.js"></script>
 
