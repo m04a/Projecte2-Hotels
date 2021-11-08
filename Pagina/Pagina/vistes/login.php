@@ -42,12 +42,7 @@ require '../includes/dologin.php';
 	<?php
 		 include '../includes/capsalera.php';
 	?>
-    <!-- *** Capçalera Final *** -->
-
-
-
-                        
-                   
+    <!-- *** Capçalera Final *** -->    
 	<section>
   <div class="mask align-items-center h-100 gradient-custom-3">
     <div class="container">
@@ -83,6 +78,9 @@ require '../includes/dologin.php';
     </div>
   </div>
 </section>
+<?php
+    unset($_SESSION["error"]);
+?>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
