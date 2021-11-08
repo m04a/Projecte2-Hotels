@@ -8,8 +8,6 @@
        return $data;
 }
   if (isset($_POST["login"])) {
-
-      
       $usuari = $_POST['usuari']; 
       validate($usuari);
       $password = $_POST['password'];
@@ -26,7 +24,7 @@ if (password_verify($password, $hash)) {
          header("location: index.php");
       }
       else{
-        $_SESSION["error"] = 1;
+        $_SESSION["error"] = '1';
     header("Location:login.php");
 }
   if(isset($_SESSION["usuari"])) {

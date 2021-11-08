@@ -49,7 +49,7 @@ require '../includes/dologin.php';
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <?php if($_SESSION["error"] = 1): ?>
+                <?php $error=$_SESSION["error"]; if($error = '1'): ?>
                   <div class='alert alert-danger'>El password és incorrecte</div>
                   <?php endif; ?>
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
