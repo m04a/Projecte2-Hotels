@@ -372,7 +372,7 @@ header
 
 @media (max-width: 767px) {
   .responsiveItem{
-    display: block;
+    display: block!important;
   }
   .header-area .main-nav .logo {
     color: #1e1e1e;
