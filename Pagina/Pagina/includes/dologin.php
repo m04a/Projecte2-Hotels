@@ -1,6 +1,6 @@
   <?php
   session_start();
- $_SESSION['error'] = '0';
+  $message = '';
   function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -24,7 +24,7 @@ if (password_verify($password, $hash)) {
          header("location: index.php");
       }
       else{
-        $_SESSION["error"] = '1';
+        $message = 'Error';
     header("Location:login.php");
 }
   if(isset($_SESSION["usuari"])) {
