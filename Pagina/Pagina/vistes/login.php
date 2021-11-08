@@ -1,7 +1,7 @@
 <?php
 
 require '../includes/conectar_DB.php';
-
+require '../includes/dologin.php';
 session_start();
 
 ?>
@@ -57,7 +57,7 @@ session_start();
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">INICIAR SESSIÓ</h2>
-              <form action="../includes/dologin.php" method="POST">
+              <form method="POST" >
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
                   <input type="text" name="usuari" class="form-control form-control-lg" />
