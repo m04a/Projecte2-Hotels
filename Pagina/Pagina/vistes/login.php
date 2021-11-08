@@ -19,20 +19,15 @@ require '../includes/conectar_DB.php';
       
 
     $hash =$conn->query("SELECT password FROM usuario WHERE usuari ='$usuari'")->fetchColumn();
-    echo $hash;
-    echo '   ';
-    echo $password;
-    $tipo =$conn->query("SELECT tipo FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
+    validate($hash);
+    $tipo =$conn->query("SELECT tipo FROM usuario WHERE usuari ='$usuari'")->fetchColumn();
 
 if (password_verify($password, $hash)) {
-     if($nRows == 1) {
         $_SESSION["usuari"] = $usuari;
         $_SESSION["tipo"] =$tipo;
          header("location: welcome.php");
-        }else {
-        $message = 'El usuari es incorrecte';
       }
-  }else{$message = 'El usuari es incorrecte';}
+      else{$message = 'El usuari es incorrecte';}
 
   if(isset($_SESSION["usuari"])) {
     header("Location:index.php");
