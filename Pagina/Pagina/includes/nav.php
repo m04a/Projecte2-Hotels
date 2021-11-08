@@ -21,9 +21,9 @@
                             if($_SESSION["usuari"]) {
                             ?>
                             <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
+                                <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Compte</a>
                               
-                                <div class="dropdown-menu">
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
                                     <a class="dropdown-item" href="../includes/logout.php">Tancar sessió</a>
                                 </div>
