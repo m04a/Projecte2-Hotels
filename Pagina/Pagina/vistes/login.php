@@ -19,10 +19,9 @@ require '../includes/conectar_DB.php';
     $sql = "SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password';";
     $record = $conn -> prepare($sql);
     $record -> execute();
-    $resultados = $record -> fetch(PDO::FETCH_ASSOC);
-    echo $resultados;
+    echo $record;
 
-     if($count == 1) {
+     if($record == 1) {
         $message = 'Usuari Correcte';
         }else {
         $message = 'Usuari Incorrecte';
