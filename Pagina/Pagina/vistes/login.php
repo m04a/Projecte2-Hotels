@@ -19,7 +19,10 @@ require '../includes/conectar_DB.php';
     $sql = "SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password';";
     $record = $conn -> prepare($sql);
     $record -> execute();
-    echo $record;
+    $fila = mysql_fetch_row($record);
+
+    $count = $fila[0];
+    
 
      if($record == 1) {
         $message = 'Usuari Correcte';
