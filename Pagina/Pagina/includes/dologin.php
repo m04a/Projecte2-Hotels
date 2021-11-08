@@ -1,6 +1,6 @@
   <?php
   session_start();
-
+ $_SESSION['error'] = 0;
   function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -8,8 +8,8 @@
        return $data;
 }
   if (isset($_POST["login"])) {
-    
-      unset($_SESSION['error']);
+
+      
       $usuari = $_POST['usuari']; 
       validate($usuari);
       $password = $_POST['password'];
