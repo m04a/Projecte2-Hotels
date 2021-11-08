@@ -1,5 +1,5 @@
 <?php
-require '../includes/session.php';
+    session_start();
 ?>
 <html">
    
@@ -8,8 +8,13 @@ require '../includes/session.php';
    </head>
    
    <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <h2><a href = "../includes/logout.php">Sign Out</a></h2>
+   	<?php
+if($_SESSION["usuari"]) {
+?>
+Welcome <?php echo $_SESSION["usuari"]; ?>. Click here to <a href="../includes/logout.php" tite="Logout">Logout.
+<?php
+}else echo "<h1>Please login first .</h1>";
+?>
    </body>
    
 </html>

@@ -20,16 +20,16 @@ require '../includes/conectar_DB.php';
     $nRows =$conn->query("SELECT COUNT(*) FROM usuario WHERE usuari ='$usuari' AND password='$password'")->fetchColumn();
 
      if($nRows == 1) {
-        session_register("usuari");
-        $_SESSION['login_user'] = $usuari;
+        $_SESSION["usuari"] = $usuari;
+
          header("location: welcome.php");
         }else {
         $message = 'El usuari es incorrecte';
       }
-
-
-    //$stmt->bindParam('$fechanacimento', $_POST['fechanacimento']);
   }
+  if(isset($_SESSION["usuari"])) {
+    header("Location:welcome.php");
+    }
 
 ?>
 <!DOCTYPE html>
