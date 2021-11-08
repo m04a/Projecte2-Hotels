@@ -17,7 +17,8 @@ $usuari=isset($_GET['usuari']) ? $_GET['usuari'] : die('ERROR: Record ID not fou
 
 //include database connection
 require '../includes/conectar_DB.php';
- 
+require 'middleware.php';    
+
  
 // read current record's data
 try {

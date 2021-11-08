@@ -1,7 +1,9 @@
 <?php
 // include database connection
 require '../includes/conectar_DB.php';
- 
+require 'middleware.php';    
+
+
 try {
  
     // get record ID
