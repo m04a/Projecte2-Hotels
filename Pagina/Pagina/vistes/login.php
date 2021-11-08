@@ -2,6 +2,8 @@
 
 require '../includes/conectar_DB.php';
 
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
