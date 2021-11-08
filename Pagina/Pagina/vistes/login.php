@@ -1,6 +1,9 @@
 <?php
 
 require '../includes/conectar_DB.php';
+
+   session_start();
+
   $message = '';
   function validate($data){
        $data = trim($data);
@@ -21,9 +24,11 @@ require '../includes/conectar_DB.php';
     echo $nRows;
 
      if($nRows == 1) {
-        $message = 'Usuari Correcte';
+        session_register("usuari");
+        $_SESSION['login_user'] = $myusername;
+         header("location: index.php");
         }else {
-        $message = 'Usuari Incorrecte';
+        $message = 'El usuari es incorrecte';
       }
 
 
@@ -77,7 +82,7 @@ require '../includes/conectar_DB.php';
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
           <?php if(!empty($message)): ?>
-                  <div class='alert alert-warning'> <?= $message ?> </div>
+                  <div class='alert alert-danger'> <?= $message ?> </div>
                   <?php endif; ?>
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
