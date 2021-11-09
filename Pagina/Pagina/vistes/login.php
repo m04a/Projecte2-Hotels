@@ -49,11 +49,9 @@ session_start();
     <div class="container">
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                <?php if(isset($_SESSION["error"])){ ?>
-                  <div class='alert alert-danger'> <?php 
-                        $error = $_SESSION["error"];
-                        echo $error; ?> </div>
-                  <?php  } ?>
+                <?php if(!empty($message)): ?>
+                  <div class='alert alert-danger'><?php $message ?></div>
+                  <?php endif; ?>
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">INICIAR SESSIÓ</h2>
