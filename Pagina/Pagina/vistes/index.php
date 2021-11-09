@@ -51,7 +51,94 @@
     <!-- *** Main Banner Area End *** -->
 
    <!-- *** Hotels promocionats inici *** -->
-   
+   <section class="section" id="trainers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="section-heading">
+                        <h2>Habitacions <em>premium</em></h2>
+                        <img src="assets/images/line-dec.png" alt="">
+                        <p>Aquestes són habitacions que tenim en venta, si vols més inforamcó només has de clicar en veure més.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>
+                                <sup>€</sup>?- <sup>€</sup>?
+                            </span>
+
+                            <h4>Habitació nom</h4>
+
+                            <p>
+                                Les millors habitacions
+                            </p>
+
+                            <ul class="social-icons">
+                                <li><a href="habitacions.php">+ Veure més</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+               <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>
+                                <sup>€</sup>?- <sup>€</sup>?
+                            </span>
+
+                            <h4>Habitació nom</h4>
+
+                            <p>
+                                Les millors habitacions
+                            </p>
+
+                            <ul class="social-icons">
+                                <li><a href="habitacions.php">+ Veure més</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="trainer-item">
+                        <div class="image-thumb">
+                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                        </div>
+                        <div class="down-content">
+                            <span>
+                                <sup>€</sup>?- <sup>€</sup>?
+                            </span>
+
+                            <h4>Habitació nom</h4>
+
+                            <p>
+                                 Les millors habitacions
+
+                            </p>
+
+
+                            <ul class="social-icons">
+                                <li><a href="habitacions.php">+ Veure més</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            <br>
+
+            <div class="main-button text-center">
+                <a href="vacations.html">View Vacations</a>
+            </div>
+        </div>
+    </section>
     <!-- *** Hotels promocionats final *** -->
 	
     <!-- *** Qui som inici *** -->
