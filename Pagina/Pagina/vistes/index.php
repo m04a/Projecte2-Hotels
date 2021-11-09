@@ -66,7 +66,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -88,7 +88,7 @@
                <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -110,7 +110,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="assets/images/product-1-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
@@ -133,10 +133,6 @@
                 </div>
 
             <br>
-
-            <div class="main-button text-center">
-                <a href="vacations.html">View Vacations</a>
-            </div>
         </div>
     </section>
     <!-- *** Hotels promocionats final *** -->
