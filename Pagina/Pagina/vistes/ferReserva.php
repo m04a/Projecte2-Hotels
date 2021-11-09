@@ -100,26 +100,20 @@ catch(PDOException $exception){
                     </div>
                   </article>
                    <article id='tabs-2'>
-<div class="container">
+                    <div class="container">
   <div class="row">
-    <div class="imatgelight">
     <a href="../utilitats/imatges/habitacio1.jpg"  data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
       <img src="../utilitats/imatges/habitacio1.jpg" class="img-fluid rounded">
-      </a>
-        </div>
-     <div class="imatgelight">
+    </a>
     <a href="../utilitats/imatges/habitacio2.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
       <img src="../utilitats/imatges/habitacio2.jpg"  class="img-fluid rounded" >
     </a>
-        </div>
-      <div class="imatgelight">
     <a href="../utilitats/imatges/habitacio3.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
       <img src="../utilitats/imatges/habitacio3.jpg" class="img-fluid rounded">
     </a>
   </div>
 </div>
-</div>
-          </article>
+                  </article>
               </section>
           </div>
       </div>
