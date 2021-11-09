@@ -42,6 +42,8 @@ try {
     $m2 = $row['m2'];
     $to = $_POST["fins"];
     $from = $_POST["desde"];
+    echo $to;
+    echo $from;
 
 }
  
@@ -68,8 +70,8 @@ catch(PDOException $exception){
               <div class="col-lg-4">
                 <ul>
                   <li><a href='#tabs-1'><i class="fa fa-star"></i> Descripció</a></li>
-                  <li><a href='#tabs-2'><i class="fa fa-info-circle"></i> Extres</a></li>
-                  <li><a href='#tabs-3'><i class="fa fa-phone"></i> Contacte</a></li>
+                  <li><a href='#tabs-2'><i class="fa fa-info-circle"></i> Imatges</a></li>
+                  <li><a href='#tabs-3'><i class="fa fa-phone"></i> Extres</a></li>
                 </ul>
               </div>
               <div class="col-lg-8">
@@ -113,6 +115,10 @@ catch(PDOException $exception){
     </a>
   </div>
 </div>
+                  </article>
+                   <article id='tabs-3'>
+                    <div class="container">
+ 
                   </article>
               </section>
           </div>
