@@ -1314,6 +1314,6 @@ div.buscador{
  .row {
   margin: 15px;
 }
-  .img-fluid{
-    padding: 15% 5% 10% 0%; 
-     }
+  .img-fluid {
+    padding: 15% 5% 10% 0%!important; 
+    }
