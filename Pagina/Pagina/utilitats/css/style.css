@@ -1311,4 +1311,9 @@ div.buscador{
   padding: 3%;
 }
 /* LIGHTBOX */
- 
+ .row {
+  margin: 15px;
+}
+  .img-fluid{
+    padding: 15% 5% 10% 0%; 
+     }

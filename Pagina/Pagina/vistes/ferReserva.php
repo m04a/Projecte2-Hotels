@@ -102,7 +102,7 @@ catch(PDOException $exception){
                    <article id='tabs-2'>
                     <div class="container">
   <div class="row">
-    <a href="../utilitats/imatges/habitacio1.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+    <a href="../utilitats/imatges/habitacio1.jpg" class="imglightbox" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
       <img src="../utilitats/imatges/habitacio1.jpg" class="img-fluid rounded">
     </a>
     <a href="../utilitats/imatges/habitacio2.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
