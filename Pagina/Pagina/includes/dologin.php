@@ -24,7 +24,7 @@ if (password_verify($password, $hash)) {
          header("location: index.php");
       }
       else{
-        $message = 'El usuari es incorrecte';
+        $message = 'Error';
 }
   if(isset($_SESSION["usuari"])) {
     header("Location:index.php");

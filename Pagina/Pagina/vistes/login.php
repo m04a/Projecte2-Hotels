@@ -50,7 +50,7 @@ session_start();
       <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                 <?php if(!empty($message)): ?>
-                  <div class='alert alert-danger'><?php $message ?></div>
+                  <div class='alert alert-danger'>Usuari o password incorrecte</div>
                   <?php endif; ?>
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
