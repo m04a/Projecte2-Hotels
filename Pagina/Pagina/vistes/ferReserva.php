@@ -100,79 +100,30 @@ catch(PDOException $exception){
                     </div>
                   </article>
                    <article id='tabs-2'>
-                    <section id="gallery">
-  <div class="container">
-    <div id="image-gallery">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-           <div class="img-overlay">
-            <a href=""><img src="https://unsplash.it/500" class="img-responsive"></a>
-            
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/600"><img src="https://unsplash.it/600" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/700"><img src="https://unsplash.it/700" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/800"><img src="https://unsplash.it/800" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/900"><img src="https://unsplash.it/900" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/1000"><img src="https://unsplash.it/1000" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/1100"><img src="https://unsplash.it/1100" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-          <div class="img-wrapper">
-            <a href="https://unsplash.it/1200"><img src="https://unsplash.it/1200" class="img-responsive"></a>
-            <div class="img-overlay">
-              <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </div>
-          </div>
-        </div>
-      </div><!-- End row -->
-    </div><!-- End image gallery -->
-  </div><!-- End container --> 
-</section>
+                    <div class="container">
+  <div class="row">
+    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=251" class="img-fluid rounded">
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=252" class="img-fluid rounded">
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=253" class="img-fluid rounded">
+    </a>
+  </div>
+  <div class="row">
+    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=254" class="img-fluid rounded">
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=255" class="img-fluid rounded">
+    </a>
+    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="https://unsplash.it/600.jpg?image=256" class="img-fluid rounded">
+    </a>
+  </div>
+</div>
                   </article>
               </section>
           </div>
