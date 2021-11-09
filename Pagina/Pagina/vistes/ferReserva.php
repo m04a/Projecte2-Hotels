@@ -103,13 +103,13 @@ catch(PDOException $exception){
                     <div class="container">
   <div class="row">
     <a href="../utilitats/imatges/habitacio1.jpg"  data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-      <img src="../utilitats/imatges/habitacio1.jpg" class="img-fluid rounded">
+      <img src="../utilitats/imatges/habitacio1.jpg" class="img-fluid rounded" id="#imatgelight">
     </a>
     <a href="../utilitats/imatges/habitacio2.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-      <img src="../utilitats/imatges/habitacio2.jpg"  class="img-fluid rounded">
+      <img src="../utilitats/imatges/habitacio2.jpg"  class="img-fluid rounded" id="#imatgelight">
     </a>
     <a href="../utilitats/imatges/habitacio3.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-      <img src="../utilitats/imatges/habitacio3.jpg" class="img-fluid rounded">
+      <img src="../utilitats/imatges/habitacio3.jpg" class="img-fluid rounded" id="#imatgelight">
     </a>
   </div>
 </div>
