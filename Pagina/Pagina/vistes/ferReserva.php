@@ -195,10 +195,23 @@ catch(PDOException $exception){
     ?>
     <!-- *** Footer final *** -->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="../utilitats/js/accordions.js"></script>
-<script src="../utilitats/js/custom.js"></script>
+<!-- jQuery -->
+    <script src="../utilitats/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../utilitats/js/popper.js"></script>
+    <script src="../utilitats/js/bootstrap.min.js"></script>
+
+    <!-- Plugins afegits -->
+    <script src="../utilitats/js/scrollreveal.min.js"></script>
+    <script src="../utilitats/js/waypoints.min.js"></script>
+    <script src="../utilitats/js/jquery.counterup.min.js"></script>
+    <script src="../utilitats/js/imgfix.min.js"></script> 
+    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/accordions.js"></script>
+    
+    <!-- Fitxer nostre -->
+    <script src="../utilitats/js/custom.js"></script>
 
 
 <!-- Latest compiled and minified Bootstrap JavaScript -->
