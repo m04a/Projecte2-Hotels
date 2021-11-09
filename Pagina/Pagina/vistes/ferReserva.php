@@ -106,8 +106,9 @@ catch(PDOException $exception){
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
           <div class="img-wrapper">
-            <a href="https://unsplash.it/500"><img src="https://unsplash.it/500" class="img-responsive"></a>
-            <div class="img-overlay">
+           <div class="img-overlay">
+            <a href=""><img src="https://unsplash.it/500" class="img-responsive"></a>
+            
               <i class="fa fa-plus-circle" aria-hidden="true"></i>
             </div>
           </div>
