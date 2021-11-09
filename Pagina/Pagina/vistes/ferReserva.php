@@ -168,7 +168,8 @@ catch(PDOException $exception){
 
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
 <!-- confirm delete record will be here -->
  
 </body>
