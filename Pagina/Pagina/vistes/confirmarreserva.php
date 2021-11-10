@@ -11,7 +11,7 @@ require '../includes/conectar_DB.php';
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
                     $usuari= $_SESSION["usuari"];
-
+                    try {
                     // prepare select query
                      $query = "SELECT nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = '$usuari' LIMIT 0,1";
 
@@ -33,8 +33,14 @@ require '../includes/conectar_DB.php';
                     $fechanacimiento = $row['fechanacimiento'];
                     $sexo = $row['sexo'];
                     $email = $row['email'];
+}
+ 
+// show error
+catch(PDOException $exception){
+    die('ERROR: ' . $exception->getMessage());
+}
+if(isset($_POST['treasure'])){
 
-if($_POST){
     try{
  
         // write update query
@@ -158,7 +164,7 @@ if($_POST){
     <tr>
         <td></td>
         <td>
-            <input type='submit' value='Guardar Canvis' class='btn btn-secondary' />
+            <input type='submit' name="treasure" value='Guardar Canvis' class='btn btn-secondary' />
         </td>
     </tr>
 </table> 
