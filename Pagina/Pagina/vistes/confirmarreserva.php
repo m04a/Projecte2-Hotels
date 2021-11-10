@@ -137,15 +137,15 @@ if($_POST){
     </tr>
     <tr>
         <td>Nom</td>
-            <td><input type='text' name='nombre' value="<?php echo $nombre;?>" class='form-control' /></td>
+            <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
    <tr>
         <td>Cognom</td>
-            <td><input type='text' name='apellidos' value="<?php echo $apellidos;?>" class='form-control' /></td>
+            <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
         <td>Data naixament</td>
-            <td><input type='date' name='fechanacimiento' value="<?php echo $fechanacimiento;  ?>" class='form-control' /></td>
+            <td><input type='date' name='fechanacimiento' value="<?php echo htmlspecialchars($fechanacimiento, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
         <td>Sexe</td>
@@ -158,7 +158,7 @@ if($_POST){
     </tr>
     <tr>
         <td>Email</td>
-            <td><input type='email' name='email' value="<?php echo $email;?>" class='form-control' /></td>
+            <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
         <td></td>
@@ -171,7 +171,6 @@ if($_POST){
 
     </div>
    <div class="col-sm">
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
             <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
@@ -202,8 +201,6 @@ if($_POST){
         </td>
     </tr>
 </table> 
- </form>
-
     </div>
   </div>
 </div>
