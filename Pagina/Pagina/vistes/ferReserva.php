@@ -138,7 +138,6 @@ catch(PDOException $exception){
     <a href='habitacions.php' class='btn btn-danger'>Tornar a habitacions</a>";
   <?php
   }
-  }
   ?>
   </div>
   <div class="card-footer text-muted">
