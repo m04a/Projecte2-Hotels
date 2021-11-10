@@ -42,8 +42,8 @@ try {
     $m2 = $row['m2'];
     $to = $_POST["fins"];
     $from = $_POST["desde"];
-    echo $to;
-    echo $from;
+    $nhabitacio = $_POST["nhabitacio"];
+    $npersones = $_POST["npersones"];
 
 }
  

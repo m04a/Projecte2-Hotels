@@ -101,6 +101,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     <?php echo "<form action='ferReserva.php?idtipo={$idtipo}' method='post'>";?>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
+                                    <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
+                                    <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
+                                   
                                     <button type="submit" class='btn btn-info m-r-6em'>Reservar</button> </li>
                                     </form>
                                 </li>

@@ -2,8 +2,6 @@
 
 require '../includes/conectar_DB.php';
 require '../includes/dologin.php';
-session_start();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +66,7 @@ session_start();
                   <button type="submit" name="login" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">No tens compte... <a href="login.php" class="fw-bold text-body"><u>Fes un compte aquí.</u></a></p>
+                <p class="text-center mt-5 mb-0">No tens compte... <a href="registre.php" class="fw-bold text-body"><u>Fes un compte aquí.</u></a></p>
               </form>
             </div>
           </div>
@@ -77,9 +75,7 @@ session_start();
     </div>
   </div>
 </section>
-<?php
-    unset($_SESSION["error"]);
-?>
+
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
