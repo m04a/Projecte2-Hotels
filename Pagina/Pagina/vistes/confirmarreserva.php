@@ -29,6 +29,7 @@ require '../includes/conectar_DB.php';
                     // values to fill up our form
 
                     $nombre = $row['nombre'];
+                    echo $nombre;
                     $apellidos = $row['apellidos'];
                     $fechanacimiento = $row['fechanacimiento'];
                     $sexo = $row['sexo'];
