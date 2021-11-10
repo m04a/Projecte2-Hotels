@@ -127,6 +127,9 @@ if($_POST){
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
+    <div class="container">
+  <div class="row">
+    <div class="col-sm">
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
@@ -166,6 +169,12 @@ if($_POST){
     </tr>
 </table> 
  </form>
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
 
 
      <!-- *** Footer inici *** -->
