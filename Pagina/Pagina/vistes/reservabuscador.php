@@ -105,8 +105,10 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     <div class="col-6">
                                     <button type="submit" class='btn btn-info m-r-6em'>Reservar</button>
                                     </div>
+                                    <div class="row">
                                     <div class="col-6">
                                         <p> Infomacion cool</p>
+                                    </div>
                                     </div>
                                     </form>
                                 </li>  
