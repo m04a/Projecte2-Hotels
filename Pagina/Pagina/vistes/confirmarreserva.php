@@ -39,6 +39,53 @@ require '../includes/conectar_DB.php';
 catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
+if($_POST){
+    try{
+ 
+        // write update query
+        // in this case, it seemed like we have so many fields to pass and
+        // it is better to label them and not use question marks
+        $query = "UPDATE usuario
+                    SET nombre=:nombre,apellidos=:apellidos,
+                    fechanacimiento=:fechanacimiento,sexo=:sexo,email=:email
+                    WHERE usuari = '$usuari'";
+                    
+                    
+                
+        // prepare query for excecution
+        $stmt = $conn->prepare($query);
+ 
+        // posted values
+        $password=htmlspecialchars(strip_tags($_POST['password']));
+        $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
+        $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
+        $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
+        $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
+        $email=htmlspecialchars(strip_tags($_POST['email']));
+ 
+        // bind the parameters
+        $stmt->bindParam(':nombre', $nombre);
+        $stmt->bindParam(':usuari', $usuari);
+        $stmt->bindParam(':apellidos', $apellidos);
+        $stmt->bindParam(':fechanacimiento', $fechanacimiento);
+        $stmt->bindParam(':sexo', $sexo);
+        $stmt->bindParam(':email', $email);
+ 
+        // Execute the query
+        if($stmt->execute()){
+            echo "<div class='alert alert-success'>Record was updated.</div>";
+        }else{
+            echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
+        }
+ 
+    }
+ 
+    // show errors
+    catch(PDOException $exception){
+        die('ERROR: ' . $exception->getMessage());
+    }
+}
+
                 }
 ?>
 <!DOCTYPE html>
@@ -82,7 +129,42 @@ catch(PDOException $exception){
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+ <table class='table table-hover table-responsive table-bordered'>
+    <tr>
+        <td>Nom</td>
+            <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+   <tr>
+        <td>Cognom</td>
+            <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>Data naixament</td>
+            <td><input type='date' name='fechanacimiento' value="<?php echo htmlspecialchars($fechanacimiento, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>Sexe</td>
+            <td>
+                <select name="sexo" class='form-control'>
+                        <option value="0">Home</option>
+                        <option value="1">Dona</option>
+                </select>
+            </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+            <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type='submit' value='Guardar Canvis' class='btn btn-primary' />
+            <a href='llistarusuaris.php' class='btn btn-danger'>Finalitzar reserva</a>
+        </td>
+    </tr>
+</table> 
+ </form>
 
 
      <!-- *** Footer inici *** -->
