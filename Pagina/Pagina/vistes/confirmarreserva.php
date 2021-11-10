@@ -128,7 +128,7 @@ if($_POST){
 	?>
     <!-- *** Capçalera Final *** -->
     <div class="container">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-sm">
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
