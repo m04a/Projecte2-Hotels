@@ -102,13 +102,13 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
                                     <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
-                                    <div class="col-6">
-                                    <button type="submit" class='btn btn-info m-r-6em'>Reservar</button>
-                                    </div>
-                                    <div class="row">
-                                    <div class="col-6">
+                                    <div class="row no-gutters">
+                                         <div class="col-6 col-md-4">
+                                            <button type="submit" class='btn btn-info m-r-6em'>Reservar</button>
+                                        </div>
+                                         <div class="col-6 col-md-4">
                                         <p> Infomacion cool</p>
-                                    </div>
+                                         </div>
                                     </div>
                                     </form>
                                 </li>  
