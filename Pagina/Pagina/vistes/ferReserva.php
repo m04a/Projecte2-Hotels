@@ -141,6 +141,7 @@ catch(PDOException $exception){
                                     <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
                                     <input type="hidden" name="numhab" value="<?php echo $numhab;?>" />
                                      <a type="submit" class='btn btn-primary m-r-6em'>Reservar</a>
+                                   </form>
                     <?php } else{ ?>
                  <a href='habitacions.php' class='btn btn-danger'>Tornar a habitacions</a>
          <?php
