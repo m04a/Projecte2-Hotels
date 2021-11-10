@@ -163,40 +163,53 @@ if($_POST){
     <tr>
         <td></td>
         <td>
-            <input type='submit' value='Guardar Canvis' class='btn btn-primary' />
-            <a href='llistarusuaris.php' class='btn btn-danger'>Finalitzar reserva</a>
+            <input type='submit' value='Guardar Canvis' class='btn btn-secondary' />
         </td>
     </tr>
 </table> 
  </form>
 
     </div>
-</div>
-    <div class="col-sm">
+   <div class="col-sm">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
-  <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+            <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+        <td>Nom</td>
+            <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
-  </tbody>
-</table>
+   <tr>
+        <td>Cognom</td>
+            <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>Data naixament</td>
+            <td><input type='date' name='fechanacimiento' value="<?php echo htmlspecialchars($fechanacimiento, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td>Sexe</td>
+            <td>
+                <select name="sexo" class='form-control'>
+                        <option value="0">Home</option>
+                        <option value="1">Dona</option>
+                </select>
+            </td>
+    </tr>
+    <tr>
+        <td>Email</td>
+            <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <input type='submit' value='Guardar Canvis' class='btn btn-secondary' />
+        </td>
+    </tr>
+</table> 
+ </form>
+
     </div>
   </div>
 </div>
