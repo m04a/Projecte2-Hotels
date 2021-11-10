@@ -107,11 +107,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                             <button type="submit" class='btn btn-info m-r-6em'>Reservar</button>
                                         </div>
                                          <div class="col-6">
-                                        <p>Numero de habitacions: <?php echo $nhabitacio;?> </p>
-                                        <p>Numero de persones: <?php echo $npersones;?></p>
+                                        <p>Habitacions: <?php echo $nhabitacio;?> </p>
+                                        <p>Persones: <?php echo $npersones;?></p>
                                          </div>
                                     </div>
-                                    <div class="alert alert-light" role="alert">
+                                    <div class="alert alert-success" role="alert">
                                     De :<?php echo $from;?> | Fins: <?php echo $to;?>
                                     </div>
                                     </form>
