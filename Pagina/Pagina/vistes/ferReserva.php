@@ -128,7 +128,7 @@ catch(PDOException $exception){
 </section>
 <div class="card text-center text-white bg-dark">
   <div class="card-header">
-    <?php $from echo '-'; $to ?>
+    <?php $from; echo '-'; $to; ?>
   </div>
   <div class="card-body">
     <?php if (isset($to)){
