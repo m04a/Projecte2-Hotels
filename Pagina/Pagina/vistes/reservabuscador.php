@@ -88,6 +88,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <?php
                             print_r($number_of_rows);
                             echo 'idtipo';
+                            echo 'from';
+                            echo 'to';
                             echo $idtipo;
                             ?>
                         <div class="down-content">
