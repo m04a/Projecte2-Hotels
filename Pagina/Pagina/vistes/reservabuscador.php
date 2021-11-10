@@ -17,24 +17,22 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
     </head>
-    
-    <body> 
-    
+
+    <body>
+
     <!-- ***** Carregador Inici ***** -->
     <?php
 		 include '../includes/carregador.php';
 	?>
     <!-- *** Preloader End *** -->
-    
-    
+
     <!-- *** Header Principal *** -->
 	<?php
 		 include '../includes/nav.php';
 	?>
     <!-- *** Header Final *** -->
-	
+
     <!-- *** Capçalera inici *** -->
 	<?php
 		 include '../includes/capsalera.php';
@@ -56,7 +54,9 @@
     require '../includes/conectar_DB.php';
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
+$to = date('Y-m-d', strtotime(str_replace('-', '/', $to)));
 $from = $_POST["from"];
+$from = date('Y-m-d', strtotime(str_replace('-', '/', $from)));
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
     if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
@@ -65,25 +65,32 @@ $npersones = $_POST["npersones"];
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
 LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
-    $stmt = $conn->prepare($query); 
+    $stmt = $conn->prepare($query);
     $stmt->execute();
-
 
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        extract($row); 
-        //$query2 = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
-        //$stmt1 = $conn->prepare($query2); 
-        //$resultat = mysql_fetch_row($stmt1);
-        //$counthab = $resultat[0];
-
+        extract($row);
+        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :from AND ffin <= :to and idtipo = :idtipo";
+        //$query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= '2021-11-1' AND ffin <= '2021-11-30' and idtipo=1;";
+        $result = $conn->prepare($query2); 
+        $result->bindParam(':from', $from);
+        $result->bindParam(':to', $to);
+        $result->bindParam(':idtipo', $idtipo);
+        $result->execute(); 
+        $number_of_rows = $result->fetch(); 
         ?>
-    
+
          <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
-                        </div>
+                            <?php
+                            print_r($number_of_rows);
+                            echo $from;
+                            echo $to;
+                            echo $idtipo;
+                            ?>
                         <div class="down-content">
                             <span>
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
@@ -96,8 +103,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             </p>
 
                             <ul class="social-icons">
-                                <li> 
-                                    <?php echo "<form action='ferReserva.php?idtipo={$idtipo}' method='post'>";?>
+                                <li>
+                                    <?php echo "<form action='ferReserva.php' method='post'>";?>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
@@ -121,14 +128,13 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                     </div>
                 </div>
 
-               
             <?php
             }
  echo '</div>';
           }
           else{ echo'<div class="alert alert-danger" role="alert">Revisa que tots els camps estiguin omplerts!</div>'; }
           }
-    ?> 
+    ?>
      </div>
    </section>
  </div>
@@ -154,10 +160,10 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     <script src="../utilitats/js/scrollreveal.min.js"></script>
     <script src="../utilitats/js/waypoints.min.js"></script>
     <script src="../utilitats/js/jquery.counterup.min.js"></script>
-    <script src="../utilitats/js/imgfix.min.js"></script> 
-    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/imgfix.min.js"></script>
+    <script src="../utilitats/js/mixitup.js"></script>
     <script src="../utilitats/js/accordions.js"></script>
-    
+
     <!-- Fitxer nostre -->
     <script src="../utilitats/js/custom.js"></script>
 
