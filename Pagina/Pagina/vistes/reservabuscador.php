@@ -75,7 +75,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= :from AND ffin >= :to";
         $stmt1 = $conn->prepare($query2, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $stmt1->execute(array(':from' => $from, ':to' => $to));
-        $stmt1->bindColumn(1, $nombre);
+        $row=$stmt1->fetch(PDO::FETCH_ASSOC);
+        extract($row);
         ?>
 
          <div class="col-lg-4">
@@ -83,7 +84,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                             <?php
-                            echo $nombre;
+                            echo $idtipo;
                             ?>
                         <div class="down-content">
                             <span>
