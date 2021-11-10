@@ -1176,8 +1176,8 @@ footer{
 
 }
 .table {
-    margin: 0 auto;
-    width: 80%;
+    margin: 0 auto !important;
+    width: 80% !important;
 }
   
 /* 
