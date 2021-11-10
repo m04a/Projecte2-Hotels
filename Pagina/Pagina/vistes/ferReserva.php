@@ -132,7 +132,7 @@ catch(PDOException $exception){
       ?>
       <div class="card-header">
         <p>Reservar habitació <?php echo htmlspecialchars($nom, ENT_QUOTES);?> el següent interval: 
-    <?php echo $from; echo ' - '; echo $to; echo ' | '; echo 'Numero de persones: ' $npersones; echo 'Numero de habitacions : ' $nhabitacio; ?> </p>
+    <?php echo $from; echo ' - '; echo $to; echo ' | '; echo 'Numero de persones: '; echo $npersones; echo 'Numero de habitacions : '; echo $nhabitacio; ?> </p>
 
 
   </div>
