@@ -128,13 +128,13 @@ catch(PDOException $exception){
 </section>
 <div class="card text-center text-white bg-dark">
   <div class="card-header">
-    
+    <?php echo'$from - $to' ?>
   </div>
   <div class="card-body">
     <?php if (isset($to)){
       ?>
       
-                                <button onclick="location.href=reservabuscador.php" class='btn btn-danger'>Tornar a reserves</button>
+                                <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
                                  <form action='confirmarreserva.php' method='post'>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
@@ -144,7 +144,7 @@ catch(PDOException $exception){
                                             <button type="submit" class='btn btn-primary m-r-6em'>Reservar</button> 
                                           </form>
                     <?php } else{ ?>
-                 <button onclick="location.href=habitacions.php" class='btn btn-danger'>Tornar a habitacions</button>
+                 <a href="habitacions.php" class='btn btn-danger'>Tornar a habitacions</a>
          <?php
          }
   ?>
