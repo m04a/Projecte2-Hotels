@@ -8,9 +8,37 @@ session_start();
                     $from = $_POST["fins"];
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
-                    echo $to;
-                    echo $from;
+                    $usuari= $_SESSION["usuari"];
+                    try {
+                    // prepare select query
+                     $query = "SELECT nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = '$usuari' LIMIT 0,1";
 
+                     $stmt = $conn->prepare($query);
+ 
+                    // this is the first question mark
+                    $stmt->bindParam(1, $usuari);
+ 
+                         // execute our query
+                     $stmt->execute();
+ 
+                     // store retrieved row to a variable
+                     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+ 
+                    // values to fill up our form
+
+                    $nombre = $row['nombre'];
+                    $apellidos = $row['apellidos'];
+                    $fechanacimiento = $row['fechanacimiento'];
+                    $sexo = $row['sexo'];
+                    $email = $row['email'];
+                    echo $nombre;
+                    echo $apellidos;
+}
+ 
+// show error
+catch(PDOException $exception){
+    die('ERROR: ' . $exception->getMessage());
+}
                 }
 ?>
 <!DOCTYPE html>
