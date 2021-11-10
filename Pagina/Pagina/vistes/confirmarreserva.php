@@ -1,12 +1,12 @@
 <?php
 session_start();
 require '../includes/conectar_DB.php';
+header('Location: '.$_SERVER['REQUEST_URI']);
 
       if($_SESSION["tipo"]!="cliente"){
                 header('Location: middleware.php');
                 }
                 else{
-                    header('Location: confirmarreserva.php');
                     $to = $_POST["desde"];
                     $from = $_POST["fins"];
                     $nhabitacio = $_POST["nhabitacio"];
