@@ -127,13 +127,13 @@ catch(PDOException $exception){
   </div>
 </section>
 <div class="card text-center text-white bg-dark">
-  <div class="card-header">
-    <?php echo $from; echo ' - ' echo $to;?>
-
-  </div>
   <div class="card-body">
     <?php if (isset($to)){
       ?>
+      <div class="card-header">
+    <?php echo $from; echo ' - ' echo $to; ?>
+
+  </div>
       
                                 <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
                                  <form action='confirmarreserva.php' method='post'>
