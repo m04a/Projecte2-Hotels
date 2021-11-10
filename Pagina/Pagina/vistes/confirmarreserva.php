@@ -6,6 +6,7 @@ require '../includes/conectar_DB.php';
                 header('Location: middleware.php');
                 }
                 else{
+                    header('Location: confirmarreserva.php');
                     $to = $_POST["desde"];
                     $from = $_POST["fins"];
                     $nhabitacio = $_POST["nhabitacio"];
