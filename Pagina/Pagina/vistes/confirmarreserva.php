@@ -136,41 +136,6 @@ if($_POST){
             <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
     </tr>
     <tr>
-        <td>Data d'inici</td>
-            <td><?php echo $to; ?></td>
-    </tr>
-   <tr>
-        <td>Data final</td>
-            <td><?php echo $from; ?></td>
-    </tr>
-    <tr>
-        <td>Numero de habitacions</td>
-            <td><?php echo $nhabitacio; ?></td>
-    </tr>
-    <tr>
-        <td>Numero de persones</td>
-            <td><?php echo $npersones; ?></td>
-    </tr>
-    <tr>
-        <td>Preu per persona/habitació</td>
-            <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-        </td>
-    </tr>
-</table> 
- </form>
-
-    </div>
-   <div class="col-sm">
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
- <table class='table table-dark table-hover table-responsive table-bordered'>
-    <tr>
-            <th colspan="2"><h3>Les teves dades de reserva són les següents</h3></th>
-    </tr>
-    <tr>
         <td>Nom</td>
             <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
@@ -199,6 +164,41 @@ if($_POST){
         <td></td>
         <td>
             <input type='submit' value='Guardar Canvis' class='btn btn-secondary' />
+        </td>
+    </tr>
+</table> 
+ </form>
+
+    </div>
+   <div class="col-sm">
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+  <table class='table table-dark table-hover table-responsive table-bordered'>
+    <tr>
+            <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
+    </tr>
+    <tr>
+        <td>Data d'inici</td>
+            <td><?php echo $to; ?></td>
+    </tr>
+   <tr>
+        <td>Data final</td>
+            <td><?php echo $from; ?></td>
+    </tr>
+    <tr>
+        <td>Numero de habitacions</td>
+            <td><?php echo $nhabitacio; ?></td>
+    </tr>
+    <tr>
+        <td>Numero de persones</td>
+            <td><?php echo $npersones; ?></td>
+    </tr>
+    <tr>
+        <td>Preu per persona/habitació</td>
+            <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
         </td>
     </tr>
 </table> 
