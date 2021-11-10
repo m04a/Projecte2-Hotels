@@ -173,7 +173,7 @@ if($_POST){
    <div class="col-sm">
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
-            <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
+            <th colspan="2"><h3>Dades de reserva</h3></th>
     </tr>
     <tr>
         <td>Data d'inici</td>
