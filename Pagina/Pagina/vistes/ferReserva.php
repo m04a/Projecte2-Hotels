@@ -132,7 +132,7 @@ catch(PDOException $exception){
   <div class="card-body">
     <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
     <?php if (isset($to)){
-    echo '<a href="#" class="btn btn-primary">Reserva</a>'
+    echo '<a href="#" class="btn btn-primary">Reserva</a>';
   }
     ?>
   </div>
