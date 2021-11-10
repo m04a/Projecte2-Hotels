@@ -1,16 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Veure habitació - Admin</title>
- 
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../utilitats/css/style.css">
-    <link rel="stylesheet" href="../utilitats/css/font-awesome.css">
-</head>
-<body>
- <?php
+<?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
 $numhab=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
@@ -42,8 +30,8 @@ try {
     $m2 = $row['m2'];
     $to = $_POST["fins"];
     $from = $_POST["desde"];
-    echo $to;
-    echo $from;
+    $nhabitacio = $_POST["nhabitacio"];
+    $npersones = $_POST["npersones"];
 
 }
  
@@ -52,6 +40,19 @@ catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
 ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Veure habitació - Admin</title>
+ 
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../utilitats/css/style.css">
+    <link rel="stylesheet" href="../utilitats/css/font-awesome.css">
+</head>
+<body>
+ 
     <!-- *** Header Principal *** -->
     <?php
          include '../includes/nav.php';
@@ -70,8 +71,8 @@ catch(PDOException $exception){
               <div class="col-lg-4">
                 <ul>
                   <li><a href='#tabs-1'><i class="fa fa-star"></i> Descripció</a></li>
-                  <li><a href='#tabs-2'><i class="fa fa-info-circle"></i> Extres</a></li>
-                  <li><a href='#tabs-3'><i class="fa fa-phone"></i> Contacte</a></li>
+                  <li><a href='#tabs-2'><i class="fa fa-info-circle"></i> Imatges</a></li>
+                  <li><a href='#tabs-3'><i class="fa fa-phone"></i> Extres</a></li>
                 </ul>
               </div>
               <div class="col-lg-8">
@@ -101,6 +102,25 @@ catch(PDOException $exception){
                        </div>
                     </div>
                   </article>
+                   <article id='tabs-2'>
+                    <div class="container">
+  <div class="row">
+    <a href="../utilitats/imatges/habitacio1.jpg"  data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="../utilitats/imatges/habitacio1.jpg" class="img-fluid rounded">
+    </a>
+    <a href="../utilitats/imatges/habitacio2.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="../utilitats/imatges/habitacio2.jpg"  class="img-fluid rounded" >
+    </a>
+    <a href="../utilitats/imatges/habitacio3.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+      <img src="../utilitats/imatges/habitacio3.jpg" class="img-fluid rounded">
+    </a>
+  </div>
+</div>
+                  </article>
+                   <article id='tabs-3'>
+                    <div class="container">
+ 
+                  </article>
               </section>
           </div>
       </div>
@@ -108,8 +128,29 @@ catch(PDOException $exception){
 </section>
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
-    <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
-    <a href="#" class="btn btn-primary">Reserva</a>
+    <?php if (isset($to)){
+      ?>
+      <div class="card-header">
+        <p>Reservar habitació <?php echo htmlspecialchars($nom, ENT_QUOTES);?> el següent interval: 
+    <?php echo $from; echo ' - '; echo $to; echo ' | '; echo 'Numero de persones: '; echo $npersones; echo 'Numero de habitacions : '; echo $nhabitacio; ?> </p>
+
+
+  </div>
+      
+                                <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
+                                 <form action='confirmarreserva.php' method='post'>
+                                    <input type="hidden" name="desde" value="<?php echo $from;?>" />
+                                    <input type="hidden" name="fins" value="<?php echo $to;?>" />
+                                    <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
+                                    <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
+                                    <input type="hidden" name="numhab" value="<?php echo $numhab;?>" />
+                                            <button type="submit" class='btn btn-primary m-r-6em'>Reservar</button> 
+                                          </form>
+                    <?php } else{ ?>
+                 <a href="habitacions.php" class='btn btn-danger'>Tornar a habitacions</a>
+         <?php
+         }
+  ?>
   </div>
   <div class="card-footer text-muted">
     Si tens algun dubte fes-ho saber
@@ -123,13 +164,29 @@ catch(PDOException $exception){
     ?>
     <!-- *** Footer final *** -->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="../utilitats/js/accordions.js"></script>
+<!-- jQuery -->
+    <script src="../utilitats/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../utilitats/js/popper.js"></script>
+    <script src="../utilitats/js/bootstrap.min.js"></script>
+
+    <!-- Plugins afegits -->
+    <script src="../utilitats/js/scrollreveal.min.js"></script>
+    <script src="../utilitats/js/waypoints.min.js"></script>
+    <script src="../utilitats/js/jquery.counterup.min.js"></script>
+    <script src="../utilitats/js/imgfix.min.js"></script> 
+    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/accordions.js"></script>
+    
+    <!-- Fitxer nostre -->
+    <script src="../utilitats/js/custom.js"></script>
+
 
 <!-- Latest compiled and minified Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- 
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+
 <!-- confirm delete record will be here -->
  
 </body>

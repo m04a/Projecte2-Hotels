@@ -2,50 +2,9 @@
   <?php
 
 require '../includes/conectar_DB.php';
-  $message = '';
-	function validate($data){
-       $data = trim($data);
-       $data = stripslashes($data);
-       $data = htmlspecialchars($data);
-       return $data;
-}
-  if (isset($_POST["Submit1"])) {
-      $usuari = $_POST['usuari']; 
-      validate($usuari);
-	    $password = $_POST['password'];
-      validate($password);
-	    $passwordc = $_POST['passwordc']; 
-      validate($passwordc);
-      $nombre = $_POST['nombre']; 
-      validate($nombre);      
-      $apellidos = $_POST['apellidos'];
-      validate($apellidos);
-      $email = $_POST['email'];
-      validate($email);
-      //$fechanacimento = $_POST['fechanacimento'];
+require '../includes/doregistre.php';
 
-if ($password != $passwordc) {
-	$message = 'Les contrasenyes no son iguals';
-	header("Location: registre.php");
-  }else{
-	
-	//$sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimento');";
-    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email) VALUES ('$usuari','$password','$nombre','$apellidos','$email');";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam('$usuari', $_POST['usuari']);
-    $stmt->bindParam('$password', $_POST['password']);
-    $stmt->bindParam('$email', $_POST['email']);
-    $stmt->bindParam('$nombre', $_POST['nombre']);
-    $stmt->bindParam('$apellidos', $_POST['apellidos']);
-    //$stmt->bindParam('$fechanacimento', $_POST['fechanacimento']);
-}
-    if ($stmt->execute()) {
-      $message = 'El usuari ha sigut creat';
-    } else {
-      $message = 'Ha hagut algun error';
-    }
-  }
-
+ 
 ?>
 <html lang="en">
   <head>
@@ -109,10 +68,10 @@ if ($password != $passwordc) {
                   <label class="form-label">Nom d'usuari</label>
                   <input type="text" name="usuari" class="form-control form-control-lg" />
                 </div>
-                 <!--<div class="form-outline mb-4">
+                 <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="fechanacimento" class="form-control form-control-lg" /> 
-                </div>-->
+                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" /> 
+                </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
                   <input type="email" name="email" class="form-control form-control-lg" />
@@ -132,7 +91,7 @@ if ($password != $passwordc) {
                   <button type="submit" name="Submit1" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
                 </div>
 
-                <p class="text-center text-muted mt-5 mb-0">Tens una compte ja?? <a href="login.php" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
+                <p class="text-center mt-5 mb-0">Tens una compte ja?? <a href="login.php" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
               </form>
             </div>
           </div>

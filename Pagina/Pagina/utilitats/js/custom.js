@@ -167,10 +167,14 @@ if ( document.URL.includes("registre.php") ) {
 	document.getElementById("titlevar").textContent="Registre";
 }
 if ( document.URL.includes("reservabuscador.php") ) {
-	document.getElementById("titlevar").textContent="Registre";
+	document.getElementById("titlevar").textContent="Reserva";
 }
 if ( document.URL.includes("login.php") ) {
 	document.getElementById("titlevar").textContent="Login";
 }
 
-/*Canvis de tabs*/
+/*Lightbox fet*/
+$(document).on("click", '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});

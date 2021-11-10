@@ -21,7 +21,7 @@
         <?php
 // fem un include de la nostre base de dades
    require '../includes/conectar_DB.php';
-		
+   require 'middleware.php';	
 $action = isset($_GET['action']) ? $_GET['action'] : "";
  
 // delete message prompt will be here

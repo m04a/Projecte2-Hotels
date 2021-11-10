@@ -23,7 +23,9 @@ ul, li {
 * {
   box-sizing: border-box;
 }
-
+.dropdown-backdrop {
+    position: static;
+}
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -33,6 +35,9 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:;
+}
+.responsiveItem{
+    display: none!important;
 }
 
 a {
@@ -366,6 +371,9 @@ header
 }
 
 @media (max-width: 767px) {
+  .responsiveItem{
+    display: block!important;
+  }
   .header-area .main-nav .logo {
     color: #1e1e1e;
   }
@@ -409,7 +417,9 @@ header
     background-color: #ed563b;
     color: #fff;
   }
-
+  .dropdown{
+    display: none;
+  }
   .header-area.header-sticky .nav {
     margin-top: 80px !important;
   }
@@ -1226,6 +1236,7 @@ table, th, td {
     color: #fff;
 }
 
+/*
 ---------------------------------------------
 habitacions
 --------------------------------------------- 
@@ -1299,3 +1310,10 @@ div.buscador{
 .formdes{
   padding: 3%;
 }
+/* LIGHTBOX */
+ .row {
+  margin: 15px;
+}
+  .imatgelight {
+    padding: 15% 5% 10% 0% !important; 
+    }
