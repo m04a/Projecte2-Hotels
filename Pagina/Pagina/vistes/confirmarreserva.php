@@ -1,6 +1,6 @@
 <?php
 session_start();
-      if($_SESSION["tipo"]!="client"){
+      if($_SESSION["tipo"]!="cliente"){
                 header('Location: middleware.php');
                 }
                 else{
