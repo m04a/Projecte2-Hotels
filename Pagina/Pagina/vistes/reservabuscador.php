@@ -102,7 +102,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                 <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                             </p>
 
-                            <ul class="social-icons">
+                            <ul class="social-icons"> 
                                 <li>
                                     <?php echo "<form action='ferReserva.php' method='post'>";?>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
