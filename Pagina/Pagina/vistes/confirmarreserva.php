@@ -169,7 +169,9 @@ if($_POST){
     </tr>
 </table> 
  </form>
+
     </div>
+</div>
     <div class="col-sm">
  <table class='table table-dark table-hover table-responsive table-bordered'>
   <thead>
