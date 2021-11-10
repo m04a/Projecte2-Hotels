@@ -81,7 +81,12 @@ require '../includes/doregistre.php';
                   <label class="form-label">Contrasenya</label>
                   <input type="password" name="password" class="form-control form-control-lg" />
                 </div> 
-
+                <div class="form-outline mb-4">
+                  <select name="sexo" class='form-control'>
+                  <option value="0">Home</option>
+                   <option value="1">Dona</option>
+                  </select>
+                </div> 
                 <div class="form-outline mb-4">
                   <label class="form-label">Confirma la contrasenya</label>
                   <input type="password" name="passwordc" class="form-control form-control-lg" />

@@ -33,8 +33,6 @@ require '../includes/conectar_DB.php';
                     $fechanacimiento = $row['fechanacimiento'];
                     $sexo = $row['sexo'];
                     $email = $row['email'];
-                    echo $nombre;
-                    echo $apellidos;
 }
  
 // show error

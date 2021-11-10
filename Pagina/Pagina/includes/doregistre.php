@@ -20,6 +20,7 @@
       $email = $_POST['email'];
       validate($email);
       $fechanacimiento = $_POST['fechanacimiento'];
+      $sexo = $_POST['sexo'];
 
 
 
@@ -30,13 +31,15 @@ if ($password != $passwordc) {
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 	  $password = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimiento) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimiento');";
+    $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimiento,sexo) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimiento',$sexo);";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam('$usuari', $_POST['usuari']);
     $stmt->bindParam('$password', $_POST['password']);
     $stmt->bindParam('$email', $_POST['email']);
     $stmt->bindParam('$nombre', $_POST['nombre']);
     $stmt->bindParam('$apellidos', $_POST['apellidos']);
+    $stmt->bindParam('$sexo', $_POST['sexo']);
+
     $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
     $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);
 
