@@ -1,6 +1,7 @@
 <?php
 session_start();
       if($_SESSION["tipo"]!="admin"){
-                header('Location: ../index.php');
+      	echo "No tens permisos per accedir aquesta pagina! Es farà una redirecció en 5 segons...";
+      	header('Refresh: 5; URL=../index.php');
                 }
 ?>
