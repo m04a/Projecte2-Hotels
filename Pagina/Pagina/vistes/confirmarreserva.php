@@ -136,34 +136,28 @@ if($_POST){
             <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
     </tr>
     <tr>
-        <td>Nom</td>
-            <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Data d'inici</td>
+            <td><?php echo $to; ?></td>
     </tr>
    <tr>
-        <td>Cognom</td>
-            <td><input type='text' name='apellidos' value="<?php echo htmlspecialchars($apellidos, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Data final</td>
+            <td><?php echo $from; ?></td>
     </tr>
     <tr>
-        <td>Data naixament</td>
-            <td><input type='date' name='fechanacimiento' value="<?php echo htmlspecialchars($fechanacimiento, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Numero de habitacions</td>
+            <td><?php echo $nhabitacio; ?></td>
     </tr>
     <tr>
-        <td>Sexe</td>
-            <td>
-                <select name="sexo" class='form-control'>
-                        <option value="0">Home</option>
-                        <option value="1">Dona</option>
-                </select>
-            </td>
+        <td>Numero de persones</td>
+            <td><?php echo $npersones; ?></td>
     </tr>
     <tr>
-        <td>Email</td>
-            <td><input type='email' name='email' value="<?php echo htmlspecialchars($email, ENT_QUOTES);  ?>" class='form-control' /></td>
+        <td>Preu per persona/habitació</td>
+            <td></td>
     </tr>
     <tr>
         <td></td>
         <td>
-            <input type='submit' value='Guardar Canvis' class='btn btn-secondary' />
         </td>
     </tr>
 </table> 
@@ -174,7 +168,7 @@ if($_POST){
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
-            <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
+            <th colspan="2"><h3>Les teves dades de reserva són les següents</h3></th>
     </tr>
     <tr>
         <td>Nom</td>
