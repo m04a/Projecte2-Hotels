@@ -4,8 +4,8 @@ session_start();
                 header('Location: middleware.php');
                 }
                 else{
-                    $to = $_POST["to"];
-                    $from = $_POST["from"];
+                    $to = $_POST["desde"];
+                    $from = $_POST["fins"];
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
                     echo $to;
