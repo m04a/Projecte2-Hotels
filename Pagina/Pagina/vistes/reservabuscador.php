@@ -71,9 +71,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
-        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= ? AND ffin >= ?";
+        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= :from AND ffin >= :to";
         $result = $conn->prepare($query2); 
-        $result->execute(array($from, $to)); 
+        $result->bindParam(':from', $from);
+        $result->bindParam(':to', $to);
+        $result->execute(); 
         $number_of_rows = $result->fetchColumn(); 
         ?>
 
