@@ -131,7 +131,7 @@ catch(PDOException $exception){
     <?php if (isset($to)){
       ?>
       <div class="card-header">
-    <?php echo $from; echo ' - ' echo $to; ?>
+    <?php echo $from; echo ' - '; echo $to; ?>
 
   </div>
       
