@@ -1178,6 +1178,7 @@ footer{
 .table {
     margin: 0 auto !important;
     width: 80% !important;
+    background-color: #1b1c1d !important;
 }
   
 /* 
