@@ -3,6 +3,15 @@ session_start();
       if($_SESSION["tipo"]!="client"){
                 header('Location: middleware.php');
                 }
+                else{
+                    $to = $_POST["to"];
+                    $from = $_POST["from"];
+                    $nhabitacio = $_POST["nhabitacio"];
+                    $npersones = $_POST["npersones"];
+                    echo $to;
+                    echo $from;
+
+                }
 ?>
 <!DOCTYPE html>
 <html lang="en">
