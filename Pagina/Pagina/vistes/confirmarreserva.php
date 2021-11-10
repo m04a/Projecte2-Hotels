@@ -130,6 +130,9 @@ if($_POST){
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
+        <td><h3>Revisa les teves dades de registre</h3></td>
+    </tr>
+    <tr>
         <td>Nom</td>
             <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
