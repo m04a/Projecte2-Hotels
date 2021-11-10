@@ -71,10 +71,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row);
+        //$query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= '2021-11-8' AND ffin >= '2021-11-18'";
         $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio <= :from AND ffin >= :to";
         $stmt1 = $conn->prepare($query2, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
         $stmt1->execute(array(':from' => $from, ':to' => $to));
-        $resultado = $stmt1->fetch();
+        $stmt1->bindColumn(1, $nombre);
         ?>
 
          <div class="col-lg-4">
@@ -82,7 +83,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                             <?php
-                            echo $resultado;
+                            echo $nombre;
                             ?>
                         <div class="down-content">
                             <span>
