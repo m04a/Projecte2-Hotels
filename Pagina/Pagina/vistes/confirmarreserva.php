@@ -1,5 +1,7 @@
 <?php
 session_start();
+require '../includes/conectar_DB.php';
+
       if($_SESSION["tipo"]!="cliente"){
                 header('Location: middleware.php');
                 }
@@ -16,7 +18,7 @@ session_start();
                      $stmt = $conn->prepare($query);
  
                     // this is the first question mark
-                    $stmt->bindParam(1, $usuari);
+                     $stmt->bindParam($usuari);
  
                          // execute our query
                      $stmt->execute();
