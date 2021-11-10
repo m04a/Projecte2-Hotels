@@ -77,7 +77,6 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         //$resultat = mysql_fetch_row($stmt1);
         //$counthab = $resultat[0];
 
-        echo $counthab;
         ?>
     
          <div class="col-lg-4">
@@ -103,11 +102,14 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
                                     <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
-                                   
-                                    <button type="submit" class='btn btn-info m-r-6em'>Reservar</button> </li>
+                                    <div class="col-6">
+                                    <button type="submit" class='btn btn-info m-r-6em'>Reservar</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <p> Infomacion cool</p>
+                                    </div>
                                     </form>
-                                </li>
-                                    
+                                </li>  
                             </ul>
                         </div>
                     </div>
