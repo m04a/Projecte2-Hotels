@@ -56,7 +56,6 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
-        $password=htmlspecialchars(strip_tags($_POST['password']));
         $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
         $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
         $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
@@ -65,7 +64,6 @@ if($_POST){
  
         // bind the parameters
         $stmt->bindParam(':nombre', $nombre);
-        $stmt->bindParam(':usuari', $usuari);
         $stmt->bindParam(':apellidos', $apellidos);
         $stmt->bindParam(':fechanacimiento', $fechanacimiento);
         $stmt->bindParam(':sexo', $sexo);
