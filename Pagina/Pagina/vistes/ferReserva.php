@@ -1,16 +1,5 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Veure habitació - Admin</title>
- 
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../utilitats/css/style.css">
-    <link rel="stylesheet" href="../utilitats/css/font-awesome.css">
-</head>
-<body>
- <?php
+<?php
+session_start();
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
 $numhab=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
@@ -52,6 +41,19 @@ catch(PDOException $exception){
     die('ERROR: ' . $exception->getMessage());
 }
 ?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Veure habitació - Admin</title>
+ 
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../utilitats/css/style.css">
+    <link rel="stylesheet" href="../utilitats/css/font-awesome.css">
+</head>
+<body>
+ 
     <!-- *** Header Principal *** -->
     <?php
          include '../includes/nav.php';
@@ -132,12 +134,21 @@ catch(PDOException $exception){
   <div class="card-body">
     <?php if (isset($to)){
       ?>
-    <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
-    <a href="#" class="btn btn-primary">Reserva</a>';
-  <?php } else{ ?>
-    <a href='habitacions.php' class='btn btn-danger'>Tornar a habitacions</a>
-  <?php
-  }
+                                <a href='reservabuscador.php' class='btn btn-danger'>Tornar a reserves</a>
+                                 <form action='confirmarreserva.php' method='post'>
+                                    <input type="hidden" name="desde" value="<?php echo $from;?>" />
+                                    <input type="hidden" name="fins" value="<?php echo $to;?>" />
+                                    <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
+                                    <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
+                                    <input type="hidden" name="numhab" value="<?php echo $numhab;?>" />
+                                    <div class="row">
+                                         <div class="col-6">
+                                            <button type="submit" class='btn btn-primary m-r-6em'>Reservar</button>
+                                        </div>
+                    <?php } else{ ?>
+                 <a href='habitacions.php' class='btn btn-danger'>Tornar a habitacions</a>
+         <?php
+         }
   ?>
   </div>
   <div class="card-footer text-muted">
