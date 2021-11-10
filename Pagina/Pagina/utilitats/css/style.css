@@ -1123,7 +1123,9 @@ responsive
 .pagination-lg .page-link {
   color: #ed563b;
 }
-
+.btn{
+  margin:15px;
+}
 .btn-primary {
   border-color: #ed563b;
   background-color: #ed563b;
