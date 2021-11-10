@@ -1,7 +1,6 @@
 <?php
 session_start();
 require '../includes/conectar_DB.php';
-header('Location: '.$_SERVER['REQUEST_URI']);
 
       if($_SESSION["tipo"]!="cliente"){
                 header('Location: middleware.php');
