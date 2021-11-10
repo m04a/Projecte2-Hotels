@@ -28,7 +28,6 @@ create table reserva (
     numpers int(5),
     finicio date,
     ffin date,
-	idhabitacion int(10),
 	idtipo  int(15),
 	usuario varchar(69),
 	foreign key reservatipo(idtipo) references tipo(idtipo),
