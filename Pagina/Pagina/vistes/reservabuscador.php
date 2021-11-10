@@ -87,9 +87,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                             <?php
                             print_r($number_of_rows);
-                            echo 'idtipo';
-                            echo 'from';
-                            echo 'to';
+                            echo $from;
+                            echo $to;
                             echo $idtipo;
                             ?>
                         <div class="down-content">
