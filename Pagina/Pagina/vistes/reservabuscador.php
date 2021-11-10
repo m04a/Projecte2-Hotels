@@ -84,7 +84,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                             <?php
-                            echo $idtipo;
+                            echo $COUNT;
                             ?>
                         <div class="down-content">
                             <span>
