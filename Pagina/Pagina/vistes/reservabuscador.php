@@ -55,6 +55,11 @@
 <?php
     require '../includes/conectar_DB.php';
 if(isset($_POST["reservaBuscar"])){
+unset($_SESSION["to"]);
+unset($_SESSION["from"]);
+unset($_SESSION["nhabitacio"]);
+unset($_SESSION["npersones"]);
+unset($_SESSION["precio"]);
 $to = $_POST["to"];
 $from = $_POST["from"];
 $nhabitacio = $_POST["nhabitacio"];

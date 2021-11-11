@@ -6,6 +6,7 @@ require '../includes/conectar_DB.php';
                 header('Location: middleware.php');
                 }
                 else{
+                    if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
                     $to = $_POST["desde"];
                     $from = $_POST["fins"];
                     $nhabitacio = $_POST["nhabitacio"];
@@ -16,8 +17,8 @@ require '../includes/conectar_DB.php';
                     $_SESSION["from"]=$from;                     
                     $_SESSION["nhabitacio"]=$nhabitacio;
                     $_SESSION["npersones"]=$npersones;
-                    $_SESSION["persones"]=$precio;
-
+                    $_SESSION["precio"]=$precio;
+                    }
 
                     $usuari= $_SESSION["usuari"];
                     try {
