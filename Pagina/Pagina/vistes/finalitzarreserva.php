@@ -39,6 +39,7 @@ require '../includes/conectar_DB.php';
                 //$stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
+                /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
                 $stmt->bindParam('$from', $_POST['from']);
                 $stmt->bindParam('$to', $_POST['to']);
 
