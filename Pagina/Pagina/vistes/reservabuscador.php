@@ -88,7 +88,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
-        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<$cantidad){
+        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">
@@ -97,16 +97,20 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
+                        <?php if($cantidad-$number_of_rows[0]["COUNT(idtipo)"]<5){ ?>
+                            <h4><tr><td>Queden nomes <?php $number_of_rows[0]["COUNT(idtipo)"] ?> habitacions d'aquest tipus</td></h4>
+                            <?php } ?>
                             <span>
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
                             </span>
 
                             <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
-
                             <p>
                                 <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                             </p>
-
+                            <p>
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$$number_of_rows[0]["COUNT(idtipo)"]} habitacions disponibles</td>"; ?>
+                            </p>
                             <ul class="social-icons">
                                 <li> 
                                     <?php echo "<form action='ferReserva.php?idtipo={$idtipo}' method='post'>";?>
