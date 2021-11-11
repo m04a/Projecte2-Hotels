@@ -52,6 +52,8 @@ require '../includes/conectar_DB.php';
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
+  <div class="container">
+    <div class="row">
    <div class="col-sm">
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
@@ -62,30 +64,38 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Nom d'habitació</td>
             <td><?php echo $_SESSION["nom"]; ?></td>
-            <td>Nom d'usuari</td>
+            <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
     <tr>
         <td>Data d'inici</td>
             <td><?php echo $_SESSION["to"]; ?></td>
-            <td>Nom d'usuari</td>
-            <td><?php echo $_SESSION["usuari"]; ?></td>
+            <td>Nom</td>
+            <td><?php echo $nombre; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
             <td><?php echo $_SESSION["from"]; ?></td>
+            <td>Cognom</td>
+            <td><?php echo $apellidos; ?></td>
     </tr>
     <tr>
         <td>Numero de habitacions</td>
             <td><?php echo $_SESSION["nhabitacio"];; ?></td>
+            <td>Cognom</td>
+            <td><?php echo $fechanacimiento; ?></td>
     </tr>
     <tr>
         <td>Numero de persones</td>
             <td><?php echo $_SESSION["npersones"]; ?></td>
+            <td>Sexo</td>
+            <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
         <td>Preu total</td>
             <td><?php echo $_SESSION["precio"]; ?></td>
+            <td>email</td>
+            <td><?php echo $email; ?></td>
     </tr>
     <tr>
         <td>Reservar al usuari</td>
@@ -94,6 +104,7 @@ require '../includes/conectar_DB.php';
 </table> 
     </div>
   </div>
+</div>
 
      <!-- *** Footer inici *** -->
      <?php
