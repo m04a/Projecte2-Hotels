@@ -57,10 +57,10 @@
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
 $ffin = DateTime::createFromFormat('j/m/Y', $to);
-//$ffin->format('Y/m/d');
+$ffin->format('Y/m/d');
 $from = $_POST["from"];
 $finicio = DateTime::createFromFormat('j/m/Y', $from);
-//$finicio->format('Y/m/d');
+$finicio->format('Y/m/d');
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
     if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
