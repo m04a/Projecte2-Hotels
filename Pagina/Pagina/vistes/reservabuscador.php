@@ -57,10 +57,9 @@
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
 $ffin = DateTime::createFromFormat('j/m/Y', $to);
-$ffin->format('Y/m/d');
 $from = $_POST["from"];
 $finicio = DateTime::createFromFormat('j/m/Y', $from);
-$finicio->format('Y/m/d');
+
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
     if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
@@ -78,8 +77,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         extract($row); 
         $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
         $result = $conn->prepare($query2); 
-        $result->bindParam(':finicio', $finicio);
-        $result->bindParam(':ffin', $ffin);
+        $result->bindParam(':finicio', $finicio->format('Y/m/d'));
+        $result->bindParam(':ffin', $ffin->format('Y/m/d'));
         $result->bindParam(':idtipo', $idtipo);
         $result->execute(); 
         $number_of_rows = $result->fetch(); 
