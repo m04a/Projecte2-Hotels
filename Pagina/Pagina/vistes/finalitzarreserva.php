@@ -15,7 +15,7 @@ require '../includes/conectar_DB.php';
                 $_SESSION["apellidos"] = $apellidos;
                 $_SESSION["fechanacimiento"] = $fechanacimiento;
                 $_SESSION["sexo"] = $sexo;
-                $_SESSION["nombre"] = $nombre;
+                $_SESSION["email"] = $email;                
             }
                 $nombre = $_SESSION["nombre"];
                 $apellidos = $_SESSION["apellidos"];
