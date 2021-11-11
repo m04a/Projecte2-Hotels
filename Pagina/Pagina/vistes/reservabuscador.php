@@ -93,9 +93,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                     <div class="trainer-item">
                         <?php
                          //print_r($number_of_rows);
-                         echo $finicio;
-                         echo $ffin;
-                         echo $idtipo;
+                         //echo $finicio;
+                         //echo $ffin;
+                         //echo $idtipo;
                         ?>
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
