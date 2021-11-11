@@ -115,7 +115,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                 <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                             </p>
                             <p>
-                                <i class="fa fa-info"></i><?php echo "<tr><td>{$$number_of_rows[0]["COUNT(idtipo)"]} habitacions disponibles</td>"; ?>
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$number_of_rows[0]["COUNT(idtipo)"]} habitacions disponibles</td>"; ?>
                             </p>
                             <ul class="social-icons">
                                 <li> 
