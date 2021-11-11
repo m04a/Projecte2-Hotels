@@ -104,9 +104,6 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
-                        <?php if($disponible<5){ ?>
-                            <h4><tr><td>Queden nomes <?php echo "$disponible" ?> habitacions d'aquest tipus</td></h4>
-                            <?php } ?>
                             <span>
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
                             </span>
@@ -137,6 +134,16 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     <div class="alert alert-success" role="alert">
                                     De: <?php echo $from;?> | Fins: <?php echo $to;?>
                                     </div>
+                                    <?php if($disponible<5){ ?>
+                                        <div class="alert alert-danger" role="alert">
+                                        <h4><tr><td>Queden nomes <?php echo "$disponible" ?> 
+                                        <?php if($disponible=1){ echo("habitació");
+                                            }else{
+                                                echo("habitació") ;
+                                            } ?>d'aquest tipus</td></h4>
+                                        </div>
+                                    <?php } ?>
+                            
                                     </form>
                                 </li>  
                             </ul>
