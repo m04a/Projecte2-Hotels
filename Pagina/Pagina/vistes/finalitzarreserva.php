@@ -36,7 +36,7 @@ require '../includes/conectar_DB.php';
                 $finicio = DateTime::createFromFormat('j/m/Y', $from);
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$tinicio','$to');";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$tinicio','$ffin');";
                 $stmt = $conn->prepare($sql);
                 //$stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
