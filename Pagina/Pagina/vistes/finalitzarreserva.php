@@ -5,12 +5,24 @@ require '../includes/conectar_DB.php';
       if($_SESSION["tipo"]!="cliente"){
                 header('Location: middleware.php');
                 }
+                if(!isset($_SESSION['nombre']) && empty($_SESSION['nombre'])) {               
                 $nombre = $_POST['nombre'];
                 $apellidos = $_POST['apellidos'];
                 $fechanacimiento = $_POST['fechanacimiento'];
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
-                $to = $_SESSION["to"];
+                $_SESSION["nombre"] = $nombre;
+                $_SESSION["apellidos"] = $apellidos;
+                $_SESSION["fechanacimiento"] = $fechanacimiento;
+                $_SESSION["sexo"] = $sexo;
+                $_SESSION["nombre"] = $nombre;
+            }
+                $nombre = $_SESSION["nombre"];
+                $apellidos = $_SESSION["apellidos"];
+                $fechanacimiento = $_SESSION["fechanacimiento"];
+                $sexo = $_SESSION["sexo"];
+                $email = $_SESSION["email"];
+                $to = $_SESSION["to"];                                     
                 $from = $_SESSION["from"];                     
                 $nhabitacio = $_SESSION["nhabitacio"];
                 $npersones = $_SESSION["npersones"];
@@ -107,7 +119,7 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
             <th colspan="2"><h4>PREU TOTAL RESERVA</h4></th>
-            <th colspan="2"><h2><?php echo $preutotal;?> €</h2></th>
+            <th colspan="2"><h2><?php echo $preciototal;?> €</h2></th>
     </tr>
 </table> 
     </div>

@@ -60,6 +60,12 @@ unset($_SESSION["from"]);
 unset($_SESSION["nhabitacio"]);
 unset($_SESSION["npersones"]);
 unset($_SESSION["precio"]);
+unset($_SESSION["nombre"]);
+unset($_SESSION["apellidos"]);
+unset($_SESSION["fechanacimiento"]);
+unset($_SESSION["sexo"]);
+unset($_SESSION["email"]);
+
 $to = $_POST["to"];
 $from = $_POST["from"];
 $nhabitacio = $_POST["nhabitacio"];
