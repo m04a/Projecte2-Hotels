@@ -94,6 +94,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
+        $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
         if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad){
         ?>
          <div class="col-lg-4">
@@ -103,8 +104,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
-                        <?php if($cantidad-$number_of_rows[0]["COUNT(idtipo)"]<5){ ?>
-                            <h4><tr><td>Queden nomes <?php $number_of_rows[0]["COUNT(idtipo)"] ?> habitacions d'aquest tipus</td></h4>
+                        <?php if($disponible<5){ ?>
+                            <h4><tr><td>Queden nomes <?php $disponible ?> habitacions d'aquest tipus</td></h4>
                             <?php } ?>
                             <span>
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
