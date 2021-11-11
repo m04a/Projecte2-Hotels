@@ -10,12 +10,12 @@ require '../includes/conectar_DB.php';
                 $fechanacimiento = $_POST['fechanacimiento'];
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
-                $preutotal=$_SESSION["precio"] * $_SESSION["nhabitacio"];
                 $to = $_SESSION["to"];
                 $from = $_SESSION["from"];                     
                 $nhabitacio = $_SESSION["nhabitacio"];
                 $npersones = $_SESSION["npersones"];
-                $precio $_SESSION["precio"]
+                $precio $_SESSION["precio"];
+                $preciototal = $nhabitacio * $precio;
                 $nomhabitacio = $_SESSION["nom"];
                 $usuari = $_SESSION["usuari"];
 ?>
