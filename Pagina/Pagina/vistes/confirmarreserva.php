@@ -212,7 +212,7 @@ if(isset($_POST['treasure'])){
     </tr>
     <tr>
         <td>Preu total</td>
-            <td><?php echo $_SESSION["precio"] €; ?></td>
+            <td><?php echo $_SESSION["precio"]; ?></td>
     </tr>
     <tr>
         <td>Reservar al usuari</td>
