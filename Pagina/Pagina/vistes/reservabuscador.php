@@ -105,7 +105,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                         </div>
                         <div class="down-content">
                         <?php if($disponible<5){ ?>
-                            <h4><tr><td>Queden nomes <?php $disponible ?> habitacions d'aquest tipus</td></h4>
+                            <h4><tr><td>Queden nomes <?php echo "$disponible" ?> habitacions d'aquest tipus</td></h4>
                             <?php } ?>
                             <span>
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
