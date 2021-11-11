@@ -10,6 +10,15 @@ require '../includes/conectar_DB.php';
                     $from = $_POST["fins"];
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
+                    $precio = $_POST["precio"];
+                    
+                    $_SESSION["to"]=$to;
+                    $_SESSION["from"]=$from;                     
+                    $_SESSION["nhabitacio"]=$nhabitacio;
+                    $_SESSION["npersones"]=$npersones;
+                    $_SESSION["persones"]=$precio;
+
+
                     $usuari= $_SESSION["usuari"];
                     try {
                     // prepare select query
@@ -178,11 +187,11 @@ if(isset($_POST['treasure'])){
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $to; ?></td>
+            <td><?php echo $_SESSION["to"]; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $from; ?></td>
+            <td><?php echo $_SESSION["from"]; ?></td>
     </tr>
     <tr>
         <td>Numero de habitacions</td>
@@ -194,7 +203,7 @@ if(isset($_POST['treasure'])){
     </tr>
     <tr>
         <td>Preu per persona/habitació</td>
-            <td></td>
+            <td><?php echo $precio; ?></td>
     </tr>
     <tr>
         <td></td>
