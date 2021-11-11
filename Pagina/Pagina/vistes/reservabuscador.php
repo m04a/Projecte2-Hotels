@@ -76,13 +76,13 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
-        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
-        $result = $conn->prepare($query2); 
-        $result->bindParam(':finicio', $finicio);
-        $result->bindParam(':ffin', $ffin);
-        $result->bindParam(':idtipo', $idtipo);
-        $result->execute(); 
-        $number_of_rows = $result->fetch(); 
+       // $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
+       // $result = $conn->prepare($query2); 
+       // $result->bindParam(':finicio', $finicio);
+       // $result->bindParam(':ffin', $ffin);
+       // $result->bindParam(':idtipo', $idtipo);
+       // $result->execute(); 
+       // $number_of_rows = $result->fetch(); 
         //$query2 = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
         //$stmt1 = $conn->prepare($query2); 
         //$resultat = mysql_fetch_row($stmt1);
@@ -93,10 +93,10 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
          <div class="col-lg-4">
                     <div class="trainer-item">
                         <?php
-                         print_r($number_of_rows);
-                         echo $finicio;
-                         echo $ffin;
-                         echo $idtipo;
+                        // print_r($number_of_rows);
+                        // echo $finicio;
+                        // echo $ffin;
+                        // echo $idtipo;
                         ?>
                         <div class="image-thumb">
                             <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
