@@ -10,12 +10,12 @@ require '../includes/conectar_DB.php';
                 $fechanacimiento = $_POST['fechanacimiento'];
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
+                $preutotal=$_SESSION["precio"] * $_SESSION["nhabitacio"];;
                 $to = $_SESSION["to"];
                 $from = $_SESSION["from"];                     
                 $nhabitacio = $_SESSION["nhabitacio"];
                 $npersones = $_SESSION["npersones"];
-                $precio $_SESSION["precio"];
-                $preciototal = $nhabitacio * $precio;
+                $precio $_SESSION["precio"]
                 $nomhabitacio = $_SESSION["nom"];
                 $usuari = $_SESSION["usuari"];
 ?>
@@ -71,37 +71,37 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
         <td>Nom d'habitació</td>
-            <td><?php echo $nomhabitacio; ?></td>
+            <td><?php echo $_SESSION["nom"]; ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $to; ?></td>
+            <td><?php echo $_SESSION["to"]; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $from; ?></td>
+            <td><?php echo $_SESSION["from"]; ?></td>
             <td>Cognom</td>
             <td><?php echo $apellidos; ?></td>
     </tr>
     <tr>
         <td>Numero de habitacions</td>
-            <td><?php echo $nhabitacio; ?></td>
+            <td><?php echo $_SESSION["nhabitacio"];; ?></td>
             <td>Data de naixament</td>
             <td><?php echo $fechanacimiento; ?></td>
     </tr>
     <tr>
         <td>Numero de persones</td>
-            <td><?php echo $npersones; ?></td>
+            <td><?php echo $_SESSION["npersones"]; ?></td>
             <td>Sexo</td>
             <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
         <td>Preu per habitació</td>
-            <td><?php echo $precio;?></td>
+            <td><?php echo $_SESSION["precio"];?> €</td>
             <td>email</td>
             <td><?php echo $email; ?></td>
     </tr>
