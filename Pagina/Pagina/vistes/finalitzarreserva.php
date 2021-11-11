@@ -5,6 +5,7 @@ require '../includes/conectar_DB.php';
       if($_SESSION["tipo"]!="cliente"){
                 header('Location: middleware.php');
                 }
+                else{
                 if(!isset($_SESSION['nombre']) && empty($_SESSION['nombre'])) {               
                 $nombre = $_POST['nombre'];
                 $apellidos = $_POST['apellidos'];
