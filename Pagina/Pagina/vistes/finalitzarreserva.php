@@ -31,7 +31,7 @@ require '../includes/conectar_DB.php';
                 $preciototal = $nhabitacio * $precio;
                 $nomhabitacio = $_SESSION["nom"];
                 $usuari = $_SESSION["usuari"];
-                if(!isset($_POST['nombre'])){
+                if(isset($_POST['nombre'])){
                 $sql = "INSERT INTO reserva (numpers) VALUES ('$npersones');";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$usuari', $_POST['usuari']);
