@@ -65,6 +65,8 @@ unset($_SESSION["apellidos"]);
 unset($_SESSION["fechanacimiento"]);
 unset($_SESSION["sexo"]);
 unset($_SESSION["email"]);
+unset($_SESSION["numhab"]);
+
 
 $to = $_POST["to"];
 $from = $_POST["from"];
