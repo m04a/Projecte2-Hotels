@@ -83,7 +83,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
-        if($number_of_rows[0]["COUNT(idtipo)"]<=$cantidad){
+        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<$cantidad){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">
