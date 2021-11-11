@@ -78,14 +78,13 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $result->bindParam(':ffin', $ffin->format('Y-m-d'));
         $result->bindParam(':idtipo', $idtipo);
         $result->execute(); 
-        $number_of_rows = $result->fetchAll(); 
-        //$query2 = "SELECT COUNT('{$idtipo}') FROM reserva WHERE finicio <= '{$from}' AND ffin => '{$to}'";
-        //$stmt1 = $conn->prepare($query2); 
-        //$resultat = mysql_fetch_row($stmt1);
-        //$counthab = $resultat[0];
-
+        $number_of_rows = $result->fetchAll();
+        $stmt2 = $conn->prepare("SELECT cantidad from tipo where idtipo=:idtipo");
+        $stmt2->bindParam(':idtipo', $idtipo);
+        $stmt2->execute();
+        $cantidad=$stmt2->fetchColumn();
+        //if($number_of_rows[0]["COUNT(idtipo)"]<=$cantidad){
         ?>
-    
          <div class="col-lg-4">
                     <div class="trainer-item">
                     
@@ -100,12 +99,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
 
                             <p>
-                                <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
-                                <?php
-                         print_r($number_of_rows);
-                         echo "   ";
-                         echo $number_of_rows[0]["COUNT(idtipo)"];
-                        ?>
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; 
+                                print_r($cantidad)?>
                             </p>
 
                             <ul class="social-icons">
@@ -136,6 +131,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
 
                
             <?php
+        //}
             }
  echo '</div>';
           }
