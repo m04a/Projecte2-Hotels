@@ -56,10 +56,7 @@
     require '../includes/conectar_DB.php';
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
-$ffin = DateTime::createFromFormat('j/m/Y', $to);
 $from = $_POST["from"];
-$finicio = DateTime::createFromFormat('j/m/Y', $from);
-
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
     if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
@@ -70,11 +67,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
-
-
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
+        $ffin = DateTime::createFromFormat('j/m/Y', $to);
+        $finicio = DateTime::createFromFormat('j/m/Y', $from);
         //$query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
         //$result = $conn->prepare($query2); 
         //$result->bindParam(':finicio', $finicio->format('Y/m/d'));
