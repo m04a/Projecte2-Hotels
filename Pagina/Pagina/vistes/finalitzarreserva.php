@@ -10,7 +10,7 @@ require '../includes/conectar_DB.php';
                 $fechanacimiento = $_POST['fechanacimiento'];
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
-                $preutotal=$_SESSION["precio"] * $_SESSION["nhabitacio"];;
+                $preutotal=$_SESSION["precio"] * $_SESSION["nhabitacio"];
                 $to = $_SESSION["to"];
                 $from = $_SESSION["from"];                     
                 $nhabitacio = $_SESSION["nhabitacio"];
