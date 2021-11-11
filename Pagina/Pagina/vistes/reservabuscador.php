@@ -104,7 +104,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                 <?php
                          print_r($number_of_rows);
                          echo "   ";
-                         echo $idtipo;
+                         echo $number_of_rows[0]["COUNT(idtipo)"];
                         ?>
                             </p>
 
