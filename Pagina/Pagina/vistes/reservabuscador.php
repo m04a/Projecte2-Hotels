@@ -119,7 +119,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                          </div>
                                     </div>
                                     <div class="alert alert-success" role="alert">
-                                    De: <?php echo $finicio->format('Y-m-d');?> | Fins: <?php echo $ffin->format('Y-m-d');?>
+                                    De: <?php echo $from;?> | Fins: <?php echo $to;?>
                                     </div>
                                     </form>
                                 </li>  
