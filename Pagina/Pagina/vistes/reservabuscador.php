@@ -102,8 +102,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <p>
                                 <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                                 <?php
-                         echo $number_of_rows[1];
-                         echo "  ";
+                         print_r($number_of_rows);
+                         echo "   ";
                          echo $idtipo;
                         ?>
                             </p>
