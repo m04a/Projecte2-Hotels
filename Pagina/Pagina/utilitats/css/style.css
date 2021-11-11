@@ -1124,7 +1124,7 @@ responsive
   color: #ed563b;
 }
 .btn{
-  margin:10 px;
+  margin:10px;
 }
 .btn-primary {
   border-color: #ed563b;
@@ -1324,6 +1324,3 @@ div.buscador{
   .imatgelight {
     padding: 15% 5% 10% 0% !important; 
     }
-.mybuttoncool{
-  margin:15px!important;
-}
