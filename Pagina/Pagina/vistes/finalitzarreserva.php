@@ -10,7 +10,6 @@ require '../includes/conectar_DB.php';
                 $fechanacimiento = $_POST['fechanacimiento'];
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
-                echo $nombre;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +52,48 @@ require '../includes/conectar_DB.php';
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-   
+   <div class="col-sm">
+  <table class='table table-dark table-hover table-responsive table-bordered'>
+    <tr>
+            <th colspan="2"><h3>Detalls reserva habitació</h3></th>
+            <th colspan="2"><h3>Detalls reserva usuari</h3></th>
+
+    </tr>
+    <tr>
+        <td>Nom d'habitació</td>
+            <td><?php echo $_SESSION["nom"]; ?></td>
+            <td>Nom d'usuari</td>
+            <td><?php echo $_SESSION["usuari"]; ?></td>
+    </tr>
+    <tr>
+        <td>Data d'inici</td>
+            <td><?php echo $_SESSION["to"]; ?></td>
+            <td>Nom d'usuari</td>
+            <td><?php echo $_SESSION["usuari"]; ?></td>
+    </tr>
+   <tr>
+        <td>Data final</td>
+            <td><?php echo $_SESSION["from"]; ?></td>
+    </tr>
+    <tr>
+        <td>Numero de habitacions</td>
+            <td><?php echo $_SESSION["nhabitacio"];; ?></td>
+    </tr>
+    <tr>
+        <td>Numero de persones</td>
+            <td><?php echo $_SESSION["npersones"]; ?></td>
+    </tr>
+    <tr>
+        <td>Preu total</td>
+            <td><?php echo $_SESSION["precio"]; ?></td>
+    </tr>
+    <tr>
+        <td>Reservar al usuari</td>
+            <td><?php  ?></td>
+    </tr>
+</table> 
+    </div>
+  </div>
 
      <!-- *** Footer inici *** -->
      <?php
