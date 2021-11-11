@@ -123,7 +123,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                          </div>
                                     </div>
                                     <div class="alert alert-success" role="alert">
-                                    De: <?php echo $finicio;?> | Fins: <?php echo $ffin;?>
+                                    De: <?php echo $finicio;?> | Fins: <?php //echo $ffin;?>
                                     </div>
                                     </form>
                                 </li>  
