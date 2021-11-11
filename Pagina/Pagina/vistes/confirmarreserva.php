@@ -12,12 +12,15 @@ require '../includes/conectar_DB.php';
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
                     $precio = $_POST["precio"];
-                    
+                    $nom = $_POST["nom"];
+
                     $_SESSION["to"]=$to;
                     $_SESSION["from"]=$from;                     
                     $_SESSION["nhabitacio"]=$nhabitacio;
                     $_SESSION["npersones"]=$npersones;
                     $_SESSION["precio"]=$precio;
+                    $_SESSION["nom"]=$nom;
+
                     }
 
                     $usuari= $_SESSION["usuari"];
@@ -187,6 +190,10 @@ if(isset($_POST['treasure'])){
             <th colspan="2"><h3>Dades de reserva</h3></th>
     </tr>
     <tr>
+        <td>Nom d'habitació</td>
+            <td><?php echo $_SESSION["nom"]; ?></td>
+    </tr>
+    <tr>
         <td>Data d'inici</td>
             <td><?php echo $_SESSION["to"]; ?></td>
     </tr>
@@ -207,9 +214,8 @@ if(isset($_POST['treasure'])){
             <td><?php echo $_SESSION["precio"]; ?></td>
     </tr>
     <tr>
-        <td></td>
-        <td>
-        </td>
+        <td>Reservar al usuari</td>
+            <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
 </table> 
     </div>
