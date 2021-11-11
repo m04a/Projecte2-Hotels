@@ -196,15 +196,15 @@ if(isset($_POST['treasure'])){
     </tr>
     <tr>
         <td>Numero de habitacions</td>
-            <td><?php echo $nhabitacio; ?></td>
+            <td><?php echo $_SESSION["nhabitacio"];; ?></td>
     </tr>
     <tr>
         <td>Numero de persones</td>
-            <td><?php echo $npersones; ?></td>
+            <td><?php echo $_SESSION["npersones"]; ?></td>
     </tr>
     <tr>
         <td>Preu per persona/habitació</td>
-            <td><?php echo $precio; ?></td>
+            <td><?php echo $_SESSION["precio"]; ?></td>
     </tr>
     <tr>
         <td></td>
