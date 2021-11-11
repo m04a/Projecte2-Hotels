@@ -31,15 +31,12 @@ require '../includes/conectar_DB.php';
                 $preciototal = $nhabitacio * $precio;
                 $nomhabitacio = $_SESSION["nom"];
                 $usuari = $_SESSION["usuari"];
+                $numhab = $_SESSION["numhab"];
+                echo $numhab;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers) VALUES ('$npersones');";
+                $sql = "INSERT INTO reserva (numpers,idtipo) VALUES ('$npersones');";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$usuari', $_POST['usuari']);
-                if ($stmt->execute()) {
-                  echo 'El usuari ha sigut creat';
-                 } else {
-                  echo 'Ha hagut algun error';
-                 }
 }
 
   }
@@ -85,6 +82,12 @@ require '../includes/conectar_DB.php';
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
+    <div class="alert alert-success"><?php if ($stmt->execute()) {
+                  echo "S'ha realitzat correctament la reserva";
+                 } else {
+                  echo "No s'ha pogut realitzar la reserva";
+                  header('Refresh: 5; URL=reservabuscador.php');  
+                 } ?></div>
   <div class="container">
     <div class="row">
    <div class="col-sm">

@@ -13,6 +13,8 @@ require '../includes/conectar_DB.php';
                     $npersones = $_POST["npersones"];
                     $precio = $_POST["precio"];
                     $nom = $_POST["nom"];
+                    $numhab = $_POST["numhab"];
+       
 
                     $_SESSION["to"]=$to;
                     $_SESSION["from"]=$from;                     
@@ -20,6 +22,7 @@ require '../includes/conectar_DB.php';
                     $_SESSION["npersones"]=$npersones;
                     $_SESSION["precio"]=$precio;
                     $_SESSION["nom"]=$nom;
+                    $_SESSION["numhab"]=$numhab;
 
                     }
 
