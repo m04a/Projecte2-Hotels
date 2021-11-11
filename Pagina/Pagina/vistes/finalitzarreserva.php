@@ -40,6 +40,8 @@ require '../includes/conectar_DB.php';
                 //$stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
+                $stmt->bindParam('$ffin', $_POST['ffin']);
+                $stmt->bindParam('$finicio', $_POST['finicio']);
 
 }
 
