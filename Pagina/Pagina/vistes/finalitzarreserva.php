@@ -30,6 +30,17 @@ require '../includes/conectar_DB.php';
                 $preciototal = $nhabitacio * $precio;
                 $nomhabitacio = $_SESSION["nom"];
                 $usuari = $_SESSION["usuari"];
+                $sql = "INSERT INTO reserva (numpers) VALUES ('$npersones');";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam('$usuari', $_POST['usuari']);
+                if ($stmt->execute()) {
+                  echo 'El usuari ha sigut creat';
+                 } else {
+                  echo 'Ha hagut algun error';
+                 }
+
+
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
