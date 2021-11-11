@@ -89,7 +89,7 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
         <td>Numero de habitacions</td>
-            <td><?php echo $nhabitacio;; ?></td>
+            <td><?php echo $nhabitacio; ?></td>
             <td>Data de naixament</td>
             <td><?php echo $fechanacimiento; ?></td>
     </tr>
