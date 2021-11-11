@@ -36,13 +36,13 @@ require '../includes/conectar_DB.php';
                 $finicio = DateTime::createFromFormat('j/m/Y', $from);
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$tinicio','$ffin');";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$finicio','$ffin');";
                 $stmt = $conn->prepare($sql);
                 //$stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
-                $stmt->bindParam('$ffin', $_POST['ffin']);
-                $stmt->bindParam('$finicio', $_POST['finicio']);
+                $stmt->bindParam('$finicio', $finicio->format('Y-m-d'));
+                $stmt->bindParam('$ffin', $ffin->format('Y-m-d'));
 
 }
 
