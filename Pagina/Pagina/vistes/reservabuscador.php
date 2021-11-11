@@ -117,9 +117,9 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <p>
                                 <i class="fa fa-bed"></i>
                                 <?php if($disponible=1){ 
-                                            echo("<tr><td> Queda $disponible habitació disponible</td> ");
+                                            echo("<tr><td> Queda {$disponible} habitació disponible</td> ");
                                             }else{
-                                                echo("<tr><td> Queden $disponible habitacions disponibles</td> ") ;
+                                                echo("<tr><td> Queden {$disponible} habitacions disponibles</td> ") ;
                                             } ?>
                             </p>
                             <ul class="social-icons">
