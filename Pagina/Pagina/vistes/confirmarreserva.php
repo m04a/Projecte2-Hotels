@@ -13,6 +13,7 @@ require '../includes/conectar_DB.php';
                     $npersones = $_POST["npersones"];
                     $precio = $_POST["precio"];
                     $nom = $_POST["nom"];
+                    $precio=$precio * $nhabitacio;
 
                     $_SESSION["to"]=$to;
                     $_SESSION["from"]=$from;                     
@@ -210,8 +211,8 @@ if(isset($_POST['treasure'])){
             <td><?php echo $_SESSION["npersones"]; ?></td>
     </tr>
     <tr>
-        <td>Preu per persona/habitació</td>
-            <td><?php echo $_SESSION["precio"]; ?></td>
+        <td>Preu total</td>
+            <td><?php echo $_SESSION["precio"] €; ?></td>
     </tr>
     <tr>
         <td>Reservar al usuari</td>
@@ -223,8 +224,15 @@ if(isset($_POST['treasure'])){
 </div>
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
-    <a href="#" class="btn btn-success">Confirmar reserva</a>
-    <a href="reservabuscador.php" class="btn btn-secondary">Canviar reserva</a>
+    <form action='finalitzarreserva.php' method='post'>
+                                    <input type="hidden" name="nombre" value="<?php echo $nombre;?>" />
+                                    <input type="hidden" name="apellidos" value="<?php echo $apellidos;?>" />
+                                    <input type="hidden" name="fechanacimiento" value="<?php echo $fechanacimiento;?>" />
+                                    <input type="hidden" name="sexo" value="<?php echo $sexo;?>" />
+                                    <input type="hidden" name="email" value="<?php echo $email;?>"/>
+                                            <button type="submit" class='btn btn-success mybuttoncool m-r-6em '>Confirmar reserva</button> 
+                                          </form>
+                                <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
   </div>
 </div>
 
