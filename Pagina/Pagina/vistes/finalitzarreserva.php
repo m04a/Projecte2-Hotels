@@ -32,17 +32,16 @@ require '../includes/conectar_DB.php';
                 $nomhabitacio = $_SESSION["nom"];
                 $usuari = $_SESSION["usuari"];
                 $numhab = $_SESSION["numhab"];
-                $ffin = DateTime::createFromFormat('j/m/Y', $to);
-                $finicio = DateTime::createFromFormat('j/m/Y', $from);
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$finicio','$ffin');";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$from','$to');";
                 $stmt = $conn->prepare($sql);
                 //$stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
-                $stmt->bindParam('$finicio', $finicio->format('Y-m-d'));
-                $stmt->bindParam('$ffin', $ffin->format('Y-m-d'));
+                $stmt->bindParam('$from', $_POST['from']);
+                $stmt->bindParam('$to', $_POST['to']);
+
 
 }
 
