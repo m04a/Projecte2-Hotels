@@ -83,7 +83,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
-        //if($number_of_rows[0]["COUNT(idtipo)"]<=$cantidad){
+        if($number_of_rows[0]["COUNT(idtipo)"]<=$cantidad){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">
@@ -99,8 +99,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
 
                             <p>
-                                <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; 
-                                print_r($cantidad)?>
+                                <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                             </p>
 
                             <ul class="social-icons">
@@ -131,7 +130,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
 
                
             <?php
-        //}
+        }
             }
  echo '</div>';
           }
