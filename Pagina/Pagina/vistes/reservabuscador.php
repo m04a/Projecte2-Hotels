@@ -90,8 +90,6 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                     <div class="trainer-item">
                         <?php
                          //print_r($number_of_rows);
-                         //echo $finicio;
-                         //echo $ffin;
                          //echo $idtipo;
                         ?>
                         <div class="image-thumb">
@@ -125,7 +123,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                          </div>
                                     </div>
                                     <div class="alert alert-success" role="alert">
-                                    De: <?php echo $from;?> | Fins: <?php echo $to;?>
+                                    De: <?php echo $finicio;?> | Fins: <?php echo $ffin;?>
                                     </div>
                                     </form>
                                 </li>  
