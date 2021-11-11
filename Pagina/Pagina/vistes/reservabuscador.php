@@ -56,10 +56,10 @@
     require '../includes/conectar_DB.php';
 if(isset($_POST["reservaBuscar"])){
 $to = $_POST["to"];
-$ffin = new DateTime($to);
+$ffin = DateTime::createFromFormat('j/m/Y', $to);
 //$ffin->format('Y/m/d');
 $from = $_POST["from"];
-$finicio = new DateTime($from);
+$finicio = DateTime::createFromFormat('j/m/Y', $from);
 //$finicio->format('Y/m/d');
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
