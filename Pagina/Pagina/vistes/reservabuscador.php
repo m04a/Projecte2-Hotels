@@ -110,10 +110,15 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
 
                             <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
                             <p>
-                                <i class="fa fa-info-circle"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
+                                <i class="fa fa-info-circle"></i><?php echo "<tr><td> {$descripcion}</td>"; ?>
                             </p>
                             <p>
-                                <i class="fa fa-info-circle"></i><?php echo "<tr><td>{$disponible} habitacions disponibles</td>"; ?>
+                                <i class="fa fa-bed"></i>
+                                <?php if($disponible=1){ 
+                                            echo("<tr><td> Queda $disponible habitació disponible</td> ");
+                                            }else{
+                                                echo("<tr><td> Queden $disponible habitacions disponibles</td> ") ;
+                                            } ?>
                             </p>
                             <ul class="social-icons">
                                 <li> 
@@ -136,10 +141,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     </div>
                                     <?php if($disponible<5){ ?>
                                         <div class="alert alert-danger" role="alert">
-                                        <h4><tr><td><i class="fa fa-exclamation-circle"></i> Queden nomes <?php echo "$disponible" ?> 
-                                        <?php if($disponible=1){ echo("habitació ");
+                                        <h4><tr><td><i class="fa fa-exclamation-circle"></i>  <?php echo "" ?> 
+                                        <?php if($disponible=1){ 
+                                            echo(" Queda nomes $disponible habitació ");
                                             }else{
-                                                echo("habitacions ") ;
+                                                echo("Queden nomes $disponible habitacions ") ;
                                             } ?>d'aquest tipus</td></h4>
                                         </div>
                                     <?php } ?>
