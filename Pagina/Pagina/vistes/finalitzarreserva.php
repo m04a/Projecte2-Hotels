@@ -34,10 +34,10 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $numhab;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,usuario) VALUES ('$npersones',$numhab,$usuari);";
+                $sql = "INSERT INTO reserva (numpers,usuario) VALUES ('$npersones',$usuari);";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$usuari', $_POST['usuari']);
-                $stmt->bindParam('$numhab', $_POST['numhab']);
+                //$stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
 
 }
