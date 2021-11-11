@@ -13,7 +13,6 @@ require '../includes/conectar_DB.php';
                     $npersones = $_POST["npersones"];
                     $precio = $_POST["precio"];
                     $nom = $_POST["nom"];
-                    $precio=$precio * $nhabitacio;
 
                     $_SESSION["to"]=$to;
                     $_SESSION["from"]=$from;                     
@@ -211,8 +210,8 @@ if(isset($_POST['treasure'])){
             <td><?php echo $_SESSION["npersones"]; ?></td>
     </tr>
     <tr>
-        <td>Preu total</td>
-            <td><?php echo $_SESSION["precio"]; ?></td>
+        <td>Preu per habitació</td>
+            <td><?php echo $_SESSION["precio"]; ?> €</td>
     </tr>
     <tr>
         <td>Reservar al usuari</td>

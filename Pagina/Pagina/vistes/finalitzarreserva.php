@@ -10,6 +10,7 @@ require '../includes/conectar_DB.php';
                 $fechanacimiento = $_POST['fechanacimiento'];
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
+                $preutotal=$_SESSION["precio"] * $_SESSION["nhabitacio"];;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +83,7 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Numero de habitacions</td>
             <td><?php echo $_SESSION["nhabitacio"];; ?></td>
-            <td>Cognom</td>
+            <td>Data de naixament</td>
             <td><?php echo $fechanacimiento; ?></td>
     </tr>
     <tr>
@@ -92,14 +93,14 @@ require '../includes/conectar_DB.php';
             <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
-        <td>Preu total</td>
-            <td><?php echo $_SESSION["precio"]; ?></td>
+        <td>Preu per habitació</td>
+            <td><?php echo $_SESSION["precio"];?> €</td>
             <td>email</td>
             <td><?php echo $email; ?></td>
     </tr>
     <tr>
-        <td>Reservar al usuari</td>
-            <td><?php  ?></td>
+            <th colspan="2"><h3>PREU TOTAL RESERVA</h3></th>
+            <th colspan="2"><h3><?php echo $preutotal;?> €</h3></th>
     </tr>
 </table> 
     </div>
