@@ -71,37 +71,37 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
         <td>Nom d'habitació</td>
-            <td><?php echo $_SESSION["nom"]; ?></td>
+            <td><?php echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $_SESSION["to"]; ?></td>
+            <td><?php echo $to; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $_SESSION["from"]; ?></td>
+            <td><?php echo $from; ?></td>
             <td>Cognom</td>
             <td><?php echo $apellidos; ?></td>
     </tr>
     <tr>
         <td>Numero de habitacions</td>
-            <td><?php echo $_SESSION["nhabitacio"];; ?></td>
+            <td><?php echo $nhabitacio;; ?></td>
             <td>Data de naixament</td>
             <td><?php echo $fechanacimiento; ?></td>
     </tr>
     <tr>
         <td>Numero de persones</td>
-            <td><?php echo $_SESSION["npersones"]; ?></td>
+            <td><?php echo $npersones; ?></td>
             <td>Sexo</td>
             <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
         <td>Preu per habitació</td>
-            <td><?php echo $_SESSION["precio"];?> €</td>
+            <td><?php echo $precio;?></td>
             <td>email</td>
             <td><?php echo $email; ?></td>
     </tr>
