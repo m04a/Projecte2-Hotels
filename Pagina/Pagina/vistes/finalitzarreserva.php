@@ -11,6 +11,13 @@ require '../includes/conectar_DB.php';
                 $sexo = $_POST['sexo'];
                 $email = $_POST['email'];
                 $preutotal=$_SESSION["precio"] * $_SESSION["nhabitacio"];;
+                $to = $_SESSION["to"];
+                $from = $_SESSION["from"];                     
+                $nhabitacio = $_SESSION["nhabitacio"];
+                $npersones = $_SESSION["npersones"];
+                $precio $_SESSION["precio"]
+                $nomhabitacio = $_SESSION["nom"];
+                $usuari = $_SESSION["usuari"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,8 +106,8 @@ require '../includes/conectar_DB.php';
             <td><?php echo $email; ?></td>
     </tr>
     <tr>
-            <th colspan="2"><h3>PREU TOTAL RESERVA</h3></th>
-            <th colspan="2"><h3><?php echo $preutotal;?> €</h3></th>
+            <th colspan="2"><h4>PREU TOTAL RESERVA</h4></th>
+            <th colspan="2"><h2><?php echo $preutotal;?> €</h2></th>
     </tr>
 </table> 
     </div>
