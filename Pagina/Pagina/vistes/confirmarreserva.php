@@ -221,7 +221,7 @@ if(isset($_POST['treasure'])){
     </div>
   </div>
 </div>
-<div class="card text-center text-white border-dark mb-3">
+<div class="card text-center text-white bg-dark">
   <div class="card-body">
     <a href="#" class="btn btn-success">Confirmar reserva</a>
     <a href="reservabuscador.php" class="btn btn-secondary">Canviar reserva</a>
