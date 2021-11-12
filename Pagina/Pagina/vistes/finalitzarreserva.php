@@ -147,6 +147,7 @@ require '../includes/conectar_DB.php';
 </table> 
     </div>
   </div>
+      <input type="button" value="Print Div Contents" id="btnPrint" />
 </div>
 
      <!-- *** Footer inici *** -->
