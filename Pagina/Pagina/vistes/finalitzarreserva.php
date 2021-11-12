@@ -34,10 +34,10 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES ('$npersones','$numhab','$desde','$hasta','$usuari')";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$desde','$hasta')";
                 //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
                 $stmt = $conn->prepare($sql);
-                $stmt->bindParam('$usuari', $usuari);
+                //$stmt->bindParam('$usuari', $usuari);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
