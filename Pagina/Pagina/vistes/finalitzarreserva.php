@@ -34,7 +34,8 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES ('$npersones','$numhab','$from','$to','$usuari');";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES ('$npersones','$numhab','$desde','$hasta','$usuari')";
+                //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
@@ -42,8 +43,8 @@ require '../includes/conectar_DB.php';
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
                 $desde=DateTime::createFromFormat('j/m/Y', $from);
                 $hasta=DateTime::createFromFormat('j/m/Y', $to);
-                $stmt->bindParam('$from', $desde->format('Y-m-d'));
-                $stmt->bindParam('$to', $hasta->format('Y-m-d'));
+                $stmt->bindParam('$desde', $desde->format('Y-m-d'));
+                $stmt->bindParam('$hasta', $hasta->format('Y-m-d'));
 
 
 }
@@ -117,6 +118,7 @@ require '../includes/conectar_DB.php';
             <td><?php echo $to; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
+            <td><?php echo $numhab; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
