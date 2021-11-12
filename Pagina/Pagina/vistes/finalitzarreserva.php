@@ -45,7 +45,10 @@ require '../includes/conectar_DB.php';
                 $hasta=DateTime::createFromFormat('j/m/Y', $to);
                 $stmt->bindParam('$desde', $desde->format('Y-m-d'));
                 $stmt->bindParam('$hasta', $hasta->format('Y-m-d'));
-
+                if ($stmt->execute()) {
+                  echo "S'ha realitzat correctament la reserva";
+                 } else {
+                  echo "No s'ha pogut realitzar la reserva";}
 
 }
 
@@ -92,12 +95,12 @@ require '../includes/conectar_DB.php';
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-    <div class="alert alert-success"><?php if ($stmt->execute()) {
+    <!--<div class="alert alert-success"><?php /*if ($stmt->execute()) {
                   echo "S'ha realitzat correctament la reserva";
                  } else {
                   echo "No s'ha pogut realitzar la reserva";
                   //header('Refresh: 5; URL=reservabuscador.php');  
-                 } ?></div>
+                 }*/ ?></div> -->
   <div class="container">
     <div class="row">
    <div class="col-sm">
@@ -118,7 +121,6 @@ require '../includes/conectar_DB.php';
             <td><?php echo $to; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
-            <td><?php echo $numhab; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
