@@ -174,13 +174,13 @@ require '../includes/conectar_DB.php';
         </thead>
         <tbody>
             <tr>
-                 <td>Nom d'habitació</td>
+                 <td>Nom dhabitacio</td>
             <td><?php echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $usuari; ?></td>
             </tr>
             <tr>
-                <<td>Data d'inici</td>
+                <td>Data dinici</td>
             <td><?php echo $to; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
