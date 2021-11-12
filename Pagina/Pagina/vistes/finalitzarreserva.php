@@ -182,6 +182,12 @@ require '../includes/conectar_DB.php';
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
             </tr>
+             <tr>
+        <td>Data final</td>
+            <td><?php echo $from; ?></td>
+            <td>Cognom</td>
+            <td><?php echo $apellidos; ?></td>
+        </tr>
             <tr>
              <td>Numero de habitacions</td>
             <td><?php echo $nhabitacio; ?></td>
