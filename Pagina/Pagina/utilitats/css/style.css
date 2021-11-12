@@ -1325,3 +1325,6 @@ div.buscador{
   .imatgelight {
     padding: 15% 5% 10% 0% !important; 
     }
+#content{
+  display: none ;
+}
