@@ -140,7 +140,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                     <?php if($disponible<5){ ?>
                                         <div class="alert alert-danger" role="alert">
                                         <h4><tr><td><i class="fa fa-exclamation-circle"></i> 
-                                        <?php if($disponible=1){ echo("Queda nomes 1 habitació ");
+                                        <?php if($disponible==1){ 
+                                                echo("Queda nomes 1 habitació ");
                                             }else{
                                                 echo("Queden nomes $disponible habitacions ") ;
                                             } ?>d'aquest tipus</td></h4>

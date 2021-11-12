@@ -7,8 +7,8 @@ require '../includes/conectar_DB.php';
                 }
                 else{
                     if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
-                    $to = $_POST["desde"];
-                    $from = $_POST["fins"];
+                    $to = $_POST["fins"];
+                    $from = $_POST["desde"];
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
                     $precio = $_POST["precio"];
@@ -198,11 +198,11 @@ if(isset($_POST['treasure'])){
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $_SESSION["to"]; ?></td>
+            <td><?php echo $_SESSION["from"]; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $_SESSION["from"]; ?></td>
+            <td><?php echo $_SESSION["to"]; ?></td>
     </tr>
     <tr>
         <td>Numero de habitacions</td>
