@@ -180,11 +180,11 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 });
 
 /*Botó per imprimir la reserva*/
- function imprimirPDF() {
+ function demoFromHTML() {
         var pdf = new jsPDF('p', 'pt', 'letter');
         // source can be HTML-formatted string, or a reference
         // to an actual DOM element from which the text will be scraped.
-        source = $('#contenidorpdf')[0];
+        source = $('#content')[0];
 
         // we support special element handlers. Register them with jQuery-style 
         // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
@@ -216,7 +216,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
             function (dispose) {
                 // dispose: object with X, Y of the last line add to the PDF 
                 //          this allow the insertion of new lines after html
-                pdf.save('reserva.pdf');
+                pdf.save('Test.pdf');
             }, margins
         );
     }

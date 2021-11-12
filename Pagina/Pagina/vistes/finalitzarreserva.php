@@ -152,7 +152,7 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
-<a href="javascript:imprimirPDF()" type="button "class="btn btn-secondary">Run Code</a>
+<a href="javascript:demoFromHTML()" class="button">Run Code</a>
 <div id="content">
     <h1>  
         We support special element handlers. Register them with jQuery-style.
