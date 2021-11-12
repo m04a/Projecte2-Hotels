@@ -108,7 +108,7 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Nom d'habitació</td>
             <td><?php
-            $stmt->debugDumpParams();
+            //$stmt->debugDumpParams();
             echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
