@@ -138,7 +138,6 @@ require '../includes/conectar_DB.php';
         <td>Numero de persones</td>
             <td><?php echo $npersones; ?></td>
             <td>Sexo</td>
-         <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
         <td>Preu per habitació</td>
