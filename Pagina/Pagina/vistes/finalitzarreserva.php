@@ -163,8 +163,10 @@ require '../includes/conectar_DB.php';
         </colgroup>
         <thead>
             <tr class='warning'>
-            <td colspan="2"><h3>Detalls reserva habitació</h3></td>
-            <td colspan="2"><h3>Detalls reserva usuari</h3></td>
+               <th></th>
+                <th>Detalls de reserva</th>
+                <th></th>
+                <th>Detalls de usuari </th>
             </tr>
         </thead>
         <tbody>
@@ -193,8 +195,10 @@ require '../includes/conectar_DB.php';
          <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
             </tr>
             <tr>
-                <td colspan="2"><h4>PREU TOTAL RESERVA</h4></td>
-            <td colspan="2"><h2><?php echo $preciototal;?> €</h2></td>
+                <td></td>
+                <td></td>
+                <td><h4>PREU TOTAL RESERVA</h4></td>
+            <td><h2><?php echo $preciototal;?> €</h2></td>
             </tr>
         </tbody>
     </table>
