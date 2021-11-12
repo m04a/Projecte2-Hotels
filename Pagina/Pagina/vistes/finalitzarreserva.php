@@ -38,8 +38,8 @@ require '../includes/conectar_DB.php';
                 //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':usuari', $usuari);
-                $stmt->bindParam(':numhab', $_POST['numhab']);
-                $stmt->bindParam(':npersones', $_POST['npersones']);
+                $stmt->bindParam(':numhab', $numhab);
+                $stmt->bindParam(':npersones', $npersones);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
                 $desde=DateTime::createFromFormat('j/m/Y', $from);
                 $hasta=DateTime::createFromFormat('j/m/Y', $to);
