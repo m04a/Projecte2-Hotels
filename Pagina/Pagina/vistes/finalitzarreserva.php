@@ -153,7 +153,7 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
-<div id="customers">
+<div id="content">
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
