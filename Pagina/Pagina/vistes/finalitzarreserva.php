@@ -49,7 +49,6 @@ require '../includes/conectar_DB.php';
                   echo "S'ha realitzat correctament la reserva";
                  } else {
                   echo "No s'ha pogut realitzar la reserva";}
-                  $stmt->debugDumpParams();
 
 }
 
@@ -113,7 +112,9 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
         <td>Nom d'habitació</td>
-            <td><?php echo $nomhabitacio; ?></td>
+            <td><?php
+            $stmt->debugDumpParams();
+            echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
