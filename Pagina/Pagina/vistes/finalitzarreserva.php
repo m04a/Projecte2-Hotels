@@ -171,7 +171,8 @@ require '../includes/conectar_DB.php';
         </thead>
         <tbody>
             <tr>
-                 <td>Nom d'habitació</td>
+            <td>WTFFF</td>
+            <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $usuari; ?></td>
