@@ -40,8 +40,8 @@ require '../includes/conectar_DB.php';
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
-                $desde=DateTime::createFromFormat('j/m/Y', $_POST['from']);
-                $hasta=DateTime::createFromFormat('j/m/Y', $_POST['to']);
+                $desde=DateTime::createFromFormat('j/m/Y', $from);
+                $hasta=DateTime::createFromFormat('j/m/Y', $to);
                 //$stmt->bindParam('$from', $desde->format('Y-m-d'));
                 //$stmt->bindParam('$to', $hasta->format('Y-m-d'));
 
@@ -110,7 +110,7 @@ require '../includes/conectar_DB.php';
         <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
             <td><?php print_r($desde->format('Y-m-d')); ?></td>
-            <td><?php print_r( $hasta->format('Y-m-d')); ?></td>
+            <td><?php print_r($hasta->format('Y-m-d')); ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
