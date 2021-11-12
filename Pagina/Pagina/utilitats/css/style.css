@@ -34,7 +34,6 @@ html, body {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color:;
 }
 .responsiveItem{
     display: none!important;
@@ -1203,7 +1202,6 @@ table, th, td {
 
 .ui-datepicker-prev {
 	margin:10% !important;
-	{
 }
 /*Calendari*/
 #ui-datepicker-div{
@@ -1309,7 +1307,7 @@ div.buscador{
 }
 
 .buscadorForm{
-  padding: :4%;
+  padding: 4%;
 }
 #cercaBtn{
   margin-left: 2%;
@@ -1325,7 +1323,4 @@ div.buscador{
   .imatgelight {
     padding: 15% 5% 10% 0% !important; 
     }
-  #content{
-visibility:hidden;
-  height:0px;
-  }
+  
