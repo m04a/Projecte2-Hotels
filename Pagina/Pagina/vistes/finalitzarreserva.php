@@ -104,8 +104,8 @@ require '../includes/conectar_DB.php';
   <div id="content">
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
-            <th colspan="2"><h3>Detalls reserva habitació</h3></th>
-            <th colspan="2"><h3>Detalls reserva usuari</h3></th>
+            <th><h3>Detalls reserva habitació</h3></th>
+            <th><h3>Detalls reserva usuari</h3></th>
 
     </tr>
     <tr>
@@ -138,6 +138,7 @@ require '../includes/conectar_DB.php';
         <td>Numero de persones</td>
             <td><?php echo $npersones; ?></td>
             <td>Sexo</td>
+         <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
         <td>Preu per habitació</td>
@@ -146,8 +147,8 @@ require '../includes/conectar_DB.php';
             <td><?php echo $email;?></td>
     </tr>
     <tr>
-            <th colspan="2"><h4>PREU TOTAL RESERVA</h4></th>
-            <th colspan="2"><h2><?php echo $preciototal;?> €</h2></th>
+            <th><h4>PREU TOTAL RESERVA</h4></th>
+            <th><h2><?php echo $preciototal;?> €</h2></th>
     </tr>
 </table> 
   </div>
