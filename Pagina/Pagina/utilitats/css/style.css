@@ -1319,6 +1319,6 @@ div.buscador{
     padding: 15% 5% 10% 0% !important; 
     }
   #content{
-  visibility:hidden;
+  /*visibility:hidden;*/
   height:0px;
 }
