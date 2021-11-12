@@ -115,13 +115,13 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $to; ?></td>
+            <td><?php echo $from; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $from; ?></td>
+            <td><?php echo $to; ?></td>
             <td>Cognom</td>
             <td><?php echo $apellidos; ?></td>
     </tr>
