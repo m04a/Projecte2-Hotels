@@ -67,6 +67,9 @@ require '../includes/conectar_DB.php';
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+
+
     </head>
     
     <body> 
@@ -93,7 +96,7 @@ require '../includes/conectar_DB.php';
                   echo "S'ha realitzat correctament la reserva";
                  } else {
                   echo "No s'ha pogut realitzar la reserva";
-                  header('Refresh: 5; URL=reservabuscador.php');  
+                 // header('Refresh: 5; URL=reservabuscador.php');  
                  } ?></div>
   <div class="container">
     <div class="row">
@@ -147,9 +150,54 @@ require '../includes/conectar_DB.php';
 </table> 
     </div>
   </div>
-      <input type="button" value="Print Div Contents" id="btnPrint" />
-</div>
+<a href="javascript:demoFromHTML()" class="button">Run Code</a>
+<div id="content">
+    <h1>  
+        We support special element handlers. Register them with jQuery-style.
+    </h1>
+</div></div>
+<script>
+    function demoFromHTML() {
+        var pdf = new jsPDF('p', 'pt', 'letter');
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        source = $('#content')[0];
 
+        // we support special element handlers. Register them with jQuery-style 
+        // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
+        // There is no support for any other type of selectors 
+        // (class, of compound) at this time.
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"
+                return true
+            }
+        };
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        // all coords and widths are in jsPDF instance's declared units
+        // 'inches' in this case
+        pdf.fromHTML(
+            source, // HTML string or DOM elem ref.
+            margins.left, // x coord
+            margins.top, { // y coord
+                'width': margins.width, // max width of content on PDF
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                // dispose: object with X, Y of the last line add to the PDF 
+                //          this allow the insertion of new lines after html
+                pdf.save('Test.pdf');
+            }, margins
+        );
+    }
+</script>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
