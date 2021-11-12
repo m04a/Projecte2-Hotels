@@ -49,6 +49,7 @@ require '../includes/conectar_DB.php';
                   echo "S'ha realitzat correctament la reserva";
                  } else {
                   echo "No s'ha pogut realitzar la reserva";}
+                  $stmt->debugDumpParams();
 
 }
 
