@@ -98,7 +98,7 @@ require '../includes/conectar_DB.php';
                   echo "No s'ha pogut realitzar la reserva";
                  // header('Refresh: 5; URL=reservabuscador.php');  
                  } ?></div>
-<div id="contenidorpdf">
+<div id="content">
   <div class="container">
     <div class="row">
    <div class="col-sm">
@@ -152,11 +152,9 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
+</div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
-<div id="content">
-    <h1>  
-        We support special element handlers. Register them with jQuery-style.
-    </h1>
+
 
      <!-- *** Footer inici *** -->
      <?php
