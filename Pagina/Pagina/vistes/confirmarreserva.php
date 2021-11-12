@@ -34,7 +34,7 @@ require '../includes/conectar_DB.php';
                      $stmt = $conn->prepare($query);
  
                     // this is the first question mark
-                     $stmt->bindParam($usuari);
+                     $stmt->bindParam('$usuari',$_POST['usuari']);
  
                          // execute our query
                      $stmt->execute();
