@@ -101,11 +101,10 @@ require '../includes/conectar_DB.php';
   <div class="container">
     <div class="row">
    <div class="col-sm">
-  <div id="content">
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
-            <th><h3>Detalls reserva habitació</h3></th>
-            <th><h3>Detalls reserva usuari</h3></th>
+            <th colspan="2"><h3>Detalls reserva habitació</h3></th>
+            <th colspan="2"><h3>Detalls reserva usuari</h3></th>
 
     </tr>
     <tr>
@@ -147,13 +146,62 @@ require '../includes/conectar_DB.php';
             <td><?php echo $email;?></td>
     </tr>
     <tr>
-            <th><h4>PREU TOTAL RESERVA</h4></th>
-            <th><h2><?php echo $preciototal;?> €</h2></th>
+            <th colspan="2"><h4>PREU TOTAL RESERVA</h4></th>
+            <th colspan="2"><h2><?php echo $preciototal;?> €</h2></th>
     </tr>
 </table> 
-  </div>
     </div>
   </div>
+</div>
+<div id="customers">
+    <table id="tab_customers" class="table table-striped">
+        <colgroup>
+            <col width="20%">
+                <col width="20%">
+                    <col width="20%">
+                        <col width="20%">
+        </colgroup>
+        <thead>
+            <tr class='warning'>
+                <th>Detalls reserva</th>
+                <th>Detalls usuari</th>
+                <th>Date</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                 <td>Nom d'habitació</td>
+            <td><?php echo $nomhabitacio; ?></td>
+            <td>Usuari</td>
+            <td><?php echo $usuari; ?></td>
+            </tr>
+            <tr>
+                <<td>Data d'inici</td>
+            <td><?php echo $to; ?></td>
+            <td>Nom</td>
+            <td><?php echo $nombre; ?></td>
+            </tr>
+            <tr>
+             <td>Numero de habitacions</td>
+            <td><?php echo $nhabitacio; ?></td>
+            <td>Data de naixament</td>
+            <td><?php echo $fechanacimiento; ?></td>
+            </tr>
+            <tr>
+                <td>Indonesia</td>
+                <td>249,866,000</td>
+                <td>July 1, 2013</td>
+                <td>3.49</td>
+            </tr>
+            <tr>
+                <td>Brazil</td>
+                <td>201,032,714</td>
+                <td>July 1, 2013</td>
+                <td>2.81</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
 
