@@ -34,16 +34,16 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$from','$to');";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES ('$npersones','$numhab','$from','$to','$usuari');";
                 $stmt = $conn->prepare($sql);
-                //$stmt->bindParam('$usuari', $_POST['usuari']);
+                $stmt->bindParam('$usuari', $_POST['usuari']);
                 $stmt->bindParam('$numhab', $_POST['numhab']);
                 $stmt->bindParam('$npersones', $_POST['npersones']);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
                 $desde=DateTime::createFromFormat('j/m/Y', $from);
                 $hasta=DateTime::createFromFormat('j/m/Y', $to);
-                //$stmt->bindParam('$from', $desde->format('Y-m-d'));
-                //$stmt->bindParam('$to', $hasta->format('Y-m-d'));
+                $stmt->bindParam('$from', $desde->format('Y-m-d'));
+                $stmt->bindParam('$to', $hasta->format('Y-m-d'));
 
 
 }
@@ -109,8 +109,6 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
-            <td><?php print_r($desde->format('Y-m-d')); ?></td>
-            <td><?php print_r($hasta->format('Y-m-d')); ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
