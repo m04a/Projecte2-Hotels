@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 session_start();
 require '../includes/conectar_DB.php';
@@ -270,4 +271,3 @@ if(isset($_POST['treasure'])){
     <script src="../utilitats/js/custom.js"></script>
 
   </body>
-</html>
