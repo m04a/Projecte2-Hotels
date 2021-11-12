@@ -1186,8 +1186,8 @@ Calendari
 --------------------------------------------- 
 */
 #ui-datepicker-div{
-	background-color: #f0a091 !important;
-    padding-right: 5% !important;
+	background-color: #373c3e !important;
+    padding-right: 10% !important;
 }
 .ui-datepicker-calendar,.ui-datepicker-title{
 	margin-top: 5% !important;
@@ -1204,12 +1204,8 @@ table, th, td {
 	margin:10% !important;
 }
 /*Calendari*/
-#ui-datepicker-div{
-	background-color: rgb(0, 0, 0) !important;
-    padding-right: 5% !important;
-}
 .ui-datepicker-calendar{
-	margin-left:20% !important;
+	margin-left:10% !important;
 }
 /*Login form*/
 .note
@@ -1252,7 +1248,6 @@ habitacions
 }
 
 #trainers .trainer-item {
-  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
   padding: 15px;
