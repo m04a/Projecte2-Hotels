@@ -224,6 +224,13 @@ if(isset($_POST['treasure'])){
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm">
+        
+        </div>
+    </div>
+</div>
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
     <form action='finalitzarreserva.php' method='post'>
