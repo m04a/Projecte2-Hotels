@@ -136,7 +136,7 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Numero de persones</td>
             <td><?php echo $npersones; ?></td>
-            <td>Sexo</td>
+            <td>Sexe</td>
          <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
     </tr>
     <tr>
@@ -163,10 +163,8 @@ require '../includes/conectar_DB.php';
         </colgroup>
         <thead>
             <tr class='warning'>
-                <th>La teva reserva</th>
-                <th>Detalls de reserva</th>
-                <th>El teu usuari</th>
-                <th>Detalls de usuari</th>
+                <th colspan="2"><h3>Detalls reserva habitació</h3></th>
+            <th colspan="2"><h3>Detalls reserva usuari</h3></th>
             </tr>
         </thead>
         <tbody>
@@ -191,14 +189,12 @@ require '../includes/conectar_DB.php';
             <tr>
                 <td>Numero de persones</td>
             <td><?php echo $npersones; ?></td>
-            <td>Sexo</td>
+            <td>Sexe</td>
          <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
             </tr>
             <tr>
-                <td>Brazil</td>
-                <td>201,032,714</td>
-                <td>July 1, 2013</td>
-                <td><h2><?php echo $preciototal;?> € </h2></td>
+                <th colspan="2"><h4>PREU TOTAL RESERVA</h4></th>
+            <th colspan="2"><h2><?php echo $preciototal;?> €</h2></th>
             </tr>
         </tbody>
     </table>
