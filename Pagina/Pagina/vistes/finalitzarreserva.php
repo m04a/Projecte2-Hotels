@@ -98,7 +98,6 @@ require '../includes/conectar_DB.php';
                   echo "No s'ha pogut realitzar la reserva";
                  // header('Refresh: 5; URL=reservabuscador.php');  
                  } ?></div>
-<div id="content">
   <div class="container">
     <div class="row">
    <div class="col-sm">
@@ -109,10 +108,12 @@ require '../includes/conectar_DB.php';
 
     </tr>
     <tr>
+        <div id="content">
         <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $usuari; ?></td>
+        </div>
     </tr>
     <tr>
         <td>Data d'inici</td>
@@ -151,7 +152,6 @@ require '../includes/conectar_DB.php';
 </table> 
     </div>
   </div>
-</div>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
 
