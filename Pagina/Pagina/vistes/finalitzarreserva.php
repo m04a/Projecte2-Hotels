@@ -95,7 +95,7 @@ require '../includes/conectar_DB.php';
                   echo "S'ha realitzat correctament la reserva";
                  } else {
                   echo "No s'ha pogut realitzar la reserva";
-                  header('Refresh: 5; URL=reservabuscador.php');  
+                  //header('Refresh: 5; URL=reservabuscador.php');  
                  } ?></div>
   <div class="container">
     <div class="row">
