@@ -109,8 +109,8 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
-            <td><?php echo $_POST['from']; ?></td>
-            <td><?php echo $_POST['to']; ?></td>
+            <td><?php echo $desde; ?></td>
+            <td><?php echo $hasta; ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
