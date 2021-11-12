@@ -101,6 +101,7 @@ require '../includes/conectar_DB.php';
   <div class="container">
     <div class="row">
    <div class="col-sm">
+  <div id="content">
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
             <th colspan="2"><h3>Detalls reserva habitació</h3></th>
@@ -108,12 +109,12 @@ require '../includes/conectar_DB.php';
 
     </tr>
     <tr>
-        <div id="content">
+        
         <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $usuari; ?></td>
-        </div>
+      
     </tr>
     <tr>
         <td>Data d'inici</td>
@@ -150,6 +151,7 @@ require '../includes/conectar_DB.php';
             <th colspan="2"><h2><?php echo $preciototal;?> €</h2></th>
     </tr>
 </table> 
+  </div>
     </div>
   </div>
 </div>
