@@ -109,8 +109,8 @@ require '../includes/conectar_DB.php';
     <tr>
         <td>Nom d'habitació</td>
             <td><?php echo $nomhabitacio; ?></td>
-            <td><?php echo $desde->format('Y-m-d'); ?></td>
-            <td><?php echo $hasta->format('Y-m-d'); ?></td>
+            <td><?php print_r($desde->format('Y-m-d')); ?></td>
+            <td><?php print_r( $hasta->format('Y-m-d')); ?></td>
             <td>Usuari</td>
             <td><?php echo $_SESSION["usuari"]; ?></td>
     </tr>
