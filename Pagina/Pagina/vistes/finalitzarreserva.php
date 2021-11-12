@@ -238,3 +238,4 @@ require '../includes/conectar_DB.php';
     <script src="../utilitats/js/custom.js"></script>
 
   </body>
+</html>
