@@ -141,7 +141,7 @@ require '../includes/conectar_DB.php';
     </tr>
     <tr>
         <td>Preu per habitació</td>
-            <td><?php echo $precio;?></td>
+            <td><?php echo $precio;?> €</td>
             <td>email</td>
             <td><?php echo $email;?></td>
     </tr>
@@ -163,10 +163,10 @@ require '../includes/conectar_DB.php';
         </colgroup>
         <thead>
             <tr class='warning'>
-                <th>Detalls reserva</th>
-                <th>Detalls usuari</th>
-                <th>Date</th>
-                <th>Age</th>
+                <th>La teva reserva</th>
+                <th>Detalls de reserva</th>
+                <th>El teu usuari</th>
+                <th>Detalls de usuari</th>
             </tr>
         </thead>
         <tbody>
@@ -189,16 +189,16 @@ require '../includes/conectar_DB.php';
             <td><?php echo $fechanacimiento; ?></td>
             </tr>
             <tr>
-                <td>Indonesia</td>
-                <td>249,866,000</td>
-                <td>July 1, 2013</td>
-                <td>3.49</td>
+                <td>Numero de persones</td>
+            <td><?php echo $npersones; ?></td>
+            <td>Sexo</td>
+         <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
             </tr>
             <tr>
                 <td>Brazil</td>
                 <td>201,032,714</td>
                 <td>July 1, 2013</td>
-                <td>2.81</td>
+                <td><h2><?php echo $preciototal;?> € </h2></td>
             </tr>
         </tbody>
     </table>
