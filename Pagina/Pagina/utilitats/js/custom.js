@@ -219,3 +219,4 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 pdf.save('reserva.pdf');
             }, margins);
     }
+$('#content').hide();
