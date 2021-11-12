@@ -180,7 +180,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 });
 
 /*Botó per imprimir la reserva*/
- function demoFromHTML() {
+ function crearPDF() {
         var pdf = new jsPDF('p', 'pt', 'letter');
         // source can be HTML-formatted string, or a reference
         // to an actual DOM element from which the text will be scraped.
@@ -216,7 +216,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
             function (dispose) {
                 // dispose: object with X, Y of the last line add to the PDF 
                 //          this allow the insertion of new lines after html
-                pdf.save('Test.pdf');
+                pdf.save('reserva.pdf');
             }, margins
         );
     }

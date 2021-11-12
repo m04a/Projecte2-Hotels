@@ -152,12 +152,11 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
-<a href="javascript:demoFromHTML()" class="button">Run Code</a>
+<a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
 <div id="content">
     <h1>  
         We support special element handlers. Register them with jQuery-style.
     </h1>
-</div></div>
 
      <!-- *** Footer inici *** -->
      <?php
