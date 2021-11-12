@@ -34,22 +34,17 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$desde','$hasta')";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (:npersones,:numhab,:desde,:hasta,:usuari)";
                 //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
                 $stmt = $conn->prepare($sql);
-                //$stmt->bindParam('$usuari', $usuari);
-                $stmt->bindParam('$numhab', $_POST['numhab']);
-                $stmt->bindParam('$npersones', $_POST['npersones']);
+                $stmt->bindParam(':usuari', $usuari);
+                $stmt->bindParam(':numhab', $_POST['numhab']);
+                $stmt->bindParam(':npersones', $_POST['npersones']);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
                 $desde=DateTime::createFromFormat('j/m/Y', $from);
                 $hasta=DateTime::createFromFormat('j/m/Y', $to);
-                $stmt->bindParam('$desde', $desde->format('Y-m-d'));
-                $stmt->bindParam('$hasta', $hasta->format('Y-m-d'));
-                if ($stmt->execute()) {
-                  echo "S'ha realitzat correctament la reserva";
-                 } else {
-                  echo "No s'ha pogut realitzar la reserva";}
-
+                $stmt->bindParam(':desde', $desde->format('Y-m-d'));
+                $stmt->bindParam(':hasta', $hasta->format('Y-m-d'));
 }
 
   }
@@ -95,12 +90,12 @@ require '../includes/conectar_DB.php';
 		 include '../includes/capsalera.php';
 	?>
     <!-- *** Capçalera Final *** -->
-    <!--<div class="alert alert-success"><?php /*if ($stmt->execute()) {
+    <div class="alert alert-success"><?php if ($stmt->execute()) {
                   echo "S'ha realitzat correctament la reserva";
                  } else {
                   echo "No s'ha pogut realitzar la reserva";
                   //header('Refresh: 5; URL=reservabuscador.php');  
-                 }*/ ?></div> -->
+                 } ?></div>
   <div class="container">
     <div class="row">
    <div class="col-sm">
