@@ -163,7 +163,7 @@ require '../includes/conectar_DB.php';
         </colgroup>
         <thead>
             <tr class='warning'>
-                <th>Country</th>
+                <th><?php echo $nomhabitacio; ?></th>
                 <th>Population</th>
                 <th>Date</th>
                 <th>Age</th>
