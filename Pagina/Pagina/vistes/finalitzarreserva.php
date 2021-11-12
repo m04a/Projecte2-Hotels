@@ -164,9 +164,9 @@ require '../includes/conectar_DB.php';
         <thead>
             <tr class='warning'>
                <th></th>
-                <th>Detalls de reserva</th>
+                <th>Reserva</th>
                 <th></th>
-                <th>Detalls de usuari </th>
+                <th>Usuari </th>
             </tr>
         </thead>
         <tbody>
