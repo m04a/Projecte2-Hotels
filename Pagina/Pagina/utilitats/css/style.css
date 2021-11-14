@@ -1185,6 +1185,9 @@ footer{
 Calendari
 --------------------------------------------- 
 */
+.ui-datepicker-week-end{
+color:#ff0000;
+}
 #ui-datepicker-div{
 	background-color: #373c3e !important;
     padding-right: 3% !important;
@@ -1288,7 +1291,7 @@ table {
   border-radius: 0.25rem;
   line-height: 2rem;
   transition: 0.3s all;
-  color: #546E7A;
+  color: #fff;
   font-size: 0.875rem;
   text-decoration: none;
 }
