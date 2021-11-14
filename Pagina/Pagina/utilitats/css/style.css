@@ -1297,12 +1297,9 @@ ul.social-icons li a:hover {
   color: #ed563b;
 }
 /* Reserva **/
-div.buscador{
-  padding: 5%
-}
 
 .buscadorForm{
-  padding: 4%;
+  padding: 3%;
 }
 #cercaBtn{
   margin-left: 2%;
