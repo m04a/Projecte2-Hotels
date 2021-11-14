@@ -1319,7 +1319,6 @@ table {
   background-size: 0.5rem;
   background-position: 50%;
   transform: rotate(180deg);
-  color: #eeeeee;
 }
 .ui-datepicker-header a.ui-datepicker-next {
   right: 0;
@@ -1327,11 +1326,13 @@ table {
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: 50%;
-  color: #eeeeee;
 
 }
 .ui-datepicker-header a>span {
   display: none;
+}
+.ui-datepicker-prev span, .ui-datepicker-next span {
+    color: #fff !important;
 }
 .ui-datepicker-title {
   text-align: center;
@@ -1340,6 +1341,7 @@ table {
   font-size: 0.875rem;
   font-weight: 500;
   padding-bottom: 0.25rem;
+  color:#fff;
 }
 .ui-datepicker-week-col {
   color: #78909C;
