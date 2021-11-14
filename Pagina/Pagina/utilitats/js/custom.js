@@ -222,19 +222,14 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     /*Tarjeta de credit*/ /*Vaya limpieza con el AJAX eh Hicham de parte el Moha jajaj*/
 function validate(){
     card = document.getElementById('card').value;
-    var nombre = document.getElementByName("nombre");
-    var apellidos = document.getElementByName("apellidos");
-    var fechanacimiento = document.getElementByName("fechanacimiento");
-    var sexo = document.getElementByName("sexo");
-    var email = document.getElementByName("email");
-    alert (nombre);
         alert(card);
         cardno = "/^(?:3[47][0-9]{13})$/";
   if(card.match(cardno)){
       return true;
   }
       else{
-        alert("Not a valid Amercican Express credit card number!");
+        alert("La tarjeta de credit no és valida!");
+        location.href = 'confirmarreserva.html';
         return false;
     }
  
