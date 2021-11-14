@@ -222,13 +222,13 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     /*Tarjeta de credit*/
 function validate(){
         card = document.getElementById('card').value;
-        alert(card);
         cardno = "/^(?:3[47][0-9]{13})$/";
   if(card.match(cardno)){
       return true;
   }
       else{
         alert("Not a valid Amercican Express credit card number!");
+        window.location.href = 'confirmarreserva.php';
         return false;
     }
  
