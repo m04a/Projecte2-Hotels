@@ -221,13 +221,12 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     }
     /*Tarjeta de credit*/
 function validate(){
-      var j = document.getElementById("cards").value;
-      alert (j);
-  /*if(true){
+      var j = document.getElementById("card").value;
+  if(j == 25){
       return true;
   }
   else {
-       alert('error');
+       alert(j);
       return false;
-  }*/
+  }
 }
