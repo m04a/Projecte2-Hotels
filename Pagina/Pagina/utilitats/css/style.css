@@ -1236,13 +1236,7 @@ table, th, td {
     background: #0062cc;
     color: #fff;
 }
-.wrapper {
-  max-width: 18rem;
-  padding: 0 0.5rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 4rem;
-}
+
 label {
   font-size: 0.75rem;
   font-weight: 400;
