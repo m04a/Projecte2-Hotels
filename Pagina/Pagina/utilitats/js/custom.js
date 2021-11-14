@@ -219,3 +219,15 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 pdf.save('latevareserva.pdf');
             }, margins);
     }
+    /*Tarjeta de credit*/
+function validate(){
+      var j = document.getElementById("cards").value;
+      alert (j);
+  /*if(true){
+      return true;
+  }
+  else {
+       alert('error');
+      return false;
+  }*/
+}
