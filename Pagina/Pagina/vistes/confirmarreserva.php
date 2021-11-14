@@ -235,7 +235,7 @@ if(isset($_POST['treasure'])){
     <div class="card-header">
     <tr>
         <td>Tarjeta de credit</td>
-            <td><input type='text' id="card" class='form-control' /></td>
+            <td><input type='text' name='cc' id="card" class='form-control' /></td>
     </tr>  </div>
   <div class="card-body">
     <form action='finalitzarreserva.php' method='post' onsubmit="validate()">
