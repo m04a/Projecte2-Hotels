@@ -219,17 +219,16 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 pdf.save('latevareserva.pdf');
             }, margins);
     }
-    /*Tarjeta de credit*/ /*Vaya limpieza con el AJAX eh Hicham de parte el Moha jajaj*/
+    /*Tarjeta de credit*/
 function validate(){
-    card = document.getElementById('card').value;
+        card = document.getElementById('card').value;
         alert(card);
         cardno = "/^(?:3[47][0-9]{13})$/";
   if(card.match(cardno)){
       return true;
   }
       else{
-        alert("La tarjeta de credit no és valida!");
-        location.href = 'confirmarreserva.html';
+        alert("Not a valid Amercican Express credit card number!");
         return false;
     }
  
