@@ -33,7 +33,9 @@
     <option value="4">4</option>
   </select>
   </div>
+  <div class="form-group mb-2 formdes">
     <button type="submit" name="reservaBuscar" id="cercaBtn" class="btn btn-outline-danger mb-1"><i class="fa fa-search"></i></button>
+  </div>
   </form>
 </div>
 
