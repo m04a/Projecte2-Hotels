@@ -222,6 +222,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     /*Tarjeta de credit*/
 function validate(){
       var j = document.getElementById("card").value;
+                       alert(j);
   if(j == 25){
       return true;
   }
