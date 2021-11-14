@@ -1316,6 +1316,7 @@ table {
   background-size: 0.5rem;
   background-position: 50%;
   transform: rotate(180deg);
+  background: #eeeeee;
 }
 .ui-datepicker-header a.ui-datepicker-next {
   right: 0;
@@ -1323,6 +1324,8 @@ table {
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: 50%;
+  background: #eeeeee;
+
 }
 .ui-datepicker-header a>span {
   display: none;
