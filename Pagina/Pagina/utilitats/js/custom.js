@@ -221,7 +221,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
     }
     /*Tarjeta de credit*/
 function validate(){
-      var j = document.getElementById("card").value;
-                       alert(j);
+        card = document.getElementById('card');
+                       alert(card);
  
 }
