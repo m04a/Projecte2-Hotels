@@ -223,7 +223,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 function validate(){
         card = document.getElementById('card').value;
         alert(card);
-        var cardno = /^(?:3[47][0-9]{13})$/;
+        cardno = "/^(?:3[47][0-9]{13})$/";
   if(card.value.match(cardno))
         {
       return true;
