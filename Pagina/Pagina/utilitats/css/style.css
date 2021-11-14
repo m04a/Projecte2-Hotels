@@ -1246,6 +1246,9 @@ label {
   color: #B0BEC5;
   border: 1px solid #ECEFF1;
   padding: 0.5rem 0.75rem;
+  text-align: center;
+  line-height: 150%;
+  font-size: .85em;
   border-radius: 0.5rem;
 }
 input {
