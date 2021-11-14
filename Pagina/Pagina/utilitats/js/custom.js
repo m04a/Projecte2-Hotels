@@ -224,14 +224,12 @@ function validate(){
         card = document.getElementById('card').value;
         alert(card);
         cardno = "/^(?:3[47][0-9]{13})$/";
-  if(card.value.match(cardno))
-        {
+  if(card.match(cardno)){
       return true;
-        }
-      else
-        {
+  }
+      else{
         alert("Not a valid Amercican Express credit card number!");
         return false;
-        }
+    }
  
 }
