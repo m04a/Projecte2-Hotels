@@ -244,7 +244,7 @@ if(isset($_POST['treasure'])){
                                     <input type="hidden" name="fechanacimiento" value="<?php echo $fechanacimiento;?>" />
                                     <input type="hidden" name="sexo" value="<?php echo $sexo;?>" />
                                     <input type="hidden" name="email" value="<?php echo $email;?>"/>
-                                            <button id="card" type="submit" class='btn btn-success mybuttoncool m-r-6em ' onsubmit="validate()">Confirmar reserva</button> 
+                                            <button id="card" type="submit" class='btn btn-success mybuttoncool m-r-6em ' onclick="validate()">Confirmar reserva</button> 
                                           </form>
                                 <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
   </div>
