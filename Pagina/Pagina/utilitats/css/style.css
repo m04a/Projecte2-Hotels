@@ -1187,7 +1187,10 @@ Calendari
 */
 #ui-datepicker-div{
 	background-color: #373c3e !important;
-    padding-right: 10% !important;
+    padding-right: 3% !important;
+}
+ui-datepicker-year{
+  color:#fff;
 }
 .ui-datepicker-calendar,.ui-datepicker-title{
 	margin-top: 5% !important;
@@ -1316,7 +1319,7 @@ table {
   background-size: 0.5rem;
   background-position: 50%;
   transform: rotate(180deg);
-  background: #eeeeee;
+  color: #eeeeee;
 }
 .ui-datepicker-header a.ui-datepicker-next {
   right: 0;
@@ -1324,7 +1327,7 @@ table {
   background-repeat: no-repeat;
   background-size: 10px;
   background-position: 50%;
-  background: #eeeeee;
+  color: #eeeeee;
 
 }
 .ui-datepicker-header a>span {
