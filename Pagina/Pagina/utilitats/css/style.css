@@ -1195,18 +1195,12 @@ Calendari
 	margin-bottom:5% !important;
 }
 table, th, td {
-  border: 1px solid white;
+  border: 1px solid grey;
   padding: 5px;
   text-align: center;
 }
 
-.ui-datepicker-prev {
-	margin:10% !important;
-}
-/*Calendari*/
-.ui-datepicker-calendar{
-	margin-left:10% !important;
-}
+
 /*Login form*/
 .note
 {
@@ -1236,6 +1230,7 @@ table, th, td {
     background: #0062cc;
     color: #fff;
 }
+/*Calendari*/
 
 label {
   font-size: 0.75rem;
