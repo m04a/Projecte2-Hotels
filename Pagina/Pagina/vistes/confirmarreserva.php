@@ -238,13 +238,13 @@ if(isset($_POST['treasure'])){
             <td><input type='text' name='cc' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>  </div>
   <div class="card-body">
-    <form action='finalitzarreserva.php' method='post'>
+    <form action='finalitzarreserva.php' method='post' onsubmit="validate()">
                                     <input type="hidden" name="nombre" value="<?php echo $nombre;?>" />
                                     <input type="hidden" name="apellidos" value="<?php echo $apellidos;?>" />
                                     <input type="hidden" name="fechanacimiento" value="<?php echo $fechanacimiento;?>" />
                                     <input type="hidden" name="sexo" value="<?php echo $sexo;?>" />
                                     <input type="hidden" name="email" value="<?php echo $email;?>"/>
-                                            <button id="card" type="submit" class='btn btn-success mybuttoncool m-r-6em ' onclick="validate()">Confirmar reserva</button> 
+                                            <button id="card" type="submit" class='btn btn-success mybuttoncool m-r-6em'>Confirmar reserva</button> 
                                           </form>
                                 <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
   </div>

@@ -223,11 +223,5 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 function validate(){
       var j = document.getElementById("card").value;
                        alert(j);
-  if(j == 25){
-      return true;
-  }
-  else {
-       alert(j);
-      return false;
-  }
+ 
 }
