@@ -1236,7 +1236,37 @@ table, th, td {
     background: #0062cc;
     color: #fff;
 }
-
+.wrapper {
+  max-width: 18rem;
+  padding: 0 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4rem;
+}
+label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #B0BEC5;
+  border: 1px solid #ECEFF1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+input {
+  font-family: 'Roboto', sans-serif;
+  display:block;
+  border: none;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  line-height: 1.5rem;
+  padding: 0;
+  font-size: 1rem;
+  color: #607D8B;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+input:focus {outline: none;}
 /*
 ---------------------------------------------
 habitacions
