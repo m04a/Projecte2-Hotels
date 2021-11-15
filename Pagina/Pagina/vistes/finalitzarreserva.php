@@ -156,7 +156,7 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
-<div id="content">
+<div id="customers">
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
@@ -164,13 +164,16 @@ require '../includes/conectar_DB.php';
                     <col width="20%">
                         <col width="20%">
         </colgroup>
+        <thead>  
             <tr>
                 <th></th>
                 <th>Reserva</th>
                 <th></th>
                 <th>Usuari </th>
             </tr>
-              <td>{{Nom d'habitació}}</td>
+            </thead>
+            <tbody>
+              <td>Nom d'habitació</td>
               <td><?php echo $nomhabitacio; ?></td>
               <td>Usuari</td>
               <td><?php echo $usuari; ?></td>
@@ -205,6 +208,7 @@ require '../includes/conectar_DB.php';
                 <td><h4>PREU TOTAL RESERVA</h4></td>
                 <td><h2><?php echo $preciototal;?> €</h2></td>
             </tr>
+            </tbody>
     </table>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
