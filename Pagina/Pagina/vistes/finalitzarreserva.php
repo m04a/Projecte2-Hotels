@@ -206,7 +206,7 @@ require '../includes/conectar_DB.php';
             </tbody>
         </table> 
     </div>
-<a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
+<a href="javascript:demoFromHTML()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
