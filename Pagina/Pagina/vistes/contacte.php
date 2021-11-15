@@ -5,9 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $nom=htmlspecialchars($_POST["nom"])
     $email=htmlspecialchars($_POST["email"])
+    $assumpte=htmlspecialchars($_POST["assumpte"])
     $missatge=htmlspecialchars($_POST["missatge"])
 
-$sql = "INSERT INTO contacte (nom,email,missatge) VALUES ('$nom','$email','$missatge');";
+$sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$email','$missatge','$assumpte');";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$nom', $_POST['nom']);
                 $stmt->bindParam('$email', $_POST['email']);
@@ -77,24 +78,24 @@ $sql = "INSERT INTO contacte (nom,email,missatge) VALUES ('$nom','$email','$miss
                             <div class="col-md-6 col-sm-12">
                               <div class="form-group">
                                 <label for="nomcomplet">Nom complet</label>
-                                    <input type="name" class="form-control" id="inputname" aria-describedby="inputname" placeholder="Entra el teu nom">
+                                    <input type="name" name="nom" class="form-control" id="inputname" aria-describedby="inputname" placeholder="Entra el teu nom">
                                     </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
                                 <div class="form-group">
                         <label for="emailAdressa">Email address</label>
-                                <input name="email" class="form-control" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Entra el teu email*" required="">
+                                <input name="email" name="email" class="form-control" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Entra el teu email*" required="">
                             </div>
                             </div>
                              <div class="col-md-6 col-sm-12">
                               <div class="form-group">
                                 <label for="asumbte">Asumpte</label>
-                                    <input type="name" class="form-control" id="asumpte" aria-describedby="asumte" placeholder="Entra el tema de la consulta">
+                                    <input type="name" name="assumpte" class="form-control" id="asumpte" aria-describedby="asumte" placeholder="Entra el tema de la consulta">
                                     </div>
                             </div>
                             <div class="col-lg-12">
                              <label for="exampleFormControlTextarea1"> Conringut del missatge</label>
-                                <textarea class="form-control" name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                                <textarea class="form-control" name="missatge" rows="6" id="missatge" placeholder="Message" required=""></textarea>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
