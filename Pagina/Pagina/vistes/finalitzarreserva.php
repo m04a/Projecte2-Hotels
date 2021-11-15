@@ -145,6 +145,7 @@ require '../includes/conectar_DB.php';
             <td>email</td>
             <td><?php echo $email;?></td>
     </tr>
+    
     <tr>
             <th colspan="2"><h4>PREU TOTAL RESERVA</h4></th>
             <th colspan="2"><h2><?php echo $preciototal;?> €</h2></th>
