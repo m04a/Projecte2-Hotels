@@ -15,7 +15,7 @@
     <div class="container">
  
         <div class="page-header">
-            <h1>tipos</h1>
+            <h1>Tipus d'habitacions</h1>
         </div>
  
         <?php
@@ -44,7 +44,7 @@ echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>
 if($num>0){
  
     //start table
-echo "<table class='table table-hover table-responsive table-bordered'>";
+echo "<table class='table table-dark'>";
  
     //creating our table heading
     echo "<tr>

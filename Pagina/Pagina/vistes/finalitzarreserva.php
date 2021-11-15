@@ -34,17 +34,16 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (:npersones,:numhab,:desde,:hasta,:usuari)";
-                //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$from','$to');";
                 $stmt = $conn->prepare($sql);
-                $stmt->bindParam(':usuari', $usuari);
-                $stmt->bindParam(':numhab', $numhab);
-                $stmt->bindParam(':npersones', $npersones);
+                //$stmt->bindParam('$usuari', $_POST['usuari']);
+                $stmt->bindParam('$numhab', $_POST['numhab']);
+                $stmt->bindParam('$npersones', $_POST['npersones']);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
-                $desde=DateTime::createFromFormat('j/m/Y', $from);
-                $hasta=DateTime::createFromFormat('j/m/Y', $to);
-                $stmt->bindParam(':desde', $desde->format('Y-m-d'));
-                $stmt->bindParam(':hasta', $hasta->format('Y-m-d'));
+                $stmt->bindParam('$from', $_POST['from']);
+                $stmt->bindParam('$to', $_POST['to']);
+
+
 }
 
   }
@@ -111,22 +110,20 @@ require '../includes/conectar_DB.php';
     <tr>
         
         <td>Nom d'habitació</td>
-            <td><?php
-            //$stmt->debugDumpParams();
-            echo $nomhabitacio; ?></td>
+            <td><?php echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $usuari; ?></td>
       
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $from; ?></td>
+            <td><?php echo $to; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $to; ?></td>
+            <td><?php echo $from; ?></td>
             <td>Cognom</td>
             <td><?php echo $apellidos; ?></td>
     </tr>
@@ -156,7 +153,7 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
-<div id="customers">
+<div id="content">
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
@@ -164,47 +161,58 @@ require '../includes/conectar_DB.php';
                     <col width="20%">
                         <col width="20%">
         </colgroup>
-            <tbody>
+        <thead>
+            <tr class='warning'>
+               <th></th>
+                <th>Reserva</th>
+                <th></th>
+                <th>Usuari </th>
+            </tr>
+        </thead>
+        <tbody>
             <tr>
-              <td>Nom d'habitació</td>
-              <td><?php echo $nomhabitacio; ?></td>
-              <td>Usuari</td>
-              <td><?php echo $usuari; ?></td>
+            <td>WTFFF</td>
+            <td>Nom d'habitació</td>
+            <td><?php echo $nomhabitacio; ?></td>
+            <td>Usuari</td>
+            <td><?php echo $usuari; ?></td>
             </tr>
             <tr>
-              <td>Data d'inici</td>
-              <td><?php echo $to; ?></td>
-              <td>Nom</td>
-              <td><?php echo $nombre; ?></td>
+                <<td>Data d'inici</td>
+            <td><?php echo $to; ?></td>
+            <td>Nom</td>
+            <td><?php echo $nombre; ?></td>
             </tr>
              <tr>
-              <td>Data final</td>
-              <td><?php echo $from; ?></td>
-              <td>Cognom</td>
-              <td><?php echo $apellidos; ?></td>
+        <td>Data final</td>
+            <td><?php echo $from; ?></td>
+            <td>Cognom</td>
+            <td><?php echo $apellidos; ?></td>
+        </tr>
+            <tr>
+             <td>Numero de habitacions</td>
+            <td><?php echo $nhabitacio; ?></td>
+            <td>Data de naixament</td>
+            <td><?php echo $fechanacimiento; ?></td>
             </tr>
             <tr>
-              <td>Numero de habitacions</td>
-              <td><?php echo $nhabitacio; ?></td>
-              <td>Data de naixament</td>
-              <td><?php echo $fechanacimiento; ?></td>
-            </tr>
-            <tr>
-              <td>Numero de persones</td>
-              <td><?php echo $npersones; ?></td>
-              <td>Sexe</td>
-              <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
+                <td>Numero de persones</td>
+            <td><?php echo $npersones; ?></td>
+            <td>Sexe</td>
+         <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td><h4>PREU TOTAL RESERVA</h4></td>
-                <td><h2><?php echo $preciototal;?> €</h2></td>
+            <td><h2><?php echo $preciototal;?> €</h2></td>
             </tr>
-            </tbody>
+        </tbody>
     </table>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
+
+
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';

@@ -184,7 +184,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
         var pdf = new jsPDF('p', 'pt', 'letter');
         // source can be HTML-formatted string, or a reference
         // to an actual DOM element from which the text will be scraped.
-        source = $('#customers')[0];
+        source = $('#content')[0];
 
         // we support special element handlers. Register them with jQuery-style 
         // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
@@ -218,5 +218,17 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 //          this allow the insertion of new lines after html
                 pdf.save('latevareserva.pdf');
             }, margins);
-    };
-    
+    }
+    /*Tarjeta de credit*/
+function validate(){
+        card = document.getElementById('card').value;
+        cardno = "/^(?:3[47][0-9]{13})$/";
+  if(card.match(cardno)){
+      return true;
+  }
+      else{
+        alert("Not a valid Amercican Express credit card number!");
+        return false;
+    }
+ 
+}
