@@ -54,23 +54,26 @@
                         <form id="contact" action="" method="post">
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
-                              <fieldset>
-                                <input name="name" type="text" id="name" placeholder="Your Name*" required="">
-                              </fieldset>
+                              <div class="form-group">
+                                <label for="nomcomplet">Nom complet</label>
+                                    <input type="name" class="form-control" id="inputname" aria-describedby="inputname" placeholder="Entra el teu nom">
+                                    </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
-                              <fieldset>
+                                <div class="form-group">
+                        <label for="emailAdressa">Email address</label>
                                 <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email*" required="">
-                              </fieldset>
                             </div>
-                            <div class="col-md-12 col-sm-12">
-                              <fieldset>
-                                <input name="subject" type="text" id="subject" placeholder="Subject">
-                              </fieldset>
+                            </div>
+                             <div class="col-md-6 col-sm-12">
+                              <div class="form-group">
+                                <label for="asumbte">Asumpte</label>
+                                    <input type="name" class="form-control" id="asumpte" aria-describedby="asumte" placeholder="Entra el tema de la consulta">
+                                    </div>
                             </div>
                             <div class="col-lg-12">
-                              <fieldset>
-                                <textarea name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                             <label for="exampleFormControlTextarea1"> Conntingut</label>
+                                <textarea class="form-control" name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
