@@ -224,6 +224,21 @@ if(isset($_POST['treasure'])){
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm">
+
+        </div>
+    </div>
+</div>
+<div class="card text-center text-white bg-dark">
+    <div class="card-header">
+    <tr>
+        <td>Tarjeta de credit</td>
+            <td><input type='text' name='cc' id="card" class='form-control' /></td>
+    </tr>  </div>
+  <div class="card-body">
+    <form action='finalitzarreserva.php' method='post' onsubmit="validate()">
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
     <form action='finalitzarreserva.php' method='post'>
@@ -232,8 +247,7 @@ if(isset($_POST['treasure'])){
                                     <input type="hidden" name="fechanacimiento" value="<?php echo $fechanacimiento;?>" />
                                     <input type="hidden" name="sexo" value="<?php echo $sexo;?>" />
                                     <input type="hidden" name="email" value="<?php echo $email;?>"/>
-                                            <button type="submit" class='btn btn-success mybuttoncool m-r-6em '>Confirmar reserva</button> 
-                                          </form>
+                                     <button type="submit" class='btn btn-success mybuttoncool m-r-6em'>Confirmar reserva</button>
                                 <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
   </div>
 </div>
@@ -242,8 +256,9 @@ if(isset($_POST['treasure'])){
      <?php
 	 include '../includes/footer.php';
 	?>
+    
 	<!-- *** Footer final *** -->
-
+    <script src="../utilitats/js/custom.js"></script>
     <!-- jQuery -->
     <script src="../utilitats/js/jquery-2.1.0.min.js"></script>
 

@@ -219,4 +219,16 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 pdf.save('latevareserva.pdf');
             }, margins);
     };
-    
+     /*Tarjeta de credit*/
+function validate(){
+        card = document.getElementById('card').value;
+        cardno = "/^(?:3[47][0-9]{13})$/";
+  if(card.match(cardno)){
+      return true;
+  }
+      else{
+        alert("La tarjeta no es valida!");
+        return false;
+    }
+
+};
