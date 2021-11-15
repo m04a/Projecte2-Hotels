@@ -174,47 +174,45 @@ require '../includes/conectar_DB.php';
         </thead>
         <tbody>
             <tr>
-                 <td>Nom dhabitacio</td>
-            <td><?php echo $nomhabitacio; ?></td>
-            <td>Usuari</td>
-            <td><?php echo $usuari; ?></td>
+              <td>Nom dhabitacio</td>
+              <td><?php echo $nomhabitacio; ?></td>
+              <td>Usuari</td>
+              <td><?php echo $usuari; ?></td>
             </tr>
             <tr>
-                <td>Data dinici</td>
-            <td><?php echo $to; ?></td>
-            <td>Nom</td>
-            <td><?php echo $nombre; ?></td>
+              <td>Data dinici</td>
+              <td><?php echo $to; ?></td>
+              <td>Nom</td>
+              <td><?php echo $nombre; ?></td>
             </tr>
              <tr>
-        <td>Data final</td>
-            <td><?php echo $from; ?></td>
-            <td>Cognom</td>
-            <td><?php echo $apellidos; ?></td>
-        </tr>
-            <tr>
-             <td>Numero de habitacions</td>
-            <td><?php echo $nhabitacio; ?></td>
-            <td>Data de naixament</td>
-            <td><?php echo $fechanacimiento; ?></td>
+              <td>Data final</td>
+              <td><?php echo $from; ?></td>
+              <td>Cognom</td>
+              <td><?php echo $apellidos; ?></td>
             </tr>
             <tr>
-                <td>Numero de persones</td>
-            <td><?php echo $npersones; ?></td>
-            <td>Sexe</td>
-         <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
+              <td>Numero de habitacions</td>
+              <td><?php echo $nhabitacio; ?></td>
+              <td>Data de naixament</td>
+              <td><?php echo $fechanacimiento; ?></td>
+            </tr>
+            <tr>
+              <td>Numero de persones</td>
+              <td><?php echo $npersones; ?></td>
+              <td>Sexe</td>
+              <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td><h4>PREU TOTAL RESERVA</h4></td>
-            <td><h2><?php echo $preciototal;?> €</h2></td>
+                <td><h2><?php echo $preciototal;?> €</h2></td>
             </tr>
         </tbody>
     </table>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
-
-
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
