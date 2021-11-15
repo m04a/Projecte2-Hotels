@@ -164,15 +164,12 @@ require '../includes/conectar_DB.php';
                     <col width="20%">
                         <col width="20%">
         </colgroup>
-        <thead>
             <tr>
                <th></th>
                 <th>Reserva</th>
                 <th></th>
                 <th>Usuari </th>
             </tr>
-        </thead>
-        <tbody>
             <tr>
               <th>Nom d'habitació</th>
               <th><?php echo $nomhabitacio; ?></th>
@@ -209,7 +206,6 @@ require '../includes/conectar_DB.php';
                 <td><h4>PREU TOTAL RESERVA</h4></td>
                 <td><h2><?php echo $preciototal;?> €</h2></td>
             </tr>
-        </tbody>
     </table>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
