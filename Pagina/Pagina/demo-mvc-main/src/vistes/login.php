@@ -1,6 +1,6 @@
 <?php
 
-require '../includes/conectar_DB.php';
+//require '../includes/conectar_DB.php';
 /*require '../includes/dologin.php';*/
 ?>
 <!DOCTYPE html>
