@@ -118,10 +118,10 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                             </span>
 
                             <h4><?php echo "<tr><td>{$nom}</td>";
-                            print_r($vacas) ?></h4>
+                            //print_r($vacas) ?></h4>
                             <p>
                                 <i class="fa fa-info-circle"></i><?php echo "<tr><td> {$descripcion}</td>";
-                                $stmt3->debugDumpParams(); ?>
+                                //$stmt3->debugDumpParams(); ?>
                             </p>
                             <p>
                                 <i class="fa fa-bed"></i>
