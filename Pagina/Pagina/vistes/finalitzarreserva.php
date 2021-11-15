@@ -165,6 +165,12 @@ require '../includes/conectar_DB.php';
                         <col width="20%">
         </colgroup>
             <tbody>
+            <tr>
+                <th> </th>
+                <th>Reserva</th>
+                <th> </th>
+                <th>Usuari </th>
+            </tr>
               <td>Nom d'habitació</td>
               <td><?php echo $nomhabitacio; ?></td>
               <td>Usuari</td>
@@ -203,7 +209,7 @@ require '../includes/conectar_DB.php';
             </tbody>
     </table>
 </div>
-<a href="javascript:demoFromHTML()" class="btn btn-primary">Imprimir PDF</a>
+<a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
