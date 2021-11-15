@@ -7,10 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email=htmlspecialchars($_POST["email"]);
     $assumpte=htmlspecialchars($_POST["assumpte"]);
     $missatge=htmlspecialchars($_POST["missatge"]);
-    echo $nom;
-    echo $email;
-    echo $assumpte;
-    echo $missatge;
+
 $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$email','$missatge','$assumpte');";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$nom', $_POST['nom']);
@@ -80,8 +77,8 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                     </div>
                 </div>
                 </div>
+                     <div class="col-lg-6 col-md-6 col-xs-12">
                 <form method="POST">
-                <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="contact-form">
                         <form id="contact" action="" method="post">
                           <div class="row">
