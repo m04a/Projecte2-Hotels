@@ -106,7 +106,7 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
-                                <button type="submit" id="form-submit" class="main-button">Enviar missatge</button>
+                                <button type="submit" id="form-submit" class="main-button">Enviar missatgee</button>
                             </div>
                         </form>                              
                             </div>
