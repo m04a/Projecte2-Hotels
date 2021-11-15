@@ -15,8 +15,8 @@
     <div class="container">
  
         <div class="page-header">
-            <h1>tipos</h1>
-        </div>
+            <h1>Tipus d'habitacions</h1>
+      </div>
  
         <?php
 // fem un include de la nostre base de dades
