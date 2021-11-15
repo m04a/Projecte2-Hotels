@@ -104,7 +104,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt3->execute(); 
         $vacas = $stmt3->fetchAll();
         $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
-        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad){
+        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]<1){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">
