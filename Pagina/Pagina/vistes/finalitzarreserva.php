@@ -34,16 +34,17 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin) VALUES ('$npersones','$numhab','$from','$to');";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (:npersones,:numhab,:desde,:hasta,:usuari)";
+                //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
                 $stmt = $conn->prepare($sql);
-                //$stmt->bindParam('$usuari', $_POST['usuari']);
-                $stmt->bindParam('$numhab', $_POST['numhab']);
-                $stmt->bindParam('$npersones', $_POST['npersones']);
+                $stmt->bindParam(':usuari', $usuari);
+                $stmt->bindParam(':numhab', $numhab);
+                $stmt->bindParam(':npersones', $npersones);
                 /*Tienes que arreglar estos campos con la cosa de datetime, i faltan algunos campos*/
-                $stmt->bindParam('$from', $_POST['from']);
-                $stmt->bindParam('$to', $_POST['to']);
-
-
+                $desde=DateTime::createFromFormat('j/m/Y', $from);
+                $hasta=DateTime::createFromFormat('j/m/Y', $to);
+                $stmt->bindParam(':desde', $desde->format('Y-m-d'));
+                $stmt->bindParam(':hasta', $hasta->format('Y-m-d'));
 }
 
   }
@@ -110,20 +111,22 @@ require '../includes/conectar_DB.php';
     <tr>
         
         <td>Nom d'habitació</td>
-            <td><?php echo $nomhabitacio; ?></td>
+            <td><?php
+            //$stmt->debugDumpParams();
+            echo $nomhabitacio; ?></td>
             <td>Usuari</td>
             <td><?php echo $usuari; ?></td>
       
     </tr>
     <tr>
         <td>Data d'inici</td>
-            <td><?php echo $to; ?></td>
+            <td><?php echo $from; ?></td>
             <td>Nom</td>
             <td><?php echo $nombre; ?></td>
     </tr>
    <tr>
         <td>Data final</td>
-            <td><?php echo $from; ?></td>
+            <td><?php echo $to; ?></td>
             <td>Cognom</td>
             <td><?php echo $apellidos; ?></td>
     </tr>
@@ -163,7 +166,6 @@ require '../includes/conectar_DB.php';
         </colgroup>
             <tbody>
             <tr>
-
               <td>Nom d'habitació</td>
               <td><?php echo $nomhabitacio; ?></td>
               <td>Usuari</td>
