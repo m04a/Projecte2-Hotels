@@ -3,10 +3,10 @@ require '../includes/conectar_DB.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $nom=htmlspecialchars($_POST["nom"])
-    $email=htmlspecialchars($_POST["email"])
-    $assumpte=htmlspecialchars($_POST["assumpte"])
-    $missatge=htmlspecialchars($_POST["missatge"])
+    $nom=htmlspecialchars($_POST["nom"]);
+    $email=htmlspecialchars($_POST["email"]);
+    $assumpte=htmlspecialchars($_POST["assumpte"]);
+    $missatge=htmlspecialchars($_POST["missatge"]);
 
 $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$email','$missatge','$assumpte');";
                 $stmt = $conn->prepare($sql);
