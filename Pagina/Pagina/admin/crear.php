@@ -146,7 +146,7 @@ if(isset($_POST["crearusuari"])){
     
     <body> 
 		 
-   <ul class="nav nav-pills nav-fill">
+   <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
