@@ -180,7 +180,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 });
 
 /*Botó per imprimir la reserva*/
- /*function crearPDF() {
+ function crearPDF() {
         var pdf = new jsPDF('p', 'pt', 'letter');
         // source can be HTML-formatted string, or a reference
         // to an actual DOM element from which the text will be scraped.
@@ -218,11 +218,4 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 //          this allow the insertion of new lines after html
                 pdf.save('latevareserva.pdf');
             }, margins);
-            
-    }*/
-    function generatePDF() {
-      // Choose the element that our invoice is rendered in.
-      const element = document.getElementById('container');
-      // Choose the element and save the PDF for our user.
-      html2pdf().from(element).save();
     }
