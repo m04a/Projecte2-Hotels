@@ -145,7 +145,7 @@ if(isset($_POST["crearusuari"])){
     </head>
     
     <body> 
-		 
+		 <nav class="navbar navbar-light"
    <ul class="nav nav-pills">
   <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
@@ -159,6 +159,7 @@ if(isset($_POST["crearusuari"])){
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
 </ul>
+</nav>
 <?php if(!empty($message)): ?>
       <p> <?= $message ?> </p>
     <?php endif; ?>
