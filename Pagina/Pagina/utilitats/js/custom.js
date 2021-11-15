@@ -205,7 +205,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
         };
         // all coords and widths are in jsPDF instance's declared units
         // 'inches' in this case
-        pdf.fromHTML(
+        /*pdf.fromHTML(
             source, // HTML string or DOM elem ref.
             margins.left, // x coord
             margins.top, { // y coord
@@ -217,5 +217,11 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 // dispose: object with X, Y of the last line add to the PDF 
                 //          this allow the insertion of new lines after html
                 pdf.save('latevareserva.pdf');
-            }, margins);
+            }, margins);*/
+            function generatePDF() {
+              // Choose the element that our invoice is rendered in.
+              const element = document.getElementById('container');
+              // Choose the element and save the PDF for our user.
+              html2pdf().from(element).save();
+            }
     }

@@ -156,7 +156,7 @@ require '../includes/conectar_DB.php';
     </div>
   </div>
 </div>
-<div id="content">
+<!-- <div id="content">
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
@@ -165,7 +165,7 @@ require '../includes/conectar_DB.php';
                         <col width="20%">
         </colgroup>
         <thead>
-            <tr class='warning'>
+            <tr>
                <th></th>
                 <th>Reserva</th>
                 <th></th>
@@ -211,8 +211,8 @@ require '../includes/conectar_DB.php';
             </tr>
         </tbody>
     </table>
-</div>
-<a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
+</div> -->
+<a href="javascript:generatePDF()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
