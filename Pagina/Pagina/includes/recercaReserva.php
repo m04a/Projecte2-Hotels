@@ -1,17 +1,13 @@
 <div class="mx-auto">
   <form class="buscadorForm form-inline" method="post" action="reservabuscador.php">
 <div class="form-group mb-2">
-        <div class="wrapper">
 <label for="from">Des de</label>
 <input type="text" id="from" name="from">
-</div>
 <!-- *** Calendari Final *** -->
 </div>
 <div class="form-group mb-2 formdes">
-  <div class="wrapper">
 <label for="to">Fins a </label>
 <input type="text" id="to" name="to">
-</div>
 </div>
 <!-- *** Seleccionar tipus habitació i numero persones Final *** -->
 <div class="form-group mb-2 formdes">
@@ -33,9 +29,7 @@
     <option value="4">4</option>
   </select>
   </div>
-  <div class="form-group mb-2 formdes">
     <button type="submit" name="reservaBuscar" id="cercaBtn" class="btn btn-outline-danger mb-1"><i class="fa fa-search"></i></button>
-  </div>
   </form>
 </div>
 

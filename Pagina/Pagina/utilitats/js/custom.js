@@ -218,19 +218,5 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
                 //          this allow the insertion of new lines after html
                 pdf.save('latevareserva.pdf');
             }, margins);
-
     };
-    /*Tarjeta de credit*/
-function validate(){
-        card = document.getElementById('card').value;
-        cardno = "/^(?:3[47][0-9]{13})$/";
-  if(card.match(cardno)){
-      return true;
-  }
-      else{
-        alert("Not a valid Amercican Express credit card number!");
-        return false;
-    }
- 
-};
-
+    

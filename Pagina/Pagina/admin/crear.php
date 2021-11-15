@@ -145,29 +145,20 @@ if(isset($_POST["crearusuari"])){
     </head>
     
     <body> 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">ADMIN</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+		 
+   <ul class="nav nav-pills nav-fill">
+  <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
+    <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
-      <li class="nav-item">
+  <li class="nav-item">
     <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
-    </ul>
-  </div>
-</nav>
+</ul>
 <?php if(!empty($message)): ?>
       <p> <?= $message ?> </p>
     <?php endif; ?>
