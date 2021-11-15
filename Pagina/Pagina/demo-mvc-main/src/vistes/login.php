@@ -1,59 +1,104 @@
-<!doctype html>
+<?php
+
+require '../includes/conectar_DB.php';
+require '../includes/dologin.php';
+?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags --> 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Pagina Hotel| Iniciar Sessió </title>
 
-    <title>Exemple d'us de sessions</title>
-  </head>
-  <body>
-    <?php include("cap.php"); ?>
+    <link rel="stylesheet" type="text/css" href="../utilitats/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../utilitats/css/style.css">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    </head>
+    
+    <body>
+    
+    <!-- ***** Carregador Inici ***** -->
+    <?php
+		 include '../includes/carregador.php';
+	?>
+    <!-- *** Preloader End *** -->
+    
+    
+    <!-- *** Header Principal *** -->
+	<?php
+		 include '../includes/nav.php';
+	?>
+    <!-- *** Header Final *** -->
+	<!-- *** Capçalera inici *** -->
+	<?php
+		 include '../includes/capsalera.php';
+	?>
+    <!-- *** Capçalera Final *** -->    
+	<section>
+  <div class="mask align-items-center h-100 gradient-custom-3">
     <div class="container">
-      <div class="row mt-1 mb-3">
-        <div class="col"><h1>Exemple per veure com funcionen les sessions</h1></div>
-      </div>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                <?php if(!empty($message)): ?>
+                  <div class='alert alert-danger'>Usuari o password incorrecte</div>
+                  <?php endif; ?>
+          <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">INICIAR SESSIÓ</h2>
+              <form method="POST" >
+                  <div class="form-outline mb-4">
+                  <label class="form-label">Nom d'usuari</label>
+                  <input type="text" name="usuari" class="form-control form-control-lg" />
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label">Contrasenya</label>
+                  <input type="password" name="password" class="form-control form-control-lg" />
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button type="submit" name="login" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                </div>
 
-    
-      
-      <div class="row mt-4">
-        <div class="col-3">
-          <div class="list-group">
-    
-            
-          </div>
-        </div>
-        <div class="col-9">
-    
-
-              <form action="index.php" method="POST">
-                <input type="hidden" name="r" value="dologin">
-                <input type="text" name="user"><br>
-                <input type="password" name="pass"><br>
-                <button>Login</button>
+                <p class="text-center mt-5 mb-0">No tens compte... <a href="registre.php" class="fw-bold text-body"><u>Fes un compte aquí.</u></a></p>
               </form>
-        </div>
-      </div>
-      <div class="row mt-5 mb-4">
-        <div class="col">
-          <div class="bg-light border rounded p-3">
-          <h2>M07 - Desenvolupament web entorn servidor</h2>
-          <p>Professor: Dani Prados</p>
-          
+            </div>
           </div>
         </div>
       </div>
-
     </div>
-    
+  </div>
+</section>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+     <!-- *** Footer inici *** -->
+     <?php
+	 include '../includes/footer.php';
+	?>
+	<!-- *** Footer final *** -->
+
+    <!-- jQuery -->
+    <script src="../utilitats/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../utilitats/js/popper.js"></script>
+    <script src="../utilitats/js/bootstrap.min.js"></script>
+
+    <!-- Plugins afegits -->
+    <script src="../utilitats/js/scrollreveal.min.js"></script>
+    <script src="../utilitats/js/waypoints.min.js"></script>
+    <script src="../utilitats/js/jquery.counterup.min.js"></script>
+    <script src="../utilitats/js/imgfix.min.js"></script> 
+    <script src="../utilitats/js/mixitup.js"></script> 
+    <script src="../utilitats/js/accordions.js"></script>
+    
+    <!-- Fitxer nostre -->
+    <script src="../utilitats/js/custom.js"></script>
+
   </body>
 </html>
