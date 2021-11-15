@@ -894,7 +894,7 @@ contacte
 }
 
 #contact-us .contact-form {
-  background-color: #1b1c1d ; 
+  background-color: #1b1c1d!important; 
   padding: 80px;
   background-position: center center;
   background-repeat: no-repeat;
