@@ -1,3 +1,20 @@
+<?php 
+require '../includes/conectar_DB.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    $nom=htmlspecialchars($_POST["nom"])
+    $email=htmlspecialchars($_POST["email"])
+    $missatge=htmlspecialchars($_POST["missatge"])
+
+$sql = "INSERT INTO contacte (nom,email,missatge) VALUES ('$nom','$email','$missatge');";
+                $stmt = $conn->prepare($sql);
+                $stmt->bindParam('$nom', $_POST['nom']);
+                $stmt->bindParam('$email', $_POST['email']);
+                $stmt->bindParam('$missatge', $_POST['missatge']);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,10 +65,11 @@
                                         <div class="contact-form">
 
                     <div id="map">
-                      <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d47242.71247854812!2d2.9302244202294494!3d42.264229323373556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ba8de7daf77b2d%3A0x2f451468ac1a35cb!2s17600%20Figueres%2C%20Girona!5e0!3m2!1sca!2ses!4v1636988055247!5m2!1sca!2ses" width="100%" height="600px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
                 </div>
+                <form method="POST">
                 <div class="col-lg-6 col-md-6 col-xs-12">
                     <div class="contact-form">
                         <form id="contact" action="" method="post">
@@ -80,9 +98,9 @@
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
-                              <fieldset>
                                 <button type="submit" id="form-submit" class="main-button">Enviar missatge</button>
-                              </fieldset>
+                            </div>
+                        </form>                              
                             </div>
                           </div>
                         </form>
