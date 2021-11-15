@@ -165,16 +165,15 @@ require '../includes/conectar_DB.php';
                         <col width="20%">
         </colgroup>
             <tr>
-               <th></th>
+                <th></th>
                 <th>Reserva</th>
                 <th></th>
                 <th>Usuari </th>
             </tr>
-            <tr>
-              <th>Nom d'habitació</th>
-              <th><?php echo $nomhabitacio; ?></th>
-              <th>Usuari</th>
-              <th><?php echo $usuari; ?></th>
+              <td>{{Nom d'habitació}}</td>
+              <td><?php echo $nomhabitacio; ?></td>
+              <td>Usuari</td>
+              <td><?php echo $usuari; ?></td>
             </tr>
             <tr>
               <td>Data d'inici</td>

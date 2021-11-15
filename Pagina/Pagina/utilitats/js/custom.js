@@ -205,7 +205,7 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
         };
         // all coords and widths are in jsPDF instance's declared units
         // 'inches' in this case
-        pdf.fromHTML(
+        pdf.html(
             source, // HTML string or DOM elem ref.
             margins.left, // x coord
             margins.top, { // y coord
