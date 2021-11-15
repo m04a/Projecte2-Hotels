@@ -75,13 +75,13 @@
                                     </div>
                             </div>
                             <div class="col-lg-12">
-                             <label for="exampleFormControlTextarea1"> Conntingut</label>
+                             <label for="exampleFormControlTextarea1"> Conringut del missatge</label>
                                 <textarea class="form-control" name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
                               </fieldset>
                             </div>
                             <div class="col-lg-12">
                               <fieldset>
-                                <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                                <button type="submit" id="form-submit" class="main-button">Enviar missatge</button>
                               </fieldset>
                             </div>
                           </div>
