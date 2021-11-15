@@ -164,23 +164,23 @@ require '../includes/conectar_DB.php';
                     <col width="20%">
                         <col width="20%">
         </colgroup>
-       
+        <thead>
             <tr>
                <th></th>
                 <th>Reserva</th>
                 <th></th>
                 <th>Usuari </th>
             </tr>
-       
+        </thead>
         <tbody>
             <tr>
-              <td>Nom dhabitacio</td>
-              <td><?php echo $nomhabitacio; ?></td>
-              <td>Usuari</td>
-              <td><?php echo $usuari; ?></td>
+              <th>Nom d'habitació</th>
+              <th><?php echo $nomhabitacio; ?></th>
+              <th>Usuari</th>
+              <th><?php echo $usuari; ?></th>
             </tr>
             <tr>
-              <td>Data dinici</td>
+              <td>Data d'inici</td>
               <td><?php echo $to; ?></td>
               <td>Nom</td>
               <td><?php echo $nombre; ?></td>
