@@ -166,10 +166,8 @@ require '../includes/conectar_DB.php';
         </colgroup>
             <tbody>
             <tr>
-                <th> </th>
-                <th>Reserva</th>
-                <th> </th>
-                <th>Usuari </th>
+                <td colspan="2">Reserva</td>
+                <td colspan="2">Usuari </td>
             </tr>
               <td>Nom d'habitació</td>
               <td><?php echo $nomhabitacio; ?></td>
