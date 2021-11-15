@@ -96,6 +96,13 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
+        $stmt3 = $conn->prepare("select count(idtipo) from tipo where vacinicio <= :vacinicio AND vacfin >= :vacfin and idtipo = :idtipo");
+        //select count(idtipo) from tipo where vacinicio <= '2021-11-15' AND vacfin >= '2021-11-16' and idtipo = '2';
+        $stmt3->bindParam(':vacinicio', $finicio->format('Y-m-d'));
+        $stmt3->bindParam(':vacfin', $ffin->format('Y-m-d'));
+        $stmt3->bindParam(':idtipo', $idtipo);
+        $stmt3->execute(); 
+        $vacas = $stmt3->fetchAll();
         $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
         if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad){
         ?>
@@ -110,9 +117,11 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
                             </span>
 
-                            <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
+                            <h4><?php echo "<tr><td>{$nom}</td>";
+                            print_r($vacas) ?></h4>
                             <p>
-                                <i class="fa fa-info-circle"></i><?php echo "<tr><td> {$descripcion}</td>"; ?>
+                                <i class="fa fa-info-circle"></i><?php echo "<tr><td> {$descripcion}</td>";
+                                $stmt3->debugDumpParams(); ?>
                             </p>
                             <p>
                                 <i class="fa fa-bed"></i>
