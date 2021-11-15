@@ -145,20 +145,32 @@ if(isset($_POST["crearusuari"])){
     </head>
     
     <body> 
-		 <nav class="navbar navbar-light"
-   <ul class="nav nav-pills">
-  <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
-    <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
-  <li class="nav-item">
+      <li class="nav-item">
     <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
-</ul>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
 </nav>
 <?php if(!empty($message)): ?>
       <p> <?= $message ?> </p>
