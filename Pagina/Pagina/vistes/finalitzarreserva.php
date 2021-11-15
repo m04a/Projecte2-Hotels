@@ -166,10 +166,10 @@ require '../includes/conectar_DB.php';
         </colgroup>
             <tbody>
             <tr>
-                <td >Reserva</td>
-                <td ><?php ?> </td>
-                <td >Usuari </td>
-                <td > <?php ?> </td>
+                <td > </td>
+                <td > </td>
+                <td > </td>
+                <td > </td>
             </tr>
             <tr>
               <td>Nom d'habitació</td>
