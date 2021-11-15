@@ -211,9 +211,8 @@ require '../includes/conectar_DB.php';
             </tr>
         </tbody>
     </table>
-</div> 
-<a href="javascript:generatePDF()" class="btn btn-primary">Imprimir PDF</a>-->
-<button onclick="generatePDF()">Imprimir PDF</button>
+</div> -->
+<a href="javascript:generatePDF()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
