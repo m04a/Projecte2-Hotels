@@ -167,9 +167,9 @@ require '../includes/conectar_DB.php';
             <tbody>
             <tr>
                 <td >Reserva</td>
-                <td ></td>
+                <td >Datos </td>
                 <td >Usuari </td>
-                <td > </td>
+                <td > Datos </td>
             </tr>
               <td>Nom d'habitació</td>
               <td><?php echo $nomhabitacio; ?></td>
