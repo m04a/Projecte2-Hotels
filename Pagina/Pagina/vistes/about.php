@@ -42,16 +42,18 @@
     <!-- *** Capçalera Final *** -->
 
     <!-- *** About body inici *** -->
-    <div class="row">
-    <div class="card text-white bg-dark mb-6" style="max-width: 18rem;">
+    <div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
   <div class="card-body">
-    <p class="card-text"><p> Som una empresa d'hosteleria reconeguda en el nostre sector, a la categoria d'HOTEL TRES ESTRELLES i amb totes les certificacions d'acord amb les normes vigents.
+    <p class="card-text">Som una empresa d'hosteleria reconeguda en el nostre sector, a la categoria d'HOTEL TRES ESTRELLES i amb totes les certificacions d'acord amb les normes vigents.
 Comptem amb moltes habitacions, i totes elles condicionades per a una bona estada, així mateix; destaquem per l´atenció personalitzada que oferim als nostres hostes, garantint el compliment de cada un dels nostres objectius, ja que volem oferir serveis de qualitat.
 Amb el pas dels anys hem anat innovant, aconseguint així posicionar-nos com un dels hotels de prestigi a la ciutat de Figueres.
-Al nostre HotelMK , oferim serveis d'allotjament complint criteris d'excel·lència i responsabilitat que caracteritza la nostra sostenibilitat. </p></p>
+Al nostre HotelMK , oferim serveis d'allotjament complint criteris d'excel·lència i responsabilitat que caracteritza la nostra sostenibilitat..</p>
   </div>
 </div>
-</div>
+  
     
    <!-- *** about boduy final *** -->
 
