@@ -881,7 +881,7 @@ ul.social-icons li a:hover {
 
 /* 
 ---------------------------------------------
-contact
+contacte
 --------------------------------------------- 
 */
 
@@ -894,8 +894,8 @@ contact
 }
 
 #contact-us .contact-form {
+  background-color: #1b1c1d ; 
   padding: 80px;
-  background-image: url(../images/contact-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
