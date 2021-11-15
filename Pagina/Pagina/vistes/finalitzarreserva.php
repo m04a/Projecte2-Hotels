@@ -157,60 +157,55 @@ require '../includes/conectar_DB.php';
   </div>
 </div>
 <div id="customers">
-    <table id="tab_customers" class="table table-striped">
-        <colgroup>
-            <col width="20%">
+        <table id="tab_customers" class="table table-striped" >
+            <colgroup>
                 <col width="20%">
-                    <col width="20%">
-                        <col width="20%">
-        </colgroup>
-        <thead>  
-            <tr>
-                <th></th>
-                <th>Reserva</th>
-                <th></th>
-                <th>Usuari </th>
-            </tr>
+                <col width="20%">
+                <col width="20%">
+                <col width="20%">
+            </colgroup>
+            <thead>         
+                <tr class='warning'>
+                    <th>Country</th>
+                    <th>Population</th>
+                    <th>Date</th>
+                    <th>Age</th>
+                </tr>
             </thead>
             <tbody>
-              <td>Nom d'habitació</td>
-              <td><?php echo $nomhabitacio; ?></td>
-              <td>Usuari</td>
-              <td><?php echo $usuari; ?></td>
-            </tr>
-            <tr>
-              <td>Data d'inici</td>
-              <td><?php echo $to; ?></td>
-              <td>Nom</td>
-              <td><?php echo $nombre; ?></td>
-            </tr>
-             <tr>
-              <td>Data final</td>
-              <td><?php echo $from; ?></td>
-              <td>Cognom</td>
-              <td><?php echo $apellidos; ?></td>
-            </tr>
-            <tr>
-              <td>Numero de habitacions</td>
-              <td><?php echo $nhabitacio; ?></td>
-              <td>Data de naixament</td>
-              <td><?php echo $fechanacimiento; ?></td>
-            </tr>
-            <tr>
-              <td>Numero de persones</td>
-              <td><?php echo $npersones; ?></td>
-              <td>Sexe</td>
-              <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td><h4>PREU TOTAL RESERVA</h4></td>
-                <td><h2><?php echo $preciototal;?> €</h2></td>
-            </tr>
+                <tr>
+                    <td>Chinna</td>
+                    <td>1,363,480,000</td>
+                    <td>March 24, 2014</td>
+                    <td>19.1</td>
+                </tr>
+                <tr>
+                    <td>India</td>
+                    <td>1,241,900,000</td>
+                    <td>March 24, 2014</td>
+                    <td>17.4</td>
+                </tr>
+                <tr>
+                    <td>United States</td>
+                    <td>317,746,000</td>
+                    <td>March 24, 2014</td>
+                    <td>4.44</td>
+                </tr>
+                <tr>
+                    <td>Indonesia</td>
+                    <td>249,866,000</td>
+                    <td>July 1, 2013</td>
+                    <td>3.49</td>
+                </tr>
+                <tr>
+                    <td>Brazil</td>
+                    <td>201,032,714</td>
+                    <td>July 1, 2013</td>
+                    <td>2.81</td>
+                </tr>
             </tbody>
-    </table>
-</div>
+        </table> 
+    </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
      <?php
