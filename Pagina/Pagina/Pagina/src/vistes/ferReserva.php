@@ -18,7 +18,7 @@ try {
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam($numhab);
+    $stmt->bindParam($tes);
  
     // execute our query
     $stmt->execute();
