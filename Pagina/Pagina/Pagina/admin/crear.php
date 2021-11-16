@@ -80,7 +80,6 @@ if(isset($_POST["crearhabitacio"])){
         die ('ERROR: ' . $exception->getMessage());
     }
 }
-if(!$_SESSION["tipo"]="gestor"){
     if(isset($_POST["crearusuari"])){
     try{
             if (!empty($_POST['usuari']) && !empty($_POST['password'])){
@@ -149,7 +148,6 @@ if(!$_SESSION["tipo"]="gestor"){
             die ('ERROR: ' . $exception->getMessage());
         }
     }
-}
 ?>
 
 <html lang="en">
@@ -186,13 +184,15 @@ if(!$_SESSION["tipo"]="gestor"){
       <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
+  <?php if(!$_SESSION["tipo"]=="gestor"){ ?>
       <li class="nav-item">
         <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
+  <?php } ?>
       <li class="nav-item">
     <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
-  <?php if(!$_SESSION["tipo"]="gestor"){ ?>
+  <?php if(!$_SESSION["tipo"]=="gestor"){ ?>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>

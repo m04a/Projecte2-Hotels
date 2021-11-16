@@ -1,8 +1,8 @@
 <?php
 session_start();
-      if($_SESSION["tipo"]="admin"){
+      if($_SESSION["tipo"]=="admin"){
             
-      }elseif($_SESSION["tipo"]="gestor"){
+      }elseif($_SESSION["tipo"]=="gestor"){
            
       }else{
             header('Location: middlewarefilter.php');
