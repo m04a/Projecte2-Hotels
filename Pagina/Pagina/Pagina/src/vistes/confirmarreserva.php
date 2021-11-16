@@ -23,15 +23,10 @@ require '../includes/conectar_DB.php';
                     $_SESSION["precio"]=$precio;
                     $_SESSION["nom"]=$nom;
                     $_SESSION["numhab"]=$numhab;
-                    $usuari= $_SESSION["usuari"];
 
                     }
-
-                    
-                    try {
-
-                    // prepare select query
-                     $query = "SELECT nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = '$usuari' LIMIT 0,1";
+                    $usuari= $_SESSION["usuari"];
+                    $query = "SELECT nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = '$usuari' LIMIT 0,1";
 
                      $stmt = $conn->prepare($query);
  
@@ -51,12 +46,6 @@ require '../includes/conectar_DB.php';
                     $fechanacimiento = $row['fechanacimiento'];
                     $sexo = $row['sexo'];
                     $email = $row['email'];
-}
- 
-// show error
-catch(PDOException $exception){
-    die('ERROR: ' . $exception->getMessage());
-}
 if(isset($_POST['treasure'])){
 
     try{
