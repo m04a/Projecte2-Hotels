@@ -100,7 +100,7 @@ if(isset($_POST["crearusuari"])){
 				$stmt->bindParam(':sexo', $sexo);
 				$stmt->bindParam(':email', $email);
 				$usuari=htmlspecialchars(strip_tags($_POST['usuari']));
-                $password = password_hash($htmlspecialchars(strip_tags($_POST['password'])), PASSWORD_DEFAULT);
+                $password = password_hash(htmlspecialchars(strip_tags($_POST['password'])), PASSWORD_DEFAULT);
 				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
 				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
 				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
