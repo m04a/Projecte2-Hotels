@@ -2,5 +2,5 @@
     session_start();
     unset($_SESSION["usuari"]);
     unset($_SESSION["tipo"]);
-    header("Location:../index.php?r=index");
+    header("Location:../public/index.php?r=index");
 ?>
