@@ -13,7 +13,7 @@ require '../includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE '$numhab' = idtipo LIMIT 0,1";
+    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE '$tes' = idtipo LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
@@ -157,7 +157,7 @@ catch(PDOException $exception){
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
                                     <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
-                                    <input type="hidden" name="numhab" value="<?php echo $numhab;?>" />
+                                    <input type="hidden" name="numhab" value="<?php echo $tes;?>" />
                                     <input type="hidden" name="nom" value="<?php echo $nom;?>" />
                                     <input type="hidden" name="precio" value="<?php echo $precio;?>" />
                                   
