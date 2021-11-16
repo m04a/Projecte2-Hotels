@@ -2,9 +2,9 @@
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
         if(!empty($_POST['idtipo'])){
-          $numhab = $_POST["idtipo"];
-          $_SESSION['numhab'] = $numhab; 
-        }else{ $numhab = $_SESSION['numhab']; }
+          $tes = $_POST["idtipo"];
+          $_SESSION['tes'] = $tes; 
+        }else{ $tes = $_SESSION['tes']; }
        
 //include database connection
 require '../includes/conectar_DB.php';
