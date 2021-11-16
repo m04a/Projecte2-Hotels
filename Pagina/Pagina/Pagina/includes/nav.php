@@ -8,7 +8,7 @@
                 <div>
                     <nav class="main-nav">
                         <!-- ***** Logo Inici ***** -->
-                        <a href="index.php?r=index" class="logo">HOTEL <em> MK</em></a>
+                        <a href="index.php" class="logo">HOTEL <em> MK</em></a>
                         <!-- ***** Logo Final ***** -->
                         <!-- ***** Menu Inici ***** -->
                         <ul class="nav">
@@ -35,13 +35,13 @@
                                     <a class="dropdown-item" href="../includes/logout.php">Tancar sessió</a>
                                 </div>
                             </li>
-                            <li><a class="responsiveItem" href=""><?php echo $_SESSION["usuari"]; ?></a></li> 
+                            <li><a class="responsiveItem" hef=""><?php echo $_SESSION["usuari"]; ?></a></li> 
                             <li><a class="responsiveItem" href=""><?php echo $_SESSION["tipo"]; ?></a></li> 
                             <li><a class="responsiveItem" href="../includes/logout.php">Tancar sessió</a></li> 
                             <?php 
                              }else{ ?>
                             <li><a href="index.php?r=login"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
-                            <li><a href="index.php?r=Registre"> Registre</a></li> 
+                            <li><a href="index.php?r=registre"> Registre</a></li> 
                             <?php
                          }
                             ?>
