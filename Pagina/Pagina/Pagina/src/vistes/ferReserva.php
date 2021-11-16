@@ -42,10 +42,10 @@ try {
     $_SESSION["npersones"]=$npersones;
   }
   else{
-    $_SESSION["to"]=$to;
-    $_SESSION["from"]=$from;                     
-    $_SESSION["nhabitacio"]=$nhabitacio;
-    $_SESSION["npersones"]=$npersones;
+    $to=$_SESSION["to"];
+    $from=$_SESSION["from"];                     
+    $nhabitacio=$_SESSION["nhabitacio"];
+    $npersones=$_SESSION["npersones"];
 }
 }
  
