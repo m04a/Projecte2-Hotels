@@ -88,26 +88,32 @@ if(isset($_POST["crearusuari"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
-			$stmt = $conn->prepare("insert into usuario 
-            (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
-			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
-				$stmt->bindParam(':usuari', $usuari);
-                $password = password_hash($password, PASSWORD_DEFAULT);
-				$stmt->bindParam(':password', $password);
-				$stmt->bindParam(':nombre', $nombre);
-				$stmt->bindParam(':apellidos', $apellidos);
-				$fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
-				$stmt->bindParam(':fechanacimiento', $fechanacimiento);
-				$stmt->bindParam(':sexo', $sexo);
-				$stmt->bindParam(':email', $email);
-				$usuari=htmlspecialchars(strip_tags($_POST['usuari']));
-				$password=htmlspecialchars(strip_tags($_POST['password']));
+                $usuari=htmlspecialchars(strip_tags($_POST['usuari']));
+                $password = password_hash(htmlspecialchars(strip_tags($_POST['password'])), PASSWORD_DEFAULT);
 				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
 				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
 				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+                $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
 				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
 				$email=htmlspecialchars($_POST['email']);
-
+			$stmt = $conn->prepare("insert into usuario 
+            (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
+			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
+                if(empty($usuari)){
+                    $stmt->bindParam(':usuari', $null);
+                }else{
+                    $stmt->bindParam(':usuari', $usuari);
+                }
+				$stmt->bindParam(':password', $password);
+				$stmt->bindParam(':nombre', $nombre);
+				$stmt->bindParam(':apellidos', $apellidos);
+                if(empty($fechanacimiento)){
+                    $stmt->bindParam(':fechanacimiento', $null);
+                }else{
+				    $stmt->bindParam(':fechanacimiento', $fechanacimiento);
+                }
+				$stmt->bindParam(':sexo', $sexo);
+				$stmt->bindParam(':email', $email);
 			if ($stmt->execute()) {
 			  $message = 'El usuari ha sigut creat';
 			} else {
