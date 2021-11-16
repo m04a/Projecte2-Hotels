@@ -1,7 +1,0 @@
-Etapa 3  (w43)
-Hauríeu de tenir:
-Codi actualitzat amb la llibreria jQuery / jQuery-UI FET
-Framework CSS vàlid i opcional: Bootstrap FET
-Gestió de preus. FET
-Inici del motor de reserves
-El codi backend organitzat amb el patró MVC.
