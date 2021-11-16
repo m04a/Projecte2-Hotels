@@ -1,7 +1,11 @@
 <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-    $numhab = $_POST["idtipo"];
+        if(!empty($_POST['idtipo'])){
+          $numhab = $_POST["idtipo"];
+          $_SESSION['numhab'] = $numhab; 
+        }else{ $numhab = $_SESSION['numhab']; }
+       
 //include database connection
 require '../includes/conectar_DB.php';
  
@@ -136,7 +140,7 @@ catch(PDOException $exception){
 
   </div>
       
-                                <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
+                                <a href="index.php?r=reservabuscador" class='btn btn-danger'>Tornar a reserves</a>
                                  <form action='confirmarreserva.php' method='post'>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
@@ -149,7 +153,7 @@ catch(PDOException $exception){
                                             <button type="submit" class='btn btn-primary mybuttoncool m-r-6em '>Reservar</button> 
                                           </form>
                     <?php } else{ ?>
-                 <a href="habitacions.php" class='btn btn-danger'>Tornar a habitacions</a>
+                 <a href="index.php?r=habitacions" class='btn btn-danger'>Tornar a habitacions</a>
          <?php
          }
   ?>
