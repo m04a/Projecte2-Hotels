@@ -12,11 +12,11 @@
                         <!-- ***** Logo Final ***** -->
                         <!-- ***** Menu Inici ***** -->
                         <ul class="nav">
-                            <li><a href="index.php=index" class="active">Inici</a></li>
-                            <li><a href="index.php=habitacions">Habitacions</a></li>
-                            <li><a href="index.php=reservabuscador">Reserva</a></li>
-							<li><a href="index.php=about">Sobre Nosaltes</a></li>
-                            <li><a href="index.php=contacte">Contacte</a></li> 
+                            <li><a href="index.php?r=index" class="active">Inici</a></li>
+                            <li><a href="index.php?r=habitacions">Habitacions</a></li>
+                            <li><a href="index.php?r=reservabuscador">Reserva</a></li>
+							<li><a href="index.php?r=about">Sobre Nosaltes</a></li>
+                            <li><a href="index.php?r=contacte">Contacte</a></li> 
 							<?php
                             if($_SESSION["usuari"]) {
                             ?>
@@ -40,8 +40,8 @@
                             <li><a class="responsiveItem" href="../includes/logout.php">Tancar sessió</a></li> 
                             <?php 
                              }else{ ?>
-                            <li><a href="login.php"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
-                            <li><a href="registre.php"> Registre</a></li> 
+                            <li><a href="index.php?r=login"><i class="fa fa-sign-in" aria-hidden="true"></i> Iniciar Sessió</a></li> 
+                            <li><a href="index.php?r=Registre"> Registre</a></li> 
                             <?php
                          }
                             ?>
