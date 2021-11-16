@@ -1,6 +1,6 @@
 <?php
 // include database connection
-require '../includes/conectar_DB.php';
+require 'conectar_DB.php';
 require 'middleware.php';    
 
 

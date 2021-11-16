@@ -16,7 +16,7 @@
 $idtipo=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
 
 //include database connection
-require '../includes/conectar_DB.php';
+require 'conectar_DB.php';
 require 'middleware.php';    
 
  
