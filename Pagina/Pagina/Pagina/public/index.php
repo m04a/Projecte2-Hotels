@@ -19,7 +19,7 @@ include "../src/config.php";
 
 include "../src/controladors/index.php";
 include "../src/controladors/login.php";
-include "../src/controladors/portada.php";
+include "../src/controladors/contacte.php";
 
 include "../src/middleware/middleAdmin.php";
 
