@@ -152,7 +152,7 @@ catch(PDOException $exception){
   </div>
       
                                 <a href="index.php?r=reservabuscador" class='btn btn-danger'>Tornar a reserves</a>
-                                 <form action='confirmarreserva.php' method='post'>
+                                 <form action='index.php?r=confirmarreserva' method='post'>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
