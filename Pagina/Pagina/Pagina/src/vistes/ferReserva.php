@@ -31,11 +31,22 @@ try {
     $descripcion = $row['descripcion'];
     $precio = $row['precio'];
     $m2 = $row['m2'];
+    if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
     $to = $_POST["fins"];
     $from = $_POST["desde"];
     $nhabitacio = $_POST["nhabitacio"];
     $npersones = $_POST["npersones"];
-
+    $_SESSION["to"]=$to;
+    $_SESSION["from"]=$from;                     
+    $_SESSION["nhabitacio"]=$nhabitacio;
+    $_SESSION["npersones"]=$npersones;
+  }
+  else{
+    $_SESSION["to"]=$to;
+    $_SESSION["from"]=$from;                     
+    $_SESSION["nhabitacio"]=$nhabitacio;
+    $_SESSION["npersones"]=$npersones;
+}
 }
  
 // show error
