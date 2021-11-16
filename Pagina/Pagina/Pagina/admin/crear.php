@@ -88,6 +88,7 @@ if(isset($_POST["crearusuari"])){
 				die("Connection failed: " . $conn->connect_error);
 			} 
 				// insertar query
+            $password = password_hash($password, PASSWORD_DEFAULT);
 			$stmt = $conn->prepare("insert into usuario 
             (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
 			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
