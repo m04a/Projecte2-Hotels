@@ -23,11 +23,13 @@ require '../includes/conectar_DB.php';
                     $_SESSION["precio"]=$precio;
                     $_SESSION["nom"]=$nom;
                     $_SESSION["numhab"]=$numhab;
+                    $usuari= $_SESSION["usuari"];
 
                     }
 
-                    $usuari= $_SESSION["usuari"];
+                    
                     try {
+
                     // prepare select query
                      $query = "SELECT nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = '$usuari' LIMIT 0,1";
 
@@ -147,7 +149,7 @@ if(isset($_POST['treasure'])){
     <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm">
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+<form action="index.php?r=confirmarreserva" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
             <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
