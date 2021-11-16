@@ -20,6 +20,10 @@ include "../src/config.php";
 include "../src/controladors/index.php";
 include "../src/controladors/login.php";
 include "../src/controladors/contacte.php";
+include "../src/controladors/habitacions.php";
+include "../src/controladors/reservabuscador.php";
+include "../src/controladors/about.php";
+include "../src/controladors/registre.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -34,10 +38,23 @@ if ($r === "contacte") {
     $resposta = ctrlContacte($peticio, $resposta, $contenidor);
 } elseif ($r === "index") {
     $resposta = ctrlIndex($peticio, $resposta, $contenidor);
-} elseif ($r === "login") {
+}
+elseif ($r === "habitacions") {
+    $resposta = ctrlHabitacions($peticio, $resposta, $contenidor);
+}
+elseif ($r === "reservabuscador") {
+    $resposta = ctrlReserva($peticio, $resposta, $contenidor);
+}
+elseif ($r === "about") {
+    $resposta = ctrlAbout($peticio, $resposta, $contenidor);
+}
+elseif ($r === "registre") {
+    $resposta = ctrlRegistre($peticio, $resposta, $contenidor);
+}
+ elseif ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
 } elseif ($r == "") {
-    $resposta = ctrlPortada($peticio, $resposta, $contenidor);
+    $resposta = ctrlIndex($peticio, $resposta, $contenidor);
 } else {
   //  $resposta = ctrlError($peticio, $resposta, $contenidor);
 }

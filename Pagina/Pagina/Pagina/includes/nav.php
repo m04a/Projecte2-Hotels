@@ -8,7 +8,7 @@
                 <div>
                     <nav class="main-nav">
                         <!-- ***** Logo Inici ***** -->
-                        <a href="index.php" class="logo">HOTEL <em> MK</em></a>
+                        <a href="index.php?r=index" class="logo">HOTEL <em> MK</em></a>
                         <!-- ***** Logo Final ***** -->
                         <!-- ***** Menu Inici ***** -->
                         <ul class="nav">
