@@ -2,9 +2,9 @@
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
         if(!empty($_POST['idtipo'])){
-          $tes = $_POST["idtipo"];
-          $_SESSION['tes'] = $tes; 
-        }else{ $tes = $_SESSION['tes']; }
+          $numhab = $_POST["idtipo"];
+          $_SESSION['numhab'] = $tes; 
+        }else{ $tes = $_SESSION['numhab']; }
        
 //include database connection
 require '../includes/conectar_DB.php';
@@ -13,12 +13,12 @@ require '../includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE '$tes' = idtipo LIMIT 0,1";
+    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE :numhab = idtipo LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam($tes);
+    $stmt->bindParam(':numhab',$numhab);
  
     // execute our query
     $stmt->execute();
@@ -157,7 +157,7 @@ catch(PDOException $exception){
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
                                     <input type="hidden" name="npersones" value="<?php echo $npersones;?>" />
-                                    <input type="hidden" name="numhab" value="<?php echo $tes;?>" />
+                                    <input type="hidden" name="numhab" value="<?php echo $numhab;?>" />
                                     <input type="hidden" name="nom" value="<?php echo $nom;?>" />
                                     <input type="hidden" name="precio" value="<?php echo $precio;?>" />
                                   
