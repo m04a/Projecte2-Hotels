@@ -1,8 +1,11 @@
 <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-$numhab=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
-
+        if(!empty($_POST['idtipo'])){
+          $numhab = $_POST["idtipo"];
+          $_SESSION['numhab'] = $tes; 
+        }else{ $tes = $_SESSION['numhab']; }
+       
 //include database connection
 require '../includes/conectar_DB.php';
  
@@ -10,12 +13,12 @@ require '../includes/conectar_DB.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE idtipo = ? LIMIT 0,1";
+    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE :numhab = idtipo LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(1, $numhab);
+    $stmt->bindParam(':numhab',$numhab);
  
     // execute our query
     $stmt->execute();
@@ -28,11 +31,22 @@ try {
     $descripcion = $row['descripcion'];
     $precio = $row['precio'];
     $m2 = $row['m2'];
+    if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
     $to = $_POST["fins"];
     $from = $_POST["desde"];
     $nhabitacio = $_POST["nhabitacio"];
     $npersones = $_POST["npersones"];
-
+    $_SESSION["to"]=$to;
+    $_SESSION["from"]=$from;                     
+    $_SESSION["nhabitacio"]=$nhabitacio;
+    $_SESSION["npersones"]=$npersones;
+  }
+  else{
+    $to=$_SESSION["to"];
+    $from=$_SESSION["from"];                     
+    $nhabitacio=$_SESSION["nhabitacio"];
+    $npersones=$_SESSION["npersones"];
+}
 }
  
 // show error
@@ -137,8 +151,8 @@ catch(PDOException $exception){
 
   </div>
       
-                                <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
-                                 <form action='confirmarreserva.php' method='post'>
+                                <a href="index.php?r=reservabuscador" class='btn btn-danger'>Tornar a reserves</a>
+                                 <form action='index.php?r=confirmarreserva' method='post'>
                                     <input type="hidden" name="desde" value="<?php echo $from;?>" />
                                     <input type="hidden" name="fins" value="<?php echo $to;?>" />
                                     <input type="hidden" name="nhabitacio" value="<?php echo $nhabitacio;?>" />
@@ -150,7 +164,7 @@ catch(PDOException $exception){
                                             <button type="submit" class='btn btn-primary mybuttoncool m-r-6em '>Reservar</button> 
                                           </form>
                     <?php } else{ ?>
-                 <a href="habitacions.php" class='btn btn-danger'>Tornar a habitacions</a>
+                 <a href="index.php?r=habitacions" class='btn btn-danger'>Tornar a habitacions</a>
          <?php
          }
   ?>

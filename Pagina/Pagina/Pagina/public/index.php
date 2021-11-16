@@ -24,6 +24,9 @@ include "../src/controladors/habitacions.php";
 include "../src/controladors/reservabuscador.php";
 include "../src/controladors/about.php";
 include "../src/controladors/registre.php";
+include "../src/controladors/ferreserva.php";
+include "../src/controladors/confirmarreserva.php";
+
 
 include "../src/middleware/middleAdmin.php";
 
@@ -38,6 +41,12 @@ if ($r === "contacte") {
     $resposta = ctrlContacte($peticio, $resposta, $contenidor);
 } elseif ($r === "index") {
     $resposta = ctrlIndex($peticio, $resposta, $contenidor);
+}
+elseif ($r === "confirmarreserva") {
+    $resposta = ctrlConfirmarReserva($peticio, $resposta, $contenidor);
+}
+elseif ($r === "ferReserva") {
+    $resposta = ctrlFerreserva($peticio, $resposta, $contenidor);
 }
 elseif ($r === "habitacions") {
     $resposta = ctrlHabitacions($peticio, $resposta, $contenidor);
