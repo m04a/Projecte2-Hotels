@@ -174,7 +174,7 @@ if(isset($_POST["crearhabitacio"])){
     <body> 
 		 
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">ADMIN <?php print_r($_SESSION["tipo"]); ?></a>
+  <a class="navbar-brand">ROL <?php print_r($_SESSION["tipo"]); ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -184,7 +184,7 @@ if(isset($_POST["crearhabitacio"])){
       <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
-  <?php if(!$_SESSION["tipo"]=="gestor"){ ?>
+  <?php if($_SESSION["tipo"]=="admin"){ ?>
       <li class="nav-item">
         <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
@@ -192,7 +192,7 @@ if(isset($_POST["crearhabitacio"])){
       <li class="nav-item">
     <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
-  <?php if(!$_SESSION["tipo"]=="gestor"){ ?>
+  <?php if($_SESSION["tipo"]=="admin"){ ?>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
