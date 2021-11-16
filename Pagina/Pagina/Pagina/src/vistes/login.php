@@ -1,7 +1,7 @@
 <?php
 
-//require '../includes/conectar_DB.php';
-/*require '../includes/dologin.php';*/
+require '../includes/conectar_DB.php';
+require '../includes/dologin.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
