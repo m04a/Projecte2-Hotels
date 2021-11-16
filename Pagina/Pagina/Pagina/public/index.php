@@ -17,10 +17,9 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/config.php";
 
 
-include "../src/controladors/portada.php";
+include "../src/controladors/index.php";
 include "../src/controladors/login.php";
-include "../src/controladors/dologin.php";
-include "../src/controladors/admin.php";
+include "../src/controladors/portada.php";
 
 include "../src/middleware/middleAdmin.php";
 
@@ -31,10 +30,10 @@ $contenidor = new Emeset\Contenidor($config);
 $resposta = $contenidor->resposta();
 $peticio = $contenidor->peticio();
 
-if ($r === "admin") {
-    $resposta = middleAdmin($peticio, $resposta, $contenidor, "ctrlAdmin");
-} elseif ($r === "dologin") {
-    $resposta = ctrldoLogin($peticio, $resposta, $contenidor);
+if ($r === "contacte") {
+    $resposta = ctrlContacte($peticio, $resposta, $contenidor);
+} elseif ($r === "index") {
+    $resposta = ctrlIndex($peticio, $resposta, $contenidor);
 } elseif ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
 } elseif ($r == "") {
