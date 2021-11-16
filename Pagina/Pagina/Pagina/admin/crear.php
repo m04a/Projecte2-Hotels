@@ -112,6 +112,7 @@ if(isset($_POST["crearusuari"])){
 			  $message = 'El usuari ha sigut creat';
 			} else {
 			  $message = 'Ha hagut algun error';
+              $stmt->debugDumpParams();
 			}
 		}else{
 			$message = 'usuari o password no establecidos';
