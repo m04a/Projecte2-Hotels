@@ -1,7 +1,6 @@
 <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-$numhab=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
 
 //include database connection
 require '../includes/conectar_DB.php';
@@ -29,6 +28,7 @@ try {
     $precio = $row['precio'];
     $m2 = $row['m2'];
     $to = $_POST["fins"];
+    $numhab = $_POST["numhab"];
     $from = $_POST["desde"];
     $nhabitacio = $_POST["nhabitacio"];
     $npersones = $_POST["npersones"];
