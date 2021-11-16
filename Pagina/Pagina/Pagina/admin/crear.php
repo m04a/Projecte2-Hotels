@@ -92,6 +92,7 @@ if(isset($_POST["crearusuari"])){
             (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
 			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
 				$stmt->bindParam(':usuari', $usuari);
+                $password = password_hash($password, PASSWORD_DEFAULT);
 				$stmt->bindParam(':password', $password);
 				$stmt->bindParam(':nombre', $nombre);
 				$stmt->bindParam(':apellidos', $apellidos);
@@ -101,7 +102,6 @@ if(isset($_POST["crearusuari"])){
 				$stmt->bindParam(':email', $email);
 				$usuari=htmlspecialchars(strip_tags($_POST['usuari']));
 				$password=htmlspecialchars(strip_tags($_POST['password']));
-                $password = password_hash($password, PASSWORD_DEFAULT);
 				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
 				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
 				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
