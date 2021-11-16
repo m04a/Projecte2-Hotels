@@ -1,7 +1,7 @@
 <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-    $numhab = $_POST["idtipos"];
+    $numhab = $_POST["idtipo"];
 //include database connection
 require '../includes/conectar_DB.php';
  
@@ -14,7 +14,7 @@ try {
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(1, $numhab);
+    $stmt->bindParam($numhab);
  
     // execute our query
     $stmt->execute();
