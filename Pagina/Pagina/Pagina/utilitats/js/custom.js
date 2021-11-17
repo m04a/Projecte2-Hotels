@@ -120,7 +120,6 @@
           defaultDate: "+1w",
           changeMonth: true,
           numberOfMonths: 1
-           minDate: 0,
         })
         .on( "change", function() {
           to.datepicker( "option", "minDate", getDate( this ) );
@@ -129,7 +128,6 @@
         defaultDate: "+1w",
         changeMonth: true,
         numberOfMonths: 1
-        minDate: 0,
       })
       .on( "change", function() {
         from.datepicker( "option", "maxDate", getDate( this ) );
