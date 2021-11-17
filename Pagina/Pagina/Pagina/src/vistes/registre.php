@@ -3,6 +3,7 @@
 
 require '../includes/conectar_DB.php';
 require '../includes/doregistre.php';
+require '../includes/checkuser.php';
 
  
 ?>
@@ -96,7 +97,7 @@ require '../includes/doregistre.php';
                   <button type="submit" name="Submit1" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Registrar-te</button>
                 </div>
 
-                <p class="text-center mt-5 mb-0">Tens una compte ja?? <a href="login.php" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
+                <p class="text-center mt-5 mb-0">Tens una compte ja? <a href="index.php?r=login" class="fw-bold text-body"><u>Fes login aquí</u></a></p>
               </form>
             </div>
           </div>

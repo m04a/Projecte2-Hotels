@@ -2,6 +2,8 @@
 
 require '../includes/conectar_DB.php';
 require '../includes/dologin.php';
+require '../includes/checkuser.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +68,7 @@ require '../includes/dologin.php';
                   <button type="submit" name="login" class="btn btn-danger btn-block btn-lg gradient-custom-4 text-body">Login</button>
                 </div>
 
-                <p class="text-center mt-5 mb-0">No tens compte... <a href="registre.php" class="fw-bold text-body"><u>Fes un compte aquí.</u></a></p>
+                <p class="text-center mt-5 mb-0">No tens compte... <a href="index.php?r=registre" class="fw-bold text-body"><u>Fes un compte aquí.</u></a></p>
               </form>
             </div>
           </div>
