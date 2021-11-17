@@ -23,7 +23,7 @@ require 'middleware.php';
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT usuari, password, nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = ? LIMIT 0,1";
+    $query = "SELECT usuari, nombre, apellidos, fechanacimiento, sexo, email FROM usuario WHERE usuari = ? LIMIT 0,1";
 
     $stmt = $conn->prepare($query);
  
@@ -38,7 +38,6 @@ try {
  
     // values to fill up our form
     $usuari = $row['usuari'];
-    $password = $row['password'];
     $nombre = $row['nombre'];
     $apellidos = $row['apellidos'];
     $fechanacimiento = $row['fechanacimiento'];
@@ -62,7 +61,7 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE usuario
-                    SET nombre=:nombre,password=:password,apellidos=:apellidos,
+                    SET nombre=:nombre,apellidos=:apellidos,
                     fechanacimiento=:fechanacimiento,sexo=:sexo,email=:email
                     WHERE usuari = :usuari";
                     
@@ -72,7 +71,6 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
-        $password=htmlspecialchars(strip_tags($_POST['password']));
         $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
         $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
         $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $_POST['fechanacimiento'])));
@@ -81,7 +79,6 @@ if($_POST){
         $email=htmlspecialchars(strip_tags($_POST['email']));
  
         // bind the parameters
-        $stmt->bindParam(':password', $password);
         $stmt->bindParam(':nombre', $nombre);
         $stmt->bindParam(':usuari', $usuari);
         $stmt->bindParam(':apellidos', $apellidos);
@@ -107,10 +104,6 @@ if($_POST){
 ?>
  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"] . "?usuari={$usuari}");?>" method="post">
  <table class='table table-hover table-responsive table-bordered'>
-     <tr>
-        <td>Contrasenya</td>
-            <td><input type='password' name='password' value="<?php echo htmlspecialchars($password, ENT_QUOTES);  ?>" class='form-control'/></td>
-    </tr>
     <tr>
         <td>Nom</td>
             <td><input type='text' name='nombre' value="<?php echo htmlspecialchars($nombre, ENT_QUOTES);  ?>" class='form-control' /></td>
