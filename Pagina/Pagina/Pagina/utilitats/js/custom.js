@@ -114,6 +114,7 @@
  yearSuffix: ''
  };
  $.datepicker.setDefaults($.datepicker.regional['cat']);
+        minDate: 0,  
     var dateFormat = "dd/mm/yy",
       from = $( "#from" )
         .datepicker ({
