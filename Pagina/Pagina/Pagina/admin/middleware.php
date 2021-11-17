@@ -1,9 +1,9 @@
 <?php
 session_start();
-      if($_SESSION["tipo"]="admin"){
-            header('Location: crear.php');
-      }elseif($_SESSION["tipo"]="gestor"){
-            header('Location: middlewarefilter.php');
+      if($_SESSION["tipo"]=="admin"){
+            
+      }elseif($_SESSION["tipo"]=="gestor"){
+           
       }else{
             header('Location: middlewarefilter.php');
       }

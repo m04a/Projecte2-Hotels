@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
     // include database connection
-    require '../includes/conectar_DB.php';
+    require 'conectar_DB.php';
     require 'middleware.php';    
 
  $message = '';
@@ -80,47 +80,74 @@ if(isset($_POST["crearhabitacio"])){
         die ('ERROR: ' . $exception->getMessage());
     }
 }
-if(isset($_POST["crearusuari"])){
-  try{
-		if (!empty($_POST['usuari']) && !empty($_POST['password'])){
+    if(isset($_POST["crearusuari"])){
+    try{
+            if (!empty($_POST['usuari']) && !empty($_POST['password'])){
 
-			if ($conn->connect_error) {
-				die("Connection failed: " . $conn->connect_error);
-			} 
-				// insertar query
-			$stmt = $conn->prepare("insert into usuario 
-            (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
-			(:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
-				$stmt->bindParam(':usuari', $usuari);
-				$stmt->bindParam(':password', $password);
-				$stmt->bindParam(':nombre', $nombre);
-				$stmt->bindParam(':apellidos', $apellidos);
-				$fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
-				$stmt->bindParam(':fechanacimiento', $fechanacimiento);
-				$stmt->bindParam(':sexo', $sexo);
-				$stmt->bindParam(':email', $email);
-			
-				$usuari=htmlspecialchars(strip_tags($_POST['usuari']));
-				$password=htmlspecialchars(strip_tags($_POST['password']));
-				$nombre=htmlspecialchars(strip_tags($_POST['nombre']));
-				$apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
-				$fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
-				$sexo=htmlspecialchars(strip_tags($_POST['sexo']));
-				$email=htmlspecialchars($_POST['email']);
-
-			if ($stmt->execute()) {
-			  $message = 'El usuari ha sigut creat';
-			} else {
-			  $message = 'Ha hagut algun error';
-			}
-		}else{
-			$message = 'usuari o password no establecidos';
-		}
-		
-    }catch(PDOException $exception){
-        die ('ERROR: ' . $exception->getMessage());
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                } 
+                    // insertar query
+                    $usuari=htmlspecialchars(strip_tags($_POST['usuari']));
+                    $password = password_hash(htmlspecialchars(strip_tags($_POST['password'])), PASSWORD_DEFAULT);
+                    $nombre=htmlspecialchars(strip_tags($_POST['nombre']));
+                    $apellidos=htmlspecialchars(strip_tags($_POST['apellidos']));
+                    $fechanacimiento=htmlspecialchars(strip_tags($_POST['fechanacimiento']));
+                    $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
+                    $sexo=htmlspecialchars(strip_tags($_POST['sexo']));
+                    $email=htmlspecialchars($_POST['email']);
+                $stmt = $conn->prepare("insert into usuario 
+                (usuari, password, nombre, apellidos, sexo, email, fechanacimiento) values 
+                (:usuari, :password, :nombre, :apellidos, :sexo, :email, :fechanacimiento)");
+                    if(empty($usuari)){
+                        $stmt->bindParam(':usuari', $null);
+                    }else{
+                        $stmt->bindParam(':usuari', $usuari);
+                    }
+                    if(empty($password)){
+                        $stmt->bindParam(':password', $null);
+                    }else{
+                        $stmt->bindParam(':password', $password);
+                    }
+                    if(empty($nombre)){
+                        $stmt->bindParam(':nombre', $null);
+                    }else{
+                        $stmt->bindParam(':nombre', $nombre);
+                    }
+                    if(empty($apellidos)){
+                        $stmt->bindParam(':apellidos', $null);
+                    }else{
+                        $stmt->bindParam(':apellidos', $apellidos);
+                    }
+                    if(empty($fechanacimiento)){
+                        $stmt->bindParam(':fechanacimiento', $null);
+                    }else{
+                        $stmt->bindParam(':fechanacimiento', $fechanacimiento);
+                    }
+                    if(empty($sexo)){
+                        $stmt->bindParam(':sexo', $null);
+                    }else{
+                        $stmt->bindParam(':sexo', $sexo);
+                    }
+                    if(empty($email)){
+                        $stmt->bindParam(':email', $null);
+                    }else{
+                        $stmt->bindParam(':email', $email);
+                    }
+                if ($stmt->execute()) {
+                $message = 'El usuari ha sigut creat';
+                } else {
+                $message = 'Ha hagut algun error';
+                $stmt->debugDumpParams();
+                }
+            }else{
+                $message = 'usuari o password no establecidos';
+            }
+            
+        }catch(PDOException $exception){
+            die ('ERROR: ' . $exception->getMessage());
+        }
     }
-}
 ?>
 
 <html lang="en">
@@ -146,8 +173,8 @@ if(isset($_POST["crearusuari"])){
     
     <body> 
 		 
-   nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand">ADMIN</a>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">ROL <?php print_r($_SESSION["tipo"]); ?></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -157,15 +184,19 @@ if(isset($_POST["crearusuari"])){
       <li class="nav-item">
     <a class="nav-link" href="#" id="crearhabitacio">Crear tipus d'habitació</a>
   </li>
+  <?php if($_SESSION["tipo"]=="admin"){ ?>
       <li class="nav-item">
         <a class="nav-link" href="#" id="crearusuari">Crear Usuari</a>
   </li>
+  <?php } ?>
       <li class="nav-item">
     <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
+  <?php if($_SESSION["tipo"]=="admin"){ ?>
   <li class="nav-item">
     <a class="nav-link" href="llistarusuaris.php">Llistar Usuaris</a>
   </li>
+  <?php } ?>
     </ul>
   </div>
 </nav>
@@ -233,7 +264,7 @@ if(isset($_POST["crearusuari"])){
 				<td>Cognom:</td>
 				<td><input type='text' name='apellidos' class='form-control' /></td>
 			</tr>
-			<<tr>
+			<tr>
 				<td>Data neixament:</td>
 				<td><input type='date' name='fechanacimiento' class='form-control' /></td>
 			</tr>
