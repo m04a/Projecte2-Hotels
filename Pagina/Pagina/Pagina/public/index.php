@@ -27,7 +27,7 @@ include "../src/controladors/registre.php";
 include "../src/controladors/ferreserva.php";
 include "../src/controladors/confirmarreserva.php";
 include "../src/controladors/finalitzarreserva.php";
-include "../src/controladors/middleware.php";
+include "../src/controladors/middleware.php"; 
 
 
 include "../src/middleware/middleAdmin.php";
