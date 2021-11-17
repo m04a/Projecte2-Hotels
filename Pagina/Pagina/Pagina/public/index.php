@@ -66,7 +66,7 @@ elseif ($r === "registre") {
     $resposta = ctrlIndex($peticio, $resposta, $contenidor);
 } else {
   //  $resposta = ctrlError($peticio, $resposta, $contenidor);
-}
+} 
 
 
 $resposta->resposta();
