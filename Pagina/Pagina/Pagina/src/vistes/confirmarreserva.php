@@ -232,7 +232,7 @@ if(isset($_POST['treasure'])){
     <form action='finalitzarreserva.php' method='post' onsubmit="validate()">
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
-    <form action='finalitzarreserva.php' method='post'>
+    <form action='index.php?r=finalitzarreserva' method='post'>
                                     <input type="hidden" name="nombre" value="<?php echo $nombre;?>" />
                                     <input type="hidden" name="apellidos" value="<?php echo $apellidos;?>" />
                                     <input type="hidden" name="fechanacimiento" value="<?php echo $fechanacimiento;?>" />
