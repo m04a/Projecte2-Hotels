@@ -27,10 +27,10 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
-    $nom  = $row['nom'];
-    $descripcion = $row['descripcion'];
-    $precio = $row['precio'];
-    $m2 = $row['m2'];
+    $_SESSION["nom"] = $row['nom'];
+    $_SESSION["descripcion"] = $row['descripcion'];
+    $_SESSION["precio"] = $row['precio'];
+    $_SESSION["m2"] = $row['m2'];
     if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
     $to = $_POST["fins"];
     $from = $_POST["desde"];

@@ -11,8 +11,6 @@ require '../includes/conectar_DB.php';
                     $from = $_POST["desde"];
                     $nhabitacio = $_POST["nhabitacio"];
                     $npersones = $_POST["npersones"];
-                    $precio = $_POST["precio"];
-                    $nom = $_POST["nom"];
                     $numhab = $_POST["numhab"];
        
 
@@ -20,8 +18,6 @@ require '../includes/conectar_DB.php';
                     $_SESSION["from"]=$from;                     
                     $_SESSION["nhabitacio"]=$nhabitacio;
                     $_SESSION["npersones"]=$npersones;
-                    $_SESSION["precio"]=$precio;
-                    $_SESSION["nom"]=$nom;
                     $_SESSION["numhab"]=$numhab;
 
                     }
