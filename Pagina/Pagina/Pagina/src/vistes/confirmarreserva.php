@@ -229,10 +229,10 @@ if(isset($_POST['treasure'])){
             <td><input type='text' name='cc' id="card" class='form-control' /></td>
     </tr>  </div>
   <div class="card-body">
-    <form action='finalitzarreserva.php' method='post' onsubmit="validate()">
+
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
-    <form action='index.php?r=finalitzarreserva' method='post'>
+        <form action='index.php?r=finalitzarreserva' method='post' onsubmit="validate()">
                                     <input type="hidden" name="nombre" value="<?php echo $nombre;?>" />
                                     <input type="hidden" name="apellidos" value="<?php echo $apellidos;?>" />
                                     <input type="hidden" name="fechanacimiento" value="<?php echo $fechanacimiento;?>" />
@@ -240,6 +240,7 @@ if(isset($_POST['treasure'])){
                                     <input type="hidden" name="email" value="<?php echo $email;?>"/>
                                      <button type="submit" class='btn btn-success mybuttoncool m-r-6em'>Confirmar reserva</button>
                                 <a href="reservabuscador.php" class='btn btn-danger'>Tornar a reserves</a>
+                            </form>
   </div>
 </div>
 
