@@ -96,15 +96,14 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
-        $stmt3 = $conn->prepare("SELECT count(idtipo) from tipo where vacinicio <= :vacinicio or vacfin >= :vacfin and idtipo = :idtipo");
-        //select count(idtipo) from tipo where vacinicio >= '2021-11-9' and vacfin <= '2021-11-10' and idtipo = '2';
+        $stmt3 = $conn->prepare("SELECT count(idtipo) from tipo where (vacfin <= :vacinicio or vacinicio >= :vacfin) and idtipo = :idtipo");
         $stmt3->bindParam(':vacinicio', $finicio->format('Y-m-d'));
         $stmt3->bindParam(':vacfin', $ffin->format('Y-m-d'));
         $stmt3->bindParam(':idtipo', $idtipo);
         $stmt3->execute(); 
         $vacas = $stmt3->fetchAll();
         $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
-        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]<1){
+        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]>0){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">
