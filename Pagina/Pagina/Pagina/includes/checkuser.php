@@ -1,6 +1,6 @@
 <?php
 session_start();
       if(isset($_SESSION["tipo"])){
-           header('Location: URL=index.php?r=index.php');       
+           header('Location: index.php?r=index.php');       
       }
 ?>
