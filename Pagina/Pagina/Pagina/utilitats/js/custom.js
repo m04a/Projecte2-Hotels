@@ -114,8 +114,7 @@
  yearSuffix: ''
  };
  $.datepicker.setDefaults($.datepicker.regional['cat']);
-        minDate: 0  
-    var dateFormat = "dd/mm/yy",
+   var dateFormat = "dd/mm/yy",
       from = $( "#from" )
         .datepicker ({
           defaultDate: "+1w",
@@ -146,7 +145,12 @@
     }
   } );
 })(window.jQuery);
-
+$("input#to").datepicker({
+minDate: 0  
+});
+$("input#from").datepicker({
+minDate: 0  
+});
 /*Canvis de reserves*/
 
 if ( document.URL.includes("reserva.php") ) {
