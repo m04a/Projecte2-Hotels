@@ -1,7 +1,7 @@
 <?php
 
-function ctrlFinalitzarreserva($peticio, $resposta, $contenidor)
+function ctrlReserva($peticio, $resposta, $contenidor)
 {
-    $resposta->SetTemplate("finalitzarreserva.php");
+    $resposta->SetTemplate("reservabuscador.php");
     return $resposta;
 }

@@ -26,6 +26,7 @@ include "../src/controladors/about.php";
 include "../src/controladors/registre.php";
 include "../src/controladors/ferreserva.php";
 include "../src/controladors/confirmarreserva.php";
+include "../src/controladors/finalitzarreserva.php";
 
 
 include "../src/middleware/middleAdmin.php";
@@ -44,6 +45,9 @@ if ($r === "contacte") {
 }
 elseif ($r === "confirmarreserva") {
     $resposta = ctrlConfirmarReserva($peticio, $resposta, $contenidor);
+}
+elseif ($r === "finalitzarreserva") {
+    $resposta = ctrlFinalitzarreserva($peticio, $resposta, $contenidor);
 }
 elseif ($r === "ferReserva") {
     $resposta = ctrlFerreserva($peticio, $resposta, $contenidor);
