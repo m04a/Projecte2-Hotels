@@ -100,7 +100,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt3->bindParam(':vacinicio', $finicio->format('Y-m-d'));
         $stmt3->bindParam(':vacfin', $ffin->format('Y-m-d'));
         $stmt3->bindParam(':idtipo', $idtipo);
-        $stmt3->execute(); 
+        $stmt3->execute();
         $vacas = $stmt3->fetchAll();
         $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
         if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]>0){
