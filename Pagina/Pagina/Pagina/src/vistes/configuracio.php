@@ -43,6 +43,7 @@
 // fem un include de la nostre base de dades
 require '../includes/conectar_DB.php';
    
+session_start();
 
 $usuari = $_SESSION["usuari"];
 
@@ -76,7 +77,6 @@ echo "<table class='table table-light table-hover table-responsive table-bordere
         <th>Persones maximes</th>
         <th>Persones maximes</th>
         <th>Persones maximes</th>
-
     </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -96,7 +96,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$preciototal}</td>
         <td>{$canthab}</td>
         <td>";
-xt part of this post
  
             // we will use this links on next part of this post
             echo "<a href='#' onclick='esborrar({$idtipo});'  class='btn btn-danger'>Esborrar</a>";
