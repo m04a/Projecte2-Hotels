@@ -72,11 +72,10 @@ if ($password != $passwordc) {
   }
   //date in mm/dd/yyyy format; or it can be in other formats as well
   $tz  = new DateTimeZone('Europe/Brussels');
-  $a = (new DateTime('now', $tz));
   $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)
        ->diff(new DateTime('now', $tz))
        ->y;
-       if($fechanacimiento>(new DateTime('now', $tz))){
+       if($fechanacimiento>date("Y-m-d")){
          $message = "no acceptem viatgers en el temps nascuts en el futur";
        }else{
         if($age<18){
