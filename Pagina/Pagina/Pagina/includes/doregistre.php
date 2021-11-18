@@ -72,6 +72,7 @@ if ($password != $passwordc) {
   }
   //date in mm/dd/yyyy format; or it can be in other formats as well
   $tz  = new DateTimeZone('Europe/Brussels');
+  $a = (new DateTime('now', $tz));
   $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)
        ->diff(new DateTime('now', $tz))
        ->y;
@@ -79,7 +80,7 @@ if ($password != $passwordc) {
          $message = "no acceptem viatgers en el temps nascuts en el futur";
        }else{
         if($age<18){
-          $message = "Tens que ser major d'edad per tenir un compte, tens $age anys";
+          $message = "$a Tens que ser major d'edad per tenir un compte, tens $age anys";
         }else{
             if ($stmt->execute()) {
               $message = "El usuari ha sigut creat";
