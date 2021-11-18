@@ -5,7 +5,7 @@
                     <div class="cta-content">
                         <br>
                         <br>
-                        <h2 id="titlevar">Nom Pagina</h2>
+                        <h2 id="titlevar"><?php echo"$r" ?></h2>
                     </div>
                 </div>
             </div>
