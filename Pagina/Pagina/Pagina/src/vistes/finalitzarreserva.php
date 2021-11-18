@@ -34,7 +34,7 @@ require '../includes/conectar_DB.php';
                 $numhab = $_SESSION["numhab"];
                 echo $finicio;
                 if(isset($_POST['nombre'])){
-                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario,preciototal,canthab) VALUES (:npersones,:numhab,:desde,:hasta,:usuari,:preciototal,:nhabitacio:)";
+                $sql = "INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario,preciototal,canthab) VALUES (:npersones,:numhab,:desde,:hasta,:usuari,:preciototal,nhabitacio:)";
                 //INSERT INTO reserva (numpers,idtipo,finicio,ffin,usuario) VALUES (1,1,'2021-08-10','2021-08-12','testt');
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam(':usuari', $usuari);
