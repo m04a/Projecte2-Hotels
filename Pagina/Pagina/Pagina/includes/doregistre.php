@@ -1,5 +1,6 @@
  <?php
  $message = '';
+ $fallo = '';
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -23,7 +24,6 @@
       $sexo = $_POST['sexo'];
 
 
-
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
   }else{
@@ -34,12 +34,12 @@ if ($password != $passwordc) {
     $null=NULL;
     $stmt = $conn->prepare($sql);
       if(empty($usuari)){
-          $stmt->bindParam(':usuari', $null);
+          $fallo="l'usuari es obligatori";
       }else{
           $stmt->bindParam(':usuari', $usuari);
       }
       if(empty($password)){
-          $stmt->bindParam(':password', $null);
+        $fallo="la contrasenya es obligatoria";
       }else{
           $stmt->bindParam(':password', $password);
       }
@@ -54,7 +54,7 @@ if ($password != $passwordc) {
           $stmt->bindParam(':apellidos', $apellidos);
       }
       if(empty($fechanacimiento)){
-          $stmt->bindParam(':fechanacimiento', $null);
+        $fallo="la data de neixament es obligatoria";
       }else{
         $fechanacimiento = date('Y-m-d', strtotime(str_replace('-', '/', $fechanacimiento))); 
         $stmt->bindParam('$fechanacimiento', $_POST['fechanacimiento']);
@@ -71,8 +71,8 @@ if ($password != $passwordc) {
       }
   }
   //date in mm/dd/yyyy format; or it can be in other formats as well
-  if($fechanacimiento==null){
-    $message="es te que posar una data de neixament";
+  if(!$fallo==''){
+    $message=$fallo;
     }else{
     $tz  = new DateTimeZone('Europe/Brussels');
     $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)

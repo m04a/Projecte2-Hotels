@@ -67,11 +67,11 @@ require '../includes/checkuser.php';
                 </div> 
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
-                  <input type="text" name="usuari" class="form-control form-control-lg" required/>
+                  <input type="text" name="usuari" class="form-control form-control-lg" />
                 </div>
                  <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" required/> 
+                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" /> 
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
@@ -80,7 +80,7 @@ require '../includes/checkuser.php';
 
                 <div class="form-outline mb-4">
                   <label class="form-label">Contrasenya</label>
-                  <input type="password" name="password" class="form-control form-control-lg" required/>
+                  <input type="password" name="password" class="form-control form-control-lg" />
                 </div> 
                 <div class="form-outline mb-4">
                   <select name="sexo" class='form-control'>
