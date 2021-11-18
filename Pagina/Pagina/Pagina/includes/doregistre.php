@@ -32,6 +32,7 @@ if ($password != $passwordc) {
 
 	  $password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimiento,sexo) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimiento',$sexo);";
+    $null=NULL;
     $stmt = $conn->prepare($sql);
       if(empty($usuari)){
           $stmt->bindParam(':usuari', $null);
@@ -78,8 +79,8 @@ if ($password != $passwordc) {
        if($fechanacimiento>date("Y-m-d")){
          $message = "no acceptem viatgers en el temps nascuts en el futur";
        }else{
-        if($age<18){
-          $message = "$a Tens que ser major d'edad per tenir un compte, tens $age anys";
+        if($age<18||$fechanacimiento==null){
+          $message = "Tens que ser major d'edad per tenir un compte";
         }else{
             if ($stmt->execute()) {
               $message = "El usuari ha sigut creat";
