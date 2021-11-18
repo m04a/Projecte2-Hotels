@@ -102,6 +102,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt3->bindParam(':idtipo', $idtipo);
         $stmt3->execute();
         $vacas = $stmt3->fetchAll();
+        echo $idtipo;
         $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
         if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]>0){
         ?>
@@ -153,7 +154,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                         <?php if($disponible==1){ 
                                                 echo("Queda nomes 1 habitació ");
                                             }else{
-                                                echo $idtipo + ("Queden nomes $disponible habitacions ") ;
+                                                echo ("Queden nomes $disponible habitacions ") ;
                                             } ?>d'aquest tipus</td></h4>
                                         </div>
                                     <?php } ?>
