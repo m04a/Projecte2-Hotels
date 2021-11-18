@@ -173,7 +173,7 @@ $ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')
             <p>-----------------------------------------------------------------------</p>
           </div>
           <div>
-            <img src="/utilitats/imatges/LOGO.png">
+            <img src="../utilitats/imatges/LOGO.png">
           </div>
 </div>
     <table id="tab_customers" class="table table-striped">
