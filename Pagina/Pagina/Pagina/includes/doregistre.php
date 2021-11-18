@@ -28,8 +28,6 @@ if ($password != $passwordc) {
 	$fallo = 'Les contrasenyes no son iguals';
   }else{
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-	  $password = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuario (usuari,password,nombre,apellidos,email,fechanacimiento,sexo) VALUES ('$usuari','$password','$nombre','$apellidos','$email','$fechanacimiento',$sexo);";
     $null=NULL;
     $stmt = $conn->prepare($sql);
@@ -41,6 +39,7 @@ if ($password != $passwordc) {
       if(empty($password)){
         $fallo="la contrasenya es obligatoria";
       }else{
+          $password = password_hash($password, PASSWORD_DEFAULT);
           $stmt->bindParam(':password', $password);
       }
       if(empty($nombre)){
