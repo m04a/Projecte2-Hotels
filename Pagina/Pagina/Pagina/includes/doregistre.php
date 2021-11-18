@@ -75,14 +75,18 @@ if ($password != $passwordc) {
   $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)
        ->diff(new DateTime('now', $tz))
        ->y;
-       if($age<18){
-         $message = "Tens que ser major d'edad per tenir un compte, tens $age anys";
+       if($fechanacimiento>(new DateTime('now', $tz))){
+         $message = "no acceptem viatgers en el temps nascuts en el futur";
        }else{
-          if ($stmt->execute()) {
-            $message = "El usuari ha sigut creat";
-          } else {
-            $message = 'Ha hagut algun error';
-          }
-        }
+        if($age<18){
+          $message = "Tens que ser major d'edad per tenir un compte, tens $age anys";
+        }else{
+            if ($stmt->execute()) {
+              $message = "El usuari ha sigut creat";
+            } else {
+              $message = 'Ha hagut algun error';
+            }
+          }  
+       }
   }
 ?>
