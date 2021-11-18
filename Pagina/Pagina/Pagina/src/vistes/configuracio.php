@@ -58,7 +58,8 @@ $stmt->execute();
  
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
- 
+$ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')->fetchColumn();
+
 // link to create record form
 echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
  
@@ -71,7 +72,7 @@ echo "<table class='table table-dark table-hover table-responsive table-bordered
     //creating our table heading
     echo "<tr>
         <th>Numero de persones</th>
-        <th>Imatge</th>
+        <th>Numero de habitacions</th>
         <th>Metres cuadrats</th>
         <th>Cantitat d'habitacions</th>
         <th>Persones maximes</th>
@@ -85,16 +86,17 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // this will make $row['firstname'] to
     // just $firstname only
     extract($row);
- 
+    $idtipo=$row['idtipo'];
+    $nomtipus =$conn->query('SELECT nom as nom FROM WHERE idtipo="$idtipo"')->fetchColumn();
+
     // creating new table row per record
     echo "<tr>
         <td>{$numpers}</td>
-        <td>{$idtipo}</td>
+        <td>{$canthab}</td>
+        <td>$nomtipus</td>
         <td>{$finicio}</td>
         <td>{$ffin}</td>
-        <td>{$usuario}</td>
         <td>{$preciototal}</td>
-        <td>{$canthab}</td>
         <td>";
  
             // we will use this links on next part of this post
