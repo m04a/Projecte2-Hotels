@@ -153,28 +153,28 @@ minDate: 0
 });
 /*Canvis de reserves*/
 
-if ( document.URL.includes("reserva.php") ) {
+if ( document.URL.includes("index.php?r=reserva") ) {
 	document.getElementById("titlevar").textContent="Reserva";
 }
-if ( document.URL.includes("habitacions.php") ) {
+if ( document.URL.includes("index.php?r=habitacions") ) {
 	document.getElementById("titlevar").textContent="Habitacions";
 }
-if ( document.URL.includes("about.php") ) {
+if ( document.URL.includes("index.php?r=about") ) {
 	document.getElementById("titlevar").textContent="Sobre nosaltres";
 }
-if ( document.URL.includes("terms.php") ) {
+if ( document.URL.includes("index.php?r=terms") ) {
 	document.getElementById("titlevar").textContent="Termes i condicions";
 }
 if ( document.URL.includes("index.php?r=contacte") ) {
 	document.getElementById("titlevar").textContent="Contacte";
 }
-if ( document.URL.includes("registre.php") ) {
+if ( document.URL.includes("index.php?r=registre") ) {
 	document.getElementById("titlevar").textContent="Registre";
 }
-if ( document.URL.includes("reservabuscador.php") ) {
+if ( document.URL.includes("index.php?r=reservabuscador") ) {
 	document.getElementById("titlevar").textContent="Reserva";
 }
-if ( document.URL.includes("login.php") ) {
+if ( document.URL.includes("index.php?r=login") ) {
 	document.getElementById("titlevar").textContent="Login";
 }
 
