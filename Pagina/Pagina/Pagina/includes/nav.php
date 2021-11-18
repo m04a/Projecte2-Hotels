@@ -25,6 +25,8 @@
                               
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
+                                    <a href="index.php?r=configuracio" class="dropdown-item"  href="">Reserves i configuració</a>
+                                   
                                     <?php
                                     if($_SESSION["tipo"] == "admin") {
                                     ?>
