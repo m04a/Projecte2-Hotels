@@ -203,7 +203,7 @@ $ultimareserva = mysql_query("SELECT MAX(numres) as ultimareserva FROM reserva")
               <td><?php if($sexo==0){echo 'Home';}else{echo 'Dona';} ?></td>
             </tr>
             <tr>
-                <td></td>
+                <td><?php echo $ultimareserva;?></td>
                 <td></td>
                 <td><h4>PREU TOTAL RESERVA</h4></td>
                 <td><h2><?php echo $preciototal;?> €</h2></td>
