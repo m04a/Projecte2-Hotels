@@ -239,7 +239,8 @@ if(isset($_POST['treasure'])){
                             </form>
   </div>
 </div>
-
+</div>
+</div>
      <!-- *** Footer inici *** -->
      <?php
 	 include '../includes/footer.php';
