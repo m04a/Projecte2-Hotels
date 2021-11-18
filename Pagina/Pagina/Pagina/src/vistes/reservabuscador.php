@@ -83,6 +83,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
+        $idtipo = $row['idtipo'];
+        echo $idtipo;
         $ffin = DateTime::createFromFormat('j/m/Y', $to);
         $finicio = DateTime::createFromFormat('j/m/Y', $from);
         $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
@@ -102,7 +104,6 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt3->bindParam(':idtipo', $idtipo);
         $stmt3->execute();
         $vacas = $stmt3->fetchAll();
-        echo $idtipo;
         $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
         if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]>0){
         ?>
