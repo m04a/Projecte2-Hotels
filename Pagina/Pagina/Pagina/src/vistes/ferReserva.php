@@ -3,8 +3,8 @@
 // isset() is a PHP function used to verify if a value is there or not
         if(!empty($_POST['idtipo'])){
           $numhab = $_POST["idtipo"];
-          $_SESSION['numhab'] = $tes; 
-        }else{ $tes = $_SESSION['numhab']; }
+          $_SESSION['numhab'] = $numhab; 
+        }else{ $numhab = $_SESSION['numhab']; }
        
 //include database connection
 require '../includes/conectar_DB.php';
