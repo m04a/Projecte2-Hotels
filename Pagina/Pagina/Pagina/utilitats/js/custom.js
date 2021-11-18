@@ -165,7 +165,7 @@ if ( document.URL.includes("about.php") ) {
 if ( document.URL.includes("terms.php") ) {
 	document.getElementById("titlevar").textContent="Termes i condicions";
 }
-if ( document.URL.includes("contacte.php") ) {
+if ( document.URL.includes("index.php?r=contacte") ) {
 	document.getElementById("titlevar").textContent="Contacte";
 }
 if ( document.URL.includes("registre.php") ) {
