@@ -72,22 +72,26 @@ if ($password != $passwordc) {
       }
   }
   //date in mm/dd/yyyy format; or it can be in other formats as well
-  $tz  = new DateTimeZone('Europe/Brussels');
-  $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)
-       ->diff(new DateTime('now', $tz))
-       ->y;
-       if($fechanacimiento>date("Y-m-d")){
-         $message = "no acceptem viatgers en el temps nascuts en el futur";
-       }else{
-        if($age<18||$fechanacimiento==null){
-          $message = "Tens que ser major d'edad per tenir un compte";
+  if($fechanacimiento==null){
+    $message="es te que posar una data de neixament";
+    }else{
+    $tz  = new DateTimeZone('Europe/Brussels');
+    $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)
+        ->diff(new DateTime('now', $tz))
+        ->y;
+        if($fechanacimiento>date("Y-m-d")){
+          $message = "no acceptem viatgers en el temps nascuts en el futur";
         }else{
-            if ($stmt->execute()) {
-              $message = "El usuari ha sigut creat";
-            } else {
-              $message = 'Ha hagut algun error';
-            }
-          }  
-       }
+          if($age<18||$fechanacimiento==null){
+            $message = "Tens que ser major d'edad per tenir un compte";
+          }else{
+              if ($stmt->execute()) {
+                $message = "El usuari ha sigut creat";
+              } else {
+                $message = 'Ha hagut algun error';
+              }
+            }  
+        }
+    }
   }
 ?>
