@@ -72,7 +72,7 @@ if ($password != $passwordc) {
   }
   //date in mm/dd/yyyy format; or it can be in other formats as well
   $tz  = new DateTimeZone('Europe/Brussels');
-  $age = DateTime::createFromFormat('d/m/Y', '12/02/1973', $tz)
+  $age = DateTime::createFromFormat('Y-m-d', $fechanacimiento, $tz)
        ->diff(new DateTime('now', $tz))
        ->y;
 
