@@ -26,7 +26,7 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
                                     <?php
-                                    if($_SESSION["tipo"] == "admin") {
+                                    if($_SESSION["tipo"] == "admin"|| $_SESSION["tipo"] == "gestor") {
                                     ?>
                                     <a class="dropdown-item"  href="../admin/crear.php"> Panell d'admin</a>
                                     <?php
