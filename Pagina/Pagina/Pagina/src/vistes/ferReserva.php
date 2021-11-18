@@ -1,24 +1,26 @@
 <?php
 // get passed parameter value, in this case, the record ID
 // isset() is a PHP function used to verify if a value is there or not
-        if(!empty($_POST['idtipo'])){
-          $numhab = $_POST["idtipo"];
-          $_SESSION['numhab'] = $numhab; 
-        }else{ $numhab = $_SESSION['numhab']; }
        
 //include database connection
 require '../includes/conectar_DB.php';
- 
+
+ if(!empty($_POST['idtipo'])){
+          $numhab = $_POST["idtipo"];
+          $_SESSION['numhab'] = $numhab; 
+        }
+        else
+          { $numhab = $_SESSION['numhab']; }
  
 // read current record's data
 try {
     // prepare select query
-    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE :numhab = idtipo LIMIT 0,1";
+    $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE '$numhab' = idtipo LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
     // this is the first question mark
-    $stmt->bindParam(':numhab',$numhab);
+    $stmt->bindParam($numhab);
  
     // execute our query
     $stmt->execute();
