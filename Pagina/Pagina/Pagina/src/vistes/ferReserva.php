@@ -11,7 +11,7 @@ require '../includes/conectar_DB.php';
         }
         else
           { $numhab = $_SESSION['numhab']; }
-        echo $numhab;
+
 
 // read current record's data
 try {
@@ -30,6 +30,7 @@ try {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
  
     // values to fill up our form
+
     $_SESSION["nom"] = $row['nom'];
     $_SESSION["descripcion"] = $row['descripcion'];
     $_SESSION["precio"] = $row['precio'];
@@ -50,6 +51,10 @@ try {
     $nhabitacio=$_SESSION["nhabitacio"];
     $npersones=$_SESSION["npersones"];
 }
+    $nom= $_SESSION["nom"];
+    $descripcion= $_SESSION["descripcion"];
+    $precio= $_SESSION["precio"];
+    $m2=$_SESSION["m2"];
 }
  
 // show error
