@@ -47,7 +47,9 @@ require '../includes/conectar_DB.php';
                 $stmt->bindParam(':desde', $desde->format('Y-m-d'));
                 $stmt->bindParam(':hasta', $hasta->format('Y-m-d'));
 }
-$ultimareserva = mysql_query("SELECT MAX(numres) as ultimareserva FROM reserva");
+$sql = mysql_query('SELECT MAX(numres) as ultimareserva FROM reserva');
+
+$ultimareserva = $conn->query($sql);
 
   }
 ?>
