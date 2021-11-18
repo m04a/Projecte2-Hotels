@@ -71,20 +71,15 @@ if ($password != $passwordc) {
       }
   }
   //date in mm/dd/yyyy format; or it can be in other formats as well
-  $birthDate = $fechanacimiento;
-  //explode the date to get month, day and year
-  $birthDate = explode("-", $birthDate);
-  //get age from date or birthdate
-  $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
-    ? ((date("Y") - $birthDate[2]) - 1)
-    : (date("Y") - $birthDate[2]));
-  $message = $age;
-
+  $tz  = new DateTimeZone('Europe/Brussels');
+  $age = DateTime::createFromFormat('d/m/Y', '12/02/1973', $tz)
+       ->diff(new DateTime('now', $tz))
+       ->y;
 
     if ($stmt->execute()) {
-      $message .= 'El usuari ha sigut creat';
+      $message = "$age El usuari ha sigut creat";
     } else {
-      $message .= 'Ha hagut algun error';
+      $message = 'Ha hagut algun error';
     }
   }
 ?>
