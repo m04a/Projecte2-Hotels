@@ -11,13 +11,14 @@ require '../includes/conectar_DB.php';
         }
         else
           { $numhab = $_SESSION['numhab']; }
- 
+        echo $numhab;
+
 // read current record's data
 try {
     // prepare select query
     $query = "SELECT nom,descripcion,precio,m2 FROM tipo WHERE '$numhab' = idtipo LIMIT 0,1";
 
-    $stmt = $conn->prepare( $query );
+    $stmt = $conn->prepare($query);
  
     // this is the first question mark
     $stmt->bindParam($numhab);
