@@ -88,7 +88,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     extract($row);
     $idtipo=$row['idtipo'];
     $nomtipus =$conn->query('SELECT nom FROM tipo WHERE idtipo="$idtipo"')->fetchColumn();
-
+    echo $nomtipus;
     // creating new table row per record
     echo "<tr>
         <td>{$numpers}</td>
