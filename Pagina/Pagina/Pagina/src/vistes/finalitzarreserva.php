@@ -169,7 +169,7 @@ $ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')
             <p><i class="fa fa-boat mr-3"></i>CIF: 15215156215</p>
             <p><i class="fa fa-boat mr-3"></i>CIF: 15215156215</p>
             <p>-----------------------------------------------------------------------</p>
-          </div>
+
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
@@ -217,8 +217,12 @@ $ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')
             </tbody>
     </table>
     <p>Gracies per reservar amb nosaltres per accedir a la teva reserva has de utilitzar el teu usuari</p>
+       <div class="row">
             <img src="../utilitats/imatges/LOGO.png">
+            <p>HOTELS MK COPYRIGHT </p>
+          </div>
 </div>
+
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
      <?php
