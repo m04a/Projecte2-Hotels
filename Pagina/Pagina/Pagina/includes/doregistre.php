@@ -25,7 +25,7 @@
 
 
 if ($password != $passwordc) {
-	$message = 'Les contrasenyes no son iguals';
+	$fallo = 'Les contrasenyes no son iguals';
   }else{
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 

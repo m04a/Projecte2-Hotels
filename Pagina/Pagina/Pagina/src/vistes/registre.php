@@ -59,7 +59,8 @@ require '../includes/checkuser.php';
                   <?php endif; ?>
                  <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
-                  <input type="text" name="nombre" class="form-control form-control-lg" />
+                  <input type="text" name="nombre" class="form-control form-control-lg" 
+                  value="<?php echo $_POST['nombre'];  ?>/>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Cognom</label>
