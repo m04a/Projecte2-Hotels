@@ -26,7 +26,6 @@
 
 if ($password != $passwordc) {
 	$message = 'Les contrasenyes no son iguals';
-	header("Location: registre.php");
   }else{
 	  // $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 

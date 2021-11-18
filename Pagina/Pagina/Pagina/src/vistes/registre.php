@@ -67,7 +67,7 @@ require '../includes/checkuser.php';
                 </div> 
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
-                  <input type="text" name="usuari" class="form-control form-control-lg" />
+                  <input type="text" name="usuari" class="form-control form-control-lg" required/>
                 </div>
                  <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
