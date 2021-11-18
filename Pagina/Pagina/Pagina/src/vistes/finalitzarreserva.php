@@ -217,10 +217,7 @@ $ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')
             </tbody>
     </table>
     <p>Gracies per reservar amb nosaltres per accedir a la teva reserva has de utilitzar el teu usuari</p>
-    <div class="row">
             <img src="../utilitats/imatges/LOGO.png">
-            <p>HOTELS MK COPYRIGHT </p>
-          </div>
 </div>
 <a href="javascript:crearPDF()" class="btn btn-primary">Imprimir PDF</a>
      <!-- *** Footer inici *** -->
