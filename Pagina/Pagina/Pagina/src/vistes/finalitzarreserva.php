@@ -3,7 +3,7 @@ session_start();
 require '../includes/conectar_DB.php';
 
       if($_SESSION["tipo"]!="cliente"){
-                header('Location: middleware.php');
+                header('Location: index.php?r=middleware');
                 }
                 else{
                 if(!isset($_SESSION['nombre']) && empty($_SESSION['nombre'])) {               
@@ -47,7 +47,14 @@ require '../includes/conectar_DB.php';
                 $stmt->bindParam(':desde', $desde->format('Y-m-d'));
                 $stmt->bindParam(':hasta', $hasta->format('Y-m-d'));
 }
+$query = "SELECT MAX(numres) as ultimareserva FROM reserva";
 
+    $stmt = $conn->prepare( $query );
+ 
+    echo $stmt;
+ 
+    // execute our query
+    $stmt->execute();
   }
 ?>
 <!DOCTYPE html>
@@ -158,6 +165,11 @@ require '../includes/conectar_DB.php';
   </div>
 </div>
 <div id="customers">
+  <h2>La teva reserva <?php echo $nombre; ?> </h2>
+  <p><i class="fa fa-home mr-3"></i> Figueres, GIRONA 17600</p>
+            <p><i class="fa fa-envelope mr-3"></i> info@MKhotels.info</p>
+            <p><i class="fa fa-phone mr-3"></i> + 666 666 666 </p>
+            <p><i class="fa fa-info mr-3"></i> HotelMK</p>
     <table id="tab_customers" class="table table-striped">
         <colgroup>
             <col width="20%">
