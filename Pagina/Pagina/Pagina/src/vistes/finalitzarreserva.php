@@ -161,7 +161,7 @@ $ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')
   </div>
 </div>
 <div id="customers">
-  <h2>La teva reserva <?php echo $nombre; ?> amb el numero de reserva: <?php echo $ultimareserva; ?> </h2>
+  <span>La teva reserva <?php echo $nombre; ?> amb el numero de reserva: <?php echo $ultimareserva; ?> </span>
   <p><i class="fa fa-home mr-3"></i>Ciutat:  Figueres, GIRONA 17600</p>
             <p><i class="fa fa-envelope mr-3"></i>Email:  info@MKhotels.info</p>
             <p><i class="fa fa-phone mr-3"></i>Telefón: + 666 666 666 </p>
