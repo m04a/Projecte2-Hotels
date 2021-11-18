@@ -71,7 +71,7 @@ require '../includes/checkuser.php';
                 </div>
                  <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" /> 
+                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" required/> 
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
@@ -80,7 +80,7 @@ require '../includes/checkuser.php';
 
                 <div class="form-outline mb-4">
                   <label class="form-label">Contrasenya</label>
-                  <input type="password" name="password" class="form-control form-control-lg" />
+                  <input type="password" name="password" class="form-control form-control-lg" required/>
                 </div> 
                 <div class="form-outline mb-4">
                   <select name="sexo" class='form-control'>
@@ -90,7 +90,7 @@ require '../includes/checkuser.php';
                 </div> 
                 <div class="form-outline mb-4">
                   <label class="form-label">Confirma la contrasenya</label>
-                  <input type="password" name="passwordc" class="form-control form-control-lg" />
+                  <input type="password" name="passwordc" class="form-control form-control-lg" required/>
                 </div>
 
                 <div class="d-flex justify-content-center">
