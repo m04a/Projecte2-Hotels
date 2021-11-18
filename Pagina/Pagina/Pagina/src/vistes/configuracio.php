@@ -66,7 +66,7 @@ echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>
 if($num>0){
  
     //start table
-echo "<table class='table table-light table-hover table-responsive table-bordered'>";
+echo "<table class='table table-dark table-hover table-responsive table-bordered'>";
  
     //creating our table heading
     echo "<tr>
