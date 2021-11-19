@@ -28,7 +28,7 @@
                                     <a href="index.php?r=configuracio" class="dropdown-item"  href="">Reserves i configuració</a>
                                    
                                     <?php
-                                    if($_SESSION["tipo"] == "admin") {
+                                    if($_SESSION["tipo"] == "admin"|| $_SESSION["tipo"] == "gestor") {
                                     ?>
                                     <a class="dropdown-item"  href="../admin/crear.php"> Panell d'admin</a>
                                     <?php

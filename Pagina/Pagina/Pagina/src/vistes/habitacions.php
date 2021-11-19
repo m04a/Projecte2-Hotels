@@ -67,14 +67,18 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                                 <sup>€</sup> <?php echo "<tr><td>{$precio}</td>"; ?>
                             </span>
 
-                            <h4><?php echo "<tr><td>{$tipo}</td>"; ?></h4>
+                            <h4><?php echo "<tr><td>{$nom}</td>"; ?></h4>
 
                             <p>
                                 <i class="fa fa-info"></i><?php echo "<tr><td>{$descripcion}</td>"; ?>
                             </p>
-
                             <ul class="social-icons">
-                                <li><?php echo "<a href='ferReserva.php?idtipo={$idtipo}' class='btn btn-info m-r-1em'>Llegir</a>";?> </li>
+                            <li>
+                                <?php echo "<form action='index.php?r=ferReserva' method='post'>";?>
+                                <input type="hidden" name="idtipo" value="<?php echo $idtipo;?>" />
+                                <button type="submit" class='btn btn-info m-r-6em'>Llegir</button>
+                                </form>
+                            </li>
                             </ul>
                         </div>
                     </div>

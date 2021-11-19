@@ -59,23 +59,28 @@ require '../includes/checkuser.php';
                   <?php endif; ?>
                  <div class="form-outline mb-4">
                  <label class="form-label">Nom</label>
-                  <input type="text" name="nombre" class="form-control form-control-lg" />
+                  <input type="text" name="nombre" class="form-control form-control-lg" 
+                  value="<?php echo $_POST['nombre']; ?>"/>
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Cognom</label>
-                  <input type="text" name="apellidos" class="form-control form-control-lg" />
+                  <input type="text" name="apellidos" class="form-control form-control-lg" 
+                  value="<?php echo $_POST['apellidos']; ?>"/>
                 </div> 
                   <div class="form-outline mb-4">
                   <label class="form-label">Nom d'usuari</label>
-                  <input type="text" name="usuari" class="form-control form-control-lg" />
+                  <input type="text" name="usuari" class="form-control form-control-lg" 
+                  value="<?php echo $_POST['usuari']; ?>"/>
                 </div>
                  <div class="form-outline mb-4">
                   <label class="form-label">Data de naixament</label>
-                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" /> 
+                  <input type="date" name="fechanacimiento" class="form-control form-control-lg" 
+                  value="<?php echo $_POST['fechanacimiento']; ?>"/> 
                 </div>
                 <div class="form-outline mb-4">
                   <label class="form-label">Correu electronic</label>
-                  <input type="email" name="email" class="form-control form-control-lg" />
+                  <input type="email" name="email" class="form-control form-control-lg" 
+                  value="<?php echo $_POST['email']; ?>"/>
                 </div> 
 
                 <div class="form-outline mb-4">
