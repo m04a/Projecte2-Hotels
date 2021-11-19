@@ -89,7 +89,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo $nomtipus;
     // creating new table row per record
     echo "<tr>
-        <td>$nomtipus</td>
+        <td>$idtipo</td>
         <td>{$finicio}</td>
         <td>{$ffin}</td>
         <td>{$preciototal}€</td>
