@@ -82,13 +82,13 @@ echo "<table class='table table-dark table-hover table-responsive table-bordered
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-    $ultimareserva =$conn->query('SELECT numres as ultimareserva FROM reserva')->fetchColumn();
-    echo $ultimareserva;
+    extract($row);
+    $idtipo=$row['idtipo'];
+    echo $idtipo;
     // extract row
     // this will make $row['firstname'] to
     // just $firstname only
-    extract($row);
-    $idtipo=$row['idtipo'];
+   
     $nomtipus =$conn->query('SELECT nom FROM tipo WHERE idtipo="$idtipo"')->fetchColumn();
     echo $nomtipus;
     // creating new table row per record
