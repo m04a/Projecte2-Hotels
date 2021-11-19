@@ -70,13 +70,12 @@ echo "<table class='table table-dark table-hover table-responsive table-bordered
  
     //creating our table heading
     echo "<tr>
-        <th>Numero de persones</th>
-        <th>Numero de habitacions</th>
-        <th>Metres cuadrats</th>
-        <th>Cantitat d'habitacions</th>
-        <th>Persones maximes</th>
-        <th>Persones maximes</th>
-        <th>Persones maximes</th>
+        <th>Nom tipus</th>
+        <th>Fecha inicis</th>
+        <th>Fecha final</th>
+        <th>Preu total</th>
+        <th>Numero de perones</th>
+        <th>Quanitat de habitacions</th>
     </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -90,12 +89,12 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     echo $nomtipus;
     // creating new table row per record
     echo "<tr>
-        <td>{$numpers}</td>
-        <td>{$canthab}</td>
         <td>$nomtipus</td>
         <td>{$finicio}</td>
         <td>{$ffin}</td>
-        <td>{$preciototal}</td>
+        <td>{$preciototal}€</td>
+        <td>{$numpers}</td>
+        <td>{$canthab}</td>
         <td>";
  
             // we will use this links on next part of this post
