@@ -58,7 +58,6 @@ $stmt->execute();
  
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
-$ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')->fetchColumn();
 
 // link to create record form
 echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
