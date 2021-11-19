@@ -48,9 +48,7 @@ session_start();
 $usuari = $_SESSION["usuari"];
 
 // if it was redirected from delete.php
-if($action=='deleted'){
-    echo "<div class='alert alert-success'>Record was deleted.</div>";
-} 
+
 // select all data
 $query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab,numres FROM reserva WHERE usuario='$usuari' ORDER BY idtipo DESC";
 $stmt = $conn->prepare($query); 
@@ -60,7 +58,6 @@ $stmt->execute();
 $num = $stmt->rowCount();
 
 // link to create record form
-echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
  
 //check if more than 0 record found
 if($num>0){

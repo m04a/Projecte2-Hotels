@@ -177,6 +177,9 @@ if ( document.URL.includes("index.php?r=reservabuscador") ) {
 if ( document.URL.includes("index.php?r=login") ) {
 	document.getElementById("titlevar").textContent="Login";
 }
+if ( document.URL.includes("index.php?r=configuracio") ) {
+	document.getElementById("titlevar").textContent="Configuracio";
+}
 
 /*Lightbox fet*/
 $(document).on("click", '[data-toggle="lightbox"]', function(event) {

@@ -1,28 +1,3 @@
-<?php 
-require '../includes/conectar_DB.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-    $nom=htmlspecialchars($_POST["nom"]);
-    $email=htmlspecialchars($_POST["email"]);
-    $assumpte=htmlspecialchars($_POST["assumpte"]);
-    $missatge=htmlspecialchars($_POST["missatge"]);
-
-$sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$email','$missatge','$assumpte');";
-                $stmt = $conn->prepare($sql);
-                $stmt->bindParam('$nom', $_POST['nom']);
-                $stmt->bindParam('$email', $_POST['email']);
-                $stmt->bindParam('$missatge', $_POST['missatge']);
-                $stmt->bindParam('$assumpte', $_POST['assumpte']);
-
- if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was updated.</div>";
-        }else{
-            echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
-        }
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
