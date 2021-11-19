@@ -52,13 +52,14 @@ if($action=='deleted'){
     echo "<div class='alert alert-success'>Record was deleted.</div>";
 } 
 // select all data
-$query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab FROM reserva WHERE usuario='$usuari' ORDER BY idtipo DESC";
+$query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab, FROM reserva WHERE usuario='$usuari' ORDER BY idtipo DESC";
 $stmt = $conn->prepare($query); 
 $stmt->execute();
  
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 $ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')->fetchColumn();
+echo $ultimareserva;
 
 // link to create record form
 echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
