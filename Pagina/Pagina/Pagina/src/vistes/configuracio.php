@@ -46,6 +46,7 @@ require '../includes/conectar_DB.php';
 session_start();
 
 $usuari = $_SESSION["usuari"];
+echo $usuari;
 
 // if it was redirected from delete.php
 if($action=='deleted'){
