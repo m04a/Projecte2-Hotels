@@ -85,7 +85,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // just $firstname only
     extract($row);
     $idtipo=$row['idtipo'];
-    $nomtipus =$conn->query('SELECT nom FROM tipo WHERE idtipo="$idtipo"';)->fetchColumn();
+    $nomtipus =$conn->query('SELECT nom FROM tipo WHERE idtipo="$idtipo";')->fetchColumn();
     // creating new table row per record
     echo "<tr>
         <td>{$nomtipus}</td>
