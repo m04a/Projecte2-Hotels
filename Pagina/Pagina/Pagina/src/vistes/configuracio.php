@@ -52,7 +52,7 @@ if($action=='deleted'){
     echo "<div class='alert alert-success'>Record was deleted.</div>";
 } 
 // select all data
-$query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab FROM reserva WHERE usuario='$usuari' ORDER BY idtipo DESC";
+$query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab,numres FROM reserva WHERE usuario='$usuari' ORDER BY idtipo DESC";
 $stmt = $conn->prepare($query); 
 $stmt->execute();
  
@@ -70,7 +70,7 @@ echo "<table class='table table-dark table-hover table-responsive table-bordered
  
     //creating our table heading
     echo "<tr>
-        <th>Nom tipus</th>
+        <th>Numero reserva</th>
         <th>Fecha inicis</th>
         <th>Fecha final</th>
         <th>Preu total</th>
@@ -84,11 +84,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     // this will make $row['firstname'] to
     // just $firstname only
     extract($row);
-    $idtipo=$row['idtipo'];
-    $nomtipus =$conn->query('SELECT nom FROM tipo WHERE idtipo="$idtipo";')->fetchColumn();
     // creating new table row per record
     echo "<tr>
-        <td>$nomtipus</td>
+        <td>{$numres}</td>
         <td>{$finicio}</td>
         <td>{$ffin}</td>
         <td>{$preciototal}€</td>
