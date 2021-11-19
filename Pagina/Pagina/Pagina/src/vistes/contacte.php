@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <?php 
+require '../includes/conectar_DB.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $nom=htmlspecialchars($_POST["nom"]);
