@@ -95,7 +95,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>";
  
             // we will use this links on next part of this post
-            echo "<a href='#' onclick='esborrar({$idtipo});'  class='btn btn-danger'>Esborrar</a>";
+            echo "<a href='index.php?r=contacte' class='btn btn-danger'>Anar al contacte per cancelar una reserva</a>";
         echo "</td>";
     echo "</tr>";
 }
