@@ -19,8 +19,10 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
 
  if($stmt->execute()){
             echo "<div class='alert alert-success'>Record was updated.</div>";
+			header("Location:index.php?r=contacte");
         }else{
             echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
+			header("Location:index.php?r=contacte");
         }
 }
     $resposta->SetTemplate("contacte.php");
