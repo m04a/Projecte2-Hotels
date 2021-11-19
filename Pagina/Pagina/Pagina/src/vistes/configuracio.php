@@ -59,8 +59,6 @@ $stmt->execute();
  
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
-$ultimareserva =$conn->query('SELECT MAX(numres) as ultimareserva FROM reserva')->fetchColumn();
-echo $ultimareserva;
 
 // link to create record form
 echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
@@ -84,6 +82,8 @@ echo "<table class='table table-dark table-hover table-responsive table-bordered
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+    $ultimareserva =$conn->query('SELECT numres as ultimareserva FROM reserva')->fetchColumn();
+    echo $ultimareserva;
     // extract row
     // this will make $row['firstname'] to
     // just $firstname only
