@@ -60,7 +60,7 @@
                     <div class="trainer-item">
                     
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/{$imagen}" alt="">
+                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>

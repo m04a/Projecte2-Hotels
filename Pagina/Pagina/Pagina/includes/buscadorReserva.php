@@ -1,5 +1,5 @@
 <?php
-require 'conectar_DB.php';
+
 
 if(isset($_POST["reservaBuscar"])){
 unset($_SESSION["to"]);
