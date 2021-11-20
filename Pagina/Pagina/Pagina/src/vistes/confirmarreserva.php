@@ -51,7 +51,9 @@ include '../includes/crearReserva.php';
 <form action="index.php?r=confirmarreserva" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
-            <th colspan="2"><h3>Revisa les teves dades de registre</h3></th>
+            <th colspan="2"><h3>Revisa les teves dades de registre
+                <p><?php if(!empty($missatge)){echo '<div class="alert alert-warning" role="alert">$missatge</div>'}?></p>
+            </h3></th>
     </tr>
     <tr>
         <td>Nom</td>

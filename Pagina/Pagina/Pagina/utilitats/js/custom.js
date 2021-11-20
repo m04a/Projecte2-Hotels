@@ -153,8 +153,17 @@ minDate: 0
 });
 /*Canvis de reserves*/
 
+if ( document.URL.includes("index.php?r=finalitzarreserva") ) {
+  document.getElementById("titlevar").textContent="Finalitzar reserva";
+}
 if ( document.URL.includes("index.php?r=reserva") ) {
 	document.getElementById("titlevar").textContent="Reserva";
+}
+if ( document.URL.includes("index.php?r=confirmarreserva") ) {
+  document.getElementById("titlevar").textContent="Confirmar la reserva";
+}
+if ( document.URL.includes("index.php?=middleware") ) {
+  document.getElementById("titlevar").textContent="NO TENS PERMISOS";
 }
 if ( document.URL.includes("index.php?r=ferReserva") ) {
   document.getElementById("titlevar").textContent="Habitació";
@@ -181,7 +190,7 @@ if ( document.URL.includes("index.php?r=login") ) {
 	document.getElementById("titlevar").textContent="Login";
 }
 if ( document.URL.includes("index.php?r=configuracio") ) {
-	document.getElementById("titlevar").textContent="Configuracio";
+	document.getElementById("titlevar").textContent="Les meves reserves";
 }
 
 /*Lightbox fet*/

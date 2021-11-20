@@ -3,6 +3,7 @@
                 header('Location: index.php?=middleware');
                 }
                 else{
+                    $missatge='';
                     if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
                     $to = $_POST["fins"];
                     $from = $_POST["desde"];
@@ -72,9 +73,10 @@ if(isset($_POST['treasure'])){
  
         // Execute the query
         if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was updated.</div>";
+            $missatge="Les dades s'han actualitzat"
         }else{
-            echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
+            $missatge="Les dades no s'han actualitzat"
+
         }
  
     }
