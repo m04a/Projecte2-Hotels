@@ -73,9 +73,9 @@ if(isset($_POST['treasure'])){
  
         // Execute the query
         if($stmt->execute()){
-            $missatge="Les dades s'han actualitzat"
+            $missatge="Les dades s'han actualitzat";
         }else{
-            $missatge="Les dades no s'han actualitzat"
+            $missatge="Les dades no s'han actualitzat";
 
         }
  
