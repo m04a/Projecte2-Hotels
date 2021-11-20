@@ -87,7 +87,9 @@ include '../includes/ferReserva.php';
                   </article>
                    <article id='tabs-3'>
                     <div class="container">
- 
+              <p>𝔸𝕚𝕣𝕖 𝕒𝕔𝕠𝕟𝕕𝕚𝕔𝕚𝕠𝕟𝕒𝕥</p>
+              <p>𝕎𝕚𝕗𝕚</p>
+               <p>𝕊𝕖𝕣𝕧𝕖𝕚 𝕕𝕖 𝕓𝕣𝕖𝕒𝕜𝕗𝕒𝕤𝕥</p>
                   </article>
               </section>
           </div>
