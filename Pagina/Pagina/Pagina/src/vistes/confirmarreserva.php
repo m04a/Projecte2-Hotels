@@ -51,9 +51,9 @@ include '../includes/crearReserva.php';
 <form action="index.php?r=confirmarreserva" method="post">
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
-            <th colspan="2"><h3>Revisa les teves dades de registre
+            <th colspan="2"><h3>Revisa les teves dades de registre</h3>
                 <?php if(!empty($missatge)){?><div class="alert alert-warning" role="alert"><?php echo $missatge;?></div><?php }?>
-            </h3></th>
+            </th>
     </tr>
     <tr>
         <td>Nom</td>

@@ -18,16 +18,16 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
             <h6 class="text-uppercase mb-4 font-weight-bold">Descubreix-nos</h6>
             <p>
-              <a class="text-white">Contacte</a>
+              <a href="index.php?r=contacte" class="text-white">Contacte</a>
             </p>
             <p>
-              <a class="text-white">Sobre Nosaltes</a>
+              <a href="index.php?r=about" class="text-white">Sobre Nosaltes</a>
             </p>
             <p>
-              <a class="text-white">Reserva</a>
+              <a href="index.php?r=buscadorreserva" class="text-white">Reserva</a>
             </p>
             <p>
-              <a class="text-white">Habitacionsr</a>
+              <a href="index.php?r=habitacions" class="text-white">Habitacions</a>
             </p>
           </div>
           <!-- Grid column -->
