@@ -24,7 +24,7 @@
               <a href="index.php?r=about" class="text-white">Sobre Nosaltes</a>
             </p>
             <p>
-              <a href="index.php?r=buscadorreserva" class="text-white">Reserva</a>
+              <a href="index.php?r=reservabuscador" class="text-white">Reserva</a>
             </p>
             <p>
               <a href="index.php?r=habitacions" class="text-white">Habitacions</a>
