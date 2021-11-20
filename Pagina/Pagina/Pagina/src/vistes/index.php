@@ -70,7 +70,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>100€</sup>- <sup>150€</sup>?
+                                <sup>100€</sup>- <sup>150€</sup>
                             </span>
 
                             <h4>Habitació Doble Estandard</h4>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>50€</sup>- <sup>60€</sup>?
+                                <sup>50€</sup>- <sup>60€</sup>
                             </span>
 
                             <h4>Habitació Individual</h4>
@@ -114,13 +114,13 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>100€</sup>?- <sup>150€</sup>?
+                                <sup>100€</sup>- <sup>150€</sup>
                             </span>
 
                             <h4>Habitació doble estandard</h4>
 
                             <p>
-                                 Per parelles i baratà
+                                 Per parelles i barat
 
                             </p>
 
