@@ -52,7 +52,7 @@ include '../includes/crearReserva.php';
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
             <th colspan="2"><h3>Revisa les teves dades de registre
-                <p><?php if(!empty($missatge)){echo '<div class="alert alert-warning" role="alert">$missatge</div>';}?></p>
+                <?php if(!empty($missatge)){?><div class="alert alert-warning" role="alert"><?php $missatge;?></div><?php }?>
             </h3></th>
     </tr>
     <tr>
