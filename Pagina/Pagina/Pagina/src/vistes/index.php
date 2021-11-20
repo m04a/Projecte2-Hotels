@@ -43,7 +43,7 @@
                 <h6>Millor hotel de Figueres</h6>
                 <h2>Hotels <em>MK</em></h2>
                 <div class="main-button">
-                    <a href="reservabuscador.php">Reserva Ara!</a>
+                    <a href="index.php?=reservabuscador">Reserva Ara!</a>
                 </div>
             </div>
         </div>
@@ -110,7 +110,7 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/product-1-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/habitacio2.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>

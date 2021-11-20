@@ -156,6 +156,9 @@ minDate: 0
 if ( document.URL.includes("index.php?r=reserva") ) {
 	document.getElementById("titlevar").textContent="Reserva";
 }
+if ( document.URL.includes("index.php?r=ferReserva") ) {
+  document.getElementById("titlevar").textContent="Habitació";
+}
 if ( document.URL.includes("index.php?r=habitacions") ) {
 	document.getElementById("titlevar").textContent="Habitacions";
 }
