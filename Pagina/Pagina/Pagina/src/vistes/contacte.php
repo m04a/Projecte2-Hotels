@@ -81,6 +81,8 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                      <div class="col-lg-6 col-md-6 col-xs-12">
                 <form method="POST">
                     <div class="contact-form">
+							<?php if(!empty($message)){echo "<div class='alert alert-info'>$message</div>";} ?>
+
                         <form id="contact" action="" method="post">
                           <div class="row">
                             <div class="col-md-6 col-sm-12">
@@ -110,7 +112,6 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                                 <button type="submit" id="form-submit" class="main-button">Enviar missatge</button>
                             </div>
                         </form>   
-		<?php if(!empty($message)){echo "<div class='alert alert-info'>$message</div>";} ?>
 						
                             </div>
                           </div>
