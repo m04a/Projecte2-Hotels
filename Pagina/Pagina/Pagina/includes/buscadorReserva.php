@@ -1,6 +1,4 @@
 <?php
-
-
 if(isset($_POST["reservaBuscar"])){
 unset($_SESSION["to"]);
 unset($_SESSION["from"]);
@@ -24,7 +22,7 @@ $npersones = $_POST["npersones"];
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
 HI HAN SUFICIENTS HABITACIONS DE CADA TIPUS
 LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
-    $query = "SELECT idtipo,precio,descripcion,nom,imagen FROM tipo ORDER BY idtipo DESC";
+    $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
