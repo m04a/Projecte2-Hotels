@@ -15,7 +15,7 @@
     <div class="container">
  
         <div class="page-header">
-            <h1>Usuaris</h1>
+            <h1>Reserves</h1>
         </div>
  
         <?php
@@ -65,12 +65,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$preciototal}€</td>
         <td>{$numpers}</td>
         <td>{$canthab}</td>
-        <td>{$usuario}</td>
-        <td>";
- 
-            // we will use this links on next part of this post
-            echo "<a href='crear.php' class='btn btn-danger'>Anar al contacte per cancelar una reserva</a>";
-        echo "</td>";
+        <td>{$usuario}</td>;"
     echo "</tr>";
 }
  
