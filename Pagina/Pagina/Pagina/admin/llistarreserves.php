@@ -65,7 +65,9 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$preciototal}€</td>
         <td>{$numpers}</td>
         <td>{$canthab}</td>
-        <td>{$usuario}</td>;"
+        <td>{$usuario}</td>";
+ 
+            // we will use this links on next part of this post
     echo "</tr>";
 }
  
