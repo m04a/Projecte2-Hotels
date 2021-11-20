@@ -117,8 +117,7 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                 </div>
             </div>
         </div>
-		<?php if(!empty($message)){echo "<div class='alert alert-info'>"$message"</div>";
- } ?>
+		<?php if(!empty($message)){echo "<div class='alert alert-info'>$message</div>";} ?>
     </section>
     <!-- ***** Contact Us Area Ends ***** -->
 
