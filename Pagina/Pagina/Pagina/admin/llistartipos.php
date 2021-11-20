@@ -38,7 +38,7 @@ $stmt->execute();
 $num = $stmt->rowCount();
  
 // link to create record form
-echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou tipus</a>";
+echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Tornar al panell d'admin</a>";
  
 //check if more than 0 record found
 if($num>0){

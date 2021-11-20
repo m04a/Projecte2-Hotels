@@ -29,6 +29,9 @@ $query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab,numres 
 $stmt = $conn->prepare($query); 
 $stmt->execute();
  
+echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Tornar al panell d'admin</a>";
+
+
 // this is how to get number of rows returned
 $num = $stmt->rowCount();
 

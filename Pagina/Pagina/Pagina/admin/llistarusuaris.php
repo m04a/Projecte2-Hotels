@@ -37,7 +37,7 @@ $stmt->execute();
 		 
 $num = $stmt->rowCount();
  
-echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Crear un nou usuari</a>";
+echo "<a href='crear.php' class='btn btn-primary m-b-1em'>Tornar al panell d'admin</a>";
  
 if($num>0){
  
