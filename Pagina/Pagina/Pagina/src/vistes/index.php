@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Habitacions <em>premium</em></h2>
+                        <h2>Habitacions <em>premiums</em></h2>
                         <img src="assets/images/line-dec.png" alt="">
                         <p>Aquestes són habitacions que tenim en venta, si vols més inforamcó només has de clicar en veure més.</p>
                     </div>
@@ -70,17 +70,17 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup>?- <sup>€</sup>?
+                                <sup>100€</sup>- <sup>150€</sup>?
                             </span>
 
-                            <h4>Habitació nom</h4>
+                            <h4>Habitació Doble Estandard</h4>
 
                             <p>
-                                Les millors habitacions
+                                Ideal per parelles
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="habitacions.php">+ Veure més</a></li>
+                                <li><a href="index.php?=habitacions">+ Veure més</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,21 +88,21 @@
                <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/product-3-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup>?- <sup>€</sup>?
+                                <sup>50€</sup>- <sup>60€</sup>?
                             </span>
 
-                            <h4>Habitació nom</h4>
+                            <h4>Habitació Individual</h4>
 
                             <p>
-                                Les millors habitacions
+                                Per persones solitaries
                             </p>
 
                             <ul class="social-icons">
-                                <li><a href="habitacions.php">+ Veure més</a></li>
+                                <li><a href="index.php?=habitacions">+ Veure més</a></li>
                             </ul>
                         </div>
                     </div>
@@ -110,23 +110,23 @@
                 <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/product-1-720x480.jpg" alt="">
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>€</sup>?- <sup>€</sup>?
+                                <sup>100€</sup>?- <sup>150€</sup>?
                             </span>
 
-                            <h4>Habitació nom</h4>
+                            <h4>Habitació doble estandard</h4>
 
                             <p>
-                                 Les millors habitacions
+                                 Per parelles i baratà
 
                             </p>
 
 
                             <ul class="social-icons">
-                                <li><a href="habitacions.php">+ Veure més</a></li>
+                                <li><a href="index.php?=habitacions">+ Veure més</a></li>
                             </ul>
                         </div>
                     </div>
