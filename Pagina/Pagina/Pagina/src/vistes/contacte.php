@@ -2,6 +2,8 @@
 <?php 
 require '../includes/conectar_DB.php';
 
+$message ="";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $nom=htmlspecialchars($_POST["nom"]);
@@ -17,9 +19,9 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                 $stmt->bindParam('$assumpte', $_POST['assumpte']);
 
  if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was updated.</div>";
+				$message ="El teu missatge s'ha enviat";
         }else{
-            echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
+				$message ="El teu missatge no s'ha enviat";
         }
 }
 ?>
@@ -115,6 +117,8 @@ $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$emai
                 </div>
             </div>
         </div>
+		<?php if(!empty($message)){echo "<div class='alert alert-info'>"$message"</div>";
+ } ?>
     </section>
     <!-- ***** Contact Us Area Ends ***** -->
 
