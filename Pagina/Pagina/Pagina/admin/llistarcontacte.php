@@ -15,7 +15,7 @@
     <div class="container">
  
         <div class="page-header">
-            <h1>Reserves</h1>
+            <h1>Contacte</h1>
         </div>
  
         <?php
@@ -25,7 +25,7 @@
 // if it was redirected from delete.php
 
 // select all data
-$query = "SELECT nom,email,assumpte,id,missatge FROM contacte ORDER BY id DESC";
+$query = "SELECT nom,email,assumpte,id,missatge FROM contacte ORDER BY id ASC";
 $stmt = $conn->prepare($query); 
 $stmt->execute();
  
@@ -63,7 +63,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         <td>{$id}</td>
         <td>{$email}</td>
         <td>{$nom}</td>
-        <td>{$assumpte}€</td>
+        <td>{$assumpte}</td>
         <td>{$missatge}</td>";
  
             // we will use this links on next part of this post
