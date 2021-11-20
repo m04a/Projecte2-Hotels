@@ -110,7 +110,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                     <div class="trainer-item">
                     
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/{imagen}" alt="">
+                            <img src="../utilitats/imatges/{$imagen}" alt="">
                         </div>
                         <div class="down-content">
                             <span>
