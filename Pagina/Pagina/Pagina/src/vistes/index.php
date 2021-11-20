@@ -43,7 +43,7 @@
                 <h6>Millor hotel de Figueres</h6>
                 <h2>Hotels <em>MK</em></h2>
                 <div class="main-button">
-                    <a href="index.php?=reservabuscador">Reserva Ara!</a>
+                    <a href="index.php?r=reservabuscador">Reserva Ara!</a>
                 </div>
             </div>
         </div>
