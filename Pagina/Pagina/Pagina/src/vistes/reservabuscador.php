@@ -84,6 +84,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
         $idtipo = $row['idtipo'];
+        $imagen = $row['imagen'];
         $ffin = DateTime::createFromFormat('j/m/Y', $to);
         $finicio = DateTime::createFromFormat('j/m/Y', $from);
         $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
@@ -110,7 +111,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
                     <div class="trainer-item">
                     
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/<?php echo '<tr><td>{$imagen}</td>'?>" alt="">
+                            <img src="../utilitats/imatges/<?php echo $imagen;?>" alt="">
                         </div>
                         <div class="down-content">
                             <span>
