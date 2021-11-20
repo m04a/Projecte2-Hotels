@@ -1,6 +1,6 @@
 <?php
       if($_SESSION["tipo"]!="cliente"){
-                header('Location: middleware.php');
+                header('Location: index.php?=middleware');
                 }
                 else{
                     if(!isset($_SESSION['to']) && empty($_SESSION['to'])) {
