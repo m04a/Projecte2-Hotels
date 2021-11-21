@@ -7,8 +7,8 @@ require 'middleware.php';
 try {
  
     // get record ID
-    // isset() is a PHP function used to verify if a value is there or not
-    $usuari=isset($_GET['usuari']) ? $_GET['usuari'] : die('ERROR: Record ID not found.');
+    // Amb isset() comprovem que existeix el ID
+    $usuari=isset($_GET['usuari']) ? $_GET['usuari'] : die('Hi ha hagut un error: No hem trobat el ID');
  
     // delete query
     $query = "DELETE FROM usuario WHERE usuari = ?";

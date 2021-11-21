@@ -11,23 +11,21 @@
 </head>
 <body>
  <?php
-// get passed parameter value, in this case, the record ID
-// isset() is a PHP function used to verify if a value is there or not
-$idtipo=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('ERROR: Record ID not found.');
+// Passem el valor del parametre// Amb isset() comprovem que existeix el ID
+$idtipo=isset($_GET['idtipo']) ? $_GET['idtipo'] : die('Hi ha hagut un error: No hem trobat el ID');
 
-//include database connection
-require 'conectar_DB.php';
+//fem un include de la nostra conexio al la base de dades i middlewarerequire 'conectar_DB.php';
 require 'middleware.php';    
 
  
 // read current record's data
 try {
-    // prepare select query
+    // Fem un select del query
     $query = "SELECT idtipo, precio, imagen, m2, cantidad, persmax, descripcion, nom FROM tipo WHERE idtipo = ? LIMIT 0,1";
 
     $stmt = $conn->prepare( $query );
  
-    // this is the first question mark
+    //Aquest es el interogant del principi / O la id
     $stmt->bindParam(1, $idtipo);
  
     // execute our query

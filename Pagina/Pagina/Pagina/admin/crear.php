@@ -222,15 +222,15 @@ if(isset($_POST["crearhabitacio"])){
             <td><input type='text' name='imagen' class='form-control' /></td>
         </tr>
         <tr>
-            <td>Metres cuadrats</td>
+            <td>M2</td>
             <td><input type='number' name='m2' class='form-control' /></td>
         </tr>
         <tr>
-            <td>Cantitat d'habitacions</td>
+            <td>Quanitat d'habitacions</td>
             <td><input type='number' name='cantidad' class='form-control' /></td>
         </tr>
         <tr>
-            <td>Persones maximes</td>
+            <td>Persones màximes</td>
             <td><input type='number' name='persmax' class='form-control' /></td>
         </tr>
         <tr>
