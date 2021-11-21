@@ -67,7 +67,7 @@ unset($_SESSION["sexo"]);
 unset($_SESSION["email"]);
 unset($_SESSION["numhab"]);
 
-
+/* coge valores de fer */
 $to = $_POST["to"];
 $from = $_POST["from"];
 $nhabitacio = $_POST["nhabitacio"];
@@ -98,14 +98,14 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
-        $stmt3 = $conn->prepare("SELECT count(idtipo) from tipo where (vacfin <= :vacinicio or vacinicio >= :vacfin) and idtipo = :idtipo");
+        $stmt3 = $conn->prepare("SELECT count(canthab) from tipo where (vacfin <= :vacinicio or vacinicio >= :vacfin) and idtipo = :idtipo");
         $stmt3->bindParam(':vacinicio', $finicio->format('Y-m-d'));
         $stmt3->bindParam(':vacfin', $ffin->format('Y-m-d'));
         $stmt3->bindParam(':idtipo', $idtipo);
         $stmt3->execute();
         $vacas = $stmt3->fetchAll();
-        $disponible=$cantidad-$number_of_rows[0]["COUNT(idtipo)"];
-        if($number_of_rows[0]["COUNT(idtipo)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]>0){
+        $disponible=$cantidad-$number_of_rows[0]["COUNT(canthab)"];
+        if($number_of_rows[0]["COUNT(canthab)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(canthab)"]>0){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">

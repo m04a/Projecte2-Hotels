@@ -193,7 +193,7 @@ if(isset($_POST["crearhabitacio"])){
     <a class="nav-link" href="llistartipos.php">Llistar tipus</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="llistarreserves.php">Llistar tipus</a>
+    <a class="nav-link" href="llistarreserves.php">Llistar reserves</a>
   </li>
   <?php if($_SESSION["tipo"]=="admin"){ ?>
   <li class="nav-item">
