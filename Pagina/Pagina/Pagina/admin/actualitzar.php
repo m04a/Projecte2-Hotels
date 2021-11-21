@@ -65,7 +65,8 @@ if($_POST){
         // in this case, it seemed like we have so many fields to pass and
         // it is better to label them and not use question marks
         $query = "UPDATE tipo
-                    SET  
+                    SET 
+                    idtipo=:idtipo, 
                     precio=:precio, 
                     imagen=:imagen, 
                     m2=:m2, 
@@ -79,7 +80,7 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
-        $idtipo=$_POST['idtipo'];
+        //$idtipo=$_POST['idtipo'];
         $precio=$_POST['precio'];
         $imagen=$_POST['imagen'];
         $m2=$_POST['m2'];
@@ -138,7 +139,7 @@ if($_POST){
             <td><input type='number' name='persmax' value="<?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
-        <td>descripcion <?php $stmt->debugDumpParams(); ?></td>
+        <td>descripcion <? $stmt->debugDumpParams(); ?></td>
             <td><textarea name='descripcion' class='form-control'><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></textarea></td>
     </tr>
     <tr>
