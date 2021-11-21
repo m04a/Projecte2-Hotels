@@ -46,7 +46,17 @@
    require '../includes/conectar_DB.php';
 /**
  * coge las habitaciones de la base de datos para mostrarlas a continuacion
- */
+ */unset($_SESSION["to"]);
+unset($_SESSION["from"]);
+unset($_SESSION["nhabitacio"]);
+unset($_SESSION["npersones"]);
+unset($_SESSION["precio"]);
+unset($_SESSION["nombre"]);
+unset($_SESSION["apellidos"]);
+unset($_SESSION["fechanacimiento"]);
+unset($_SESSION["sexo"]);
+unset($_SESSION["email"]);
+unset($_SESSION["numhab"]);
     $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
