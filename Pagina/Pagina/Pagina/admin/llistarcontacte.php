@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Llistar reserves - Admin</title>
+    <title>Llistar contactes - Admin</title>
  
     <!-- Latest compiled and minified Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -15,7 +15,7 @@
     <div class="container">
  
         <div class="page-header">
-            <h1>Reserves</h1>
+            <h1>Contacte</h1>
         </div>
  
         <?php
@@ -25,7 +25,7 @@
 // if it was redirected from delete.php
 
 // select all data
-$query = "SELECT numpers,idtipo,finicio,ffin,usuario,preciototal,canthab,numres FROM reserva ORDER BY numres DESC";
+$query = "SELECT nom,email,assumpte,id,missatge FROM contacte ORDER BY id ASC";
 $stmt = $conn->prepare($query); 
 $stmt->execute();
  
@@ -45,13 +45,11 @@ echo "<table class='table table-dark table-hover table-responsive table-bordered
  
     //creating our table heading
     echo "<tr>
-        <th>Numero reserva</th>
-        <th>Fecha inicis</th>
-        <th>Fecha final</th>
-        <th>Preu total</th>
-        <th>Numero de perones</th>
-        <th>Quantiat de habitacions</th>
-         <th>Usuari</th>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Nom</th>
+        <th>Assumpte</th>
+        <th>Misstage</th>
     </tr>";
  
     // http://stackoverflow.com/questions/2770630/pdofetchall-vs-pdofetch-in-a-loop
@@ -62,13 +60,11 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
     extract($row);
     // creating new table row per record
     echo "<tr>
-        <td>{$numres}</td>
-        <td>{$finicio}</td>
-        <td>{$ffin}</td>
-        <td>{$preciototal}€</td>
-        <td>{$numpers}</td>
-        <td>{$canthab}</td>
-        <td>{$usuario}</td>";
+        <td>{$id}</td>
+        <td>{$email}</td>
+        <td>{$nom}</td>
+        <td>{$assumpte}</td>
+        <td>{$missatge}</td>";
  
             // we will use this links on next part of this post
     echo "</tr>";
