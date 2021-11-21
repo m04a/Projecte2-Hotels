@@ -171,3 +171,100 @@ Instalem el apache2
 
 I executem el seguent script a la nostra pagina
 ````
+--------------------------------------------------------------------------------------------------------------------------------------------------
+````
+
+
+if [ "$(whoami)" != 'root' ]; then
+echo "Has de acceruta com a root"
+exit 1;
+fi
+read -p "Escriu el server name que vols (sense el www e.g mkhotels) : " servidor
+read -p "Escriu el CNAME (e.g. www) : " cname
+read -p "Escriu la ruta on vols instalar-ho (e.g. : /var/www/ ): " ruta
+read -p "Escriu el usuari qye vols utilizar (e.g. : apache) : " usuari
+read -p "Escriu la IP del teu servidor (e.g. : 192.168.56.2): " ip
+if ! mkruta -p $ruta$cname_$servidor; then
+echo "Web rutaectory already Exist !"
+else
+echo "Web rutaectory created with success !"
+fi
+echo "<?php echo '<h1>$cname $servidor</h1>'; ?>" > $ruta$cname_$servidor/index.php
+chown -R $usuari:$usuari $ruta$cname_$servidor
+chmod -R '755' $ruta$cname_$servidor
+mkruta /var/log/$cname_$servidor
+
+alias=$cname.$servidor
+if [[ "${cname}" == "" ]]; then
+alias=$servidor
+fi
+
+echo "#### $cname $servidor
+<VirtualHost $ip:80>
+ServerName $servidor
+ServerAlias $alias
+DocumentRoot $ruta$cname_$servidor
+<rutaectory $ruta$cname_$servidor>
+Options Indexes FollowSymLinks MultiViews
+AllowOverride All
+Order allow,deny
+Allow from all
+Require all granted
+</rutaectory>
+</VirtualHost>" > /etc/httpd/conf.d/$cname_$servidor.conf
+if ! echo -e /etc/httpd/conf.d/$cname_$servidor.conf; then
+echo "Virtual host wasn't created !"
+else
+echo "Virtual host created !"
+fi
+echo "Would you like me to create ssl virtual host [y/n]? "
+read q
+if [[ "${q}" == "yes" ]] || [[ "${q}" == "y" ]]; then
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/httpd/conf.d/$cname_$servidor.key -out /etc/httpd/conf.d/$cname_$servidor.crt
+if ! echo -e /etc/httpd/conf.d/$cname_$servidor.key; then
+echo "Certificate key wasn't created !"
+else
+echo "Certificate key created !"
+fi
+if ! echo -e /etc/httpd/conf.d/$cname_$servidor.crt; then
+echo "Certificate wasn't created !"
+else
+echo "Certificate created !"
+fi
+
+echo "#### ssl $cname $servidor
+<VirtualHost $ip:443>
+SSLEngine on
+SSLCertificateFile /etc/httpd/conf.d/$cname_$servidor.crt
+SSLCertificateKeyFile /etc/httpd/conf.d/$cname_$servidor.key
+ServerName $servidor
+ServerAlias $alias
+DocumentRoot $ruta$cname_$servidor
+<rutaectory $ruta$cname_$servidor>
+Options Indexes FollowSymLinks MultiViews
+AllowOverride All
+Order allow,deny
+Allow from all
+Satisfy Any
+</rutaectory>
+</VirtualHost>" > /etc/httpd/conf.d/ssl.$cname_$servidor.conf
+if ! echo -e /etc/httpd/conf.d/ssl.$cname_$servidor.conf; then
+echo "SSL Virtual host wasn't created !"
+else
+echo "SSL Virtual host created !"
+fi
+fi
+
+echo "127.0.0.1 $servidor" >> /etc/hosts
+if [ "$alias" != "$servidor" ]; then
+echo "127.0.0.1 $alias" >> /etc/hosts
+fi
+echo "Testing configuration"
+service httpd configtest
+echo "Would you like me to restart the server [y/n]? "
+read q
+if [[ "${q}" == "yes" ]] || [[ "${q}" == "y" ]]; then
+service httpd restart
+fi
+
+````
