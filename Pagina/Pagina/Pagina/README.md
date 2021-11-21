@@ -164,4 +164,10 @@ ALTER TABLE tipo ALTER vacinicio SET DEFAULT '2021-02-17';
 ````
 SEGON INSTAL·LEM ELS SEGUENTS MÒDULS DE PHP I DEL APACHE
 =============
+````
+bcmath, calendar, Core, ctype, curl, date, dom, exif, FFI, fileinfo, filter, ftp, gd, gettext, hash, iconv, json, libxml, mbstring, mysqli, mysqlnd, openssl, pcntl, pcre, PDO, pdo_mysql, Phar, posix, readline, Reflection, session, shmop, SimpleXML, sockets, sodium, SPL, standard, sysvmsg, sysvsem, sysvshm, tokenizer, xml, xmlreader, xmlwriter, xsl, Zend OPcache, zip, zlib
 
+Instalem el apache2
+
+I executem el seguent script a la nostra pagina
+````
