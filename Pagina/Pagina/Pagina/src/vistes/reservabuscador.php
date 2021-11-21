@@ -87,7 +87,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $imagen = $row['imagen'];
         $ffin = DateTime::createFromFormat('j/m/Y', $to);
         $finicio = DateTime::createFromFormat('j/m/Y', $from);
-        $query2 = "SELECT COUNT(idtipo) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
+        $query2 = "SELECT COUNT(canthab) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
         $result = $conn->prepare($query2); 
         $result->bindParam(':finicio', $finicio->format('Y-m-d'));
         $result->bindParam(':ffin', $ffin->format('Y-m-d'));
@@ -98,7 +98,7 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
-        $stmt3 = $conn->prepare("SELECT count(canthab) from tipo where (vacfin <= :vacinicio or vacinicio >= :vacfin) and idtipo = :idtipo");
+        $stmt3 = $conn->prepare("SELECT count(idtipo) from tipo where (vacfin <= :vacinicio or vacinicio >= :vacfin) and idtipo = :idtipo");
         $stmt3->bindParam(':vacinicio', $finicio->format('Y-m-d'));
         $stmt3->bindParam(':vacfin', $ffin->format('Y-m-d'));
         $stmt3->bindParam(':idtipo', $idtipo);
