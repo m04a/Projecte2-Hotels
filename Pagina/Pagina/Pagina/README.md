@@ -156,9 +156,12 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2021-11-21 11:54:24
-
 ```
-
+S'han de afegir les seguents comandas
+```sql
+ ALTER TABLE tipo ALTER vacfin SET DEFAULT '2021-02-17';
+ALTER TABLE tipo ALTER vacinicio SET DEFAULT '2021-02-17';
+````
 SEGON INSTAL·LEM ELS SEGUENTS MÒDULS DE PHP I DEL APACHE
 =============
 
