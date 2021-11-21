@@ -158,3 +158,7 @@ UNLOCK TABLES;
 -- Dump completed on 2021-11-21 11:54:24
 
 ```
+
+SEGON INSTAL·LEM ELS SEGUENTS MÒDULS DE PHP I DEL APACHE
+=============
+
