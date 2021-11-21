@@ -67,7 +67,7 @@ unset($_SESSION["sexo"]);
 unset($_SESSION["email"]);
 unset($_SESSION["numhab"]);
 
-/* coge valores de fer */
+/* coge valores de*/
 $to = $_POST["to"];
 $from = $_POST["from"];
 $nhabitacio = $_POST["nhabitacio"];
@@ -87,7 +87,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $imagen = $row['imagen'];
         $ffin = DateTime::createFromFormat('j/m/Y', $to);
         $finicio = DateTime::createFromFormat('j/m/Y', $from);
-        $query2 = "SELECT COUNT(canthab) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
+        $query2 = "SELECT SUM(canthab) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
+        //SELECT SUM(canthab) FROM reserva WHERE finicio >= '2021-11-22' AND ffin <= '2021-11-23' and idtipo = 2;
         $result = $conn->prepare($query2); 
         $result->bindParam(':finicio', $finicio->format('Y-m-d'));
         $result->bindParam(':ffin', $ffin->format('Y-m-d'));
@@ -104,8 +105,8 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $stmt3->bindParam(':idtipo', $idtipo);
         $stmt3->execute();
         $vacas = $stmt3->fetchAll();
-        $disponible=$cantidad-$number_of_rows[0]["COUNT(canthab)"];
-        if($number_of_rows[0]["COUNT(canthab)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(canthab)"]>0){
+        $disponible=$cantidad-$number_of_rows[0]["SUM(canthab)"];
+        if($number_of_rows[0]["SUM(canthab)"]+$nhabitacio<=$cantidad&&$vacas[0]["count(idtipo)"]>0){
         ?>
          <div class="col-lg-4">
                     <div class="trainer-item">
