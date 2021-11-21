@@ -102,8 +102,7 @@ if($_POST){
  
         // Execute the query
         if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was updated. $stmt->debugDumpParams(); </div>";
-            
+            echo "<div class='alert alert-success'>Record was updated. </div>";
         }else{
             echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
         }
@@ -140,7 +139,7 @@ if($_POST){
             <td><input type='number' name='persmax' value="<?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
-        <td>descripcion</td>
+        <td>descripcion <?php $stmt->debugDumpParams(); ?></td>
             <td><textarea name='descripcion' class='form-control'><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></textarea></td>
     </tr>
     <tr>
