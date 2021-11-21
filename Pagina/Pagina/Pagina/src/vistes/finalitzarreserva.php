@@ -112,6 +112,7 @@ include '../includes/finalitzarres.php';
     </div>
   </div>
 </div>
+<!-- contenido que se imprimira en el pdf y esta oculto  -->
 <div id="customers">
   <span>El numero de la teva reserva es nº<?php echo $ultimareserva; ?>.</span>
   <p><i class="fa fa-home mr-3"></i>Ciutat:  Figueres, GIRONA 17600</p>

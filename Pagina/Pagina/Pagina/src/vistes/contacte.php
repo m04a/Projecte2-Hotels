@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php 
 require '../includes/conectar_DB.php';
-
+/** se cambia a mensaje de error dependiendo de si la query se ha ejecutado correctamente o no */
 $message ="";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -10,7 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email=htmlspecialchars($_POST["email"]);
     $assumpte=htmlspecialchars($_POST["assumpte"]);
     $missatge=htmlspecialchars($_POST["missatge"]);
-
+/**
+ * inserta la consulta en la base de datos
+ */
 $sql = "INSERT INTO contacte (nom,email,missatge,assumpte) VALUES ('$nom','$email','$missatge','$assumpte');";
                 $stmt = $conn->prepare($sql);
                 $stmt->bindParam('$nom', $_POST['nom']);

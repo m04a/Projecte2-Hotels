@@ -49,6 +49,7 @@ include '../includes/crearReserva.php';
   <div class="row justify-content-center">
     <div class="col-sm">
 <form action="index.php?r=confirmarreserva" method="post">
+    <!-- imprime los datos de usuario y deja al cliente cambiarlos si es necesario -->
  <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
             <th colspan="2"><h3>Revisa les teves dades de registre</h3>
@@ -91,6 +92,7 @@ include '../includes/crearReserva.php';
 
     </div>
    <div class="col-sm">
+       <!-- muestra los datos de reserva -->
   <table class='table table-dark table-hover table-responsive table-bordered'>
     <tr>
             <th colspan="2"><h3>Dades de reserva</h3></th>
@@ -141,7 +143,7 @@ include '../includes/crearReserva.php';
             <td><input type='text' name='cc' id="card" class='form-control' /></td>
     </tr>  </div>
   <div class="card-body">
-
+<!-- envia los datos a finalitzarreserva -->
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
         <form action='index.php?r=finalitzarreserva' method='post' onsubmit="validate()">

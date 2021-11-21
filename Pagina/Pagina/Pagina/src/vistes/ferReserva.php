@@ -98,13 +98,15 @@ include '../includes/ferReserva.php';
 </section>
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
+    <!-- en caso de que se vaya a esta pagina desde reserva con una fecha establecida permitira avanzar con la reserva
+  en caso de que se vaya desde habitacion (sin fecha "hasta") permitira volver a habitaciones -->
     <?php if (isset($to)){
       ?>
       <div class="card-header">
         <p>Reservar habitació <?php echo htmlspecialchars($nom, ENT_QUOTES);?> el següent interval: 
     <?php echo $from; echo ' - '; echo $to; echo ' | '; echo 'Numero de persones: '; echo $npersones; echo ' | Numero de habitacions : '; echo $nhabitacio; ?> </p>
 
-
+<!-- envia los datos a confirmarreserva  -->
   </div>
       
                                 <a href="index.php?r=reservabuscador" class='btn btn-danger'>Tornar a reserves</a>

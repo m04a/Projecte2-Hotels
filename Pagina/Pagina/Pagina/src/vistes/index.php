@@ -62,6 +62,7 @@
                     </div>
                 </div>
             </div>
+            <!-- dos habitaciones fijas de ejemplo -->
             <div class="row">
                <div class="col-lg-4">
                     <div class="trainer-item">

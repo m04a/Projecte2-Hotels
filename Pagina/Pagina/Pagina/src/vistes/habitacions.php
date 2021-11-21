@@ -44,20 +44,21 @@
             <br>
 <?php
    require '../includes/conectar_DB.php';
-
+/**
+ * coge las habitaciones de la base de datos para mostrarlas a continuacion
+ */
     $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
-          
         ?>
     
          <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
-                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
+                            <img src="../utilitats/imatges/<?php echo $imagen;?>" alt="">
                         </div>
                         <div class="down-content">
                             <span>

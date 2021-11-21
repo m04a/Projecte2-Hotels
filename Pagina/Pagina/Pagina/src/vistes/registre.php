@@ -53,6 +53,9 @@ require '../includes/checkuser.php';
           <div class="card text-white bg-secondary" id="card" style="border-radius: 15px;">
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Crear un compte</h2>
+              <!-- 
+                Las comprobaciones correspondientes se realizan en doregistre en includes
+              -->
               <form method="POST">
                  <?php if(!empty($message)): ?>
                   <div class='alert alert-warning'> <?= $message ?> </div>

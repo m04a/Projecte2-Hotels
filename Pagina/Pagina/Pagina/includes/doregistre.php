@@ -1,6 +1,9 @@
  <?php
  $message = '';
  $fallo = '';
+ /**
+  * comprueba la variable para evitar posibles inyecciones sql
+  */
 	function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -23,7 +26,10 @@
       $fechanacimiento = $_POST['fechanacimiento'];
       $sexo = $_POST['sexo'];
 
-
+/** 
+ * En caso de que haya algun fallo, devuelve un mensaje de error y no deja avanzar.
+ * Si todo es correcto inserta el usuario en la base de datos
+*/
 if ($password != $passwordc) {
 	$fallo = 'Les contrasenyes no son iguals';
   }else{
@@ -68,7 +74,9 @@ if ($password != $passwordc) {
           $stmt->bindParam(':email', $email);
       }
   }
-  //date in mm/dd/yyyy format; or it can be in other formats as well
+  /**
+   * comprueba si ha habido algun fallo, si no hay ninguno comprueba que el usuario sea mayor de edad y si lo es lo registra a la BBDD
+   */
   if(!$fallo==''){
     $message=$fallo;
     }else{
