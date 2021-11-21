@@ -1,3 +1,11 @@
+<!--
+    * Include navbar
+    * 
+    * @author: MohamedBourarach mbourarachs@cendrassos.net
+    *
+    * Ens mostra un form de recerca basicament
+    *
+-->
 <div class="mx-auto">
   <form class="buscadorForm form-inline" method="post" action="index.php?r=reservabuscador">
 <div class="form-group mb-2">

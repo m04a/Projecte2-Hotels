@@ -1,3 +1,11 @@
+<!--
+    * Include footer
+    * 
+    * @author: MohamedBourarach mbourarachs@cendrassos.net
+    *
+    * El footer és repeteix en tots el llocs
+    *
+-->
   <!-- Footer -->
   <footer class="text-center text-lg-start text-white">
     <!-- Grid container -->

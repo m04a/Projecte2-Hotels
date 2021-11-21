@@ -1,4 +1,9 @@
-/*Importem totes les fonts */
+/*Importem totes les fonts
+S'han tingut en compte els conceptes de English friendly websites
+Les clases utilitzades en el projecte tenen moltes clases en angles per ser més esquematiques de manera
+que les clases tenen el esquema angles de pagines web
+
+ */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
@@ -551,7 +556,7 @@ header banner
 
 /*
 ---------------------------------------------
-features
+Carectersitiques
 ---------------------------------------------
 */
 
@@ -594,7 +599,7 @@ features
 
 /*
 ---------------------------------------------
-subscribe
+Fer una subscripció
 ---------------------------------------------
 */
 
@@ -630,7 +635,7 @@ subscribe
 
 /*
 --------------------------------------------
-Our Classes
+Les nostres clases
 --------------------------------------------
 */
 
@@ -818,7 +823,7 @@ schedule
 
 /* 
 ---------------------------------------------
-trainers
+Trainers
 --------------------------------------------- 
 */
 

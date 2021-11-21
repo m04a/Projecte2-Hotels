@@ -4,9 +4,9 @@ $config = array();
 
 /* configuració de connexió a la base dades */
 $config["db"] = array();
-$config["db"]["user"] = 'demologin';
-$config["db"]["pass"] = '06C5rju2lfSGIQ7m';
-$config["db"]["dbname"] = 'demologin';
+$config["db"]["user"] = 'admin';
+$config["db"]["pass"] = 'Nemes1sx';
+$config["db"]["dbname"] = 'hotel';
 $config["db"]["host"] = 'localhost';
 
 /* Path on guardarem el fitxer sqlite */

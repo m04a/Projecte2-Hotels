@@ -1,3 +1,11 @@
+<!--
+    * Include checkuser
+    * 
+    * @author: MohamedBourarach mbourarachs@cendrassos.net
+    *
+    * Fem una revisió de la nostra reserva de manera que tinguem en compte les sesions creades
+    *
+-->
  <?php
  if($_SESSION["tipo"]!="cliente"){
                 header('Location: index.php?r=middleware');

@@ -1,3 +1,11 @@
+<!--
+    * Include navbar Kirill tus muertos vago de mierda
+    * 
+    * @author: MohamedBourarach mbourarachs@cendrassos.net
+    *
+    * Es mostra a totes les pagines
+    *
+-->
  <?php
     session_start();
 ?>
@@ -22,7 +30,8 @@
                             ?>
                             <li class="dropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
-                              
+                                                      <!-- ***** Si la sessió es diferent no apareixen alguns so es admin surt el apartat de crear següent ***** -->
+
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item"  href=""><?php echo $_SESSION["usuari"]; ?></a>
                                     <a href="index.php?r=configuracio" class="dropdown-item"  href="">Reserves i configuració</a>

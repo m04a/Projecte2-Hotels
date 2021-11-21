@@ -1,3 +1,11 @@
+<!--
+    * Include checkuser
+    * 
+    * @author: MohamedBourarach mbourarachs@cendrassos.net
+    *
+    * Si el tipus esta asignat en el login o el registre ens torna a la pagina principal
+    *
+-->
  <?php
  $message = '';
  $fallo = '';
