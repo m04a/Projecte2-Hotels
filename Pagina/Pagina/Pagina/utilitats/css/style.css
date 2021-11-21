@@ -953,7 +953,7 @@ button:hover {
 
 /* 
 ---------------------------------------------
-Carregador de la pagina (Credits a la biblografia)
+Carregador de la Pàgina (Credits a la biblografia)
 --------------------------------------------- 
 */
 
@@ -977,7 +977,7 @@ Carregador de la pagina (Credits a la biblografia)
     transition: opacity 0.25s ease;
 }
 
-/*Quan està carregat aquest no és mostra i aixi és veu la pagina*/
+/*Quan està carregat aquest no és mostra i aixi és veu la Pàgina*/
 .js-preloader.loaded {
     opacity: 0;
     visibility: hidden;
@@ -1120,7 +1120,7 @@ responsive
   color: #ed563b!important;
 }
 
-.pagination-lg .page-link {
+.Pàgination-lg .page-link {
   color: #ed563b;
 }
 .btn{

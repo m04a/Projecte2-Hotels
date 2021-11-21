@@ -12,7 +12,7 @@ header('Refresh:5; URL=index.php?r=index');
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='../utilitats/imatges/favicon.ico' />
-    <title>Pagina Hotel| Se te redidirigira en... </title>
+    <title>Pàgina Hotel| Se te redidirigira en... </title>
 
     <link rel="stylesheet" type="text/css" href="../utilitats/css/font-awesome.css">
 
@@ -44,7 +44,7 @@ header('Refresh:5; URL=index.php?r=index');
     <!-- *** Capçalera Final *** -->
 
     <div class="alert alert-danger" role="alert">
-    La pagina que intentes accedir requereix iniciar sessió has iniciat sessió o no estas registrat, se té redigirà automaticament. <a href="index.php?r=login"> Si no redirigeix dona clic aqui </a>
+    La Pàgina que intentes accedir requereix iniciar sessió has iniciat sessió o no estas registrat, se té redigirà automaticament. <a href="index.php?r=login"> Si no redirigeix dona clic aqui </a>
     </div>
 
      <!-- *** Footer inici *** -->

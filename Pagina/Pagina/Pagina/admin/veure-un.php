@@ -63,15 +63,15 @@ catch(PDOException $exception){
         <td><?php echo htmlspecialchars($imagen, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>Metres cuadrats</td>
+        <td>M2</td>
         <td><?php echo htmlspecialchars($m2, ENT_QUOTES);  ?></td>
     </tr>
     <tr>
-        <td>Cantitat</td>
+        <td>Quanitat</td>
         <td><?php echo htmlspecialchars($cantidad, ENT_QUOTES);  ?></td>
     </tr>
          <tr>
-        <td>Persones maximes</td>
+        <td>Persones màximes</td>
         <td><?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?></td>
     </tr>
     <tr>

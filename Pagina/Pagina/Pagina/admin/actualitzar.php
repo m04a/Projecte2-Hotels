@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+º<!DOCTYPE HTML>
 <html>
 <head>
     <title>Veure tipus - Admin</title>
@@ -127,15 +127,15 @@ if($_POST){
             <td><input type='text' name='imagen' value="<?php echo htmlspecialchars($imagen, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
      <tr>
-        <td>Metres cuadrats</td>
+        <td>M2</td>
             <td><input type='number' name='m2' value="<?php echo htmlspecialchars($m2, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
      <tr>
-        <td>Cantitat habitacions</td>
+        <td>Quanitat de habitacions</td>
             <td><input type='number' name='cantidad' value="<?php echo htmlspecialchars($cantidad, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
      <tr>
-        <td>Persones maximes</td>
+        <td>Persones màximes</td>
             <td><input type='number' name='persmax' value="<?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>

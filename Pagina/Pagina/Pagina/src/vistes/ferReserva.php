@@ -98,7 +98,7 @@ include '../includes/ferReserva.php';
 </section>
 <div class="card text-center text-white bg-dark">
   <div class="card-body">
-    <!-- en caso de que se vaya a esta pagina desde reserva con una fecha establecida permitira avanzar con la reserva
+    <!-- en caso de que se vaya a esta Pàgina desde reserva con una fecha establecida permitira avanzar con la reserva
   en caso de que se vaya desde habitacion (sin fecha "hasta") permitira volver a habitaciones -->
     <?php if (isset($to)){
       ?>
