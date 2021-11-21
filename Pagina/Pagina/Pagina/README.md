@@ -176,7 +176,7 @@ I executem el seguent script a la nostra pagina
 
 
 if [ "$(whoami)" != 'root' ]; then
-echo "Has de acceruta com a root"
+echo "Has de accedir com a root"
 exit 1;
 fi
 read -p "Escriu el server name que vols (sense el www e.g mkhotels) : " servidor
@@ -185,9 +185,9 @@ read -p "Escriu la ruta on vols instalar-ho (e.g. : /var/www/ ): " ruta
 read -p "Escriu el usuari qye vols utilizar (e.g. : apache) : " usuari
 read -p "Escriu la IP del teu servidor (e.g. : 192.168.56.2): " ip
 if ! mkruta -p $ruta$cname_$servidor; then
-echo "Web rutaectory already Exist !"
+echo "La ruta ja existeix !"
 else
-echo "Web rutaectory created with success !"
+echo "La Web del directory  se ha creat !"
 fi
 echo "<?php echo '<h1>$cname $servidor</h1>'; ?>" > $ruta$cname_$servidor/index.php
 chown -R $usuari:$usuari $ruta$cname_$servidor
@@ -213,9 +213,9 @@ Require all granted
 </rutaectory>
 </VirtualHost>" > /etc/httpd/conf.d/$cname_$servidor.conf
 if ! echo -e /etc/httpd/conf.d/$cname_$servidor.conf; then
-echo "Virtual host wasn't created !"
+echo "Virtual host no s'ha creat !"
 else
-echo "Virtual host created !"
+echo "Virtual host se ha creat !"
 fi
 echo "Would you like me to create ssl virtual host [y/n]? "
 read q
