@@ -1,3 +1,11 @@
+<!--
+    * Include de la creació de la reserva
+    * 
+    * @author: MohamedBourarach mbourarachs@cendrassos.net
+    *
+    * Carrega la part de la capçalera.
+    *
+-->
 <?php
       if($_SESSION["tipo"]!="cliente"){
                 header('Location: index.php?=middleware');
