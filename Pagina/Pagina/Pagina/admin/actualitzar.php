@@ -139,7 +139,7 @@ if($_POST){
             <td><input type='number' name='persmax' value="<?php echo htmlspecialchars($persmax, ENT_QUOTES);  ?>" class='form-control' /></td>
     </tr>
     <tr>
-        <td>descripcion <? $stmt->debugDumpParams(); ?></td>
+        <td>descripcion</td>
             <td><textarea name='descripcion' class='form-control'><?php echo htmlspecialchars($descripcion, ENT_QUOTES);  ?></textarea></td>
     </tr>
     <tr>
