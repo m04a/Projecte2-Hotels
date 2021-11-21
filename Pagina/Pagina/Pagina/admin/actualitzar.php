@@ -102,8 +102,8 @@ if($_POST){
  
         // Execute the query
         if($stmt->execute()){
-            echo "<div class='alert alert-success'>Record was updated. </div>";
-            $stmt->debugDumpParams();
+            echo "<div class='alert alert-success'>Record was updated. $stmt->debugDumpParams(); </div>";
+            
         }else{
             echo "<div class='alert alert-danger'>Unable to update record. Please try again.</div>";
         }
