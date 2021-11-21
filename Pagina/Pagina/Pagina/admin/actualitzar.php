@@ -80,14 +80,14 @@ if($_POST){
         $stmt = $conn->prepare($query);
  
         // posted values
-        $idtipo=htmlspecialchars(strip_tags($_POST['idtipo']));
-        $precio=htmlspecialchars(strip_tags($_POST['precio']));
-        $imagen=htmlspecialchars(strip_tags($_POST['imagen']));
-        $m2=htmlspecialchars(strip_tags($_POST['m2']));
-        $cantidad=htmlspecialchars(strip_tags($_POST['cantidad']));
-        $persmax=htmlspecialchars(strip_tags($_POST['persmax']));
-        $descripcion=htmlspecialchars(strip_tags($_POST['descripcion']));
-        $nom=htmlspecialchars(strip_tags($_POST['nom']));
+        $idtipo=$_POST['idtipo'];
+        $precio=$_POST['precio'];
+        $imagen=$_POST['imagen'];
+        $m2=$_POST['m2'];
+        $cantidad=$_POST['cantidad'];
+        $persmax=$_POST['persmax'];
+        $descripcion=$_POST['descripcion'];
+        $nom=$_POST['nom'];
  
         // bind the parameters
         

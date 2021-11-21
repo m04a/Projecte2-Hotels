@@ -63,28 +63,6 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="trainer-item">
-                        <div class="image-thumb">
-                            <img src="../utilitats/imatges/product-2-720x480.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <span>
-                                <sup>100€</sup>- <sup>150€</sup>
-                            </span>
-
-                            <h4>Habitació Doble Estandard</h4>
-
-                            <p>
-                                Ideal per parelles
-                            </p>
-
-                            <ul class="social-icons">
-                                <li><a href="index.php?=habitacions">+ Veure més</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                <div class="col-lg-4">
                     <div class="trainer-item">
                         <div class="image-thumb">
@@ -92,7 +70,7 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>50€</sup>- <sup>60€</sup>
+                                <sup>50€</sup>
                             </span>
 
                             <h4>Habitació Individual</h4>
@@ -114,14 +92,13 @@
                         </div>
                         <div class="down-content">
                             <span>
-                                <sup>100€</sup>- <sup>150€</sup>
+                                <sup>100€</sup>
                             </span>
 
                             <h4>Habitació doble estandard</h4>
 
                             <p>
                                  Per parelles i barat
-
                             </p>
 
 

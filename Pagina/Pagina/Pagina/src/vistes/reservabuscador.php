@@ -67,11 +67,13 @@ unset($_SESSION["sexo"]);
 unset($_SESSION["email"]);
 unset($_SESSION["numhab"]);
 
-/* coge valores de*/
+/* coge valores desde recercaReserva */
+
 $to = $_POST["to"];
 $from = $_POST["from"];
 $nhabitacio = $_POST["nhabitacio"];
 $npersones = $_POST["npersones"];
+
     if(!empty($to) && !empty($from) && !empty($nhabitacio) && !empty($npersones)){
    //Hem de posar les condicions corresponentes
     /*HABITACIÓ NO TOPA AMB EL PERIODE DE VACANCES DEL HOTEL
@@ -81,12 +83,16 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
+
+/* mientras haya un tipo de habitacion disponible, lo imprime */
+
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         extract($row); 
         $idtipo = $row['idtipo'];
         $imagen = $row['imagen'];
         $ffin = DateTime::createFromFormat('j/m/Y', $to);
         $finicio = DateTime::createFromFormat('j/m/Y', $from);
+        /* comprueba la cantidad de habitaciones reservadas entre las fechas especificadas */
         $query2 = "SELECT SUM(canthab) FROM reserva WHERE finicio >= :finicio AND ffin <= :ffin and idtipo = :idtipo";
         //SELECT SUM(canthab) FROM reserva WHERE finicio >= '2021-11-22' AND ffin <= '2021-11-23' and idtipo = 2;
         $result = $conn->prepare($query2); 
@@ -95,10 +101,12 @@ LA HABITACIÓ NO ESTÁ RESERVADA EN ELS PERIODES DEMANATS **/
         $result->bindParam(':idtipo', $idtipo);
         $result->execute(); 
         $number_of_rows = $result->fetchAll();
+        /* coge la cantidad total de habitaciones */
         $stmt2 = $conn->prepare("SELECT cantidad from tipo where idtipo=:idtipo");
         $stmt2->bindParam(':idtipo', $idtipo);
         $stmt2->execute();
         $cantidad=$stmt2->fetchColumn();
+        /* comprueba si este tipo de habitacion esta en vacaciones */
         $stmt3 = $conn->prepare("SELECT count(idtipo) from tipo where (vacfin <= :vacinicio or vacinicio >= :vacfin) and idtipo = :idtipo");
         $stmt3->bindParam(':vacinicio', $finicio->format('Y-m-d'));
         $stmt3->bindParam(':vacfin', $ffin->format('Y-m-d'));
