@@ -1,4 +1,14 @@
+
+
 # GUIA INSTALACIÓ
+<br />
+<div align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="https://i.ibb.co/JHfjBC6/Screenshot-20211008-011505-2.png" alt="Logo" width="200" height="250">
+  </a>
+
+  <h3 align="center">EL JOC DE LA VIDA</h3>
+
 
 PRIMER IMPORTEM LA BASE DE DADES
 =============
@@ -227,9 +237,9 @@ else
 echo "Certificate key created !"
 fi
 if ! echo -e /etc/httpd/conf.d/$cname_$servidor.crt; then
-echo "Certificate wasn't created !"
+echo "Certificat no creat !"
 else
-echo "Certificate created !"
+echo "Certificat creat !"
 fi
 
 echo "#### ssl $cname $servidor
@@ -249,9 +259,9 @@ Satisfy Any
 </rutaectory>
 </VirtualHost>" > /etc/httpd/conf.d/ssl.$cname_$servidor.conf
 if ! echo -e /etc/httpd/conf.d/ssl.$cname_$servidor.conf; then
-echo "SSL Virtual host wasn't created !"
+echo "SSL Virtual host no ha sigut creada !"
 else
-echo "SSL Virtual host created !"
+echo "SSL Virtual host se ha creat !"
 fi
 fi
 
@@ -261,7 +271,7 @@ echo "127.0.0.1 $alias" >> /etc/hosts
 fi
 echo "Testing configuration"
 service httpd configtest
-echo "Would you like me to restart the server [y/n]? "
+echo "Vols reinciar el servidor [y/n]? "
 read q
 if [[ "${q}" == "yes" ]] || [[ "${q}" == "y" ]]; then
 service httpd restart
