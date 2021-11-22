@@ -57,7 +57,7 @@ unset($_SESSION["fechanacimiento"]);
 unset($_SESSION["sexo"]);
 unset($_SESSION["email"]);
 unset($_SESSION["numhab"]);
-    $query = "SELECT idtipo,precio,descripcion,nom FROM tipo ORDER BY idtipo DESC";
+    $query = "SELECT idtipo,precio,descripcion,nom,imagen FROM tipo ORDER BY idtipo DESC";
     $stmt = $conn->prepare($query); 
     $stmt->execute();
     echo '<div class="row">';
